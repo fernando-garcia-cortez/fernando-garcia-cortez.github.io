@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SU(N) Generators</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Articles.html" style="color: black; text-decoration: none;">
+						Articles
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			
+			<h2 style="text-align:center;">The generators of $SU(N)$.</h2>
+			<p style="text-align:center;">October 19th, 2023.</p>
+			
+			<p>The following statement is used quite a bit in theoretical physics without proof or motivation: The Lie Group $SU(N)$ has $n^2-1$ generators.</p>
+			
+			<p>Before going into a simple proof, it is relevant to note some technicalities: When we talk about the generators of $SU(N)$, we can talk about two (equivalent things):</p>
+			
+			<p>1. The generators are the basis of the Lie Algebra. That is, every element of the Lie Algebra (a vector space) can be written as a linear combination of the generators.</p>
+			
+			<p>2. We can refer to these same elements as the generators of the group <i>through exponentiation</i>, in the sense that any element of the Lie Group associated to the aforementioned Lie Algebra can be obtained through the exponentiation of the generators (along with appropriate constants, that is: a linear combination of the generators).</p>
+			
+			<p>With this in mind, suppose  $J_i$ is a generator of $SU(N)$. Before considering the special/unitary requirements, notice that a complex $n\times n$ matrix has $2n^2 $ free parameters. For example, in 2D:</p>
+			\[\begin{pmatrix}  a+ib & c+id \\  e+if & g+ih \\  \end{pmatrix}   \tag{1} \]
+			<p>Or in 3D</p>
+			\[\begin{pmatrix}  a+ib & c+id & e+if \\  g+ih & k+il & m+in \\  o+ip & q+ir & s+it \\  \end{pmatrix}    \tag{2}\]
+			<p>If  $J_i$ is a generator, then the unitary requirement demands</p>
+			\[(e^{iJ_i })^{\dagger}e^{iJ_i }=1\in SU(N) \tag{3}\]
+			<p>Where exponentiation takes places as the unitary requirement is for the Lie Group, not the Lie Algebra for which $J_i$ is a generator/basis element.</p>
+			<p>Equation (3) implies that:</p>
+			\[-iJ_i^{\dagger}+iJ_i =0  \tag{4}\]
+			<p>Meaning that</p>
+			\[J_i ^{\dagger}=J_i \tag{5} \]
+			<p>That is, a generator of $SU(N)$ is Hermitian. How can this be used to get some structure on the generators? Let's consider some examples.
+			
+			<p>In the 2 dimensional case, we have:</p>
+			\[\begin{pmatrix}  a+ib & c+id \\  e+if & g+ih \\  \end{pmatrix} =\begin{pmatrix}  a-ib & e-if \\  c-id & g-ih \\  \end{pmatrix}   \tag{6}\]
+			<p>In the 3 dimensional case, we have:</p>
+			\[\begin{pmatrix}  a+ib & c+id & e+if \\  g+ih & k+il & m+in \\  o+ip & q+ir & s+it \\  \end{pmatrix}  =\begin{pmatrix}  a-ib & g-ih & o-ip \\  c-id & k-il & q-ir \\  e-if & m-in & s-it \\  \end{pmatrix}  \tag{7}\]
+			<p>From those 2 cases it is clear that there are two things to note:</p>
+			<p>1. The diagonal elements have to be real.</p>
+			<p>2. The strictly triangular parts depend on each other.</p>
+			<p>So, from the arbitrary $n\times n$ matrix with $2n^2 $ free parameters, we now subtract $n$ from the lost parameters of the diagonal (all the imaginary parts' coefficients) and</p>
+			\[\begin{split}
+2\sum_{i=1}^{n-1} &= 2\cdot \frac{1}{2}n \left( n-1 \right)  \\
+				 &= n(n-1) 
+			\end{split}\tag{8} \]
+			<p>From all the parameters in either of the strictly triangular parts of the matrix. So far the total number of free parameters is:</p>
+			\[\begin{split}
+			2n^2 -n- n(n-1)&= 2n^2-n-n^2+n \\
+				 &= n^2 
+			\end{split}  		\tag{9}	\]
+			<p>As a quick example of this, notice that a Hermitian $3\times 3$ matrix has $3^2 =9$ arbitrary parameters:</p>
+			\[\begin{pmatrix}  a & c+id & e+if \\  c-id & k & m+in \\  e-if & m-in & s \\  \end{pmatrix}   \tag{10} \]
+			<p>Now, let's consider the second requirement, that of being "Special":</p>
+			\[\text{det} (e^{iJ_i })=1 \tag{11}\]
+			<p>The "special" requirement requires us to have unit determinant (to be in $SU(N)$). How can this be used to further define a generator? We first recall that for a matrix $A$, the following trace identity holds:</p>
+			\[\text{det} (e^{A})=e^{\text{trace} A}\tag{12} \]
+			<p>And notice that</p>
+			\[e^{\text{trace} A}=1 \tag{13}\]
+			<p>Will only happen if the matrix $A$ is traceless. This in the context of the generators, which we know are Hermitian and thus have real diagonal entries, implies that:</p>
+			\[\sum_{i=1}^{N} d_i=0 \tag{14}\]
+			<p>Where $d_i$ denotes the diagonal entries. It is clear that we only have to specify all but one of the diagonal entries to now all of them, and thus we have one less free parameter in our collection of free parameters to write a generator.</p>
+			<p>It is here then that we conclude that we have $n^2-1$ free parameters to write a generator.</p>
+			<p>To form a basis, we let each generator be equal to the matrix where only one of the free parameters is 1 and the rest zero.</p>
+			<p>We now conclude that we indeed have $n^2-1$ elements in the basis, that is, $n^2-1$ generators.</p>
+			<p>To make these ideas clearer, let's consider two examples:</p>
+			<p>In the case $N=2 $:</p>
+			\[\begin{split}
+\begin{bmatrix}  a & c-if \\  c+if & -a \\  \end{bmatrix} &= c\begin{bmatrix}  0 & 1 \\  1 & 0 \\  \end{bmatrix} +f\begin{bmatrix}  0 & -i \\  i & 0 \\  \end{bmatrix} +    a\begin{bmatrix}  1 & 0 \\  0 & -1 \\  \end{bmatrix}    \\
+	 &= c\sigma _1 +f\sigma _2 +a\sigma _3  
+\end{split}  			\tag{15}\]
+<p>Where we recognize the generators as the Pauli sigma matrices.</p>
+<p>In the case $N=3 $, the most general traceless hermitian matrix is of the form:</p>
+\[\begin{pmatrix}  a & d-ie & f-ig \\  d+ie & b & h-ij \\  f+ig & h+ij & -(a+b) \\  \end{pmatrix}    \tag{16}\]
+			<p>From it, we can deduce what the generators are:</p>
+			\[\begin{split}
+\begin{pmatrix}  1 & 0 & 0 \\  0 & 0 & 0 \\  0 & 0 & -1 \\  \end{pmatrix} &{\;\;\;}  \begin{pmatrix}  0 & 0 & 0 \\  0 & 1 & 0 \\  0 & 0 & -1 \\  \end{pmatrix}  \\
+\begin{pmatrix}  0 & 1 & 0 \\  1 & 0 & 0 \\  0 & 0 & 0 \\  \end{pmatrix} &{\;\;\;} \begin{pmatrix}  0 & -i & 0 \\  i & 0 & 0 \\  0 & 0 & 0 \\  \end{pmatrix}  \\
+\begin{pmatrix}  0 & 0 & 1 \\  0 & 0 & 0 \\  1 & 0 & 0 \\  \end{pmatrix}  &{\;\;\;} \begin{pmatrix}  0 & 0 & -i \\  0 & 0 & 0 \\  i & 0 & 0 \\  \end{pmatrix} \\
+\begin{pmatrix}  0 & 0 & 0 \\  0 & 0 & 1 \\  0 & 1 & 0 \\  \end{pmatrix} &{\;\;\;} \begin{pmatrix}  0 & 0 & 0 \\  0 & 0 & -i \\  0 & i & 0 \\  \end{pmatrix}
+\end{split}  			\tag{17}\]
+<p>Which, although valid, they aren't the most popular basis out there. At least in physics, the first 2 generators presented above are instead writen as:</p>
+\[\begin{pmatrix}  1 & 0 & 0 \\  0 & -1 & 0 \\  0 & 0 & 0 \\  \end{pmatrix} \;\;\;\;\;\frac{1}{\sqrt{3}}\begin{pmatrix}  1 & 0 & 0 \\  0 & 1 & 0 \\  0 & 0 & -2 \\  \end{pmatrix}     \tag{18} \]
+<p>Which along with the later 6 generators are known as the Gell-Mann matrices.</p>
+<p>Whether we pick the 2 matrices regarding the 3 diagonal elements to be the first ones presented or those from the Gell-Mann set, we have a valid basis: all of them are orthogonal and satisfy the generator requirements (tracelessness and hermicity).</p>
+<br>
+			<a href="../Articles.html" style="color: black; "><h4>Back to Articles</h4></a>
+			
+        
+		</div>
+    </body>
+</html>
