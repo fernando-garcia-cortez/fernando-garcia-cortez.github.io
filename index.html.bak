@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Other</title>
+        <title>Home</title>
         <script>
             MathJax = {
                 tex: {
@@ -27,8 +27,8 @@
 						Home
 					</a>
 					&nbsp; &nbsp;
-					<a href="Blog.html" style="color: black; text-decoration: none;">
-						Blog
+					<a href="Articles.html" style="color: black; text-decoration: none;">
+						Articles
 					</a>
 					&nbsp; &nbsp;
 					<a href="Other.html" style="color: black; text-decoration: none;">
@@ -47,13 +47,26 @@
 			<!----------- Content ----------->
 			<!------------------------------->
 			
+			<p>Hey there! Welcome to my site. Here you will find out about topics related to my research interests as well as a collection of multimedia related to my hobbies.</p>
 			
-			<a href="Music/Gear.html" style="text-decoration: none;"><h2>My gear</h2></a>
+			<h2>Currently reading</h2>
 			
-			<a href="Music/Tabs.html" style="text-decoration: none;"><h2>Guitar tabs</h2></a>
+				<div class="subzone">
+					<p><i>Uzumaki</i>, by Junji Ito.</p>
+					
+					<p><i>The road to reality</i>, by Roger Penrose.</p>
+					
+					<p><i>The three body problem</i>, by Liu Cixin.</p>
+				</div>
+				
+			<h2>Picture of the month</h2>
 			
-			<a href="Music/Covers.html" style="text-decoration: none;"><h2>Covers</h2></a>
+			<img src="PicturesOfTheMonth/2023-10.jpg" class="centerImg" style="width: 70%;border: 2px solid #000000">
 			
+			<div class="centerImg">
+			<p style="text-align: center;">October: Solar eclipse of October 14, 2023.</p>
+			<a href="PicturesOfTheMonth/Pictures-Of-The-Month.html" style="text-decoration: none;"><h4 style="text-align: center;">Archive.</p></h4>
+			</div>
 			
         
 		</div>

@@ -12,7 +12,7 @@
 	   <script id="MathJax-script" async
 		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 	   </script>
-	   <link rel="stylesheet" href="GarciaStyles.css">
+	   <link rel="stylesheet" href="../GarciaStyles.css">
     </head>
     <body>
 		<div class="InnerBody">
@@ -23,19 +23,19 @@
 			<h1 class="liner">Fernando Garcia</h1>
 			
 			<h4>
-					<a href="index.html" style="color: black; text-decoration: none;">
+					<a href="../index.html" style="color: black; text-decoration: none;">
 						Home
 					</a>
 					&nbsp; &nbsp;
-					<a href="Blog.html" style="color: black; text-decoration: none;">
-						Blog
+					<a href="../Articles.html" style="color: black; text-decoration: none;">
+						Articles
 					</a>
 					&nbsp; &nbsp;
-					<a href="Other.html" style="color: black; text-decoration: none;">
+					<a href="../Other.html" style="color: black; text-decoration: none;">
 						Other
 					</a>
 					&nbsp; &nbsp;
-					<a href="AboutMe.html" style="color: black; text-decoration: none;">
+					<a href="../AboutMe.html" style="color: black; text-decoration: none;">
 						About me
 					</a>
 			</h4>
@@ -48,13 +48,13 @@
 			<!------------------------------->
 			
 			
-			<a href="Music/Gear.html" style="text-decoration: none;"><h2>My gear</h2></a>
-			
-			<a href="Music/Tabs.html" style="text-decoration: none;"><h2>Guitar tabs</h2></a>
-			
-			<a href="Music/Covers.html" style="text-decoration: none;"><h2>Covers</h2></a>
 			
 			
+			<h2 style="text-align:center;">Music theory</h2>
+			
+			
+			
+			<a href="../Music.html" style="color: black; "><h4>Back to Music</h4></a>
         
 		</div>
     </body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home</title>
+        <title>OZ-06MS Leo</title>
         <script>
             MathJax = {
                 tex: {
@@ -27,8 +27,8 @@
 						Home
 					</a>
 					&nbsp; &nbsp;
-					<a href="../Blog.html" style="color: black; text-decoration: none;">
-						Blog
+					<a href="../Articles.html" style="color: black; text-decoration: none;">
+						Articles
 					</a>
 					&nbsp; &nbsp;
 					<a href="../Other.html" style="color: black; text-decoration: none;">
@@ -48,29 +48,22 @@
 			<!------------------------------->
 			
 			
-				
-			<h2>Picture(s) of the month</h2>
 			
-			<img src="2023-10.jpg" class="centerImg" style="width: 70%;border: 2px solid #000000">
 			
-			<p style="text-align: center;">October 2023: Solar eclipse of October 14, 2023.</p>
+			<h2 style="text-align:center;">OZ-06MS Leo</h2>
 			
-			<img src="2023-09.jpg" class="centerImg" style="width: 70%;border: 2px solid #000000">
+			<img src="OZ-06MS-Leo/cover.png" class="centerImg" style="width: 35%">
 			
-			<p style="text-align: center;">September 2023: Fossil at NMMNHS.</p>
+			<p>It is not usual that I get small and simple gundams, but this one has a purpose...</p>
 			
-			<img src="2023-08.jpg" class="centerImg" style="width: 70%;border: 2px solid #000000">
+			<p>Every gundam I have built so far wasn't painted entirely, even more, just a few bits on them were painted, if any at all.</p>
 			
-			<p style="text-align: center;">August 2023: Pecos River (New Mexico).</p>
-			
-			<img src="2023-07.jpg" class="centerImg" style="width: 70%;border: 2px solid #000000">
-			
-			<p style="text-align: center;">July 2023: Working bee (ABQ BioPark).</p>
-			
-			<img src="2023-06.jpg" class="centerImg" style="width: 70%;border: 2px solid #000000">
-			
-			<p style="text-align: center;">June 2023: Bird over Santa Fe, New Mexico.</p>
-			
+			<p>The purpose of this model is to paint everys single piece of it, with two purposes in mind:</p>
+			<ul>
+				<li>Remove the plastic look.</li>
+				<li>Do some extreme weathering on it.</li>
+			</ul>
+			<a href="../Scale-Models.html" style="color: black; "><h4>Back to Scale Models</h4></a>
         
 		</div>
     </body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home</title>
+        <title>Tabs</title>
         <script>
             MathJax = {
                 tex: {
@@ -27,8 +27,8 @@
 						Home
 					</a>
 					&nbsp; &nbsp;
-					<a href="../Blog.html" style="color: black; text-decoration: none;">
-						Blog
+					<a href="../Articles.html" style="color: black; text-decoration: none;">
+						Articles
 					</a>
 					&nbsp; &nbsp;
 					<a href="../Other.html" style="color: black; text-decoration: none;">
@@ -48,29 +48,33 @@
 			<!------------------------------->
 			
 			
+			
+			
+			<h2 style="text-align:center;">Guitar Tabs</h2>
+			
+			<h2>Coming soon</h2>
+			
+			<div class="ListOfArticles">
 				
-			<h2>Picture(s) of the month</h2>
+				<h4>Дешёвая жизнь</h4>
+				<h6>By Аут</h6>
+				
+				<h4>Ligature Marks: Patterns</h4>
+				<h6>By Meshugah</h6>
+				
+				<h4>Descending</h4>
+				<h6>By Lamb of God</h6>
+				
+				<h4>Open Car</h4>
+				<h6>By Porcupine Tree</h6>
+				
+				<h4>Kingdom</h4>
+				<h6>By Devin Townsend Project</h6>
+			</div>
 			
-			<img src="2023-10.jpg" class="centerImg" style="width: 70%;border: 2px solid #000000">
 			
-			<p style="text-align: center;">October 2023: Solar eclipse of October 14, 2023.</p>
 			
-			<img src="2023-09.jpg" class="centerImg" style="width: 70%;border: 2px solid #000000">
-			
-			<p style="text-align: center;">September 2023: Fossil at NMMNHS.</p>
-			
-			<img src="2023-08.jpg" class="centerImg" style="width: 70%;border: 2px solid #000000">
-			
-			<p style="text-align: center;">August 2023: Pecos River (New Mexico).</p>
-			
-			<img src="2023-07.jpg" class="centerImg" style="width: 70%;border: 2px solid #000000">
-			
-			<p style="text-align: center;">July 2023: Working bee (ABQ BioPark).</p>
-			
-			<img src="2023-06.jpg" class="centerImg" style="width: 70%;border: 2px solid #000000">
-			
-			<p style="text-align: center;">June 2023: Bird over Santa Fe, New Mexico.</p>
-			
+			<a href="../Music.html" style="color: black; "><h4>Back to Music</h4></a>
         
 		</div>
     </body>

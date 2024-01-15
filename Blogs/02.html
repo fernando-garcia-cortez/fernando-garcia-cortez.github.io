@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Path Integrals in Quantum Mechanics</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			
+			<h2 style="text-align:center;">Exploring the use of path integrals in Quantum Mechanics</h2>
+			<p style="text-align:center;">December 25th, 2023.</p>
+			
+			<p>After working with quantum fields for a while, the idea of path integrals is no stranger. However, until recently, I had never used path integrals to solve basic quantum mechanics problems.</p>
+
+			<p>My upper-level course in Quantum Mechanics didn't cover this topic, but the textbook (Townsend, A Modern Approach to Quantum Mechanics) provides good motivation and derives the appropriate equations in a clear manner. For readers unfamiliar with the topic, I highly recommend this text as a first introduction.</p>
+
+			<p>In this entry, I would like to further explore the ideas presented there and solve some of the problems.</p>
+			
+			
+			<h4>Using induction to complete the proof for the free-particle propagator</h4>
+			
+			<p>Townsend works out the propagator for a free particle, yet his proof skips the inductive step. Let's finish his proof before moving on.</p>
+			
+			<p>The proof revolves around integrals of the form</p>
+			
+			\begin{equation}\int_{-\infty }^{\infty } dy_{m}\exp \left( i \left[  \left( y_{m+1}-y_m \right) ^2 + \left( y_{m}-y_{m-1} \right) ^2  \right] \right)  \end{equation}
+			
+			<p>Where $m $ goes from $1 $ to $N-1 $, where $N $ denotes the number of discrete time intervals used to break up the particle's path.</p>
+
+			<p>We are presented with a few results. For the $m=1 $ integral, we find</p>
+			\begin{equation}\int_{-\infty }^{\infty } dy_1\exp  \left( i \left[ (y_2 -y_1 )^2 +(y_1 -y_0 )^2  \right] \right) =\sqrt{\frac{i\pi }{2}}e^{i \frac{\left( y_2 -y_0  \right)^2 }{2} } \end{equation}
+			
+			<p>And for the $m=2  $ integral, we find:</p>
+			
+			\begin{equation}\begin{split}
+				\int_{-\infty }^{\infty } dy_2\exp \left( i \left[ (y_3 -y_2 )^2 +(y_2 -y_0 )^2/2  \right] \right) &= \sqrt{\frac{i\pi }{2}}\sqrt{\frac{i2\pi }{3}}\exp \left( i \frac{\left( y_3 -y_0  \right)^2 }{3} \right) \\
+				  &= \sqrt{\frac{(i\pi )^2 }{3}}\exp \left( i \frac{\left( y_3 -y_0  \right)^2 }{3} \right)
+			\end{split}\end{equation}
+			
+			<p>And we want to claim that (given the apparent pattern) that for the $N-1 $ integral (that is, after performing all the $N-1 $ integrals in $\int_{-\infty }^{\infty } dy_1 \cdots \int_{-\infty }^{\infty } dy_{N-1}\exp \left( i\sum_{i=1}^{N} (y_i -y_{i-1})^2  \right)  $) we find:</p>
+			
+			\begin{equation}\int_{-\infty }^{\infty } dy_1 \cdots \int_{-\infty }^{\infty } dy_{N-1}\exp \left( i\sum_{i=1}^{N} (y_i -y_{i-1})^2  \right) =\sqrt{\frac{(i\pi )^{N-1}}{N}}\exp \left( i\frac{ \left( y_N-y_0 \right) ^2 }{N} \right)  \end{equation}
+			
+			<p>Assume this is the case. Let's use induction to show that the $N+1 $ case holds, and thus (by induction) the proposition is correct.</p>
+
+			<p>Before computing the integral, it is relevant to recall:</p>
+			
+			\begin{equation}I(a,b)=\int_{-\infty }^{\infty } dx\exp \left( -ax^2 +bx \right)  =\exp \left( \frac{b^2 }{4a} \right) \sqrt{\frac{\pi }{a}} \end{equation}
+			
+			<p>With a total of $N+1$ intervals, we have the integral:</p>
+			
+			\begin{equation}
+			\begin{split}
+			 &{\;} \int_{-\infty }^{\infty } dy_1 \cdots \int_{-\infty }^{\infty } dy_N\exp \left( i\sum_{i=1}^{N+1} (y_i -y_{i-1})^2  \right)\\
+			  &=  \sqrt{\frac{(i\pi )^{N-1}}{N}}\int_{-\infty }^{\infty } dy_N\exp \left( i \left[ y_{N+1}-y_N \right] ^2 +i \left[ y_N-y_0 \right] ^2 /N \right)  \\
+			 &= \sqrt{\frac{(i\pi )^{N-1}}{N}}\exp \left( iy_{N+1}^2  \right) \exp \left( iy_0 ^2 /N \right) \int_{-\infty }^{\infty } dy_N\exp \left( i \left[ 1+\frac{1}{N} \right] y_N^2 -2i \left[ y_{N+1}+\frac{y_0}{N} \right] y_N \right)  \\
+			 &= \sqrt{\frac{(i\pi )^{N-1}}{N}}\exp \left( iy_{N+1}^2  \right) \exp \left( iy_0 ^2 /N \right)\exp \left( \frac{-4 \left[ y_{N+1}+y_0/N \right] ^2 }{-4i \left( 1+\frac{1}{N} \right) } \right) \sqrt{\frac{\pi }{-i \left( 1+\frac{1}{N} \right) }} \\
+			 &= \sqrt{\frac{(i\pi )^{N-1}(i\pi )}{N(1+1/N)}}\exp \left( i \left[ y^2 _{N+1}+\frac{y_0 ^2 }{N}-\frac{y_{N+1}^2 +2y_{N+1}y_0/N+y_0^2 /N^2 }{1+\frac{1}{N}} \right]  \right)  \\
+			 &= \sqrt{\frac{(i\pi )^{N}}{N+1}}\exp \left( i \frac{ \left[ y_{N+1}-y_0 \right] ^2 }{N+1}\right)
+			\end{split}  
+			 \end{equation}
+			 
+			<p>Which is exactly what we would expect, that is: $P(N)\Rightarrow P(N+1)$. Thus, by PMI, the result holds. Once we know this, it is straightforaward to show that</p>
+			
+			\begin{equation} \langle x',t'|x_0 ,t_0  \rangle =\sqrt{\frac{m}{2\pi \hbar i(t'-t_0 )}}\exp \left( \frac{im}{2\hbar }\frac{(x'-x_0 )^2 }{t'-t_0 } \right) \end{equation}
+			
+			<h4>Time evolution of the free-particle Gaussian wave-packet</h4>
+			As physicists, predicting the future (or time evolution) of a system is one of the most important goals we have. The path integral approach to quantum mechanics provides a simple way to do so once we have a transition amplitude, also known as the propagator.
+
+			<p>Recall that the time evolution of a state $\psi(t_0)$ with propagator $\langle x',t'|x_0,t_0 \rangle$ is</p>
+
+			\begin{equation}
+			\langle x'|\psi '(t') \rangle=\int_{-\infty }^{\infty } dx_0 \langle x',t'|x_0 ,t_0  \rangle \langle x_0 |\psi (t_0 ) \rangle 
+			\end{equation}
+						
+			<p>As discussed previously, the propagator for the free-particle is</p>
+
+			\begin{equation}
+				\langle x',t'|x_0 ,t_0  \rangle =\sqrt{\frac{m}{2\pi \hbar i(t'-t_0 )}}\exp \left( \frac{im}{2\hbar }\frac{(x'-x_0 )^2 }{t'-t_0 } \right) 
+			\end{equation}  
+
+			<p>Recall that a Gaussian Wave-Packet is of the form:</p>
+
+			\begin{equation}
+			\langle x|\psi  \rangle =\psi (x)=\frac{1}{\sqrt{\sqrt{\pi }a}}\exp \left( -\frac{1}{2a^2 }x^2  \right) 
+			\end{equation}  
+
+			<p>A function that will play the role of $\langle x_0 |\psi (t_0 ) \rangle  $ in this problem, with $t_0 =0$. Our job is to evaluate the integral:</p>
+
+			\begin{equation}
+				\int_{-\infty }^{\infty } \sqrt{\frac{m}{2\pi \hbar i(t' )}}\exp \left( \frac{im}{2\hbar }\frac{(x'-x_0 )^2 }{t' } \right) \frac{1}{\sqrt{\sqrt{\pi }a}}\exp \left( -\frac{1}{2a^2 }x_0 ^2  \right) dx_0 
+			\end{equation}  
+
+			<p>And we should find that</p>
+
+			\begin{equation}
+			\psi (x,t)=\frac{1}{\sqrt{\sqrt{\pi } \left[ a+\frac{i\hbar t}{ma} \right] }}\exp \left( -\frac{x^2 }{2a^2  \left[ 1+\frac{i\hbar t}{ma^2 } \right] } \right) 
+			\end{equation}  
+
+			<p>A result that arises from studying the same problem through the conventional operator formulation of quantum mechanics. Evaluating the integral above is not a difficult task, as we can employ the same Gaussian integral formula used in the induction proof. However, a few steps will be necessary to simplify the result and present it in the desired form.</p>
+\begin{equation}
+\begin{split}
+ \psi (x',t')&= \int_{-\infty }^{\infty }dx_0 \sqrt{\frac{m}{2\pi \hbar i(t' )}}\exp \left( \frac{im}{2\hbar }\frac{(x'-x_0 )^2 }{t' } \right) \frac{1}{\sqrt{\sqrt{\pi }a}}\exp \left( -\frac{1}{2a^2 }x_0 ^2  \right) \\
+  &= \sqrt{\frac{m}{2\pi \hbar it'}}\frac{1}{\sqrt{\sqrt{\pi }a}}\int_{-\infty }^{\infty } dx_0 \exp \left( \frac{im}{2\hbar t'} \left[ {x'}^2 -2x'x_0 +x_0 ^2  \right] -\frac{1}{2a^2 }x_0 ^2  \right)  \\
+ &= \sqrt{\frac{m}{2\pi \hbar it'}}\frac{1}{\sqrt{\sqrt{\pi }a}}\int_{-\infty }^{\infty } dx_0 \exp \left(   \frac{im}{2\hbar t'}{x'}^2 -2\frac{im}{2\hbar t'}x'x_0 +\frac{im}{2\hbar t'}x_0 ^2   -\frac{1}{2a^2 }x_0 ^2  \right) \\
+ &= \sqrt{\frac{m}{2\pi \hbar it'}}\frac{1}{\sqrt{\sqrt{\pi }a}} \int_{-\infty }^{\infty } dx_0  \exp \left( \frac{im}{2\hbar t'} {x'}^2 \right)  \exp \left(      \left[ \frac{im}{2\hbar t'}   -\frac{1}{2a^2 } \right] x_0 ^2 - \left[ 2\frac{im}{2\hbar t'}x' \right] x_0 \right) \\
+  &= \sqrt{\frac{m}{2\pi \hbar it'}}\frac{1}{\sqrt{\sqrt{\pi }a}} \exp \left( \frac{im}{2\hbar t'} {x'}^2 \right)\int_{-\infty }^{\infty } dx_0    \exp \left(      \left[ \frac{im}{2\hbar t'}   -\frac{1}{2a^2 } \right] x_0 ^2 - \left[ 2\frac{im}{2\hbar t'}x' \right] x_0 \right) \\
+  &= \sqrt{\frac{m}{2\pi \hbar it'}}\frac{1}{\sqrt{\sqrt{\pi }a}} \exp \left( \frac{im}{2\hbar t'} {x'}^2 \right) I \left(\frac{1}{2a^2}-\frac{im}{2\hbar t'} ,-\frac{imx'}{\hbar t'} \right) \\
+    &= \sqrt{\frac{m}{2\pi \hbar it'}}\frac{1}{\sqrt{\sqrt{\pi }a}} \exp \left( \frac{im}{2\hbar t'} {x'}^2 \right)\sqrt{\frac{\pi }{\frac{1}{2a^2}-\frac{im}{2\hbar t'}}}\exp \left(  \left[ \frac{imx'}{\hbar t'} \right] ^2 \frac{1}{4 \left( \frac{1}{2a^2}-\frac{im}{2\hbar t'} \right) } \right) \\
+      &= \sqrt{\frac{m}{2\pi \hbar it'}}\frac{1}{\sqrt{\sqrt{\pi }a}} \sqrt{\frac{2 i \pi  a^2 t' \hbar }{a^2 m+i t' \hbar }}\exp \left( \frac{im}{2\hbar t'} {x'}^2 \right)\exp \left(  \left[ \frac{imx'}{\hbar t'} \right] ^2 \frac{i a^2 t' \hbar }{2 a^2 m+2 i t' \hbar } \right) \\
+        &= \frac{1}{\sqrt{\sqrt{\pi }}}\sqrt{\frac{am}{a^2 m+i\hbar t'}}\exp \left(  \left[ \frac{im}{2\hbar t'}-\frac{m^2 }{\hbar ^2 {t'}^2 }\frac{ia^2 t'\hbar }{2a^2 m+2it'\hbar } \right] {x'}^2  \right)  \\
+        &= \frac{1}{\sqrt{\sqrt{\pi }}}\sqrt{\frac{am}{am \left( a+\frac{i\hbar t'}{am} \right) }}\exp \left( -\frac{m}{2ma^2 +2it'\hbar }{x'}^2  \right)  \\
+        &= \frac{1}{\sqrt{\sqrt{\pi } \left( a+\frac{i\hbar t'}{ma} \right) }}\exp \left( -\frac{1}{2a^2  \left[ 1+\frac{i\hbar t'}{a^2 m} \right] }{x'}^2  \right) 
+\end{split}  
+\end{equation}
+<p>This is precisely the result we were expecting. It is worth studying how this looks visually. Because the wave function is complex (rather than purely real), we need to visualize the real and imaginary parts separately. The following animation was created using Mathematica.</p>  
+
+<video width="50%" class="centerImg" controls>
+  <source src="02/FreeParticleVideo.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
+<h4>Path integrals for systems with non-zero potentials: The Harmonic Oscillator</h4>
+
+
+<p>To conclude this article entry, let's explore systems with non-zero potentials, and in particular systems with Gaussian integrals.</p>
+
+<p>These systems have Lagrangians of the form</p>
+
+\begin{equation}
+L=a(t)\dot{x}^2 +b(t)\dot{x}x+c(t)x^2 +d(t)\dot{x}+e(t)x+f(t)
+\end{equation}
+
+<p>It can be shown (see Feynman and Hibbs, Quantum Mechanics and Path Integrals) that a system with a Lagrangian of that form has a propagator (also known as kernel) from point $a=(x_a,t_a)$ to point $b=(x_b,t_b) $ that is given by:</p>
+
+\begin{equation}
+K(b,a)=\exp \left( \frac{i}{\hbar }S_{\text{cl} } \left[ b,a \right]  \right) F(t_b,t_a)
+\end{equation}  
+
+<p>Where $S_{\text{cl} } $ is the action (from $a $ to $b $) through the classical path, and $F $ is a function that only depends on the times $t_a $ and $t_b $.</p>
+
+<p>As Feynman and Hibbs put it, the Kernel's (propagator) spatial dependence is known. Still, we will have to find a way to write $F $ down explicitly.</p>
+
+<p>A free particle clearly belongs to this family of systems. A non-trivial, yet familiar example of a system belonging to this family is the harmonic oscillator. Recall the its Lagrangian is given by:</p>
+
+\begin{equation}
+L=\frac{1}{2}m\dot{x}^2 -\frac{1}{2}m\omega ^2 x^2 
+\end{equation}  
+
+<p>It is relevant to recall that this Lagrangian implies</p>
+
+\begin{equation}
+\ddot{x} = -\omega ^2 x
+\end{equation}  
+
+<p>A fact that we will use later.</p>
+
+<p>Before calculating its action (to then find its propagator/kernel $K$) it is instructive to calculate the action for a free particle (Problem 2.1, Feynman and Hibbs):</p>
+
+\begin{equation}
+\begin{split}
+S_{\text{cl} }^{\text{Free Particle} } &= \frac{1}{2}m\int_{t_a}^{t_b} \dot{x}^2 dt \\
+  &= \frac{1}{2}\int_{t_a}^{t_b} \dot{x}\dot{x}dt \\
+  \text{Use integration by parts...}\;\; &= \frac{1}{2}m \left( \dot{x}x\Big|_{t_a}^{t_b} -\int_{t_a}^{t_b} \dot{x} \right)  \\
+  &= \frac{1}{2}m\dot{x}(x(t_b)-x(t_a)) \\
+  &= \frac{1}{2}m\frac{\Delta d}{\delta t}(x_b-x_a) \\
+  &= \frac{1}{2}m\frac{x_b-x_a}{t_b-t_a}(x_b-x_a) \\
+  &= \frac{1}{2}m\frac{(x_b-x_a)^2 }{t_b-t_a} 
+\end{split}            
+\end{equation}  
+
+<p>(Not only did working this out give us practice with action integrals, but it also gave us most of the information to construct a well-known propagator we worked with above)</p>
+
+<p>With this much simpler example in mind, we now turn our attention towards the action of the simple harmonic oscillator. One might be temped to split the integral linearly and use the result from the free particle (for the first term), but this is not right as we no longer have that $\ddot{x}=0 $.</p>
+
+\begin{equation}
+\begin{split}
+S_{\text{cl} }^{\text{Har. Osc.} } &= \frac{m}{2}\int_{t_a}^{t_b} \dot{x}^2  -\omega ^2 x^2 dt\\
+ &= \frac{m}{2} \left( \int_{t_a}^{t_b}\dot{x}\dot{x}dt-\omega ^2 \int_{t_a}^{t_b}xxdt \right) \\
+ &= \frac{m}{2} \left(  \left[ \dot{x}x \right] _{t_a}^{t_b}-\int_{t_a}^{t_b}x\ddot{x}dt-\omega ^2 \int_{t_a}^{t_b} xxdt \right) \\
+ &= \frac{m}{2} \left(  \left[ \dot{x}x \right] _{t_a}^{t_b}-\int_{t_a}^{t_b}x(-\omega ^2 x)dt-\omega ^2 \int_{t_a}^{t_b} xxdt \right)\\
+ &= \frac{m}{2} \left[ \dot{x}x \right] _{t_a}^{t_b}\\
+ &= \frac{m}{2} \bigg( v(t_b)x(t_b)-v(t_a)x(t_a)\bigg)
+\end{split}  
+\end{equation}  
+
+<p>Problem 2.2 in Feynman and Hibbs provides the form of this action. The general solution to the Harmonic Oscillator ($\ddot{x}=-\omega ^2 x $) is a function $x(t) $ of the form</p>
+
+\begin{equation}
+x(t)=A\sin \left( \omega t \right) +B\cos \left( \omega t \right) 
+\end{equation}  
+
+<p>But the final answer presented in their text contains no $A $ or $B $. It is easy to see that if we plug the above form into the solution of $S_{\text{cl} }^{\text{Har. Osc.} } $ we will find something different.</p>
+
+<p>If we had more information about the system, we could figure out what $A $ and $B $ should be. Since we are trying to keep everything as general as possible, one option we have is to transform the time coordinate in $x(t) $ (and $v(t) $).</p>
+
+<p>We want to make this transformation in such a way that at $t'=0 $ , where $t' $ denotes the time dimension in the new time-shifted reference frame, we find $x(0)=x_a $. This transformation is given by $t'=t-t_a $. We further define $T=t_b-t_a $, so $x(T)=x_b $. See the diagram below:</p>
+
+<img src="02/ChangeOfCoordinates.PNG" class="centerImg" style="width: 50%;">
+
+<p>With $x(0)=x_a $, it follows that $B=x_a $, since:</p>
+
+\begin{equation}
+\begin{split}
+x(0)=x_a &= A\sin \left( 0\right) +B\cos \left( 0 \right)   \\
+  &= 0+B \\
+  &= B
+\end{split}  
+\end{equation}  
+
+<p>Similarly, we find that $A $ is given by:</p>
+
+\begin{equation}
+\begin{split}
+x(T)=x_b &= A\sin \left(  \omega T\right) +B\cos \left( \omega T \right)   \\
+x_b &= A\sin \left( \omega T \right) +x_a\cos \left( \omega T \right)  \\
+x_b-x_a\cos \left( \omega T \right)  &= A\sin \left( \omega T \right)  \\
+A &= \frac{1}{\sin \left( \omega T \right) }\bigg( x_b-x_a\cos \left( \omega T \right) \bigg)
+\end{split}  
+\end{equation}  
+
+<p>Thus, we know what $A $ and $B $ should be given the initial and final points $a $ and $b $, respectively. At this point we can write:</p>
+
+\begin{equation}
+x(t)=\frac{1}{\sin \left( \omega T \right) }\bigg( x_b-x_a\cos \left( \omega T \right) \bigg)\sin \left( \omega t \right) +x_a\cos \left( \omega t \right) 
+\end{equation}  
+
+<p>The time derivative (velocity) is:</p>
+
+\begin{equation}
+\dot{x}(t)\equiv v(t)=\frac{1}{\sin \left( \omega T \right) }\bigg( x_b-x_a\cos \left( \omega T \right) \bigg)\omega \cos \left( \omega t \right) -x_a\omega \sin \left( \omega t \right) 
+\end{equation}  
+
+<p>So</p>
+
+\begin{equation}
+\dot{x}(0)=\frac{1}{\sin \left( \omega T \right) }\bigg( x_b-x_a\cos \left( \omega T \right) \bigg)\omega 
+\end{equation}  
+
+<p>And</p>
+
+\begin{equation}
+\dot{x}(T)=\frac{1}{\sin \left( \omega T \right) }\bigg( x_b-x_a\cos \left( \omega T \right) \bigg)\omega \cos \left( \omega T \right) -x_a\omega \sin \left( \omega T \right) 
+\end{equation}  
+
+<p>We can finally write down</p>
+
+\begin{equation}
+\begin{split}
+S_{\text{cl} }^{\text{Har. Osc.} } &= \frac{m}{2} \bigg( v(t_b)x(t_b)-v(t_a)x(t_a)\bigg) \\
+  &=  \frac{m}{2}\bigg( \left\lbrace \frac{1}{\sin \left( \omega T \right) }\bigg( x_b-x_a\cos \left( \omega T \right) \bigg)\omega \cos \left( \omega T \right) -x_a\omega \sin \left( \omega T \right) \right\rbrace x_b \\
+  &{\;}\;\;-\left\lbrace \frac{1}{\sin \left( \omega T \right) }\bigg( x_b-x_a\cos \left( \omega T \right) \bigg)\omega  \right\rbrace x_a  \bigg)   \\
+  &=   \frac{m}{2}\bigg( \omega x_b^2 \frac{\cos \left( \omega T \right) }{\sin \left( \omega T \right) }-\omega x_ax_b\frac{\cos ^2  \left( \omega T \right) }{\sin \left( \omega T \right) }-\omega x_ax_b\sin \left( \omega T \right)  \\
+    &{\;}\;\; -x_ax_b\omega \frac{1}{\sin \left( \omega T \right) }+x_a^2 \omega \frac{\cos \left( \omega T \right) }{\sin \left( \omega T \right) }\bigg) \\
+    &= \frac{m}{2}\frac{\omega }{\sin \left( \omega T \right) }	\bigg( x_b^2 \cos \left( \omega T \right) -x_ax_b\cos ^2   \left( \omega T \right) -x_ax_b\sin ^2  \left( \omega T \right)  \\
+    &{\;}\;\; -x_ax_b +x_a^2 \cos \left( \omega T \right) \bigg) \\
+    &= \frac{m}{2}\frac{\omega }{\sin \left( \omega T \right) } \left( \cos \left( \omega T \right)  \left( x_a^2 +x_b^2  \right) -2x_ax_b \right) 
+\end{split}  
+\end{equation}  
+
+<p>So the kernel of the harmonic oscillator, up to a multiplicative factor $F $ that only depends on time is:</p>
+
+\begin{equation}
+K_{\text{Har. Osc.} }(b,a)=\exp \left( \frac{i}{\hbar }\frac{m}{2}\frac{\omega }{\sin \left( \omega T \right) } \left( \cos \left( \omega T \right)  \left( x_a^2 +x_b^2  \right) -2x_ax_b \right) 
+ \right) F(t_b,t_a)
+\end{equation}  
+
+<p>Feynman and Hibbs explicitly work out the form of $F(t_b,t_a) $. As such, I won't discuss this function, at least not in this entry.</p>
+
+<h4>Final remarks</h4>
+
+<p>The formalism explored in this entry isn't necessarily better than the operator approach to quantum mechanics. In fact, some consider path integrals to be useless/complicated in NRQM.</p>
+
+<p>Still, it is instructive to see how we apply such a method in a context different to QFT.</p>
+
+
+
+
+<br>
+			<a href="../Blog.html" style="color: black; "><h4>Back to Blogs</h4></a>
+		</div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

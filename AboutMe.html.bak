@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Other</title>
+        <title>About Me</title>
         <script>
             MathJax = {
                 tex: {
@@ -27,8 +27,8 @@
 						Home
 					</a>
 					&nbsp; &nbsp;
-					<a href="Blog.html" style="color: black; text-decoration: none;">
-						Blog
+					<a href="Articles.html" style="color: black; text-decoration: none;">
+						Articles
 					</a>
 					&nbsp; &nbsp;
 					<a href="Other.html" style="color: black; text-decoration: none;">
@@ -47,13 +47,16 @@
 			<!----------- Content ----------->
 			<!------------------------------->
 			
+			<p>Hey there! My name is Fernando Garcia; I'm a physics and pure mathematics major at the University of New Mexico.</p>
+
+			<p>My current research revolves around the Standard Model, most specifically Neutrinos.</p>
 			
-			<a href="Music/Gear.html" style="text-decoration: none;"><h2>My gear</h2></a>
-			
-			<a href="Music/Tabs.html" style="text-decoration: none;"><h2>Guitar tabs</h2></a>
-			
-			<a href="Music/Covers.html" style="text-decoration: none;"><h2>Covers</h2></a>
-			
+			<!----------- Make a research page describing current research ----------->
+
+			<p>I love playing my electric guitars, watching movies, reading, taking pictures, building things, and above all, explore our universe: from trying new food and meeting new people to the intricate works of nature.</p>
+
+			<!-- <p style="color:darkblue"><a href="" style="color: black; text-decoration: none;">CV.</a></p> -->
+
 			
         
 		</div>

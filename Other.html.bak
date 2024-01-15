@@ -27,8 +27,8 @@
 						Home
 					</a>
 					&nbsp; &nbsp;
-					<a href="Blog.html" style="color: black; text-decoration: none;">
-						Blog
+					<a href="Articles.html" style="color: black; text-decoration: none;">
+						Articles
 					</a>
 					&nbsp; &nbsp;
 					<a href="Other.html" style="color: black; text-decoration: none;">
@@ -48,11 +48,11 @@
 			<!------------------------------->
 			
 			
-			<a href="Music/Gear.html" style="text-decoration: none;"><h2>My gear</h2></a>
+			<a href="Music.html" style="text-decoration: none;"><h2>Music</h2></a>
 			
-			<a href="Music/Tabs.html" style="text-decoration: none;"><h2>Guitar tabs</h2></a>
+			<a href="Photography.html" style="text-decoration: none;"><h2>Photography</h2></a>
 			
-			<a href="Music/Covers.html" style="text-decoration: none;"><h2>Covers</h2></a>
+			<a href="Scale-Models.html" style="text-decoration: none;"><h2>Scale Modeling</h2></a>
 			
 			
         

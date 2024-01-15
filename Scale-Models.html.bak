@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Other</title>
+        <title>Scale models</title>
         <script>
             MathJax = {
                 tex: {
@@ -27,8 +27,8 @@
 						Home
 					</a>
 					&nbsp; &nbsp;
-					<a href="Blog.html" style="color: black; text-decoration: none;">
-						Blog
+					<a href="Articles.html" style="color: black; text-decoration: none;">
+						Articles
 					</a>
 					&nbsp; &nbsp;
 					<a href="Other.html" style="color: black; text-decoration: none;">
@@ -48,13 +48,39 @@
 			<!------------------------------->
 			
 			
-			<a href="Music/Gear.html" style="text-decoration: none;"><h2>My gear</h2></a>
-			
-			<a href="Music/Tabs.html" style="text-decoration: none;"><h2>Guitar tabs</h2></a>
-			
-			<a href="Music/Covers.html" style="text-decoration: none;"><h2>Covers</h2></a>
+			<h2 style="text-align:center;">Scale modeling</h2>
 			
 			
+			
+			<h2>Currently working on</h2>
+			
+			<div class="ListOfArticles">
+				
+				<a href="Scale models/OZ-06MS-Leo.html" style="text-decoration: none;"><h4>OZ-06MS Leo (HG)</h4></a>
+				<h6>Bandai (Gundam)</h6>
+				
+				<a href="Scale models/Calibarn.html" style="text-decoration: none;"><h4><h4>Gundam Calibarn (HG)</h4></a>
+				<h6>Bandai (Gundam)</h6>
+			</div>
+			
+			<h2>Unstarted</h2>
+			
+			<div class="ListOfArticles">
+				<h4>MS-06S ZAKU II (RG)</h4>
+				<h6>Bandai (Gundam)</h6>
+				
+				
+			</div>
+			<h2>Past projects</h2>
+			
+			<div class="ListOfArticles">
+				
+				<a href="Scale models/Rockmaw.html" style="text-decoration: none;"><h4>Miniature: Rockmaw</h4></a>
+				<h6>Bones</h6>
+				
+				<a href="Scale models/AT-ST.html" style="text-decoration: none;"><h4>AT-ST 1/48</h4></a>
+				<h6>Bandai (Star Wars)</h6>
+			</div>
         
 		</div>
     </body>
