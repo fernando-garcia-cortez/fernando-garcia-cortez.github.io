@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>In-medium neutrino mixing</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			
+			<h2 style="text-align:center;">Some derivations for in-medium neutrino mixing</h2>
+			<p style="text-align:center;">January 28th, 2024.</p>
+			
+			<h4>Introduction</h4>
+			
+					<p>The mixing of Neutrinos plays a central role in my current research. In this entry I will derive some equations that aren't used verbatim in my research, but rather set the stage for me to work on.</p>
+					
+					<p>I assume that the reader is familiar with the distinction between flavor Neutrinos and mass Neutrinos, as well as the general idea behind vacuum neutrino oscillations.</p>
+			
+			<h4>Neutrinos swimming in matter</h4>
+
+					<p>Let's consider a model with neutrino flavors: electron and muon. Since the neutral weak current has the same effect on both flavors, we don't expect it to make a difference and thus is ignored. The charged weak interaction, on the other hand, will act on the electron flavor neutrino but not on the muon flavor.</p>
+					
+					<p>Starting with the weak effective Hamiltonian:</p>
+					
+					\begin{equation}
+						H=\frac{1}{\sqrt{2}}G_F \left( J^{\mu }_{\text{c} }J_{\text{c} \mu }^{\dagger}+J_{\text{N} }^{\mu }J_{\text{N} \mu } \right)
+					\end{equation}
+
+					<p>The second term (involving the neutral current) vanishes for our purposes. We now recall that the charged current has the form:</p>
+					
+					\begin{equation}
+						J_{\text{c} }^{\mu }=\text{Quark terms} +\begin{pmatrix}  \overline{e} & \overline{\mu } & \overline{\tau } \\\end{pmatrix} \gamma ^{\mu }(1-\gamma ^5 )\begin{pmatrix}  \nu _e \\  \nu _{\mu } \\  \nu _{\tau } \\  \end{pmatrix}     
+					\end{equation}
+					
+					<p>Performing the contraction on $\mu  $ (on the Hamiltonian), while keeping only the electron terms, gives:
+					
+					\begin{equation}
+						H_{\text{int}}=\frac{1}{\sqrt{2}}G_F \overline{e}\gamma ^{\mu }(1-\gamma ^5 )\nu _e\overline{\nu _e}\gamma _{\mu }(1-\gamma ^5 )e
+					\end{equation} 
+					
+					<p>(Using Fierz) Let's rearrange the above expression to look like:</p>
+					
+					\begin{equation}
+						H_{\text{int}}=\frac{1}{\sqrt{2}}G_F \overline{\nu _e}\gamma ^{\mu }(1-\gamma ^5 )\nu _e\overline{e}\gamma _{\mu }(1-\gamma ^5 )e
+					\end{equation}
+					
+					<p>It can then be argued that (having electrons at rest)</p>
+					
+					\begin{equation}
+						\overline{e}\gamma _{\mu } \left( 1-\gamma ^5  \right) e=\delta _{\mu 0}N_e
+					\end{equation} 
+					
+					<p>Where $N_e $ denotes the number density of electrons. Thus:</p>
+					
+					\begin{equation}
+						H_{\text{int}}\rightarrow G_F \sqrt{2} N_e
+					\end{equation} 
+					
+					<p>That is, the medium acts as (through a CC interaction) an additional potential:</p>
+					
+					\begin{equation}
+						V=G_F \sqrt{2} N_e
+					\end{equation}  
+					
+<br>
+			<a href="../Blog.html" style="color: black; "><h4>Back to Blogs</h4></a>
+		</div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
