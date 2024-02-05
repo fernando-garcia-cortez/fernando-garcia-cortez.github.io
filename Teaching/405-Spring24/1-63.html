@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problem 1.63</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			<h2 style="text-align:center;">PHYS405 - Electricity & Magnetism I</h2>
+			<h4 style="text-align:center;">Spring 2024</h4>
+			
+			<h2>Problem 1.63</h2>
+			
+			<div class="BlogAbstract">
+				
+					<p><b>(a)</b> Find the divergence of the function</p>
+
+					\[\mathbf{v}=\frac{1}{r}\hat{\mathbf{r}} \]
+
+					<p>First compute it directly, as in Eq. 1.84:</p>
+
+					\[\nabla \cdot  \left( \frac{1}{r^2 }\hat{\mathbf{r}} \right) =\frac{1}{r^2 }\frac{\partial   }{\partial r} \left( r^2 \frac{1}{r^2 } \right) =\frac{1}{r^2 }\frac{\partial   }{\partial r}(1)=0\tag{Eq. 1.84, page 43} \]
+
+					<p>Test your result using the divergence theorem (over a sphere of radius $R $, centered at the origin), as in Eq. 1.85:</p>
+
+					\[\oint \mathbf{v}\cdot d\mathbf{a}=\int  \left( \frac{1}{R^2 }\hat{\mathbf{r}} \right) \cdot (R^2 \sin \theta d\theta d\phi \hat{\mathbf{r}})\tag{Eq. 1.85, page 44} \]
+
+					<p>Is there a delta function at the origin, as there was for $\hat{\mathbf{r}}/r^2 ? $ What is the general formula for the divergence of $r^n \hat{\mathbf{r}} $?</p>
+
+					<p><b>(b)</b> Find the curl of $r^n \hat{\mathbf{r}} $. Test your conclusion using problem 1.61b.</p>
+				
+			</div>
+			
+					<p><b>(a)</b> A direct computation gives</p>
+
+					\begin{align*}
+						\nabla \cdot \mathbf{v} &= \nabla \cdot  \left( \frac{1}{r}\hat{\mathbf{r}} \right)  \\
+						  &= \frac{1}{r^2 }\frac{\partial  }{\partial r} \left( r^2 \frac{1}{r} \right) \\
+							&= \frac{1}{r^2 }\frac{\partial  }{\partial r}(r)\\
+							 &= \frac{1}{r^2 }
+					\end{align*}
+
+					<p>Using the divergence theorem</p>
+
+					\[\int \mathbf{v}\cdot d\mathbf{a}=\int \nabla \cdot \mathbf{v}d\tau  \]
+
+					<p>let's first take a surface integral over a sphere of radius $R $:</p>
+
+					\begin{align*}
+						\oint \mathbf{v}\cdot d\mathbf{a} &= \int  \left( \frac{1}{R}\hat{\mathbf{r}} \right) \cdot (R^2 \sin \theta d\theta d\phi \hat{\mathbf{r}} ) \\
+						  &= R\int_{\phi =0}^{2\pi } \int_{\theta =0}^{\pi } \sin \left( \theta  \right) d\theta d\phi  \\
+						  &= 4\pi R 
+					\end{align*}
+
+					<p>And now a volume integral of the divergence</p>
+
+					\begin{align*}
+						\int \nabla \cdot \mathbf{v}d\tau  &= \int_{\phi =0}^{2\pi } \int_{\theta =0}^{\pi } \int_{r=0}^{R}  \left( \frac{1}{r^2 } \right)  \left( r^2 \sin \left( \theta  \right) drd\theta d\phi  \right)  \\
+						 &= 4\pi R 
+					\end{align*}
+
+					<p>In this case (contrary to $\mathbf{v}=\hat{\mathbf{r}}/r^2  $), the divergence theorem works perfectly. </p>
+
+					<p>In general, we have:</p>
+
+					\begin{align*}
+						\nabla \cdot (r^n \hat{\mathbf{r}}) &= \frac{1}{r^2 }\frac{\partial  }{\partial r} \left( r^2 r^n  \right)  \\
+						  &= \frac{1}{r^2 }\frac{\partial }{\partial r}(r^{n+2}) \\
+						  &= \frac{1}{r^2 }(n+2)r^{n+1} \\
+						  &= (n+2)r^{n+1-2} \\
+						  &= (n+2)r^{n-1} \tag{For $n\neq -2 $}
+					\end{align*}
+
+					<p>If $n=-2 $, then we have the delta Dirac $\nabla \cdot (\hat{\mathbf{r}}/r^2 )=4\pi \delta ^3 (\mathbf{r}) $ (see Eq. 1.99, page 48).</p>
+
+					<p><b>(b)</b> A quick inspection at the curl formula in spherical coordinates tells us that</p>
+
+					\[\nabla \times (r^n \hat{\mathbf{r}})=\mathbf{0} \]
+
+					<p>Using problem 1.61b, we see that the integrand on right hand side of</p>
+
+					\[\int _{\mathcal{V}}(\nabla \times \mathbf{v})d\tau =-\oint _{\mathcal{S}}\mathbf{v}\times d\mathbf{a} \]
+
+					<p>Is a cross product of parallel vectors and thus vanishes. This means that the left hand side is also zero, as expected from the explicit computation of the curl.</p>
+
+ 
+			
+			<br>
+			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
+			
+        
+		</div>
+    </body>
+</html>
+

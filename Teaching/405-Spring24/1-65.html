@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problem 1.65</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			<h2 style="text-align:center;">PHYS405 - Electricity & Magnetism I</h2>
+			<h4 style="text-align:center;">Spring 2024</h4>
+			
+			<h2>Problem 1.65</h2>
+			
+			<div class="BlogAbstract">
+				
+				<p>Consider the vector function</p>
+
+				\[\mathbf{A}=\frac{-y\hat{\mathbf{x}}+x\hat{\mathbf{y}}}{x^2 +y^2 } \]
+
+				<p><b>(a)</b> Check Stokes' theorem for $\mathbf{A} $ using a circle of radius $R $ in the $xy $ plane. Diagnose the problem, and fix it by correcting the curl of $\mathbf{A} $. Use Cartesian coordinates.</p>
+
+				<p><b>(b)</b> Convert $\mathbf{A} $ to cylindrical coordinates, and repeat part (a), this time doing everything in terms of $s,\phi ,z $.</p>
+				
+			</div>
+			
+			<p>Let's recall The Fundamental Theorem for curls, also known as Stokes' theorem:</p>
+
+			\begin{equation}
+			\int _{\mathcal{S}}(\nabla \times \mathbf{v})\cdot d\mathbf{a}=\oint _{\mathcal{P}}\mathbf{v}\cdot d\mathbf{l}\tag{Eq. 1.57, page 33}
+			\end{equation} 
+
+			<p><b>(a)</b> Let's consider the circular path (of radius $R $, centered at the origin)</p>
+
+			\[\mathbf{r}(t)=\begin{pmatrix}  R\cos \left( t \right)  \\  R\sin \left( t \right)  \\  \end{pmatrix}    \]
+
+			<p>Where $t $ will go from $0 $ to $2\pi  $. The field $\mathbf{A} $ at some point on the curve given by $t $ will be given by:</p>
+
+			\begin{align*}
+				\mathbf{A} &= -\frac{R\sin \left( t \right) }{R^2 \cos ^2 t + R^2  \sin ^2 t} \hat{\mathbf{x}} +\frac{R\cos \left( t \right) }{R^2 \cos ^2 t + R^2  \sin ^2 t} \hat{\mathbf{y}} \\
+				  &= -\frac{R\sin \left( t \right) }{R^2 } \hat{\mathbf{x}} +\frac{R\cos \left( t \right) }{R^2} \hat{\mathbf{y}} \\
+				  &= -\frac{\sin \left( t \right) }{R } \hat{\mathbf{x}} +\frac{\cos \left( t \right) }{R} \hat{\mathbf{y}} 
+			\end{align*}
+			
+			<iframe scrolling="no" title="1-65" src="https://www.geogebra.org/material/iframe/id/fspcmbua/width/975/height/439/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="975px" height="439px" style="border:0px;"> </iframe>
+			
+			<p>To compute the line integral, let's first compute the differential $d\mathbf{r} $:</p>
+
+			\[d\mathbf{r}=\begin{pmatrix}  -R\sin \left( t \right)  \\  R\cos \left( t \right)  \\  \end{pmatrix}   dt \]
+
+			<p>We can now compute the line integral:</p>
+
+			\begin{align*}
+				\oint _{\mathcal{C}}\mathbf{A}\cdot d\mathbf{r} &= \int_{t=0}^{2\pi } \begin{pmatrix}  -\sin \left( t \right) /R \\  \cos \left( t \right) /R \\  \end{pmatrix} \cdot \begin{pmatrix}  -R\sin \left( t \right)  \\  R\cos \left( t \right)  \\  \end{pmatrix} dt     \\
+				  &= \int_{t=0}^{2\pi } \sin ^2 t +\cos ^2 t dt\\
+					&= \int_{t=0}^{2\pi } 1dt\\
+					  &= 2\pi  
+			\end{align*}
+
+			<p>Now, let's consider the surface integral of the curl. It is straightforward to see that the curl of $\mathbf{A} $ is</p>
+
+			\[\nabla \times \mathbf{A}=\mathbf{0} \]
+
+			<p>So... the surface integral is 0! This contradicts Stokes' theorem (since the line integral yielded $2\pi  $, not 0).</p>
+			
+			<p>To fix this, let's rewrite the curl using Dirac Deltas:</p>
+
+			\[\nabla \times \mathbf{A}=2\pi\delta (x)\delta (y)\;\hat{\mathbf{z}}  \]
+
+			<p>When doing so, we see that</p>
+
+			\begin{align*}
+				\int _{\text{Circle of radius $R $} }(\nabla \times \mathbf{A})\cdot (dxdy\hat{\mathbf{z}}) &= \int _{\text{Circle of radius $R $} }2\pi\delta (x)\delta (y)dxdy \\
+				 &= 2\pi  
+			\end{align*}
+
+			<p>Which now agrees with Stokes' theorem.</p>
+
+			<p><b>(b)</b> We start part b by writing the field in cylindrical coordinates. Let's recall the conversions:</p>
+
+			\begin{align*}
+				x &= s \cos \left( \phi  \right)  \\
+				y &= s \sin \left( \phi  \right)  
+			\end{align*}
+
+			<p>Further, recall</p>
+
+			\begin{align*}
+				\hat{\mathbf{x}} &= \cos \phi \hat{s}-\sin \phi  \hat{\phi 	} \\
+				\hat{\mathbf{y}} &= \sin \phi  \hat{s}+\cos \phi  \hat{\phi } 
+			\end{align*} 
+
+			<p>So</p>
+
+			\begin{align*}
+				\mathbf{A} &= \frac{s\sin ^2 \phi +s \cos ^2 \phi }{(s \cos \phi )^2 +(s \sin \phi )^2 }\hat{\phi } \\
+				 &= \frac{1}{s}\hat{\phi } 
+			\end{align*}
+
+			<p>Which agrees with the intuition from the interactive plot above: The vector is always pointing tangentially from the circle.</p>
+
+			<p>The line integral will now take place using the path</p>
+
+			\[\mathbf{r}=R\hat{s}+t\hat{\phi } \]
+
+			<p>With $t $ going from $0 $ to $2\pi  $. It is clear that the result will again be $2\pi  $. For the other side of Stokes' theorem (surface integral of the curl), it is easy to see that (using the cylindrical curl) $\nabla \times \mathbf{A}=\mathbf{0} $. To fix this, we again bring Dirac Deltas, now in the form:</p>
+
+			\[\nabla \times \mathbf{A}\frac{\delta (s)}{s}\hat{z} \]
+
+			<p>And notice how this way:</p>
+
+			\begin{align*}
+				\int _{\text{Circle of radius $R $} }(\nabla \times \mathbf{A})\cdot d\mathbf{A} &= \int_{\phi =0}^{2\pi } \int_{0}^{R} \frac{\delta (s)}{\cancel{s}}(\cancel{s}dsd\phi )   \\
+				   &= \int_{0}^{2\pi } d\phi  \\
+				   &= 2\pi 
+			\end{align*}
+			
+			
+			
+			
+			
+			
+			<br>
+			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
+			
+        
+		</div>
+    </body>
+</html>
+

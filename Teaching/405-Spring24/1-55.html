@@ -62,11 +62,79 @@
 				<p>(where $a $ and $b $ are constants) and the circular path of radius $R $, centered at the origin in the $xy $ plane.</p>
 			</div>
 			
-			<p>Here's a live demonstration of the $\mathbf{v} $ field. Feel free to use the sliders to modify the field.</p>
+			<p>Let's recall The Fundamental Theorem for curls, also known as Stokes' theorem:</p>
+			
+			\begin{equation}
+			\int _{\mathcal{S}}(\nabla \times \mathbf{v})\cdot d\mathbf{a}=\oint _{\mathcal{P}}\mathbf{v}\cdot d\mathbf{l}\tag{Eq. 1.57, page 33}
+			\end{equation}  
+			
+			<p>Given the circular path mentioned above, the left hand side's surface integral will be over the surface of the circle of radius $R $, while the line integral will be over its circumference.</p>
+			
+			<p>The field to be integrated over the entire area is the curl of $\mathbf{v} $:</p>
+			
+			\begin{equation}
+			\nabla \times \mathbf{v} = (-a+b) \hat{\mathbf{z}}
+			\end{equation}  
+			
+			<p>This is a constant vector pointing perpendicularly in or out (depending on the vaulues of $a $ and $b $) our of the circle's surface.</p>
+			
+			<p>The line integral will be withr respect to the $\mathbf{v} $ field itself. Here's a live demonstration of the $\mathbf{v} $ field. Feel free to use the sliders to modify the field.</p>
 			
 			<iframe scrolling="no" title="Copia de Griffiths Problem 1.55" src="https://www.geogebra.org/material/iframe/id/fefrydvt/width/931/height/1011/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="931px" height="1011px" style="border:0px;"> </iframe>
 			
-			<p>Rest of the solution goes here...</p>
+			<p>Let's now calculate both integrals and compare the results.</p>
+			
+			<p>Starting with the surface integral:</p>
+			
+			\begin{align*}
+				\int _{\mathcal{S}} (\nabla \times \mathbf{v})\cdot d\mathbf{a} &= \int _{\mathcal{S}}(-a+b)\hat{\mathbf{z}}\cdot da \hat{\mathbf{z}} \\
+				  &= \int _{\mathcal{S}}(-a+b)da \\
+				  &= (-a+b)\int _{\mathcal{S}}da\\
+				  &= (-a+b)\cdot  \left( \text{area of a circle of radius $R $}  \right) \\
+				  &= (-a+b)\pi R^2  
+			\end{align*}
+
+			<p>It is true that $d\mathbf{a}=dxdy\hat{\mathbf{z}} $, but keeping it ``symbolic'' can be helpful (in this particular problem) to show that the integral is just the are of the surface. Longer ways to solve this integral include actually writing $dxdy $ and writing the limits of integration to bound the area to a circle of radius $R $, or converting the area element into a polar area element (which then simplifies the integration limits).</p>
+
+			<p>Let's now do the line integral. A better way to think about line integrals is to think about the following expression:</p>
+			\[\int _{\mathcal{C}}\mathbf{v}\cdot d\mathbf{r} \]
+			<p>Where $\mathcal{C} $ is a <i>Curve</i>, a fancy word for a path. This curve depends on a single parameter which we usually denote with $t $. You can think of a curve as a vector that depends on a single variable.</p>
+
+			<p>Notice that a circle of radius $R $ can be represented by the following curve:</p>
+			 
+			 \[\text{Circle of radius $R $} =\left\lbrace \begin{pmatrix}  R\cos \left( t \right)  \\  R\sin \left( t \right)  \\  \end{pmatrix} |t\in  \left[ 0,2\pi  \right]    \right\rbrace \]
+			 
+			 <iframe scrolling="no" title="1-55 - CircleCurve" src="https://www.geogebra.org/material/iframe/id/fxvkauqh/width/931/height/1011/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="931px" height="1011px" style="border:0px;"> </iframe>
+			 
+			<p>That is, we will start to only deal with the variable $t $ rather than $x $ and $y $ itself. Using this variable, we see that the vector field $\mathbf{v} $ can be rewritten as:</p>
+			 
+			 \[\mathbf{v}=\begin{pmatrix}  ay \\  bx \\  \end{pmatrix} \rightarrow \begin{pmatrix}  a R \sin \left( t \right)  \\  b R \cos \left( t \right)  \\  \end{pmatrix}      \]
+			 
+			 <p>Notice then that for a given $t $, we now know how to find the Cartesian point of the curve AND the components of the vector field at that point on the curve:</p>
+			 
+			 <iframe scrolling="no" title="1-55 - CircleCurve - Point" src="https://www.geogebra.org/material/iframe/id/wf6bmrmp/width/931/height/1011/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="931px" height="1011px" style="border:0px;"> </iframe>
+			 
+			<p>And we have the infinitesimal:</p>
+			
+			 \begin{align*}
+				d\mathbf{r} &= \frac{d\mathbf{r}}{dt}dt \\
+				 &= \begin{pmatrix}  -R\sin \left( t \right)  \\  R\cos \left( t \right)  \\  \end{pmatrix}   dt  
+			 \end{align*}
+			 
+			<p>So the line integral is:</p>
+			
+			\begin{align*}
+				\int  \mathbf{v}\cdot d\mathbf{r} &= \int_{0}^{2\pi } \begin{pmatrix}  a R \sin \left( t \right)  \\  b R \cos \left( t \right)  \\  \end{pmatrix}\cdot  \begin{pmatrix}  -R\sin \left( t \right)  \\  R\cos \left( t \right)  \\  \end{pmatrix} dt \\
+				  &= \int_{0}^{2\pi } -aR^2 \sin ^2 (t) +b R ^2 \cos ^2  (t) dt\\
+					&= \int_{0}^{2\pi } -aR^2 \sin ^2 (t) dt+\int_{0}^{2\pi }b R ^2 \cos ^2  (t) dt \\
+					&= -a R^2 \int_{0}^{2\pi }\sin ^2 t dt + b R^2  \int_{0}^{2\pi }\cos ^2 (t)dt\\
+					&= -a R^2  \left( \pi  \right)  + b R^2  \left( \pi  \right) \\
+					&= (-a+b)\pi R^2 
+			\end{align*}  
+
+			<p>Which is precisely the result we obtained by performing the surface integral of the curl of the field.</p> 
+ 
+			
 			<br>
 			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
 			
