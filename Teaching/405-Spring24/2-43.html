@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problem 2.43</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			<h2 style="text-align:center;">PHYS405 - Electricity & Magnetism I</h2>
+			<h4 style="text-align:center;">Spring 2024</h4>
+			
+			<h2>Problem 2.43</h2>
+			
+			<div class="BlogAbstract">
+				
+				<p>A metal sphere of radius $R $ carries a total charge $Q $. What is the force of repulsion between the "northern" hemisphere and the "southern" hemisphere?</p>
+				
+			</div>
+			
+<p>An important keyword here is "A <b>metal</b> sphere," meaning that we are dealing with a conductor. As such, it follows that</p>
+
+\begin{align*}
+	\mathbf{E}_{\text{Inside} } &= \mathbf{0} \hat{\mathbf{r}}\\
+	\mathbf{E}_{\text{Outside} } &= \frac{1}{4\pi \epsilon _0}\frac{Q}{r^2  }\hat{\mathbf{r}} 
+\end{align*}
+
+<p>Where the first comes from the fact that it is a conductor, and ideal conductors (see page 95) are such that $\mathbf{E}=\mathbf{0} $ inside (property 1 of conductors). Furthermore, since conductors hide the internal charge configuration, we can simply treat this sphere as a uniformly charged sphere. The field of such a sphere is the one given above. (For a derivation of this result, see Example 2.3, page 69.)</p>
+
+<p>Recall the force per unit area equation:</p>
+
+\[\begin{split}
+\mathbf{f} &= \sigma \mathbf{E}_{\text{avg} } \\
+ &= \frac{1}{2}\sigma (\mathbf{E}_{\text{above} }+\mathbf{E}_{\text{below} })
+\end{split}   \tag{Eq. 2.50, page 100}\]
+
+<p>$\sigma  $ will be:</p>
+
+\[\begin{split}
+\sigma  &= \frac{\text{Total charge inside conductor} }{\text{Conductor's surface area} } \\
+  &= \frac{Q}{4\pi R^2 }
+\end{split}   \]
+
+<p>(A result that's familiar to us after doing problem 2.40!) And because $\mathbf{E}_{\text{below} }=\mathbf{0} $, we see that:</p>
+
+\[\begin{split}
+\mathbf{f} &= \sigma \frac{1}{2}\mathbf{E}_{\text{above} } \\
+  &= \frac{1}{2}\frac{Q}{4\pi R^2 } \mathbf{E}_{\text{Outside} }\Big|_{r=R} \\
+  &= \frac{1}{2}\frac{Q}{4\pi R^2 }\frac{1}{4\pi \epsilon _0}\frac{Q}{R^2  }\hat{\mathbf{r}}
+\end{split}   \]
+
+<p>To get the force of repulsion between the "northern" hemisphere and the "southern" hemisphere, we need only the vertical component of the force per unit unit area:</p>
+
+\[f_z=|\mathbf{f}|\cos \left( \theta  \right)  \]
+
+<p>We finish by integrating this over the northern hemisphere:</p>
+
+\[\begin{split}
+F_z &= \int f_zda \\
+  &= \int_{\phi =0}^{2\pi } \int_{\theta =0}^{\pi /2}  \left[ \frac{1}{2}\frac{Q}{4\pi R^2 }\frac{1}{4\pi \epsilon _0}\frac{Q}{R^2  } \right]\cos \left( \theta  \right)   \left( R^2 \sin \left( \theta  \right) d\theta d\phi  \right)  \\
+  &= \frac{1}{2}\frac{Q}{4\pi R^2 }\frac{1}{4\pi \epsilon _0}\frac{Q}{R^2 }R^2 (2\pi )\int_{\theta =0}^{\pi /2} \cos \left( \theta  \right) \sin \left( \theta  \right) d\theta  \\
+  &= \frac{Q }{4\pi \epsilon _0}\frac{Q}{4R^2 } \left( \frac{1}{2}u ^2  \right) _0^{1} \\
+  &= \frac{Q^2}{32\pi R^2 \epsilon _0}
+\end{split}   \]
+
+<p>Where $u $-substitution was used as follows: Let $u=\sin \left( \theta  \right)  $, then $du =\cos \left( \theta  \right) d\theta  $, so $d\theta =\frac{du}{\cos \left( \theta  \right) } $ and the integral simplifies to $\int_{0}^{\pi /2} \sin \left( \theta  \right) \cos \left( \theta  \right) d\theta = \int_{0}^{1} du$.</p>
+
+<p>We see than that the force of repulsion between the "northern" hemisphere and the "southern" hemisphere is</p>
+
+\[F_z=\frac{Q^2}{32\pi R^2 \epsilon _0} \]
+			
+			<br>
+			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
+			
+        
+		</div>
+    </body>
+</html>
+
