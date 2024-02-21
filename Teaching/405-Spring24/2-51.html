@@ -64,7 +64,50 @@
 				
 			</div>
 			
-			<p>My solution</p>
+<p>Start by recalling that</p>
+
+\[\mathbf{E}=-\nabla V \]
+
+<p>Using the spherical gradient, it is clear that</p>
+
+\begin{align*}
+	\mathbf{E} &= -A\frac{\partial }{\partial r} \left( \frac{e^{-\lambda r}}{r} \right) \hat{\mathbf{r}} \\
+	  &= A\frac{e^{-\lambda r}}{r^2 }(r\lambda +1)\hat{\mathbf{r}} 
+\end{align*}
+
+<p>To find $\rho  $, we recall</p>
+
+\[\rho =\epsilon _0 \nabla \cdot \mathbf{E} \]
+
+<p>To calculate such divergence, we need to recall two things:</p>
+
+<p>1. Product rule.</p>
+
+\[\nabla \cdot (f\mathbf{v})=\nabla (f)\cdot \mathbf{v}+f(\nabla \cdot \mathbf{v}) \]
+
+<p>2. The special case of the divergence of $1/r^2  $.</p>
+
+\[\nabla \cdot  \left( \frac{\hat{\mathbf{r}}}{r^2 } \right) =4\pi \delta ^3 (\mathbf{r}) \]
+
+<p>With that in mind, we proceed:</p>
+
+\begin{align*}
+	\rho  &= \epsilon _0\nabla \cdot  \left( A\frac{e^{-\lambda r}}{r^2 }(r\lambda +1)\hat{\mathbf{r}}  \right)  \\
+	  &= \epsilon A \left( e^{-\lambda r}(r\lambda +1)\nabla \cdot  \left( \frac{\hat{\mathbf{r}}}{r^2 } \right) + \left( \frac{\hat{\mathbf{r}}}{r^2 } \right) \cdot \nabla (e^{-\lambda r}(r\lambda +1)) \right) \\
+	  &= \epsilon _0 A  \left( 4\pi \delta ^3 (\mathbf{r})-\frac{\lambda ^2 }{r}e^{-\lambda r} \right)  
+\end{align*}  
+
+To get the charge, we integrate
+
+\begin{align*}
+	Q &= \int \rho d\tau  \\
+	 &= \epsilon _0 A\int 4\pi \delta ^3 (\mathbf{r})d\tau  -\epsilon _0 A\lambda ^2 \int \frac{e^{-\lambda r}}{r}d\tau \\
+	   &= \epsilon _0 A4\pi -\epsilon _0 A\lambda ^2 \int_{\phi =0}^{2\pi } \int_{\theta =0}^{\pi } \int_{r=0}^{\infty } \frac{e^{-\lambda r}}{r}r^2 \sin \left( \theta  \right) drd\theta d\phi \\
+	   &= \epsilon _0 A4\pi -\epsilon _0 A\lambda ^2 4\pi \int_{0}^{\infty } re^{-\lambda r}dr\\
+	   &= \epsilon _0 A4\pi -\epsilon _0 A\lambda ^2 4\pi \frac{1}{\lambda ^2 }\\
+	   &= 0
+\end{align*}
+ 
 			
 			<br>
 			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
