@@ -63,7 +63,49 @@
 				
 			</div>
 			
-			<p>My solution</p>
+<p>We are interested in the difference of the potential between two points. As such, we should only worry about the potential at those points rather than everywhere. To find the potential at a given point, let's use:</p>
+
+\[V(\mathbf{r})=\frac{1}{4\pi \epsilon _0 }\int \frac{\sigma }{\mathcal{R} }da \]
+
+<img src="2-49/01.PNG" class="centerImg" style="width: 40%;">
+
+<p>The potential at the center (origin) is straightforward, since $\mathcal{R} =R $, a constant value.</p>
+
+<img src="2-49/02.PNG" class="centerImg" style="width: 40%;">
+
+\begin{align*}
+	V_1  &= \frac{1}{4\pi \epsilon _0 }\int  \frac{\sigma }{R}da \\
+	  &= \frac{1}{4\pi \epsilon _0 }\int_{\phi =0}^{2\pi } \int_{\theta =0}^{\pi /2} \frac{\sigma }{R}(R^2 \sin \left( \theta  \right) )d\theta d\phi  \\
+	  &= \frac{R\sigma }{2\epsilon _0 }
+\end{align*} 
+
+<p>The potential at the "north pole" will take a bit more work. The distance from the north pole to some infinitesimal charge won't be constant across the surface of interest. Consider the following simulation:</p>
+
+<iframe scrolling="no" title="2-49" src="https://www.geogebra.org/material/iframe/id/cjhyxeyw/width/1048/height/547/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="1048px" height="547px" style="border:0px;"> </iframe>
+
+<p>It is clear that we can use the law of cosines to write:</p>
+
+\begin{align*}
+	\mathcal{R}  &= \sqrt{R^2 +R^2 -2RR\cos \left( \theta  \right) } \\
+	  &= R\sqrt{2}\sqrt{1-\cos \left( \theta  \right) } 
+\end{align*}
+
+<p>With this, we can now calculate $V_2  $:</p>
+
+\begin{align*}
+	V_2  &= \frac{1}{4\pi \epsilon _0 }\int \frac{\sigma }{\mathcal{R} }da \\
+	  &= \frac{1}{4\pi \epsilon _0 }\int_{\phi =0}^{2\pi } \int_{\theta =0}^{\pi /2} \frac{\sigma }{R\sqrt{2}\sqrt{1-\cos \left( \theta  \right) }}(R^2 \sin \left( \theta  \right) )d\theta d\phi \\
+	  &= \frac{\sigma R}{\sqrt{2} 4\pi \epsilon _0 }2\pi  \int_{\theta =0}^{\pi /2} \frac{\sin \left( \theta  \right) }{\sqrt{1-\cos \left( \theta  \right) }}d\theta  \\
+	  &= \frac{R\sigma }{\sqrt{2}\epsilon _0  }
+\end{align*} 
+
+<p>Thus, the potential difference between the "north pole" and the center is:</p>
+
+\begin{align*}
+	\Delta V &= V_2 -V_1  \\
+	  &= \frac{R\sigma }{\sqrt{2}\epsilon _0 }- \frac{R\sigma }{2\epsilon _0 }\\
+	  &= \frac{R\sigma }{2\epsilon _0 } \left( \sqrt{2}-1 \right) 
+\end{align*} 
 			
 			<br>
 			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
