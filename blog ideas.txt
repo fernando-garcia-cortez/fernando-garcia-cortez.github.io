@@ -1,3 +1,9 @@
 https://londmathsoc.onlinelibrary.wiley.com/doi/epdf/10.1112/plms/s2-42.1.90
 On Milne's Theory of World-Structure
 A. G. Walker
+
+". Interestingly, although
+the Majorana condition and Weyl condition cannot be imposed simultaneously in four
+dimensions, you can do this in Minowski spacetimes of dimension 2, 10, 18,...."
+Tong, p. 97, QFT
+https://static.ias.edu/pitp/archive/PiTPspinrs.pdf
