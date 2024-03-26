@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problem 3.13</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			<h2 style="text-align:center;">PHYS405 - Electricity & Magnetism I</h2>
+			<h4 style="text-align:center;">Spring 2024</h4>
+			
+			<h2>Problem 3.13</h2>
+			
+			<div class="BlogAbstract">
+				
+<p>Two semi-infinite grounded conducting planes meet at right angles. In the region between them, there is a point charge $q $, situated as shown in Fig. 3.15. Set up the image configuration, and calculate the potential in this region.</p>
+
+<img src="3-13/01.PNG" class="centerImg" style="width: 50%;">
+
+<p>What charges do you need, and where should they be located?</p>
+
+<p>What is the force on $q $?</p>
+
+<p>How much work did it take to bring $q $ in from infinity? </p>
+
+<p>Suppose the planes met at some angler other than 90 degrees. Would you still be able to solve the problem by the method of images? If not, for what particular angles does the method work?</p>
+				
+			</div>
+			
+			
+			
+			<p>We have to place image charges in such a way that we can replicate the boundary conditions.</p>
+			
+			<p>Let's start by formalizing where $q $ is: $q $ is in $(a,b) $. The region of interest is the 1st quadrant of the $xy $-plane (top right). There are 2 boundary conditions:</p>
+			
+			\begin{align*}
+				V(0,y) &= 0 \tag{For all $y\geq 0 $}\\
+				V(x,0) &= 0 \tag{For all $x\geq 0 $}
+			\end{align*}
+			 
+			<p>To achieve the first, we can place a $-q $ charge at $(-a,b) $. To achieve the second, we can place a $-q $ charge at $(a,-b) $. Now, notice that at $(0,0) $ we don't quite have $V=0 $. To achieve this, let's place a charge $+q $ at $(-a,-b) $. Visually:</p>
+								
+			<img src="3-13/02.PNG" class="centerImg" style="width: 50%;">
+			
+			<p>Notice how the potential (red surface) is 0 on the axes:</p>
+			
+			<iframe scrolling="no" title="3-13 Image Potential" src="https://www.geogebra.org/material/iframe/id/xukbqesu/width/936/height/501/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="936px" height="501px" style="border:0px;"> </iframe>
+			
+			<p>Because of the first uniqueness theorem (see page 119 of your book), it follows that the potential of the dual semi-infinite plane and charge $q $ is the same as that of the 4 charges above. Again, this follows because the potential at the boundary is the same. Writing the potential for the 4 charge configuration is straightforward:</p>
+			
+			\begin{align*}
+				V(x,y) &= V_{\text{Due to top right charge} }+ V_{\text{Due to bottom left charge} }+V_{\text{Due to top left charge} }+V_{\text{Due to bottom right charge} }\\
+				  &= \frac{q}{4\pi \epsilon _0}\bigg(    \frac{1}{\sqrt{(x-a)^2 +(y-b)^2 }}\\
+				  &{\;} \;\;\; + \frac{1}{\sqrt{(x+a)^2 +(y+b)^2 }} \\
+				  &{\;} \;\;\; - \frac{1}{\sqrt{(x-a)^2 +(y+b)^2 }} \\
+				  &{\;} \;\;\; - \frac{1}{\sqrt{(x+a)^2 +(y-b)^2 }} \bigg)  
+			\end{align*}  
+			
+			<p>The force on $q $ can be calculated using the other 3 (image) charges. With TL denoting Top Left, BL Bottom Left, and BR Bottom Right, we have:</p>
+			
+			\begin{align*}
+				\mathbf{F} &= \mathbf{F}_{\text{Due to TL} }+\mathbf{F}_{\text{Due to BR} }+\mathbf{F}_{\text{Due to BL} } \\
+				  &= q\cdot \mathbf{E}_{\text{TL} }\Big|_{(a,b)} +q\cdot \mathbf{E}_{\text{BR} }\Big|_{(a,b)}+q\cdot \mathbf{E}_{\text{BL} }\Big|_{(a,b)} \\
+				  &= q\bigg( -\frac{q}{4\pi \epsilon _0 }\frac{1}{(2a)^2 }\hat{\mathbf{x}} - \frac{q}{4\pi \epsilon _0 }\frac{1}{(2b)^2 }\hat{\mathbf{y}} \\
+				  &=+ \frac{q}{4\pi \epsilon _0 }\frac{1}{(2\sqrt{a^2 +b^2 })^2 }  \left( \frac{a}{\sqrt{a^2 +b^2 }} \hat{\mathbf{x}} + \frac{b}{\sqrt{a^2 +b^2 }}\hat{\mathbf{y}} \right)  \bigg)\\
+				  &= \frac{q^2 }{16\pi \epsilon _0 }\bigg ( \bigg ( \frac{a}{ \left[ a^2 +b^2  \right] ^{3/2}}-\frac{1}{a^2 }  \bigg) \hat{\mathbf{x}} +  \bigg ( \frac{b}{ \left[ a^2 +b^2  \right] ^{3/2}}-\frac{1}{b^2 }   \bigg)\hat{\mathbf{y}}   \bigg) 
+			\end{align*} 
+			
+			<p>The work can be calculated using the image configuration. Recall from chapter 2 that:</p>
+			
+			\[W=\frac{1}{2}\sum_{i=1}^{n} q_iV(\mathbf{r}_i ) \tag{Eq. 2.42, page 9.} \]
+			
+			<p>Where the potential will be the potential <i>from the 3 image charges</i>:</p>
+			
+			\begin{align*}
+				V_{\text{image} }(x,y) &=  V_{\text{Due to bottom left charge} }+V_{\text{Due to top left charge} }+V_{\text{Due to bottom right charge} }\\
+				  &= \frac{q}{4\pi \epsilon _0}\bigg(     \frac{1}{\sqrt{(x+a)^2 +(y+b)^2 }} \\
+				  &{\;} \;\;\; - \frac{1}{\sqrt{(x-a)^2 +(y+b)^2 }} \\
+				  &{\;} \;\;\; - \frac{1}{\sqrt{(x+a)^2 +(y-b)^2 }} \bigg)  
+			\end{align*} 
+			
+			<p>Which evaluated at $(a,b) $ gives:</p>
+			
+			 \begin{align*}
+			 	V_{\text{image} }(a,b) &= \frac{q}{4\pi \epsilon _0 }\bigg( +\frac{1}{\sqrt{(2a^2 )+(2b)^2 }}-\frac{1}{\sqrt{(2a)^2}} - \frac{1}{\sqrt{(2b)^2 }}  \bigg) \\
+			 	  &= \frac{q}{4\pi \epsilon _0 } \frac{1}{2}\bigg(\frac{1}{\sqrt{a^2 +b^2 }}-\frac{1}{a}-\frac{1}{b} \bigg) 
+			 \end{align*}
+			 <p>So</p>
+			 \begin{align*}
+			 	W &= \frac{1}{2}  \frac{q}{4\pi \epsilon _0 } \frac{1}{2}\bigg(\frac{1}{\sqrt{a^2 +b^2 }}-\frac{1}{a}-\frac{1}{b} \bigg)\\
+			 	  &= \frac{q}{16\pi \epsilon _0 } \bigg(\frac{1}{\sqrt{a^2 +b^2 }}-\frac{1}{a}-\frac{1}{b} \bigg) 
+			 \end{align*}  
+			
+			<p>To see at what other angles this would work, go look at the plot of the potential again (red surface above). We see that we created 4 regions that behave quite similarly. This is precisely the key to answer this: we need to divide the plane in equal sections, and to do this the angle has to be an (integer) divisor of 180 degrees.</p>
+			
+			<p>Other angles won't work as they will require us to add image charges inside the region we are interested in studying. Consider, for instance, 120 degrees. This is an enlightening example, as it divides 360 (not 180, though, which is what we are really interested in):</p>
+			
+			<p>Place a charge anywhere in the area of interest, and consider the 2 grounded semi-planes:</p>
+			
+			<img src="3-13/03.PNG" class="centerImg" style="width: 50%;">
+			
+			<p>To have $V=0 $ on the bottom semi-plane, reflect the charge $A $ across the line, obtain $B $:</p>
+			
+			<img src="3-13/04.PNG" class="centerImg" style="width: 50%;">
+			
+			<p>To have $V=0 $ on the angled semi-plane, reflect the charge $A $ across the line, obtain $C $:</p>
+						
+			<img src="3-13/05.PNG" class="centerImg" style="width: 50%;">
+			
+			But after we added $C $, $V $ is no longer 0 on the bottom semi-plane, so let's reflect $C $ across the bottom line, obtain $D $:
+			
+			<img src="3-13/06.PNG" class="centerImg" style="width: 50%;">
+			
+			But after we added $D $, $V $ is no longer 0 on the angled semi-plane, so let's reflect $D $ across the angles line, obtain $E $:
+			
+			<img src="3-13/07.PNG" class="centerImg" style="width: 50%;">
+			
+			There are 2 issues here, the second more important than the first:
+			
+			<p>(1) It is clear that we will need to add yet another charge (reflecting $E $ across the bottom line). Will we need another one for the new one? What about the next one? That is, will this sequence ever converge? I will let you think about that on your free time. Regardless of this, there is a bigger problem here:</p>
+			
+			<p>(2) We placed a charge inside the region of interest. That is, we have a different problem and this no longer represents the initial configuration.</p>
+			
+			<p>Extra: The answer to whether the sequence of reflections ever converges is that, yes:</p>
+			
+			<img src="3-13/08.PNG" class="centerImg" style="width: 50%;">
+			
+			<p>We reflect $E $ to get $F $, and then we reflect $F $ to get $G $, but $G $ goes exactly where $B $ is! Notice that we have the same amount of perpendicular lines for each of the semi-planes.</p>			
+			
+			<br>
+			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
+			
+        
+		</div>
+    </body>
+</html>
+

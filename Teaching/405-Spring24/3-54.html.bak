@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problem 3.54</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			<h2 style="text-align:center;">PHYS405 - Electricity & Magnetism I</h2>
+			<h4 style="text-align:center;">Spring 2024</h4>
+			
+			<h2>Problem 3.54</h2>
+			
+			<div class="BlogAbstract">
+				
+<p>(a) Suppose a charge distribution $\rho _1 (\mathbf{r}) $ produces a potential $V_1 (\mathbf{r}) $, and some other charge distribution $\rho _2 (\mathbf{r}) $ produces a potential $V_2 (\mathbf{r}) $.</p>
+
+<p>(The two situations may have nothing in common, for all I care - perhaps number 1 is a uniformly charged sphere and number 2 is a parallel-plate capacitor. Please understand that $\rho _1  $ and $\rho _2  $ are not present at the same time, we are talking about two different problems, on in which only $\rho _1  $ is present, and another in which only $r\rho _2  $ is present).</p>
+
+<p>Prove Green's reciprocity theorem (ref28):</p>
+
+\[\int _{\text{all space} } \rho _1V_2 d\tau =\int _{\text{all space} }\rho _2V_1d\tau  \tag{3.107}\]
+
+<p>Hint: Evaluate $\int \mathbf{E}_1 \cdot \mathbf{E}_2 d\tau  $ two ways, first writing $\mathbf{E}_1 =-\nabla V_1  $ and using integration by parts to transfer the derivative to $\mathbf{E}_2  $, then writing $\mathbf{E}_2 =-\nabla V_2  $ and transferring the derivative to $\mathbf{E}_1  $.</p>
+
+<p>(b) Suppose now that you have two separated conductors (Fig. 3.41). </p>
+
+<img src="3-54/01.PNG" class="centerImg" style="width: 50%;">
+
+<p>If you charge up conductor $a $ by amount $Q $ (leaving $b $ uncharged), the resulting potential on $b $ is, say, $V_{ab}  $. On the other hand, if you put that same charge $Q $ on conductor $b $ (leaving $a $ uncharged), the potential of $a  $ would be $V_{ba} $.</p>
+
+<p>Use Green's reciprocity theorem to show that $V_{ab}=V_{ba} $ (an astonishing result, since we assumed nothing about the shapes or placement of the conductors).</p>
+				
+			</div>
+			
+			<h4>Part (a)</h4>
+			
+			<p>Consider</p>
+			
+			\[\int \mathbf{E}_1\cdot \mathbf{E}_2d\tau  \]
+			
+			<p>Recall that for the $\mathbf{E} $ field, we have:</p>
+			\[\mathbf{E}=-\nabla V \]
+			<p>Further, from integral calculus, recall:</p>
+			\[\nabla \cdot (f\mathbf{A})=f(\nabla \cdot \mathbf{A})+\mathbf{A}\cdot (\nabla f) \]
+			<p>So if we write:</p>
+			\[\int \mathbf{E}_1\cdot \mathbf{E}_2d\tau =\int -\nabla V_1  \cdot \mathbf{E}_2 d\tau  \]
+			<p>The integrand turns into</p>
+			\[-\mathbf{E}_2 \cdot (\nabla V_1 )=V_1 (\nabla \cdot \mathbf{E}_2 )-\nabla \cdot (V_1 \mathbf{E}_2) \]
+			<p>But we also have that $\nabla \cdot \mathbf{E}=\rho /\epsilon _0  $. Combining all these results:</p>
+			\[\int \mathbf{E}_1\cdot \mathbf{E}_2d\tau =\int V_1 \frac{\rho _2 }{\epsilon _0 }-\nabla \cdot (V_1 \mathbf{E}_2) d\tau  \]
+			<p>The 2nd term in the integral will vanish (use divergence theorem. The potential vanishes as it expands). We conclude that</p>
+			\[\int \mathbf{E}_1\cdot \mathbf{E}_2d\tau =\frac{1}{\epsilon _0 }\int V_1 \rho _2  d\tau  \]
+			<p>If we do the exact same procedure but writing $\mathbf{E}_2  $ as a gradient of the potential instead of $\mathbf{E}_1  $, we find:</p>
+			\[\int \mathbf{E}_1\cdot \mathbf{E}_2d\tau =\frac{1}{\epsilon _0 }\int V_2 \rho _1  d\tau  \]
+			<p>Thus:</p>
+			\[\int _{\text{all space} } \rho _1V_2 d\tau =\int _{\text{all space} }\rho _2V_1d\tau  \tag{As seen on Eq. 3.107}\]
+			<h4>Part (b)</h4>
+			
+			<br>
+			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
+			
+        
+		</div>
+    </body>
+</html>
+
