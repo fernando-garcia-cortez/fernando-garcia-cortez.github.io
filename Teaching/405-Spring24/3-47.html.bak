@@ -228,8 +228,8 @@
 			<h4>Finding the induced surface charge</h4>
 			\begin{align*}
 				\sigma _{\text{induced} } (\theta ) &= -\epsilon _0 \frac{\partial V}{\partial r}\Big|_{r=a}  \\
-				  &= - \epsilon _0\left( -\frac{2 k \left(r^3-a^3\right) \cos (\theta )}{3 \epsilon  r^3}-\frac{a V_0}{r^2}+\frac{k \cos (\theta )}{\epsilon } \right) \Big|_{r=a} \\
-				  &= \frac{V_0 \epsilon _0}{a}-k\cos \left( \theta  \right)  
+				  &= - \left( -\frac{2 k \left(r^3-a^3\right) \cos (\theta )}{3 \epsilon  r^3}-\frac{a V_0}{r^2}+\frac{k \cos (\theta )}{\epsilon } \right) \Big|_{r=a} \\
+				  &= \frac{V_0 }{a}-\frac{k}{\epsilon }\cos \left( \theta  \right)  
 			\end{align*} 
 			
 			
@@ -241,20 +241,10 @@
 			
 			\begin{align*}
 				q_{\text{induced} } &= \int \sigma _{\text{induced} }da \\
-				  &= \int_{\phi =0}^{2\pi } \int_{\theta =0}^{2\pi }  \left( \frac{V_0 \epsilon _0}{a}-k\cos \left( \theta  \right)\right) a^2\sin \left( \theta  \right)  d\theta d\phi \\
-				  &= 4\pi a\epsilon _0 V_0  
-			\end{align*} 
-			<p>Which also corresponds to the total charge of the system.</p>
+				• &= \int_{\phi =0}^{2\pi } \int_{\theta =0}^{2\pi }  \left( \frac{V_0 }{a}-\frac{k}{\epsilon }\cos \left( \theta  \right)   \right) a^2\sin \left( \theta  \right)  d\theta d\phi \\
+				• &= • 
+			\end{align*}• 
 			
-			
-			<h4>The behavior of $V $ at large $r $.</h4>
-        
-        <p>Consider the $V $ for $r\geq b $. For large $r $, the 2nd term can be ignored and we are left with</p>
-        \[V(r,\theta )\approx \frac{aV_0 }{r} \]
-        <p>Notice that this is the same as putting the total charge found on part (b) in the point-particle formula.</p>
-        
-        
-        
 			<br>
 			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
 			
