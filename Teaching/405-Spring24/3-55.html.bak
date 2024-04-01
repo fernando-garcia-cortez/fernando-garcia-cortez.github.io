@@ -250,7 +250,8 @@
 			
 			<img src="3-55/c-in-sup.PNG" class="centerImg" style="width: 50%;">
 			 
-			
+			<br>
+			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
 			<p>We have that</p>
 			\begin{align*}
 				\int \rho _2 V_1 d\tau  &= Q_{\text{sphere} }^{\text{supplementary} }V_{\text{sphere} }^{\text{actual} }+Q_{\text{charge} }^{\text{supplementary} }V^{\text{actual} }_{\text{charge} } \\
@@ -267,17 +268,7 @@
 			\[Q_{\text{induced} }  = -\frac{q}{V_0 }V(r=a) \]
 			<p>But now $V $ takes a different form. You should know by now that the potential inside a uniformly charged sphere is constant. (Why? The electric field inside is zero, so calculating the potential reduces to an integral from $\infty  $ to $R $, rather than $r $ with $r < R $). We discussed above that outside the sphere, $V(r)=\frac{1}{4\pi \epsilon _0 }\frac{Q}{r} $, so inside it is:</p>
 			\[V_{\text{in} }(r)=\frac{1}{4\pi \epsilon _0 }\frac{Q}{R} \]
-			<p>Where $Q $ is again what we found before: $Q=V_0 R (4\pi \epsilon _0 ) $ so that it satisfies the boundary condition. We thus conclude</p>
-			\begin{align*}
-				Q_{\text{induced} } &= -\frac{q}{V_0 }V_{\text{inside} }(r=a) \\
-				  &= -\frac{q}{V_0 }V_0 \\
-				  &= -q 
-			\end{align*}
-			 
-			 
-			 
-			 <br>
-			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
+			<p>Where $Q $ is again what we found before: $Q=V_0 R (4\pi \epsilon _0 ) $ so that it satisfies the boundary condition.</p>
 		</div>
     </body>
 </html>
