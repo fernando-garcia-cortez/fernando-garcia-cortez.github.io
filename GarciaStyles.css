@@ -77,6 +77,15 @@ text-align: justify;
 	margin-bottom: 0;
 }
 
+.ListOfTalks p{
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.ListOfTalks h4{
+	margin-bottom: 0;
+}
+
 .BlogAbstract{
 	max-width:95%;
 	background-color: #ffffff;
