@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problem 4.35</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Research.html" style="color: black; text-decoration: none;">
+						Research
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			<h2 style="text-align:center;">PHYS405 - Electricity & Magnetism I</h2>
+			<h4 style="text-align:center;">Spring 2024</h4>
+			
+			<h2>Problem 4.35</h2>
+			
+			<div class="BlogAbstract">
+				
+<p>The space between the plates of a parallel-plate capacitor is filled with dielectric material whose dielectirc constant varies linearly from 1 at the bottom plate ($x=0 $) to 2 at the top plate ($x=d $).</p>
+
+<p>The capacitor is connected to a battery of voltage $V $.</p>
+
+<p>Find all the bound charge, and check that the total is zero.</p>
+				
+			</div>
+			
+			
+			<p>To find the bound charges ($\rho _b $ and $\sigma _b $) we need to know what $\mathbf{P} $ is. To find $\mathbf{P} $, we can use the fact that</p>
+			\[\mathbf{P}=\epsilon _0 \chi _e \mathbf{E}\tag{Eq. 4.30, page 186} \]
+			<p>So we need to find $\mathbf{E} $. To do so, we use $\mathbf{D}=\epsilon \mathbf{E} $ (Eq. 4.32). We don't have the permittivity, but we know about $\epsilon _r $.</p>
+			
+			
+			<p>$\epsilon _r $, the dielectric constant (also known as the relative permittivity, see page 187), is defined as</p>
+			\[\epsilon _r=1+\chi _e=\frac{\epsilon }{\epsilon _0 }\tag{4.34, page 187} \]
+			<p>Since $\epsilon _r(0)=1 $ and $\epsilon _r(d)=2 $, it follows that</p>
+			\begin{align*}
+				\chi _e(0) &= 0 \\
+				\chi _e(d) &= 1 
+			\end{align*}
+			<p>The linear function that satisfies this conditions is</p>
+			\[\chi _e(x)=\frac{x}{d} \]
+			 <p>Using Eq. 4.34 again, it follows that</p>
+			 \begin{align*}
+			 	\text{Permittivity} \;\;\;\epsilon  &= \epsilon _0 (1+\chi _e) \\
+			 	  &= \epsilon _0   \left( 1+\frac{x}{d} \right) 
+			 \end{align*}
+			<p>Using this in Eq. 4.32 for $\mathbf{E} $, we see that</p>
+			\[\mathbf{E}=\frac{1}{\epsilon }\mathbf{D}=\frac{1}{\epsilon _0   \left( 1+\frac{x}{d} \right)}\mathbf{D} \]
+			<p>It is clear that $\mathbf{D}=\sigma _f\hat{\mathbf{x}} $, so we conclude that</p>
+			\[\mathbf{E}=\frac{1}{\epsilon _0  \left( 1+\frac{x}{d} \right) }\sigma _f \hat{\mathbf{x}} \]
+			<p>We can relate $\sigma _f $ to $V $ as follows:</p>
+			\begin{align*}
+				V &= -\int_{d}^{0} \mathbf{E}\cdot d\mathbf{l} \\
+				  &= \frac{\sigma _f}{\epsilon _0 }\int_{0}^{d} \frac{1}{1+\frac{x}{d}}dx \\
+				  &= \frac{\sigma _f}{\epsilon _0 }d \ln (1+(x/d)) \Big|_{0}^{d} \\
+				  &= \frac{\sigma _f}{\epsilon _0 }d\ln (2)- \frac{\sigma _f}{\epsilon _0 }d \ln (1)\\
+				  &=  \frac{\sigma _f}{\epsilon _0 }d\ln (2) 
+			\end{align*}
+			<p>So</p>
+			\[\sigma _f=\frac{\epsilon _0 }{d\ln (2)}V \]
+			<p>This implies that</p>
+			\[\mathbf{E}=\frac{V}{d \ln (2)}\frac{1}{1+\frac{x}{d}} \hat{\mathbf{x}}\]
+			<p>Now we can go back to Eq. 4.30 and see that</p>
+			\begin{align*}
+				\mathbf{P} &= \epsilon _0 \chi _e\mathbf{E} \\
+				  &= \epsilon _0 \chi _e\frac{V}{d \ln (2)}\frac{1}{1+\frac{x}{d}} \hat{\mathbf{x}} \\
+				  &=  \epsilon _0 \frac{x}{d}\frac{V}{d \ln (2)}\frac{1}{1+\frac{x}{d}} \hat{\mathbf{x}}\\
+				  &=  \epsilon _0 \frac{V}{d^2  \ln (2)}\frac{x}{1+\frac{x}{d}} \hat{\mathbf{x}}
+			\end{align*}  
+			 <p>To find the bound charges, we recall:</p>
+			 \begin{align*}
+			 	\rho _{\text{b} } &= -\nabla \cdot \mathbf{P} \tag{Eq. 4.12, page 173}\\
+			 	\sigma _{\text{b} } &= \mathbf{P}\cdot \hat{\mathbf{n}} \tag{Eq. 4.11, page 173}
+			 \end{align*}
+			 <p>So:</p>
+			  \begin{align*}
+			 	\rho _{\text{b} } &= -\frac{V\epsilon _0 }{(d+x)^2 \ln (2)} \\
+			 	\sigma _{\text{b} } &= \begin{cases} \begin{matrix}  0 & x=0 \\  \frac{\epsilon _0 }{2d\ln 2}V & x=d \\  \end{matrix} \end{cases} 
+			 \end{align*}
+			 <p>Finally, we verify that the total bound charge is zero (where $S $ denotes surface area):</p>
+			 \begin{align*}
+			 	Q_{\text{b} } &= \int \rho _bd\tau +\int \sigma _bda \\
+			 	  &= \int_{0}^{d}  -\frac{V\epsilon _0 }{(d+x)^2 \ln (2)}Sdx + \int  \frac{\epsilon _0 }{2d\ln 2}VdA\\
+			 	  &= -\frac{V\epsilon _0}{ \ln 2}S\int_{0}^{d} \frac{1}{(d+x)^2} dx +   \frac{\epsilon _0 }{2d\ln 2}VS\\
+			 	  &=  -\frac{V\epsilon _0}{ \ln 2}S\cdot \frac{1}{2d} +\frac{\epsilon _0 }{2d\ln 2}VS\\
+			 	  &= 0
+			 \end{align*}
+			 <p>As expected.</p> 
+			
+			
+			
+			
+			 
+			  
+			
+			 
+			
+			
+			
+			
+			<br>
+			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
+			
+        
+		</div>
+    </body>
+</html>
+
