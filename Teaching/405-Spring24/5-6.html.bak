@@ -76,7 +76,7 @@
 			<p>The direction of $\boldsymbol{\omega } $ and $\mathbf{K} $ are clear from context, and we may write</p>
 			\[K=\sigma \omega r \]
 			
-			<img src="5-6/01.PNG" class="centerImg" style="width: 50%;">
+			
 			<h4>Part (b)</h4>
 			
 			<p>Recall that</p>
@@ -92,7 +92,7 @@
 			\end{align*}
 			<p>Giving:</p>
 			 \[\mathbf{J}=\frac{Q}{\frac{4}{3}\pi R^3 }\omega r \sin \left( \theta  \right) \hat{\phi } \]
-			<img src="5-6/02.PNG" class="centerImg" style="width: 30%;">
+			
 			
 			<br>
 			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
