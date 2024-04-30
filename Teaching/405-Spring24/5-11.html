@@ -69,8 +69,57 @@
 <p>What is the field on the axis of an infinite solenoid? (Infinite in both directions)</p>
 				
 			</div>
+			<img src="5-11/Fig-5-24.PNG" class="centerImg" style="width: 50%;">
 			
-			<p>My solution</p>
+			<p>As suggested by the problem, we can think of this as a collection of rings. Example 5.6 shows the $B $ field of a ring a distance $z $ above the point of interest:</p>
+			
+			\[B(z)=\frac{\mu _0 I}{2}\frac{R^2 }{(R^2 +z^2 )^{3/2}}\tag{Eq. 5.41} \]
+			
+			<p>Now, we need to modify this slightly. We will replace</p>
+			\[I\rightarrow nI \]
+			<p>So the integral we want to compute is of the form:</p>
+			\[B=\frac{\mu _0 nI}{2}\int \frac{a^2 }{(a^2 +z^2 )^{3/2}}dz \]
+			<p>Instead of using a perpendicular distance to the rings $(z) $, it is of interest to use an angle as showcased in figure 5.24 above. We note that</p>
+			\[\tan \left( \theta  \right) =\frac{a}{z} \]
+			<p>So</p>
+			\begin{align*}
+				z &= \frac{a}{\tan \left( \theta  \right) } \\
+				  &= a\cot \left( \theta  \right)  
+			\end{align*}
+			<p>Replacing this variable in the integral:</p>
+			\begin{align*}
+				dz &= a(-\csc ^2 (\theta ))d\theta  \\
+				  &= -\frac{a}{\sin ^2 \theta }d\theta  
+			\end{align*}
+			<p>Further, we note that </p>
+			\begin{align*}
+				\frac{1}{a^2 +a^2 \cot ^2 \theta } &= \frac{1}{a^2  \left( 1+\cot ^2 \theta  \right) } \\
+				  &= \frac{1}{a^2 \csc ^2 \theta }\\
+				  &= \frac{\sin ^2 \theta }{a^2 } 
+			\end{align*}
+			<p>Therefore</p>
+			\[\frac{1}{(a^2 +z^2 )^{3/2}}=\frac{\sin ^3 \theta }{a ^3} \]
+			<p>We see then that the integral reduces to:</p>
+			\begin{align*}
+				B &= \frac{\mu _0 nI}{2}\int_{\theta _1 }^{\theta _2 }  \frac{a^2 \sin ^3 \theta }{a^3 \sin ^2 \theta }(-1)ad\theta  \\
+				  &= -\frac{\mu _0 nI}{2}\int_{\theta _1 }^{\theta _2 }  \sin \theta d\theta \\
+				  &= -\frac{\mu _0 nI}{2} (\cos \theta _2  - \cos \theta _1 ) 
+			\end{align*}
+			<p>If we now want to consider an infintie solenoid, consider what happens to the angles $\theta _1  $ and $\theta _2  $ as we stretch the solenoid to infinity:</p>
+			\begin{align*}
+				\theta _1  &= \pi  \\
+				\theta _2  &= 0 
+			\end{align*}
+			<p>Which reduces the above result to</p>
+			\[B=\mu _0 nI \]
+			   
+			
+			
+			
+			
+			
+			
+			
 			
 			<br>
 			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
