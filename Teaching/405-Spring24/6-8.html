@@ -63,12 +63,58 @@
 				<p>A very long cylinder of radius $R $ carries a magnetization</p>
 \[\mathbf{M}=ks^2 \hat{\phi } \]
 <p>Where $k $ is a constant (See Fig. 6.13).</p>
-
+<img src="6-8/01.PNG" class="centerImg" style="width: 30%;">
 <p>Find the magnetic field due to $\mathbf{M} $, for points inside and outside the cylinder (and far from the end).</p>
 				
 			</div>
 			
-			<p>My solution</p>
+<p>Let's start by calculating the volume and surface currents due to $\mathbf{M} $. Recall:</p>
+
+\begin{align*}
+	\text{Volume} \;\;\; \mathbf{J}_b &= \nabla \times \mathbf{M} \\
+	\text{Surface} \;\;\; \mathbf{K}_b &= \mathbf{M}\times \hat{\mathbf{n}} 
+\end{align*} 
+
+<p>So</p>
+
+\begin{align*}
+	\text{Volume} \;\;\; \mathbf{J}_b &= \frac{1}{s}\frac{\partial }{\partial s}(s\cdot (ks^2 )) \hat{\mathbf{z}} \\
+	  &= 3ks \hat{\mathbf{z}} 
+\end{align*} 
+
+<p>Similarly,</p> 
+
+\begin{align*}
+	\text{Surface} \;\;\; \mathbf{K}_b &= ks^2 \Big|_{s=R} (\hat{\phi }\times \hat{s}) \\
+	  &= -kR^2 \hat{z} 
+\end{align*}
+<p>Where the negative sign comes from the orientation of that cross product. </p>
+
+<p>We have cylindrical symmetry, so we can use Ampere's law. Inside, the current enclosed is:</p>
+
+\begin{align*}
+	I_{\text{enc} }^{(\text{inside} )} &= \int \mathbf{J}_b\cdot d\mathbf{a} \\
+	  &= \int_{\phi =0}^{2\pi } \int_{s=0}^{s}  J_b da_{s,\phi }\\
+	  &= \int_{\phi =0}^{2\pi } \int_{s=0}^{s}  J_b rdrd\phi \\
+	  &= \int_{\phi =0}^{2\pi } \int_{s=0}^{s}  3ks sdsd\phi \\
+	  &= 2\pi k\int_{s=0}^{s}  3s^2 ds \\
+	  &= 2\pi ks^3 
+\end{align*}
+
+<p>So Ampere's law follows:</p>
+
+\begin{align*}
+	B\cdot \text{area}  &= \mu _0 I_{\text{enc} }^{(\text{inside} )} \\
+	B2\pi s &= \mu _0 2\pi ks^3 \\
+	B &= \mu _0 ks^2  \hat{\phi } \\
+	\text{That is...} \;\;\; \mathbf{B} &= \mu _0 ks^2 \hat{\phi } \\
+	  &= \mu  \mathbf{M} 
+\end{align*}
+
+ <p>Now, if we are inside, the charge enclosed will be the total from inside ($2\pi kR^3  $) plus the one from the surface current density, but the surface charge turns out to be the exact opposite: $\int K_b dl = -2\pi kR^3  $.</p>
+ 
+ <p>So the total current enclosed is 0, meaning that outside</p>
+ \[\mathbf{B}=\mathbf{0} \]
 			
 			<br>
 			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
