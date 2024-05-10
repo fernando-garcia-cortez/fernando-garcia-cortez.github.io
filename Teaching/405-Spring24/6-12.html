@@ -63,7 +63,7 @@
 				<p>An infinitely long cylinder, of radius $R $, carries a "frozen-in" magnetization, parallel to the axis:</p>
 
 \[\mathbf{M}=ks \hat{z} \]
-
+<img src="6-8/01.PNG" class="centerImg" style="width: 30%;">
 <p>Where $k $ is a constant and $s $ is the distance from the axis; there is no free current anywhere.</p>
 
 <p>Find the magnetic field inside and outside the cylinder by two different methods:</p>
@@ -74,7 +74,50 @@
 				
 			</div>
 			
-			<p>My solution</p>
+<h4>Part (a)</h4>
+
+<p>As we did on the last problem (6.8), let's calculate the bound charges. Recall:</p>
+
+\begin{align*}
+	\text{Volume} \;\;\; \mathbf{J}_b &= \nabla \times \mathbf{M} \\
+	\text{Surface} \;\;\; \mathbf{K}_b &= \mathbf{M}\times \hat{\mathbf{n}} 
+\end{align*} 
+
+<p>So</p>
+
+\begin{align*}
+	\text{Volume} \;\;\; \mathbf{J}_b &=-k \hat{\mathbf{\phi }} \\
+	\text{Surface} \;\;\; \mathbf{K}_b  &= kR \hat{\mathbf{\phi }} 
+\end{align*} 
+
+<p>Outside it is clear that $\mathbf{B}=\mathbf{0} $. Inside, let's calculate (using an amperian loop in the $sz $-plane) the enclosed current and then use Ampere's law:</p>
+\begin{align*}
+	I_{\text{enc} }^{\text{inside} } &= \int \mathbf{J}_b\cdot d\mathbf{a} + \int \mathbf{K}_b\cdot d\mathbf{l} \\
+	  &= kls 
+\end{align*}
+<p>So</p>
+\begin{align*}
+	B &= \frac{1}{l}\mu _0 I_{\text{enc} } \\
+	  &= \mu _0 ks  \\
+	\text{So...} \;\;\; \mathbf{B} &= \mu ks \hat{\mathbf{z}} 
+\end{align*}
+  
+
+
+<h4>Part (b)</h4>
+
+<p>There is no free charge so</p>
+
+\[\mathbf{H}=\mathbf{0} \]
+
+<p>So</p>
+
+\begin{align*}
+	\mathbf{B} &= \mu _0 (\mathbf{H}+\mathbf{M}) \\
+	  &= \mu _0 \mathbf{M}\\
+	  &= \begin{cases} \begin{matrix}  \mu _0 ks \hat{z} & \text{inside}  \\  \mathbf{0} & \text{outside}  \\  \end{matrix} \end{cases}  
+\end{align*}
+<p>Since outside we have $\mathbf{M} =\mathbf{0}$. </p>
 			
 			<br>
 			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
