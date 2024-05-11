@@ -60,13 +60,49 @@
 			
 			<div class="BlogAbstract">
 				
-				<p>At the interface between one linear magnetic material and another, the magnetic field lines bend (Fig. 6.32). Show that </p>
+				<p>At the interface between one linear magnetic material and another, the magnetic field lines bend (Fig. 6.32). </p>
+				<img src="6-28/01.PNG" class="centerImg" style="width: 40%;">		
+				<p>Show that </p>
 \[\frac{\tan \theta _2 }{\tan \theta _1 }=\frac{\mu _2 }{\mu _1}  \]
 <p>Assuming there is no free current at the boundary. Compare Eq. 4.68.</p>
 				
 			</div>
 			
-			<p>My solution</p>
+<p>Recall from section 6.3.3 "Boundary conditions" that the perpendicular components of $\mathbf{B} $ at the interface are continuous:</p>
+\[B^{\perp}_{\text{above} }-B^{\perp}_{\text{below} }=0\tag{Eq. 6.26} \]
+<p>And the parallel components of $\mathbf{H} $ are continuous in the absence of surface current:</p>
+\begin{align*}
+	\mathbf{H}^{\parallel}_{\text{above} }-\mathbf{H}^{\parallel}_{\text{below} } &= \cancel{\mathbf{K}_f}\times \hat{n} \\
+	  &= \mathbf{0} 
+\end{align*}
+
+<p>In other words, we have:</p>
+\begin{align*}
+	B_1 ^{\perp} &= B_2 ^{\perp} \\
+	\mathbf{H}_1 ^{\parallel} &= \mathbf{H}_2 ^{\parallel} 
+\end{align*}
+
+<p>Now, recall that</p>
+\[\mathbf{B}=\mu \mathbf{H} \]
+<p>(where $\mu = \mu _0 (1+\chi _m)$) So</p>
+\begin{align*}
+	\mathbf{H}_1 ^{\parallel} &= \mathbf{H}_2 ^{\parallel} \\
+	\Rightarrow \;\;\;\frac{1}{\mu _1 }\mathbf{B}_1 ^{\parallel} &= \frac{1}{\mu _2 }\mathbf{B}_2 ^{\parallel} 
+\end{align*}
+<p>By (geometric) definition of tangent, we have:</p>
+\[\tan \theta _1  =\frac{B^{\parallel}_1 }{B^{\perp}_1 }\]
+<p>And</p>
+\[\tan \theta _2  =\frac{B^{\parallel}_2 }{B^{\perp}_2 }\]
+<p>So</p>
+\begin{align*}
+	\frac{\tan \theta _2 }{\tan \theta _1 } &= \frac{B^{\parallel}_2 }{B^{\perp}_2 }\frac{1}{\frac{B^{\parallel}_1 }{B^{\perp}_1 }} \\
+	  &= \frac{B^{\parallel}_2 }{B^{\perp}_2 }   \frac{B^{\perp}_1 }{B^{\parallel}_1 }\\
+	  &= \frac{B^{\parallel}_2 }{\cancel{B^{\perp}_2} }   \frac{\cancel{B^{\perp}_1} }{B^{\parallel}_1 }\tag{By boundary condition}\\
+	  &= \frac{B^{\parallel}_2 }{B^{\parallel}_1 } \\
+	  &= \frac{\mu _2 }{\mu _1 }
+\end{align*}
+ 
+
 			
 			<br>
 			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
