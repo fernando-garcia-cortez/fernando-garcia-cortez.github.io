@@ -215,6 +215,80 @@
 
 			<h3 id="Path-Integrals-I">Path Integrals I - Quantum Mechanics</h3>
 			
+			
+					<p>In the Heisenberg picture, the transition amplitude for the event/transition:</p>
+
+					<img src="QFT/PI - I - 01.PNG" class="centerImg" style="width: 30%;">
+
+					<p>Is denoted by $\langle q''|t''|q',t' \rangle  $.</p>
+
+					<p>It can be shown that</p>
+					\[\langle q'',t''|q',t' \rangle =\int \mathcal{D}q \exp \left( i\int_{t'}^{t''} dt\;L(\dot{q}(t),q(t)) \right)  \]
+					<p>Where $L $ is the Lagrangian of the system. This is one of the most remarkable points of the path integral approach to Quantum Mechanics (and QFT): it allows us to move from the Hamiltonian to the Lagrangian.</p>
+
+					<p>The above $\mathcal{D}q $ integration is over all paths such that $q(t')=q' $ and $q(t'')=q'' $.</p>
+
+					<p>For additional operators:</p>
+
+					\begin{align*}
+						\langle q'',t''|Q(t_1 )|q',t' \rangle  &=\int \mathcal{D}p\mathcal{D}q\;q(t_1 )e^{iS} \\
+						\int \mathcal{D}p\mathcal{D}q\;q(t_1 )q(t_2 )e^{iS} &= \langle q'',t''|TQ(t_1 )Q(t_2 )|q',t' \rangle  
+					\end{align*}
+
+					<p>We define the functional derivative as:</p>
+					\[\frac{\delta }{\delta f(t_1 )}f(t_2 )=\delta (t_1 -t_2 ) \]
+					<p>(product, chain, etc. rules hold).</p>
+
+					<p>By considering the modified (added external forces) Hamiltonian:</p>
+
+					\[H(p,q)\rightarrow H(p,q)-f(t)q(t)-h(t)p(t) \]
+
+					<p>We define</p>
+
+					\[\langle q'',t''|q',t' \rangle _{f,h}=\int \mathcal{D}p\mathcal{D}q \exp \left( i \int_{t'}^{t''} dt \left( p\dot{q}-H+fq+hp \right)  \right)  \]
+
+					<p>So that</p>
+
+					\[\langle q'',t''|TQ(t_1 )\cdots P(t_n )\cdots |q',t' \rangle =\frac{1}{i}\frac{\delta }{\delta f(t_1 )}\cdots \frac{1}{i}\frac{\delta }{\delta h(t_n )}\cdots \langle q'',t'' | q',t' \rangle _{f,h}\Big|_{f=h=0}  \]
+
+					<p>Whenever the initial and final states are the ground state:</p>
+
+					\[\langle 0|0 \rangle _{f,h}=\int \mathcal{D}p\mathcal{D}q \;\exp \left( i \int_{-\infty }^{\infty } dt \left( p\dot{q}-(1-i\epsilon )H+fq+hp \right)  \right)  \]
+
+					<p>Where we can let $h=0 $:</p>
+
+					\[\langle 0|0 \rangle _{f}=\int \mathcal{D}p\mathcal{D}q \;\exp \left( i \int_{-\infty }^{\infty } dt \left( p\dot{q}-(1-i\epsilon )H+fq \right)  \right)  \]
+
+					<p>If we are interested well-behaved systems (interactions written in terms of $q $, no more than quadratic in $P $ without $Q $, and for time-ordered products of $Q $s) such as the harmonic oscillator:</p>
+
+					\[H_{\text{H.O.} }(P,Q)=\frac{1}{2m}P^2 +\frac{1}{2}m\omega ^2 Q^2  \]
+
+					<p>For which</p>
+
+					\begin{align*}
+						\langle 0|0 \rangle _f &= \exp \left( \frac{i}{2}\int_{-\infty }^{\infty } \frac{dE}{2\pi }\frac{\tilde{f}(E)\tilde{f}(-E)}{-E^2 +\omega ^2 -i\epsilon } \right)  \\
+						  &= \exp \left( \frac{i}{2}\int_{-\infty }^{\infty } dtdt'\;f(t)G(t-t')f(t') \right)   
+					\end{align*}
+
+					<p>Where $G(t-t') $:</p>
+
+					\[G(t-t')=\int_{-\infty }^{\infty } \frac{dE}{2\pi }\frac{e^{-iE(t-t')}}{-E^2 +\omega ^2 -i\epsilon } \]
+
+					<p>Is a Green's function:</p>
+
+					\[ \left( \frac{\partial ^2 }{\partial t^2 }+\omega ^2  \right) G(t-t')=\delta (t-t') \]
+
+					<p>$G $ can be written as</p>
+
+					\[G(t-t')=\frac{i}{2\omega }\exp \left( -i\omega |t-t'| \right)  \]
+
+					<p>Which can be used in the general formula for the ground-state expectation value of some time-ordered product of many $Q(t) $s:</p>
+
+					\[\langle 0|TQ(t_1 )\cdots Q(t_{2n})|0 \rangle =\frac{1}{i^n }\sum_{\text{pairings/contractions} }^{} G(t_{i_1 }-t_{i_2 })\cdots G(t_{i_{2n-1}}-t_{i_{2n}}) \]
+
+					<p>Where it is relevant to note that if the number of $Q(t) $s in the product is odd, then the expectation value vanishes.</p>
+
+
 			<h3 id="Path-Integrals-II">Path Integrals II - (Scalar) Free field theory</h3>	
 			
 			<h3 id="Path-Integrals-III">Path Integrals III - (Scalar) Interacting field theories</h3>	
