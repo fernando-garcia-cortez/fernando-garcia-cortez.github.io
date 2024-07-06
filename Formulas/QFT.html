@@ -73,6 +73,14 @@
 				<a href="#Scalar-Field-Canonical"><p>Scalar fields and canonical quantization.</p></a>
 				
 				<a href="#LSZ-Scalar"><p>Lehmann–Symanzik–Zimmermann (LSZ) reduction formula.</p></a>
+				
+				<a href="#Path-Integrals-I"><p>Path Integrals I - Quantum Mechanics.</p></a>
+				
+				<a href="#Path-Integrals-II"><p>Path Integrals II - (Scalar) Free field theory.</p></a>
+				
+				<a href="#Path-Integrals-III"><p>Path Integrals III - (Scalar) Interacting field theories.</p></a>
+				
+
 			
 			</div>
 			
@@ -107,7 +115,13 @@
 					\mu _0  &= 4\pi  
 				\end{align*}
 			
-			<h3 id="Math-Id">Mathematical facts and identities relevant to QFT.</h3>
+			<h3 id="Math-Id">Mathematical facts, notation, and identities relevant to QFT.</h3>
+			
+				<p>Notation:</p>
+
+				\[ f\stackrel{\leftrightarrow}{\partial _{\mu }}g =f(\partial _{\mu }g)-(\partial _{\mu }f)g\]
+			
+				<p>Identities:</p>
 			
 				\[\int d^3 xe^{i\mathbf{q}\cdot \mathbf{x}}=(2\pi )^3 \delta ^3 (\mathbf{q}) \]
 			
@@ -179,7 +193,31 @@
 			
 			<h3 id="LSZ-Scalar">Lehmann–Symanzik–Zimmermann (LSZ) reduction formula</h3>
 			
+					<p>In the case of $n $ incoming and $n' $ outgoing particles, the Lehmann-Symanzik-Zimermann reduction formula (LSZ) is:</p>
+
+					\[\langle f|i \rangle  =i^{n+n'}\int d^4 x_1 e^{ik_1 x_1 }(-\partial ^2 _{1}+m^2 )\cdots d^4 x'_{1}e^{-ik'_1 x'_1 }(-\partial _{1'}^2 +m^2 )\cdots \langle 0|T\phi (x_1 )\cdots \phi (x'_1 )\cdots |0 \rangle \]
+
+					<p>Where $T $ is a time-ordering symbol, and $\langle f|i \rangle  $ denotes the scattering amplitude.</p>
+
+					<p>The derivation of this formula is usually done before talking about interacting fields in-depth. As such, it is relevant to note the necessary conditions/assumptions:</p>
+
+					<p>(1) The ground state $| 0 \rangle  $ is unique, and it is such that it possesses no energy and momentum.</p>
+
+					<p>(2) The first excited state is a 1-particle state, the second is a 2-particle state (mass $m $, $2m $, etc.). For a $n $-particle state, the lowest possible energy (assuming no bound states) is $nm $ (that is, $\mathbf{k}=0 $)</p>
+
+					<iframe scrolling="no" title="Scalar Real LSZ - Energies" src="https://www.geogebra.org/material/iframe/id/n34ux8sz/width/973/height/426/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="973px" height="426px" style="border:0px;"> </iframe>
+
+					<p>(3) The fields must obey </p>
+					\begin{align*}
+						\langle 0|\phi (0)|0 \rangle  &= 0 \\
+						\langle p|\phi (x)|0 \rangle  &= e^{-ikx} 
+					\end{align*}
+
+			<h3 id="Path-Integrals-I">Path Integrals I - Quantum Mechanics</h3>
 			
+			<h3 id="Path-Integrals-II">Path Integrals II - (Scalar) Free field theory</h3>	
+			
+			<h3 id="Path-Integrals-III">Path Integrals III - (Scalar) Interacting field theories</h3>	
 			
 			<a href="../Formulas.html" style="color: black; "><h4>Back to Formulas</h4></a>
         
