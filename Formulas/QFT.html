@@ -84,6 +84,7 @@
 			
 			</div>
 			
+			<hr>
 			<h3 id="Natural-Units">Natural units, dimensional analysis.</h3>
 			
 				\[\hbar =c=1 \]
@@ -115,6 +116,7 @@
 					\mu _0  &= 4\pi  
 				\end{align*}
 			
+			<hr>
 			<h3 id="Math-Id">Mathematical facts, notation, and identities relevant to QFT.</h3>
 			
 				<p>Notation:</p>
@@ -125,6 +127,7 @@
 			
 				\[\int d^3 xe^{i\mathbf{q}\cdot \mathbf{x}}=(2\pi )^3 \delta ^3 (\mathbf{q}) \]
 			
+			<hr>
 			<h3 id="Scalar-Field-Canonical">Scalar fields and canonical quantization.</h3>
 			
 					<p>Using natural units $\hbar =c=1 $...</p>
@@ -191,6 +194,7 @@
 					\[\tilde{dk}=\frac{d^3 k}{(2\pi )^3 2\omega } \]
 					<p>Is frequently used and known as the Lorentz-invariant differential.</p>
 			
+			<hr>
 			<h3 id="LSZ-Scalar">Lehmann–Symanzik–Zimmermann (LSZ) reduction formula</h3>
 			
 					<p>In the case of $n $ incoming and $n' $ outgoing particles, the Lehmann-Symanzik-Zimermann reduction formula (LSZ) is:</p>
@@ -212,7 +216,8 @@
 						\langle 0|\phi (0)|0 \rangle  &= 0 \\
 						\langle p|\phi (x)|0 \rangle  &= e^{-ikx} 
 					\end{align*}
-
+			
+			<hr>
 			<h3 id="Path-Integrals-I">Path Integrals I - Quantum Mechanics</h3>
 			
 			
@@ -287,10 +292,46 @@
 					\[\langle 0|TQ(t_1 )\cdots Q(t_{2n})|0 \rangle =\frac{1}{i^n }\sum_{\text{pairings/contractions} }^{} G(t_{i_1 }-t_{i_2 })\cdots G(t_{i_{2n-1}}-t_{i_{2n}}) \]
 
 					<p>Where it is relevant to note that if the number of $Q(t) $s in the product is odd, then the expectation value vanishes.</p>
-
-
-			<h3 id="Path-Integrals-II">Path Integrals II - (Scalar) Free field theory</h3>	
 			
+			<hr>
+			<h3 id="Path-Integrals-II">Path Integrals II - (Scalar) Free field theory</h3>	
+
+					<p>The path integral in a free-field scalar theory is (as a generalization of the above):</p>
+
+					\[Z_0(J)\equiv \langle 0|0 \rangle _J=\int \mathcal{D}\phi \;\exp \left( i \int d^4 x  \left[ \mathcal{L}_0 +J\phi  \right]  \right)  \]
+
+					<p>Where $q $ was replaced by the classical field $\phi (\mathbf{x},t)  $, $Q $ by the operator corresponding to $\phi (\mathbf{x},t) $, and $f $ became a classical source $J(\mathbf{x},t) $.</p>
+
+					<p>This path integral goes over all paths in the space of field configurations. The measure $\mathcal{D}\phi  $ is proportional to $\prod _{x}d\phi (x) $.</p>
+
+					<p>Remark: If we fourier transform the field $\phi  $:</p>
+
+					\begin{align*}
+						\phi (x) &= \int \frac{d^4 k}{(2\pi )^4 }e^{ikx}\tilde{\phi }(k) \\
+						\tilde{\phi }(k) &= \int d^4 x e^{-ikx}\phi (x) 
+					\end{align*} 
+
+					<p>The action $S_0 =\int d^4 x  \left[ \mathcal{L}_0 +J\phi  \right]  $ becomes one that resembles that of the harmonic oscillator. By introducing the Feynman propagator:</p>
+
+					\[\Delta (x-x')=\int \frac{d^4 k}{(2\pi )^4 }\frac{e^{ik(x-x')}}{k^2 +m^2 -i\epsilon } \]
+
+					<p>We are able to write $Z_0  $ as:</p>
+
+					\[Z_0 (J)=\exp \left( \frac{i}{2}\int d^4 xd^4 x'\;J(x)\Delta (x-x')J(x') \right)  \]
+
+					<p>So</p>
+
+					\[\langle 0|T\phi (x_1 )\cdots |0 \rangle =\frac{1}{i}\frac{\delta }{\delta J(x_1 )}\cdots Z_0 (J)\Big|_{J=0}  \]
+
+					<p>For example:</p>
+
+					\[\langle 0|T\phi (x_1 )\phi (x_2 )|0 \rangle =\frac{1}{i}\Delta (x_2 -x_1 ) \]
+
+					<p>In general (for even number of $\phi  $s in the time ordered product, otherwise it vanishes), we have Wick's theorem:</p>
+
+					\[\langle 0|T\phi (x_1 )\cdots \phi (x_{2n})|0 \rangle =\frac{1}{i^n }\sum_{\text{pairings/contractions} }^{} \Delta (x_{i_1 }-x_{i_2 })\cdots \Delta (x_{i_{2n-1}}-x_{i_{2n}}) \]
+			
+			<hr>
 			<h3 id="Path-Integrals-III">Path Integrals III - (Scalar) Interacting field theories</h3>	
 			
 			<a href="../Formulas.html" style="color: black; "><h4>Back to Formulas</h4></a>
