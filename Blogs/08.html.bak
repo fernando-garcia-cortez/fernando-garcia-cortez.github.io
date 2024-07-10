@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>A deep exploration of complex scalar fields</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Research.html" style="color: black; text-decoration: none;">
+						Research
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			
+			<h2 style="text-align:center;">A deep exploration of complex scalar fields</h2>
+			<p style="text-align:center;">July XXth, 2024.</p>
+
+
+
+<h4>Introduction</h4>
+
+<p>The basics of (real) scalar field theory and its quantization are heavily covered in various books and review articles. Brief comments are usually made on its complex brother: field theory of a complex scalar field. </p>
+
+<p>In this blog post I will be going over, in detail, the basics of having a complex scalar field and its quantization. A final comment will be made on the ground state of the theory. This post was heavily inspired by a Problem in Mark Srednicki's QFT book.</p>
+
+
+<!------------------------------->
+<!------------------------------->
+<!------------------------------->
+
+
+<h4>As a classical field</h4>
+
+<p>Let's make the theory concrete by writing down the its Lagrangian:</p>
+
+\[\mathcal{L}=-\partial ^{\mu }\phi ^{\dagger}\partial _{\mu }\phi -m^2 \phi ^{\dagger}\phi +\Omega _0  \]
+
+<p>Where $\Omega _0  $ is a constant. The equation of motion of a real scalar field analogous to the one above is the Klein-Gordon equation. It is straight forward to show that both $\phi  $ and $\phi ^{\dagger} $ follow the same equation.</p>
+
+<p>If we plug the Lagrangian into the Euler-Lagrange equation for the $\phi  $ field, we find:</p>
+
+\begin{align*}
+	\frac{\partial \mathcal{L}}{\partial \phi } &= \partial _{\mu } \left( \frac{\partial \mathcal{L}}{\partial (\partial _{\mu }\phi )} \right)  \\
+	-m^2 \phi ^{\dagger} &= \partial _{\mu } \left( -\partial ^{\mu }\phi ^{\dagger} \right) \\
+	\partial _{\mu }\partial ^{\mu }\phi ^{\dagger}-m^2 \phi ^{\dagger} &= 0\\
+	 \left( \partial _{\mu }\partial ^{\mu }-m^2  \right) \phi ^{\dagger} &= 0 
+\end{align*}
+ 
+
+<p>And if we do it for the $\phi ^{\dagger} $ field, we find:</p>
+
+\begin{align*}
+	\frac{\partial \mathcal{L}}{\partial \phi ^{\dagger}} &= \partial _{\mu } \left( \frac{\partial \mathcal{L}}{\partial (\partial _{\mu }\phi ^{\dagger})} \right)  \\
+	-m^2 \phi  &= \partial _{\mu } \left( -\partial ^{\mu }\phi  \right) \\
+	\partial _{\mu }\partial ^{\mu }\phi -m^2 \phi  &= 0\\
+	 \left( \partial _{\mu }\partial ^{\mu }-m^2  \right) \phi  &= 0 
+\end{align*}
+
+<p>Where it is relevant to remark that we treat $\phi  $ and $\phi ^{\dagger} $ as independent fields. From a canonical point of view (to be worked out later on), the Hamiltonian (density) plays a central role, and as such we need to find the canonical momenta of the theory. We see that</p>
+
+\begin{align*}
+	\Pi _{\phi }(x) &= \frac{\partial \mathcal{L}}{\partial \dot{\phi }} \\
+	  &= \dot{\phi }^{\dagger}(x)
+\end{align*}
+
+<p>And</p>
+
+\begin{align*}
+	\Pi _{\phi ^{\dagger}}(x) &= \frac{\partial \mathcal{L}}{\partial \dot{\phi }^{\dagger}} \\
+	  &= \dot{\phi }(x)
+\end{align*}
+
+<p>So the Hamiltonian (density) reads:</p>
+
+\begin{align*}
+	\mathcal{H} &= \Pi _{\phi }\dot{\phi }+\Pi _{\phi ^{\dagger}}\dot{\phi }^{\dagger}-\mathcal{L} \\
+	  &= \dot{\phi }^{\dagger}\dot{\phi }+\dot{\phi }\dot{\phi }^{\dagger}+\partial ^{\mu }\phi ^{\dagger}\partial _{\mu }\phi +m^2 \phi ^{\dagger}\phi -\Omega _0  \\
+	  &= \dot{\phi }^{\dagger}\dot{\phi }+\dot{\phi }\dot{\phi }^{\dagger}+\eta ^{\mu \nu }\partial _{\mu }\phi ^{\dagger}\partial _{\mu }\phi +m^2 \phi ^{\dagger}\phi -\Omega _0  \\
+	  &= \dot{\phi }^{\dagger}\dot{\phi }+\dot{\phi }\dot{\phi }^{\dagger}+ \left( -\dot{\phi }^{\dagger}\dot{\phi }+\nabla \phi ^{\dagger}\nabla \phi  \right)  +m^2 \phi ^{\dagger}\phi -\Omega _0 \\
+	  &= \Pi _{\phi ^{\dagger}}\Pi _{\phi }+\nabla \phi ^{\dagger}\nabla \phi   +m^2 \phi ^{\dagger}\phi -\Omega _0 \\
+\end{align*}
+ 
+<p>Now, let's suppose we expand $\phi  $ in terms of modes:</p>
+
+\[\phi (x)=\int \tilde{dk}  \left( a(\mathbf{k})e^{ikx}+b^{\dagger}(\mathbf{k})e^{-ikx} \right)  \]
+
+<p>Where</p>
+
+\[\tilde{dk}=\frac{d^3 k}{(2\pi )^3 2\omega } \]
+
+<p>It is relevant to remark that $kx\equiv \mathbf{k}\cdot \mathbf{x}-\omega t $.</p>
+
+<p>The immediate question is what are $a(\mathbf{k}) $ and $b^{\dagger}(\mathbf{k}) $. Here it is relevant to note that in the case that $\phi  $ is real, $a $ and $b $ are related to each other and we get the usual expressions. In this case (complex $\phi  $) we will have to work it out.</p>
+
+<p>Recall the important identity:</p>
+
+\[\int d^3 xe^{i\mathbf{q}\cdot \mathbf{x}}=(2\pi )^3 \delta ^3 (\mathbf{q}) \]
+
+<p>We can apply it on both sides of the mode expansion, that is, let's multiply by $e^{i\mathbf{q}\cdot \mathbf{x}} $ and then integrate spatially:</p>
+
+\begin{align*}
+	• &= • \\
+	• &= • 
+\end{align*}• 
+
+<!------------------------------->
+<!------------------------------->
+<!------------------------------->
+
+
+
+<h4>As a quantum field</h4>
+
+
+<!------------------------------->
+<!------------------------------->
+<!------------------------------->
+
+<h4>The ground state</h4>
+
+
+<!------------------------------->
+<!------------------------------->
+<!------------------------------->
+
+<br>
+			<a href="../Blog.html" style="color: black; "><h4>Back to Blogs</h4></a>
+		</div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
