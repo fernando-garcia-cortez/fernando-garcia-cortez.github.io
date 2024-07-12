@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Complex scalar fields: Mode expansions and quantization</title>
+        <title>Brute forcing Feynman diagrams: Combinations and symmetry factors</title>
         <script>
             MathJax = {
                 tex: {
@@ -54,16 +54,32 @@
 			
 			
 			
-			<h2 style="text-align:center;">Complex scalar fields: Mode expansions and quantization</h2>
-			<p style="text-align:center;">July 10th, 2024.</p>
+			<h2 style="text-align:center;">Brute forcing Feynman diagrams: Combinations and symmetry factors</h2>
+			<p style="text-align:center;">July 12th, 2024.</p>
 
 
 
 <h4>Introduction</h4>
 
-<p>The basics of (real) scalar field theory and its quantization are heavily covered in various books and review articles. Brief comments are usually made on its complex brother: field theory of a complex scalar field. </p>
+<p>Feynman diagrams are such an important concept (and tool!) that even many of those who have never worked with Quantum Field Theory know about their existence.</p>
 
-<p>In this blog post I will be going over, in detail, the basics of having a complex scalar field and its quantization. A final comment will be made on the ground state of the theory. This post was heavily inspired by a Problem in Mark Srednicki's QFT book.</p>
+<p>To recapitulate, Feynman diagrams appear from expanding a theory into a series (to be precise, from expanding the interacting partition function into a series). They are a visual representation of a given term in the expansion.</p>
+
+<p>These connection between terms of a series and the diagrams allows us to classify them by the amount of external points (sources) $E $, vertices $V $, and propagators (curve segment) $P $. </p>
+
+ <p>This blog post will focus on $\phi ^3  $ theory, where $E $, $V $, and $P $ are related by</p>
+ 
+ \[E=2P-3V \]
+ 
+ <p>Things start  to get a bit out of control when we realize that for a given $P $ and $V $, there are many, many terms in the expansion. It is then relevant to realize how many terms in the expansion give the <i>same</i> Feynman diagram.</p>
+ 
+ <p>This is known as the symmetry factor. It can be calculated quickly and easily for simple diagrams, but sometimes counting gets complicated or tedious. Let's explore a brute-force way get this number.</p>
+ 
+ <p>In $\phi ^3  $ theory, $Z_1 (J) $ takes the form (see Srednicki)</p>
+ 
+ \[Z_1 (J)\propto \sum_{V=0}^{\infty } \frac{1}{V!} \left[ \frac{iZ_gg}{6} \int d^4 x  \left( \frac{1}{i}\frac{\delta }{\delta J(x)} \right) ^3  \right] ^{V} \times \sum_{P=0}^{\infty } \frac{1}{P!} \left[ \frac{i}{2}\int d^4 yd^4 z J(y)\Delta (y-z)J(z) \right] ^{p} \]
+ 
+ <p>Warning: This method is by no means ideal/fast. The purpose of this post is to show how all the numbers are connected.</p>
 
 
 <!------------------------------->
@@ -71,245 +87,172 @@
 <!------------------------------->
 
 
-<h4>As a classical field</h4>
+<h4>Terms with $E=0 $, $V=2 $ (therefore $P=3 $).</h4>
 
-<p>Let's make the theory concrete by writing down the its Lagrangian:</p>
+<p>If we have two vertices, each has to have 3 lines coming in/out of it, and there are 3 lines to place on the diagram, it is clear that there are only two possible Feynman diagrams:</p>
 
-\[\mathcal{L}=-\partial ^{\mu }\phi ^{\dagger}\partial _{\mu }\phi -m^2 \phi ^{\dagger}\phi +\Omega _0  \]
+<img src="09/01.PNG" class="centerImg" style="width: 30%;">
 
-<p>Where $\Omega _0  $ is a constant. The equation of motion of a real scalar field analogous to the one above is the Klein-Gordon equation. It is straight forward to show that both $\phi  $ and $\phi ^{\dagger} $ follow the same equation.</p>
+<p>We start by noting that the term with $V=2 $ and $P=3 $ (in $Z_1  $) gives a numerical factor of</p>
 
-<p>If we plug the Lagrangian into the Euler-Lagrange equation for the $\phi  $ field, we find:</p>
+\[\frac{1}{2^P 6^V(V!)(P!)}\Big|_{V=2,P=3} =\frac{1}{3456} \]
+
+<p>This number will be important in a second. Now notice that we have 6 functional derivatives (with respect to sources $J(x) $) acting on a product of 6 sources. Carrying out the product rule will yield</p>
+
+\[6!=720\;\text{terms}  \]
+
+<p>That is, there are 720 diagrams to be considered. Are they all different? How many are the same? As speculated above, we hope to get only 2 diagrams.</p>
+
+<p>To keep track of variables, let's use the following variables:</p>
+
+\[\frac{1}{3456}\int 
+d^4xd^4 w  
+d^4 y_1 d^4 y_2 d^4 y_3  d^4 z_1 d^4 z_2 d^4 z_3
+\left( \frac{1}{i}\frac{\delta }{\delta J(x)} \right) ^3 \left( \frac{1}{i}\frac{\delta }{\delta J(w)} \right) ^3   
+J(y_1)\Delta (y_1-z_1)J(z_1)
+J(y_2)\Delta (y_2-z_2)J(z_2)
+J(y_3)\Delta (y_3-z_3)J(z_3) \]
+
+<p>So we will have a product of three propagators $\Delta (y_1-z_1) \Delta (y_2-z_2) \Delta (y_3-z_3)$ times 720 terms. Each one of the terms is of the form</p>
+
+\[\delta (x-\;\;)\delta (x-\;\;)\delta (x-\;\;)\delta (w-\;\;)\delta (w-\;\;)\delta (w-\;\;) \]
+
+<p>Where the spaces are to be filled with (once each) $y_1 ,y_2 ,y_3 ,z_1 ,z_2 ,z_3  $. For instance:</p>
+
+\[\Delta (y_1-z_1) \Delta (y_2-z_2) \Delta (y_3-z_3)\bigg(\delta (x-y_1 )\delta (x-y_2 )\delta (x-y_3 )\delta (w-z_1 )\delta (w-z_2 )\delta (w-z_3 )+\text{the other 719 terms} \bigg) \]
+
+<p>It is clear that we can compute the six $\int  d^4 y_1 d^4 y_2 d^4 y_3  d^4 z_1 d^4 z_2 d^4 z_3 $ integrals, which will turn the 3 propagatos into propagators in terms of $x $s and $w $s.</p>
+
+<p>There are only two possible cases, we end up (after computing the integrals over the deltas) with $\Delta (x-w)^3  $, or $\Delta (0)^2 \Delta (x-y) $. Notice how there is simply no way to get $\Delta (0)^3  $ out of the available variables, the same goes for $\Delta (0)\Delta (x-w)^2  $.</p>
+
+<p>For the case $\Delta (x-w)^3  $, let's see how many terms we have (out of the 720). There are 6 ways to place a given $y_i  $ among the <b>6</b> half-filled deltas. If we picked one with an $x $, then we must place $z_i  $ in one of the <b>3</b> deltas with $w $ (and vice versa).</p>
+
+<p>Now pick $y_j $ for $i\neq j $. There are <b>4</b> half-filled deltas to pick. This forces us to place $z_j $ in one of the remaining <b>2</b> deltas with the opposite $x/w $ variable.</p>
+
+<p>Finally, we can place $y_k $ for $i\neq j \neq k $ in either of the <b>2</b> remaining deltas, and the last $z_k $ variable gets placed in the remaining delta with opposite variable.</p>
+
+<p>In total, we have</p>
+
+\[6\times 3\times 4\times 2\times 2=288\;\text{terms}  \]
+
+<p>They all, of course, represent the same diagram:</p>
+
+<img src="09/02.PNG" class="centerImg" style="width: 25%;">
+
+<p>We are pretty sure that there should only be an additional diagram, corresponding to terms of the form $\Delta (x-y)\Delta (0)^2  $. We could right away say that there are $720-288=432 $ such terms. Instead, let's work out the combinations and see that it is truly 432 (and we can finally confirm that there are 2 two diagrams, since we would then have 720 worked out terms).</p>
+
+<p>We can place $y_i  $ in any of the deltas: <b>6</b>.</p>
+
+<p>To induce a $\Delta (0) $, we place another $y_j $ in any of the two remaining deltas with the same variable: <b>2</b>.</p>
+
+<p>To induce another $\Delta (0) $, we place any of the $z_i $ in any of the 3 deltas with the other variable: <b>9</b> ways.</p>
+
+<p>The $\Delta (0) $ happens once we place yet another $z_j  $ in any of the two remaining deltas with the other variable: <b>2</b> ways.</p>
+
+<p>There are <b>2</b> ways to place the remaining $y_k,z_k $ in the two last deltas. We see that:</p>
+\[6\times 2\times 9\times 2\times 2=432 \;\text{terms} \]
+<p>As expected. Those terms represent the diagram:</p>
+
+<img src="09/03.PNG" class="centerImg" style="width: 25%;">
+
+
+
+<!------------------------------->
+<!------------------------------->
+<!------------------------------->
+
+<h4>Contributions and symmetry factors</h4>
+
+<p>We must not forget that we still have the $\int d^4 xd^4 w $ integrals over the above expressions. Furthermore, the numerical factor of $1/3456 $ combines with the amount of terms for the same diagram to give the proper symmetry factor:</p>
 
 \begin{align*}
-	\frac{\partial \mathcal{L}}{\partial \phi } &= \partial _{\mu } \left( \frac{\partial \mathcal{L}}{\partial (\partial _{\mu }\phi )} \right)  \\
-	-m^2 \phi ^{\dagger} &= \partial _{\mu } \left( -\partial ^{\mu }\phi ^{\dagger} \right) \\
-	\partial _{\mu }\partial ^{\mu }\phi ^{\dagger}-m^2 \phi ^{\dagger} &= 0\\
-	 \left( \partial _{\mu }\partial ^{\mu }-m^2  \right) \phi ^{\dagger} &= 0 
+	\frac{1}{3456}\cdot 288 &= \frac{1}{\color{red}12\color{black}} \\
+	\frac{1}{3456}\cdot 432 &= \frac{1}{\color{red}8\color{black}} 
 \end{align*}
  
+<p>In this post we are not interested in computing corrections or observables, but if we want to, we must also remember the factors of $g $, $Z_g $, and any other constants in the expansion of the path integral.</p>
 
-<p>And if we do it for the $\phi ^{\dagger} $ field, we find:</p>
-
-\begin{align*}
-	\frac{\partial \mathcal{L}}{\partial \phi ^{\dagger}} &= \partial _{\mu } \left( \frac{\partial \mathcal{L}}{\partial (\partial _{\mu }\phi ^{\dagger})} \right)  \\
-	-m^2 \phi  &= \partial _{\mu } \left( -\partial ^{\mu }\phi  \right) \\
-	\partial _{\mu }\partial ^{\mu }\phi -m^2 \phi  &= 0\\
-	 \left( \partial _{\mu }\partial ^{\mu }-m^2  \right) \phi  &= 0 
-\end{align*}
-
-<p>Where it is relevant to remark that we treat $\phi  $ and $\phi ^{\dagger} $ as independent fields. From a canonical point of view (to be worked out later on), the Hamiltonian (density) plays a central role, and as such we need to find the canonical momenta of the theory. We see that</p>
-
-\begin{align*}
-	\Pi _{\phi }(x) &= \frac{\partial \mathcal{L}}{\partial \dot{\phi }} \\
-	  &= \dot{\phi }^{\dagger}(x)
-\end{align*}
-
-<p>And</p>
-
-\begin{align*}
-	\Pi _{\phi ^{\dagger}}(x) &= \frac{\partial \mathcal{L}}{\partial \dot{\phi }^{\dagger}} \\
-	  &= \dot{\phi }(x)
-\end{align*}
-
-<p>So the Hamiltonian (density) reads:</p>
-
-\begin{align*}
-	\mathcal{H} &= \Pi _{\phi }\dot{\phi }+\Pi _{\phi ^{\dagger}}\dot{\phi }^{\dagger}-\mathcal{L} \\
-	  &= \dot{\phi }^{\dagger}\dot{\phi }+\dot{\phi }\dot{\phi }^{\dagger}+\partial ^{\mu }\phi ^{\dagger}\partial _{\mu }\phi +m^2 \phi ^{\dagger}\phi -\Omega _0  \\
-	  &= \dot{\phi }^{\dagger}\dot{\phi }+\dot{\phi }\dot{\phi }^{\dagger}+\eta ^{\mu \nu }\partial _{\mu }\phi ^{\dagger}\partial _{\mu }\phi +m^2 \phi ^{\dagger}\phi -\Omega _0  \\
-	  &= \dot{\phi }^{\dagger}\dot{\phi }+\dot{\phi }\dot{\phi }^{\dagger}+ \left( -\dot{\phi }^{\dagger}\dot{\phi }+\nabla \phi ^{\dagger}\nabla \phi  \right)  +m^2 \phi ^{\dagger}\phi -\Omega _0 \\
-	  &= \Pi _{\phi ^{\dagger}}\Pi _{\phi }+\nabla \phi ^{\dagger}\nabla \phi   +m^2 \phi ^{\dagger}\phi -\Omega _0 \\
-\end{align*}
- 
-<p>Now, let's suppose we expand $\phi  $ in terms of modes:</p>
-
-\[\phi (x)=\int \tilde{dk}  \left( a(\mathbf{k})e^{ikx}+b^{\dagger}(\mathbf{k})e^{-ikx} \right)  \]
-
-<p>Where</p>
-
-\[\tilde{dk}=\frac{d^3 k}{(2\pi )^3 2\omega } \]
-
-<p>It is relevant to remark that $kx\equiv \mathbf{k}\cdot \mathbf{x}-\omega t $. That is, we should not forget the fact that there's a time-dependent exponential factor (even though the integral (measure) only goes over spatial momentum modes).</p>
-
-<p>The immediate question is what are $a(\mathbf{k}) $ and $b^{\dagger}(\mathbf{k}) $ (that is, how are they related to the field itself?). Here it is good to note that in the case that $\phi  $ is a real field, $a $ and $b $ are directly related to each other (in fact, we can show that $\phi ^* (x)=\phi (x) $ implies $b^* (-\mathbf{k})=a(\mathbf{k}) $) and we get the familiar expressions. The simplification is not as simple for the case of a complex $\phi  $ field, but we can work it out.</p>
-
-<p>Recall the important identity:</p>
-
-\[\int d^3 xe^{i\mathbf{q}\cdot \mathbf{x}}=(2\pi )^3 \delta ^3 (\mathbf{q}) \]
-
-<p>We can apply it on both sides of the mode expansion, that is, let's multiply by $e^{iq\cdot x} $ and then integrate spatially. Notice again that we are adding an exponential with both time and spatial components. Performing the aforementioned steps will induce some deltas in the integrand which will allow us to chug down the momentum integrals nicely:</p>
-
-\begin{align*}
-	\phi (x) &= \int \tilde{dk}  \left( a(\mathbf{k})e^{ikx}+b^{\dagger}(\mathbf{k})e^{-ikx} \right) \\
-	e^{iqx}\phi (x) &= e^{iqx} \int \tilde{dk}  \left( a(\mathbf{k})e^{ikx}+b^{\dagger}(\mathbf{k})e^{-ikx} \right) \\
-	e^{iqx}\phi (x) &= e^{i(\mathbf{q}\cdot \mathbf{x}-\alpha t)} \int \tilde{dk}  \left( a(\mathbf{k})e^{ikx}+b^{\dagger}(\mathbf{k})e^{-ikx} \right) \\
-	e^{iqx}\phi (x) &=  \int \tilde{dk}  \bigg( a(\mathbf{k})e^{ i\mathbf{k}\cdot \mathbf{x}+i\mathbf{q}\cdot \mathbf{x}-i\omega t-i\alpha t}+b^{\dagger}(\mathbf{k})e^{-i\mathbf{k}\cdot \mathbf{x}+i\mathbf{q}\cdot \mathbf{x}+i\omega t-i\alpha t} \bigg) \\
-	\int d^3 x e^{iqx}\phi (x) &=  \int \tilde{dk}d^3 x  \bigg( a(\mathbf{k})e^{ i\mathbf{k}\cdot \mathbf{x}+i\mathbf{q}\cdot \mathbf{x}-i\omega t-i\alpha t}+b^{\dagger}(\mathbf{k})e^{-i\mathbf{k}\cdot \mathbf{x}+i\mathbf{q}\cdot \mathbf{x}+i\omega t-i\alpha t} \bigg) \\
-	\int d^3 x e^{iqx}\phi (x) &=  \int \tilde{dk}d^3 x  \bigg( a(\mathbf{k})e^{ i(\mathbf{k}+\mathbf{q})\cdot \mathbf{x}}e^{-i(\omega +\alpha ) t}+b^{\dagger}(\mathbf{k})e^{i(\mathbf{q}-\mathbf{k})\cdot \mathbf{x}}e^{+i(\omega -\alpha ) t} \bigg) \\
-	  &= \int \tilde{dk}  \bigg( a(\mathbf{k})(2\pi )^3 \delta ^3 (\mathbf{k}+\mathbf{q})e^{-i(\omega +\alpha ) t}+b^{\dagger}(\mathbf{k})(2\pi )^3 \delta ^3 (\mathbf{q}-\mathbf{k})e^{+i(\omega -\alpha ) t} \bigg) \\
-	  &= \frac{1}{2\omega }\bigg( a(-\mathbf{q})e^{-i(\omega +\alpha )t}+b^{\dagger}(\mathbf{q})e^{+i(\omega -\alpha )t} \bigg) 
-\end{align*}
- 
- <p>We have made good progress so far. To further simplify, we need to deal with $\omega  $ and $\alpha  $. We first note that they are the temporal parts of $k $ and $q $, respectively. Since $k $ and $q $ have equal magnitudes and equal spatial parts, we must have that the temporal parts are equal to each other, that is:</p>
- 
- \[\omega =\alpha  \]
- 
- <p>In the above I will substitute $\mathbf{q}\rightarrow -\mathbf{q} $ (where terms with $\alpha  $ pick up a negative sign) to get:</p>
- 
- \begin{align*}
- 	\int d^3 x\;e^{-iqx}\phi (x) &= \frac{1}{2\omega }\bigg( a(\mathbf{q})e^{-i(\omega -\alpha )t}+b^{\dagger}(-\mathbf{q})e^{+i(\omega +\alpha )t} \bigg) \\
- 	  &= \frac{1}{2\omega }\bigg( a(\mathbf{q})e^{-i(\alpha -\alpha )t}+b^{\dagger}(-\mathbf{q})e^{+i(\alpha +\alpha )t} \bigg) \\
- 	  &= \frac{1}{2\alpha }\bigg( a(\mathbf{q})+b^{\dagger}(-\mathbf{q})e^{+i2\alpha t} \bigg) 
- \end{align*}
-  
-  <p>Now, I will follow the trick Srednicki used to get another linear combination that's not parallel to the above one. If we consider instead expanding $\partial _{0}\phi  $ into momentum modes:</p>
-  
-  \begin{align*}
-  	\partial _{0}(\phi (x)) &= \partial _{0}\bigg[ \int \tilde{dk}  \left( a(\mathbf{k})e^{ikx}+b^{\dagger}(\mathbf{k})e^{-ikx} \right) \bigg] \\
-  	 &= \int \tilde{dk}  \left( (-i\omega )a(\mathbf{k})e^{ikx}+(+i\omega )b^{\dagger}(\mathbf{k})e^{-ikx} \right) 
-  \end{align*} 
-  
-  <p>We pick up factors ($\pm $: negative for the first one and positive for the second term because $kx\equiv \mathbf{k}\cdot \mathbf{x}-\omega t $) of $i\omega  $ and the rest follows in the same way. It is then clear that:</p>
-  
-  \begin{align*}
-  	\int d^3 x\;e^{-iqx}\color{blue}\partial _0\color{black} \phi (x) &= \frac{1}{2\alpha }\bigg( (-i\omega ) a(\mathbf{q})+(+i\omega )b^{\dagger}(-\mathbf{q})e^{+i2\alpha t} \bigg)  \\
-  	  &= \frac{1}{2\alpha }\bigg( (-i\alpha ) a(\mathbf{q})+(i\alpha )b^{\dagger}(-\mathbf{q})e^{+i2\alpha t} \bigg) \\
-  	  &=  \frac{i}{2 }\bigg( - a(\mathbf{q})+b^{\dagger}(-\mathbf{q})e^{+i2\alpha t} \bigg) \\
-  \end{align*}
-   
-   <p>At this point we have a system of equations. One can right away find solutions to $a(\mathbf{q}) $:</p>
-   
-	\[a(\mathbf{q})=\int d^3 x\;e^{-iqx} \left( \alpha \phi (x)+i \Pi _{\phi ^{\dagger}}(x) \right)  \]   
-   
-   <p>And we can find a solution to $b^{\dagger}(-\mathbf{q}) $ (and thus $b(-\mathbf{q}) $, once we undo the dagger). How do we find $b(\mathbf{q}) $ from it? There is a connection/relation between the complex field and $a/b $. If we replace $\phi  $ by $\phi ^{\dagger} $ in the mode expansion, we see that the roles of $a $ and $b $ get interchanged. As such, $b(\mathbf{q}) $ is given by substituting $\phi  $ for $\phi ^{\dagger} $ in $a(\mathbf{q}) $:</p>
-
-\[b(\mathbf{q})=\int d^3 x\;e^{-iqx} \left( \alpha \phi ^{\dagger}(x)+i \Pi _{\phi }(x) \right)  \] 
-
-<p>Where I used the fact that $\Pi _{\phi }=\partial _{0}\phi ^{\dagger} $ and $\Pi _{\phi ^{\dagger}}=\partial _{0}\phi  $. To make the equations easier to read, let's go back to writing (this is a simple relabeling of variables) $q\rightarrow k=(\omega ,\mathbf{k}) $:</p>
-
-\begin{align*}
-	a(\mathbf{k}) &= \int d^3 x\;e^{-ikx} \left( \omega \phi (x)+i \Pi _{\phi ^{\dagger}}(x) \right) \\
-	b(\mathbf{k}) &= \int d^3 x\;e^{-ikx} \left( \omega \phi ^{\dagger}(x)+i \Pi _{\phi }(x) \right) 
-\end{align*}
-
-  
-
+<p>It is also relevant to note that we got the exact same expressions as if we had followed the rules of adding $\frac{1}{i}\Delta (x-y)  $ per propagator, and $iZ_gg\int d^4 x $ per vertex. </p>
 <!------------------------------->
 <!------------------------------->
 <!------------------------------->
 
 
+<h4>Terms with $E=1 $, $V=1 $ (therefore $P=2 $).</h4>
 
-<h4>As a quantum field</h4>
-
-
-<p>Having written down $a(\mathbf{k}) $ and $b(\mathbf{k}) $, we can start to talk about the field as a quantum field. That is, let's impose canonical commutation relations <i>on the fields (and the respective momenta)</i>:</p>
-
-\begin{align*}
-	 \left[ \phi (\mathbf{x},t),\phi (\mathbf{y},t) \right]  &= 0 \\
-	 \left[ \phi ^{\dagger}(\mathbf{x},t),\phi ^{\dagger} (\mathbf{y},t) \right]  &= 0 \\
-	\left[ \phi (\mathbf{x},t),\Pi _{\phi ^{\dagger}} (\mathbf{y},t) \right]  &= 0 \\
-	\left[ \phi^{\dagger} (\mathbf{x},t),\Pi _{\phi } (\mathbf{y},t) \right]  &= 0 \\
-	 \left[ \phi (\mathbf{x},t),\Pi _{\phi }(\mathbf{y},t) \right]  &= i\delta ^3 (\mathbf{x}-\mathbf{y}) \\
-	 \left[ \phi ^{\dagger}(\mathbf{x},t),\Pi _{\phi ^{\dagger}}(\mathbf{y},t) \right]  &= i\delta ^3 (\mathbf{x}-\mathbf{y}) \\
-	  \left[ \Pi _{\phi } (\mathbf{x},t),\Pi _{\phi } (\mathbf{y},t) \right]  &= 0 \\
-	  \left[ \Pi _{\phi ^{\dagger}} (\mathbf{x},t),\Pi _{\phi ^{\dagger}} (\mathbf{y},t) \right]  &= 0 \\
-	  \left[ \Pi _{\phi } (\mathbf{x},t),\Pi _{\phi ^{\dagger}} (\mathbf{y},t) \right]  &= 0 \\
-\end{align*}
-<p>Visually, let's introduce the table:</p>
-
-<img src="08/Table01.PNG" class="centerImg" style="width: 30%;">
-
-<p>A particular feature of it is that it highlights the antisymmetric nature of the current problem. In fact, out of the 16 combinations, we only really need to formally compute, at most, 10. Others might follow from already computed results. For the case of the field variables:</p>
-
-<img src="08/Table02.PNG" class="centerImg" style="width: 40%;">
-
-<p>We now ask, what are the commutation relations for $a(\mathbf{k}) $ and $b(\mathbf{k}) $? Here are the results</p>
-
-<img src="08/Table03.PNG" class="centerImg" style="width: 40%;">
-
-<p>And we now justify them. We notice that some the zeros were color-coded. This signifies that the result of one of them directly implies that of another of the same color.</p>
-
-<p>The first commutator, $ \left[ a,a \right]  $, is quite trivial. As demonstrated above, $a(\mathbf{k}) $ depends on the field $\phi  $ and the conjugate momenta of its complex conjugate $\Pi _{\phi ^{\dagger}} $. As such, all the commutators are between the same object or between distinct objects for the un-daggered/daggered components. As such, it vanishes. And</p>
-
-\[ \left[ a,a \right] =\color{green}0\color{black} \;\;\;\;\Rightarrow \;\;\;\;  \left[ a^{\dagger},a^{\dagger} \right] =\color{green}0\color{black} \]
-
-<p>The exact same argument follows for $ \left[ b,b \right] =0 $, further:</p>
-
-\[ \left[ b,b \right] =\color{red}0\color{black} \;\;\;\;\Rightarrow \;\;\;\;  \left[ b^{\dagger},b^{\dagger} \right] =\color{red}0\color{black} \]
+<p>It is clear that there is only one diagram for this scenario:</p>
 
 
-<p>So far 4 commutators. To continue, let's recall that</p>
+<img src="09/04.PNG" class="centerImg" style="width: 25%;">
 
-\[ \left[ A+B,C \right] = \left[ A,C \right] + \left[ B,C \right]  \]
 
-<p>So</p>
+<p>Where the black filled dot is now representing a source/external point.</p>
 
-\begin{align*}
-	 \left[ A+B,C+D \right]  &=  \left[ A,C+D \right] + \left[ B,C+D \right]  \\
-	 &=  \left[ A,C \right] + \left[ A,D \right] + \left[ B,C \right] + \left[ B,D \right]  
-\end{align*}
- 
+<p>We get a numerical factor of</p>
 
-<p>Let's now compute the orange $\color{orange}0 $s. </p>
+\[\frac{1}{2^P 6^V(V!)(P!)}\Big|_{V=1,P=2} =\frac{1}{48} \]
 
-<p>Consider $ \left[ a,b \right]  $. Within the integrand, the non-zero commutators are</p>
+<p>in the expansion, as well as the integral (again, brushing off the factors of $i,g,Z_g $, and the numerical factor of $1/48 $ for now):</p>
 
-\begin{align*}
-	 \left[ \phi (x),\Pi (y) \right] + \left[ \phi (y),\Pi (x) \right] ^{\dagger} &= i\delta ^3 (\mathbf{x}-\mathbf{y})+\bigg(i\delta ^3 (\mathbf{x}-\mathbf{y})\bigg)^{\dagger}  \\
-	  &= i\delta ^3 (\mathbf{x}-\mathbf{y})-i\delta ^3 (\mathbf{x}-\mathbf{y})\\
-	  &= 0 
-\end{align*}
-<p>So</p>
-\[ \left[ a,b \right] =\color{orange}0\color{black} \]
-<p>And we notice that</p>
+\[\int 
+d^4 x
+d^4 y_1 d^4 y_2 
+d^4 z_1 
+d^4 z_2 
+\frac{\delta }{\delta J(x)}
+\frac{\delta }{\delta J(x)}
+\frac{\delta }{\delta J(x)}
+J(y_1)\Delta (y_1-z_1)J(z_1)
+J(y_2)\Delta (y_2-z_2)J(z_2) \]
 
-\[ \left[ a,b \right] =\color{orange}0\color{black} \;\;\;\;\Rightarrow \;\;\;\;  \left[ a^{\dagger},b^{\dagger} \right] =\color{orange}0\color{black} \]
+<p>Which, when acting with the functional derivatives, we find:</p>
+\[\int 
+d^4 x
+d^4 y_1 d^4 y_2 
+d^4 z_1 
+d^4 z_2 
+\;
+\Delta (y_1-z_1)
+\Delta (y_2-z_2)
+ \bigg( \text{terms of the form} \;\; 
+J(\;\;)\delta (x-\;\;)\delta (x-\;\;)\delta (x-\;\;) \bigg)  \]
 
-<p>To compute the blue $\color{blue}0 $s, it is enough to see the expansions of $a $ and $b^{\dagger} $. Both of them contain the field $\phi   $ and the momenta of the field $\phi ^{\dagger} $. It is clear that all the commutators go to zero, and thus</p>
+<p>The first question is: how many terms are there? A careful analysis shows that we get $4\times 3\times 2=24 $ terms. It is also to see that they are all of the same form. Either the two $y $s will get placed in $\delta  $s and the $z $s one in a delta and one inside the source $J $, or vice versa.</p>
 
-\[ \left[ a,b^{\dagger} \right] =\color{blue}0 \]
+<p>After computing the $d^4 y_1 d^4 y_2 d^4 z_1 d^4 z_2  $ integrals, we find:</p>
 
-<p>So</p>
+\[\int d^4 xd^4 y_1 J(y_1 )\Delta (y_1 -x)\Delta (0) \]
 
-\[ \left[ a,b^{\dagger} \right] =\color{blue}0\color{black} \;\;\;\;\Rightarrow \;\;\;\;   \left[ a^{\dagger},b \right] =\color{blue}0\]
+<p>Which is what the rules (times constant factors) dictate (for each source, add the integral $i \int d^4 y J(y) $).</p>
 
-<p>Let's finalize by working out the non-zero commutators.</p>
+<p>Since we only have 1 diagram and 24 terms, we invoke the numerical factor of $1/48 $ to see that the symmetry factor of the diagram is:</p>
 
-\begin{align*}
-	 \left[ a(\mathbf{k}),a^{\dagger}(\mathbf{q}) \right]  &= \bigg[ \int d^3 x e^{-ikx}\left\lbrace \omega \phi (x)+i\Pi _{\phi ^{\dagger}}(\mathbf{x}) \right\rbrace,\;\int d^3 ye^{+iqy}\left\lbrace \omega \phi ^{\dagger}(y)-i\Pi _{\phi }(y) \right\rbrace  \bigg] \\
-	  &= \int d^3 x\;d^3 y\;e^{+iqy-ikx} \left[ \omega \phi (x)+i\Pi _{\phi ^{\dagger}}(x),\; \omega \phi ^{\dagger}(y)-i\Pi _{\phi }(y) \right] \\
-	  &= \int d^3 x\;d^3 y\;e^{+iqy-ikx} \bigg(\omega ^2  \cancel{\left[ \phi (x),\phi (y) \right]} -i\omega  \left[ \phi (x),\Pi _{\phi }(y) \right] +i\omega  \left[ \Pi _{\phi ^{\dagger}}(x),\phi ^{\dagger}(y)  \right] -i^2  \cancel{\left[ \Pi _{\phi ^{\dagger}}(x),\Pi _{\phi }(y) \right]} \bigg) \\
-	  &= \int d^3 x\;d^3 y\;e^{+iqy-ikx} (-2i\omega ) \left[ \phi (x),\Pi _{\phi }(y) \right] \\
-	  &= \int d^3 x\;d^3 y\;e^{+iqy-ikx} (-2i\omega ) i\delta ^3 (\mathbf{x}-\mathbf{y})\\
-	  &= 2\omega \int d^3 x\;d^3 y\;e^{+iqy-ikx}\delta ^3 (\mathbf{x}-\mathbf{y})\\
-	  &= 2\omega \int d^3 x\;e^{+iqx-ikx} \\
-	  &= 2\omega \int d^3 x\;e^{-(k-q)x}\\
-	  &= 2\omega (2\pi )^3 \delta ^3 (\mathbf{k}-\mathbf{q})
-\end{align*}
-<p>As proposed.</p> 
+\[\frac{1}{48}\cdot 24 = \frac{1}{\color{red}2\color{black}} \]
+
+<p>As expected.</p>
+
+
 
 <!------------------------------->
 <!------------------------------->
 <!------------------------------->
+<h4>Final remarks and conclusion</h4>
 
-<h4>Concluding remarks and the Hamiltonian</h4>
+<p>It is clear that Feynman diagrams are based on solid ground. The above analysis can get complicated even for the simplest of conditions ($P,V $). More than a tool, doing the above is instructive while studying Quantum Field Theory. It is one of those things you do once and never come back to it, but the implications stay with you for the rest of your life.</p>
 
-<p>The model above is indeed instructive and worth working out. To keep this blog post short, I won't be showing all the steps in regards to getting a Hamiltonian in terms of $a $s and $b $s. I will give an overview of the result and in a later blog we can work things out step by step.</p>
+<p>I think turning this into a computer program shouldn't be too complicated. By coding the rules of functional differentiation, one could possibly avoid having to do a combinatorics-heavy analysis.</p>
 
-<p>To compare, we recall that the Hamiltonian of a single real scalar field $\varphi $ is given by:</p>
+<img src="09/05.PNG" class="centerImg" style="width: 25%;">
 
-\[H=\int \tilde{dk} \omega a^{\dagger}(\mathbf{k})a(\mathbf{k})+(\mathcal{E}_0 -\Omega _0 )V \]
+<p style="text-align: center;">Picture Credits: <a href="https://phdcomics.com/comics/archive.php?comicid=1461" style="text-decoration: none;">Jorge Cham, phdcomics.</a></p>
 
-<p>Where $\mathcal{E}_0  $ represents the total zero-point energy of all the oscillators, per unit volume. It is here where we find our first infinity when studying QFT. Such an integral diverges. We could introduce an ultraviolet cutoff $\Lambda  $, or give a value to $\Omega _0  $ to get rid of it. In the case of the real field, we simply let $\Omega _0 =\mathcal{E}_0  $.</p>
+<p>
 
-<p>If we now turn our attention towards the complex field $\phi ,\phi ^{\dagger} $, we can show that the Hamiltonian presented earlier in the blog post can be written as</p>
 
-\[H=(2\mathcal{E}_0 -\Omega _0 )V+\int \tilde{dk} \omega  \left[ a^{\dagger}(\mathbf{k})a(\mathbf{k})+b^{\dagger}(\mathbf{k})b(\mathbf{k}) \right]  \]
-
-<p>In such a case, it is clear that the infinity issue gets fixed by setting $\Omega _0 =2\mathcal{E}_0  $. It must be said that this sets the ground state energy to zero.</p>
-
+<!------------------------------->
+<!------------------------------->
+<!------------------------------->
+<h4></h4>
 
 <!------------------------------->
 <!------------------------------->
