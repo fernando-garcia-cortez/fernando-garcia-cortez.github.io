@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>A deep exploration of complex scalar fields</title>
+        <title>Complex scalar fields: Mode expansions and quantization</title>
         <script>
             MathJax = {
                 tex: {
@@ -54,8 +54,8 @@
 			
 			
 			
-			<h2 style="text-align:center;">A deep exploration of complex scalar fields</h2>
-			<p style="text-align:center;">July XXth, 2024.</p>
+			<h2 style="text-align:center;">Complex scalar fields: Mode expansions and quantization</h2>
+			<p style="text-align:center;">July 10th, 2024.</p>
 
 
 
@@ -130,20 +130,70 @@
 
 \[\tilde{dk}=\frac{d^3 k}{(2\pi )^3 2\omega } \]
 
-<p>It is relevant to remark that $kx\equiv \mathbf{k}\cdot \mathbf{x}-\omega t $.</p>
+<p>It is relevant to remark that $kx\equiv \mathbf{k}\cdot \mathbf{x}-\omega t $. That is, we should not forget the fact that there's a time-dependent exponential factor (even though the integral (measure) only goes over spatial momentum modes).</p>
 
-<p>The immediate question is what are $a(\mathbf{k}) $ and $b^{\dagger}(\mathbf{k}) $. Here it is relevant to note that in the case that $\phi  $ is real, $a $ and $b $ are related to each other and we get the usual expressions. In this case (complex $\phi  $) we will have to work it out.</p>
+<p>The immediate question is what are $a(\mathbf{k}) $ and $b^{\dagger}(\mathbf{k}) $ (that is, how are they related to the field itself?). Here it is good to note that in the case that $\phi  $ is a real field, $a $ and $b $ are directly related to each other (in fact, we can show that $\phi ^* (x)=\phi (x) $ implies $b^* (-\mathbf{k})=a(\mathbf{k}) $) and we get the familiar expressions. The simplification is not as simple for the case of a complex $\phi  $ field, but we can work it out.</p>
 
 <p>Recall the important identity:</p>
 
 \[\int d^3 xe^{i\mathbf{q}\cdot \mathbf{x}}=(2\pi )^3 \delta ^3 (\mathbf{q}) \]
 
-<p>We can apply it on both sides of the mode expansion, that is, let's multiply by $e^{i\mathbf{q}\cdot \mathbf{x}} $ and then integrate spatially:</p>
+<p>We can apply it on both sides of the mode expansion, that is, let's multiply by $e^{iq\cdot x} $ and then integrate spatially. Notice again that we are adding an exponential with both time and spatial components. Performing the aforementioned steps will induce some deltas in the integrand which will allow us to chug down the momentum integrals nicely:</p>
 
 \begin{align*}
-	• &= • \\
-	• &= • 
-\end{align*}• 
+	\phi (x) &= \int \tilde{dk}  \left( a(\mathbf{k})e^{ikx}+b^{\dagger}(\mathbf{k})e^{-ikx} \right) \\
+	e^{iqx}\phi (x) &= e^{iqx} \int \tilde{dk}  \left( a(\mathbf{k})e^{ikx}+b^{\dagger}(\mathbf{k})e^{-ikx} \right) \\
+	e^{iqx}\phi (x) &= e^{i(\mathbf{q}\cdot \mathbf{x}-\alpha t)} \int \tilde{dk}  \left( a(\mathbf{k})e^{ikx}+b^{\dagger}(\mathbf{k})e^{-ikx} \right) \\
+	e^{iqx}\phi (x) &=  \int \tilde{dk}  \bigg( a(\mathbf{k})e^{ i\mathbf{k}\cdot \mathbf{x}+i\mathbf{q}\cdot \mathbf{x}-i\omega t-i\alpha t}+b^{\dagger}(\mathbf{k})e^{-i\mathbf{k}\cdot \mathbf{x}+i\mathbf{q}\cdot \mathbf{x}+i\omega t-i\alpha t} \bigg) \\
+	\int d^3 x e^{iqx}\phi (x) &=  \int \tilde{dk}d^3 x  \bigg( a(\mathbf{k})e^{ i\mathbf{k}\cdot \mathbf{x}+i\mathbf{q}\cdot \mathbf{x}-i\omega t-i\alpha t}+b^{\dagger}(\mathbf{k})e^{-i\mathbf{k}\cdot \mathbf{x}+i\mathbf{q}\cdot \mathbf{x}+i\omega t-i\alpha t} \bigg) \\
+	\int d^3 x e^{iqx}\phi (x) &=  \int \tilde{dk}d^3 x  \bigg( a(\mathbf{k})e^{ i(\mathbf{k}+\mathbf{q})\cdot \mathbf{x}}e^{-i(\omega +\alpha ) t}+b^{\dagger}(\mathbf{k})e^{i(\mathbf{q}-\mathbf{k})\cdot \mathbf{x}}e^{+i(\omega -\alpha ) t} \bigg) \\
+	  &= \int \tilde{dk}  \bigg( a(\mathbf{k})(2\pi )^3 \delta ^3 (\mathbf{k}+\mathbf{q})e^{-i(\omega +\alpha ) t}+b^{\dagger}(\mathbf{k})(2\pi )^3 \delta ^3 (\mathbf{q}-\mathbf{k})e^{+i(\omega -\alpha ) t} \bigg) \\
+	  &= \frac{1}{2\omega }\bigg( a(-\mathbf{q})e^{-i(\omega +\alpha )t}+b^{\dagger}(\mathbf{q})e^{+i(\omega -\alpha )t} \bigg) 
+\end{align*}
+ 
+ <p>We have made good progress so far. To further simplify, we need to deal with $\omega  $ and $\alpha  $. We first note that they are the temporal parts of $k $ and $q $, respectively. Since $k $ and $q $ have equal magnitudes and equal spatial parts, we must have that the temporal parts are equal to each other, that is:</p>
+ 
+ \[\omega =\alpha  \]
+ 
+ <p>In the above I will substitute $\mathbf{q}\rightarrow -\mathbf{q} $ (where terms with $\alpha  $ pick up a negative sign) to get:</p>
+ 
+ \begin{align*}
+ 	\int d^3 x\;e^{-iqx}\phi (x) &= \frac{1}{2\omega }\bigg( a(\mathbf{q})e^{-i(\omega -\alpha )t}+b^{\dagger}(-\mathbf{q})e^{+i(\omega +\alpha )t} \bigg) \\
+ 	  &= \frac{1}{2\omega }\bigg( a(\mathbf{q})e^{-i(\alpha -\alpha )t}+b^{\dagger}(-\mathbf{q})e^{+i(\alpha +\alpha )t} \bigg) \\
+ 	  &= \frac{1}{2\alpha }\bigg( a(\mathbf{q})+b^{\dagger}(-\mathbf{q})e^{+i2\alpha t} \bigg) 
+ \end{align*}
+  
+  <p>Now, I will follow the trick Srednicki used to get another linear combination that's not parallel to the above one. If we consider instead expanding $\partial _{0}\phi  $ into momentum modes:</p>
+  
+  \begin{align*}
+  	\partial _{0}(\phi (x)) &= \partial _{0}\bigg[ \int \tilde{dk}  \left( a(\mathbf{k})e^{ikx}+b^{\dagger}(\mathbf{k})e^{-ikx} \right) \bigg] \\
+  	 &= \int \tilde{dk}  \left( (-i\omega )a(\mathbf{k})e^{ikx}+(+i\omega )b^{\dagger}(\mathbf{k})e^{-ikx} \right) 
+  \end{align*} 
+  
+  <p>We pick up factors ($\pm $: negative for the first one and positive for the second term because $kx\equiv \mathbf{k}\cdot \mathbf{x}-\omega t $) of $i\omega  $ and the rest follows in the same way. It is then clear that:</p>
+  
+  \begin{align*}
+  	\int d^3 x\;e^{-iqx}\color{blue}\partial _0\color{black} \phi (x) &= \frac{1}{2\alpha }\bigg( (-i\omega ) a(\mathbf{q})+(+i\omega )b^{\dagger}(-\mathbf{q})e^{+i2\alpha t} \bigg)  \\
+  	  &= \frac{1}{2\alpha }\bigg( (-i\alpha ) a(\mathbf{q})+(i\alpha )b^{\dagger}(-\mathbf{q})e^{+i2\alpha t} \bigg) \\
+  	  &=  \frac{i}{2 }\bigg( - a(\mathbf{q})+b^{\dagger}(-\mathbf{q})e^{+i2\alpha t} \bigg) \\
+  \end{align*}
+   
+   <p>At this point we have a system of equations. One can right away find solutions to $a(\mathbf{q}) $:</p>
+   
+	\[a(\mathbf{q})=\int d^3 x\;e^{-iqx} \left( \alpha \phi (x)+i \Pi _{\phi ^{\dagger}}(x) \right)  \]   
+   
+   <p>And we can find a solution to $b^{\dagger}(-\mathbf{q}) $ (and thus $b(-\mathbf{q}) $, once we undo the dagger). How do we find $b(\mathbf{q}) $ from it? There is a connection/relation between the complex field and $a/b $. If we replace $\phi  $ by $\phi ^{\dagger} $ in the mode expansion, we see that the roles of $a $ and $b $ get interchanged. As such, $b(\mathbf{q}) $ is given by substituting $\phi  $ for $\phi ^{\dagger} $ in $a(\mathbf{q}) $:</p>
+
+\[b(\mathbf{q})=\int d^3 x\;e^{-iqx} \left( \alpha \phi ^{\dagger}(x)+i \Pi _{\phi }(x) \right)  \] 
+
+<p>Where I used the fact that $\Pi _{\phi }=\partial _{0}\phi ^{\dagger} $ and $\Pi _{\phi ^{\dagger}}=\partial _{0}\phi  $. To make the equations easier to read, let's go back to writing (this is a simple relabeling of variables) $q\rightarrow k=(\omega ,\mathbf{k}) $:</p>
+
+\begin{align*}
+	a(\mathbf{k}) &= \int d^3 x\;e^{-ikx} \left( \omega \phi (x)+i \Pi _{\phi ^{\dagger}}(x) \right) \\
+	b(\mathbf{k}) &= \int d^3 x\;e^{-ikx} \left( \omega \phi ^{\dagger}(x)+i \Pi _{\phi }(x) \right) 
+\end{align*}
+
+  
 
 <!------------------------------->
 <!------------------------------->
@@ -154,11 +204,111 @@
 <h4>As a quantum field</h4>
 
 
+<p>Having written down $a(\mathbf{k}) $ and $b(\mathbf{k}) $, we can start to talk about the field as a quantum field. That is, let's impose canonical commutation relations <i>on the fields (and the respective momenta)</i>:</p>
+
+\begin{align*}
+	 \left[ \phi (\mathbf{x},t),\phi (\mathbf{y},t) \right]  &= 0 \\
+	 \left[ \phi ^{\dagger}(\mathbf{x},t),\phi ^{\dagger} (\mathbf{y},t) \right]  &= 0 \\
+	\left[ \phi (\mathbf{x},t),\Pi _{\phi ^{\dagger}} (\mathbf{y},t) \right]  &= 0 \\
+	\left[ \phi^{\dagger} (\mathbf{x},t),\Pi _{\phi } (\mathbf{y},t) \right]  &= 0 \\
+	 \left[ \phi (\mathbf{x},t),\Pi _{\phi }(\mathbf{y},t) \right]  &= i\delta ^3 (\mathbf{x}-\mathbf{y}) \\
+	 \left[ \phi ^{\dagger}(\mathbf{x},t),\Pi _{\phi ^{\dagger}}(\mathbf{y},t) \right]  &= i\delta ^3 (\mathbf{x}-\mathbf{y}) \\
+	  \left[ \Pi _{\phi } (\mathbf{x},t),\Pi _{\phi } (\mathbf{y},t) \right]  &= 0 \\
+	  \left[ \Pi _{\phi ^{\dagger}} (\mathbf{x},t),\Pi _{\phi ^{\dagger}} (\mathbf{y},t) \right]  &= 0 \\
+	  \left[ \Pi _{\phi } (\mathbf{x},t),\Pi _{\phi ^{\dagger}} (\mathbf{y},t) \right]  &= 0 \\
+\end{align*}
+<p>Visually, let's introduce the table:</p>
+
+<img src="08/Table01.PNG" class="centerImg" style="width: 30%;">
+
+<p>A particular feature of it is that it highlights the antisymmetric nature of the current problem. In fact, out of the 16 combinations, we only really need to formally compute, at most, 10. Others might follow from already computed results. For the case of the field variables:</p>
+
+<img src="08/Table02.PNG" class="centerImg" style="width: 40%;">
+
+<p>We now ask, what are the commutation relations for $a(\mathbf{k}) $ and $b(\mathbf{k}) $? Here are the results</p>
+
+<img src="08/Table03.PNG" class="centerImg" style="width: 40%;">
+
+<p>And we now justify them. We notice that some the zeros were color-coded. This signifies that the result of one of them directly implies that of another of the same color.</p>
+
+<p>The first commutator, $ \left[ a,a \right]  $, is quite trivial. As demonstrated above, $a(\mathbf{k}) $ depends on the field $\phi  $ and the conjugate momenta of its complex conjugate $\Pi _{\phi ^{\dagger}} $. As such, all the commutators are between the same object or between distinct objects for the un-daggered/daggered components. As such, it vanishes. And</p>
+
+\[ \left[ a,a \right] =\color{green}0\color{black} \;\;\;\;\Rightarrow \;\;\;\;  \left[ a^{\dagger},a^{\dagger} \right] =\color{green}0\color{black} \]
+
+<p>The exact same argument follows for $ \left[ b,b \right] =0 $, further:</p>
+
+\[ \left[ b,b \right] =\color{red}0\color{black} \;\;\;\;\Rightarrow \;\;\;\;  \left[ b^{\dagger},b^{\dagger} \right] =\color{red}0\color{black} \]
+
+
+<p>So far 4 commutators. To continue, let's recall that</p>
+
+\[ \left[ A+B,C \right] = \left[ A,C \right] + \left[ B,C \right]  \]
+
+<p>So</p>
+
+\begin{align*}
+	 \left[ A+B,C+D \right]  &=  \left[ A,C+D \right] + \left[ B,C+D \right]  \\
+	 &=  \left[ A,C \right] + \left[ A,D \right] + \left[ B,C \right] + \left[ B,D \right]  
+\end{align*}
+ 
+
+<p>Let's now compute the orange $\color{orange}0 $s. </p>
+
+<p>Consider $ \left[ a,b \right]  $. Within the integrand, the non-zero commutators are</p>
+
+\begin{align*}
+	 \left[ \phi (x),\Pi (y) \right] + \left[ \phi (y),\Pi (x) \right] ^{\dagger} &= i\delta ^3 (\mathbf{x}-\mathbf{y})+\bigg(i\delta ^3 (\mathbf{x}-\mathbf{y})\bigg)^{\dagger}  \\
+	  &= i\delta ^3 (\mathbf{x}-\mathbf{y})-i\delta ^3 (\mathbf{x}-\mathbf{y})\\
+	  &= 0 
+\end{align*}
+<p>So</p>
+\[ \left[ a,b \right] =\color{orange}0\color{black} \]
+<p>And we notice that</p>
+
+\[ \left[ a,b \right] =\color{orange}0\color{black} \;\;\;\;\Rightarrow \;\;\;\;  \left[ a^{\dagger},b^{\dagger} \right] =\color{orange}0\color{black} \]
+
+<p>To compute the blue $\color{blue}0 $s, it is enough to see the expansions of $a $ and $b^{\dagger} $. Both of them contain the field $\phi   $ and the momenta of the field $\phi ^{\dagger} $. It is clear that all the commutators go to zero, and thus</p>
+
+\[ \left[ a,b^{\dagger} \right] =\color{blue}0 \]
+
+<p>So</p>
+
+\[ \left[ a,b^{\dagger} \right] =\color{blue}0\color{black} \;\;\;\;\Rightarrow \;\;\;\;   \left[ a^{\dagger},b \right] =\color{blue}0\]
+
+<p>Let's finalize by working out the non-zero commutators.</p>
+
+\begin{align*}
+	 \left[ a(\mathbf{k}),a^{\dagger}(\mathbf{q}) \right]  &= \bigg[ \int d^3 x e^{-ikx}\left\lbrace \omega \phi (x)+i\Pi _{\phi ^{\dagger}}(\mathbf{x}) \right\rbrace,\;\int d^3 ye^{+iqy}\left\lbrace \omega \phi ^{\dagger}(y)-i\Pi _{\phi }(y) \right\rbrace  \bigg] \\
+	  &= \int d^3 x\;d^3 y\;e^{+iqy-ikx} \left[ \omega \phi (x)+i\Pi _{\phi ^{\dagger}}(x),\; \omega \phi ^{\dagger}(y)-i\Pi _{\phi }(y) \right] \\
+	  &= \int d^3 x\;d^3 y\;e^{+iqy-ikx} \bigg(\omega ^2  \cancel{\left[ \phi (x),\phi (y) \right]} -i\omega  \left[ \phi (x),\Pi _{\phi }(y) \right] +i\omega  \left[ \Pi _{\phi ^{\dagger}}(x),\phi ^{\dagger}(y)  \right] -i^2  \cancel{\left[ \Pi _{\phi ^{\dagger}}(x),\Pi _{\phi }(y) \right]} \bigg) \\
+	  &= \int d^3 x\;d^3 y\;e^{+iqy-ikx} (-2i\omega ) \left[ \phi (x),\Pi _{\phi }(y) \right] \\
+	  &= \int d^3 x\;d^3 y\;e^{+iqy-ikx} (-2i\omega ) i\delta ^3 (\mathbf{x}-\mathbf{y})\\
+	  &= 2\omega \int d^3 x\;d^3 y\;e^{+iqy-ikx}\delta ^3 (\mathbf{x}-\mathbf{y})\\
+	  &= 2\omega \int d^3 x\;e^{+iqx-ikx} \\
+	  &= 2\omega \int d^3 x\;e^{-(k-q)x}\\
+	  &= 2\omega (2\pi )^3 \delta ^3 (\mathbf{k}-\mathbf{q})
+\end{align*}
+<p>As proposed.</p> 
+
 <!------------------------------->
 <!------------------------------->
 <!------------------------------->
 
-<h4>The ground state</h4>
+<h4>Concluding remarks and the Hamiltonian</h4>
+
+<p>The model above is indeed instructive and worth working out. To keep this blog post short, I won't be showing all the steps in regards to getting a Hamiltonian in terms of $a $s and $b $s. I will give an overview of the result and in a later blog we can work things out step by step.</p>
+
+<p>To compare, we recall that the Hamiltonian of a single real scalar field $\varphi $ is given by:</p>
+
+\[H=\int \tilde{dk} \omega a^{\dagger}(\mathbf{k})a(\mathbf{k})+(\mathcal{E}_0 -\Omega _0 )V \]
+
+<p>Where $\mathcal{E}_0  $ represents the total zero-point energy of all the oscillators, per unit volume. It is here where we find our first infinity when studying QFT. Such an integral diverges. We could introduce an ultraviolet cutoff $\Lambda  $, or give a value to $\Omega _0  $ to get rid of it. In the case of the real field, we simply let $\Omega _0 =\mathcal{E}_0  $.</p>
+
+<p>If we now turn our attention towards the complex field $\phi ,\phi ^{\dagger} $, we can show that the Hamiltonian presented earlier in the blog post can be written as</p>
+
+\[H=(2\mathcal{E}_0 -\Omega _0 )V+\int \tilde{dk} \omega  \left[ a^{\dagger}(\mathbf{k})a(\mathbf{k})+b^{\dagger}(\mathbf{k})b(\mathbf{k}) \right]  \]
+
+<p>In such a case, it is clear that the infinity issue gets fixed by setting $\Omega _0 =2\mathcal{E}_0  $. It must be said that this sets the ground state energy to zero.</p>
 
 
 <!------------------------------->
