@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulas - EM</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Research.html" style="color: black; text-decoration: none;">
+						Research
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			
+			<h2 style="text-align:center;margin-bottom: 0;">Electrodynamics</h2>
+			<h4 style="text-align:center;margin-top: 0;">Formulas</h4>
+
+			
+			
+			
+			<p>This collection serves a personal purpose: the structure follows that of my Electromagnetism II course, as such it originates as a personal reference page. Still, studying for the physics GRE made me realize that there is no one good source that will only show the formulas at this level.</p>
+			
+			<p>Since these were originally conceived as a personal aid for my EM II class, a lot of electrostatics and magnetostatics are omitted, and what's included has been consolidated into a single section. The order follows that of my class and Griffiths's book. A lot of results and applications can be seen in <a href="../Teaching/405-Spring24.html">my class page</a> when I was the TA for EM I.</p>
+			
+			<h3>Contents</h3>
+			
+			<div class="subzone">
+			
+				<a href="#Vector-Calc-Ids"><p>Constants.</p></a>
+			
+				<a href="#Vector-Calc-Ids"><p>Vector Calculus Identities.</p></a>
+				
+				<a href="#Electrostatics"><p>Electrostatics.</p></a>
+				
+				<a href="#Std-Elecstat-Configs"><p>Standard electrostatic configurations.</p></a>
+				
+				<a href="#Magnetostatics"><p>Magnetostatics.</p></a>
+				
+				<a href="#Std-Magstat-Configs"><p>Standard magnetostatics configurations.</p></a>
+				
+
+			
+			</div>
+			
+			<hr>
+			<h3 id="Constants">Constants.</h3>
+			
+						<p>Permittivity of free space</p>
+						
+						\[\epsilon _0 =8.85\times 10^{-12} \frac{\text{C} ^2 }{\text{N} \cdot \text{m} ^2 }\]
+			
+			
+			<hr>
+			<h3 id="Vector-Calc-Ids">Vector Calculus Identities.</h3>
+			
+						<p>Fundamental theorem for Gradients</p>
+
+						\[\int_{\mathbf{a}}^{\mathbf{b}} (\nabla T)\cdot d\mathbf{l}=T(\mathbf{b})-T(\mathbf{a}) \]
+
+						<p>Fundamental theorem for Divergences (Gauss's/Green's/divergence theorem)</p>
+
+						\[\int _{\mathcal{V}}(\nabla \cdot \mathbf{v})d\tau =\oint _{\mathcal{S}}\mathbf{v}\cdot d\mathbf{a} \]
+
+						<p>Fundamental theorem for Curls (Stokes' theorem)</p>
+
+						\[\int _{\mathcal{S}}(\nabla \times \mathbf{v})\cdot d\mathbf{a}=\oint _{\mathcal{P}}\mathbf{v}\cdot d\mathbf{l} \]
+
+						<p>Dot/cross triple products</p>
+
+						\begin{align*}
+							\mathbf{A}\cdot (\mathbf{B}\times \mathbf{C}) &= \mathbf{B}\cdot (\mathbf{C}\times \mathbf{A})=\mathbf{C}\cdot (\mathbf{A}\times \mathbf{B})\tag{Cyclic permutations} \\
+							\mathbf{A}\times (\mathbf{B}\times \mathbf{C}) &= \mathbf{B}(\mathbf{A}\cdot \mathbf{C})-\mathbf{C}(\mathbf{A}\cdot \mathbf{B}) 
+						\end{align*}
+
+						<p>Gradient, Divergence, and Curl product rules:</p>
+
+						\begin{align*}
+							\nabla (fg) &= f(\nabla g)+g(\nabla f) \\
+							\nabla (\mathbf{A}\cdot \mathbf{B}) &= \mathbf{A}\times (\nabla \times \mathbf{B})+\mathbf{B}\times (\nabla \times \mathbf{A})+(\mathbf{A}\cdot \nabla )\mathbf{B}+(\mathbf{B}\cdot \nabla )\mathbf{A} \\
+							\nabla \cdot (f\mathbf{A}) &= f(\nabla \cdot \mathbf{A})+\mathbf{A}\cdot (\nabla f) \\
+							\nabla \cdot (\mathbf{A}\times \mathbf{B}) &= \mathbf{B}\cdot (\nabla \times \mathbf{A})-\mathbf{A}\cdot (\nabla \times \mathbf{B}) \\
+							\nabla \times (f\mathbf{A}) &= f(\nabla \times \mathbf{A})-\mathbf{A}\times (\nabla f) \\
+							\nabla \times (\mathbf{A}\times \mathbf{B}) &= (\mathbf{B}\cdot \nabla )\mathbf{A}-(\mathbf{A}\cdot \nabla )\mathbf{B}+\mathbf{A}(\nabla \cdot \mathbf{B})-\mathbf{B}(\nabla \cdot \mathbf{A}) 
+						\end{align*} 
+
+						<p>Second derivatives:</p>
+
+						\begin{align*}
+							\nabla \cdot (\nabla \times \mathbf{A}) &= 0 \\
+							\nabla \times (\nabla f) &= \mathbf{0} \\
+							\nabla \times (\nabla \times \mathbf{A}) &= \nabla (\nabla \cdot \mathbf{A})-\nabla ^2 \mathbf{A} 
+						\end{align*}
+
+						<p>Spherical line and volume elements:</p>
+
+						\begin{align*}
+							d\mathbf{l} &= dr\hat{\mathbf{r}}+rd\theta \hat{\theta }+r\sin \theta d\phi  \hat{\phi } \\
+							d\tau  &= r^2 \sin \theta drd\theta d\phi  
+						\end{align*} 
+
+						<p>Cylindrical line and volume elements:</p>
+
+						\begin{align*}
+							d\mathbf{l} &= ds\hat{\mathbf{s}}+sd\phi \hat{\phi }+dz\hat{z} \\
+							d\tau  &= sdsd\phi dz 
+						\end{align*}
+			
+			<hr>
+			<h3 id="Electrostatics">Electrostatics.</h3>
+			
+						<p>Separation vector:</p>
+
+						\[\mathscr{r}=\mathbf{r}-\mathbf{r}' \]
+
+						<ul>
+							<li>$\mathscr{r}$ is the vector from charges to ourselves (test charge).</li>
+							<li>$\mathbf{r}' $ is the vector from the origin to the charge configuration.</li>
+							<li>$\mathbf{r} $ is the vector from the origin to us (a test charge)</li>
+						</ul>
+
+						<p>Coulomb's law:</p>
+
+						\[\mathbf{F}= \frac{1}{4\pi \epsilon _0 }\frac{qQ}{\mathscr{r}^2 }\hat{\mathscr{r}}\]
+
+						<p>Electric field for a line, surface, volume charge:</p>
+
+						\begin{align*}
+							\mathbf{E}(\mathbf{r}) &= \frac{1}{4\pi \epsilon _0 }\int \frac{\lambda (\mathbf{r}')}{\mathscr{r}^2 }\hat{\mathscr{r}}dl' \\
+							\mathbf{E}(\mathbf{r}) &= \frac{1}{4\pi \epsilon _0 }\int \frac{\sigma (\mathbf{r}')}{\mathscr{r}^2 }\hat{\mathscr{r}}da' \\
+							\mathbf{E}(\mathbf{r}) &= \frac{1}{4\pi \epsilon _0 }\int \frac{\rho (\mathbf{r}')}{\mathscr{r}^2 }\hat{\mathscr{r}}d\tau ' 
+						\end{align*}
+
+						<p>Electric flux:</p>
+
+						\[\Phi _E=\int _{\mathcal{S}}\mathbf{E}\cdot d\mathbf{a} \]
+
+						<p>Gauss's law:</p>
+
+						\[\oint \mathbf{E}\cdot d\mathbf{a}=\frac{1}{\epsilon _0 }Q_{\text{enc} } \]
+
+						<p>Gauss's law in differential form:</p>
+
+						\[\nabla \cdot \mathbf{E}=\frac{1}{\epsilon _0 }\rho  \]
+						
+						<p>3 useful symmetries for Gauss's law:</p>
+
+						<ol>
+							<li>Spherical symmetry (use concentric sphere).</li>
+							<li>Cylindrical symmetry (use coaxial cylinder).</li>
+							<li>Plane symmetry (use pillbox).</li>
+						</ol>
+
+						<p>In the case of electrostatics:</p>
+
+						\[\nabla \times \mathbf{E}=\mathbf{0} \]
+
+						<p>Electric potential $V $:</p>
+
+						\[\mathbf{E}=-\nabla V \]
+
+						<p>Inversely:</p>
+
+						\[V=-\int \mathbf{E}\cdot d\mathbf{l} \]
+
+						<p>Poisson's equation:</p>
+
+						\[\nabla ^2 V=-\frac{\rho }{\epsilon _0 } \]
+
+						<p>General solution to Poisson's equation:</p>
+
+						\[V(\mathbf{r})=\frac{1}{4\pi \epsilon _0 }\int \frac{\rho (\mathbf{r}')}{\mathscr{r}}d\tau ' \]
+
+						<p>Laplace's equation:</p>
+
+						\[\nabla ^2 V=0 \]
+
+						<p>General solution to Laplace's equation in spherical coordinates with azimuthal symmetry:</p>
+
+						\[V(r,\theta )=\sum_{l=0}^{\infty }  \left( A_lr^{l}+\frac{B_l}{r^{l+1}} \right) P_l(\cos \theta ) \]
+
+						<p>List of Legendre polynomials:</p>
+
+						\begin{align*}
+							P_{0}(x) &= 1 \\
+							P_{1}(x) &= x \\
+							P_{2}(x) &= \frac{3x^2 -1}{2} \\
+							P_{3}(x) &= \frac{5x^3 -3x}{2} \\
+							P_{4}(x) &= \frac{35x^4 -30x^2 +3}{8} \\
+							P_{5}(x) &= \frac{63x^5 -70x^3 +15x}{8} 
+						\end{align*}
+
+						<p>General solution to Laplace's equation in cylindrical coordinates with cylindrical symmetry:</p>
+						 
+						\[V(s,\phi )=a_0 +b_0 \ln s + \sum_{k=1}^{\infty } \bigg[ s^k (a_k \cos \left( k\phi  \right) +b_k \sin \left( k\phi  \right) )+s^{-k}(c_k \cos \left( k\phi  \right) +d_k \sin \left( k\phi  \right) )\bigg] \]
+						 
+						<p>Uniqueness theorems:</p>
+
+						<ol>
+							<li>The solution to Laplace's equation in a volume $\mathcal{V} $ is uniquely determined by the boundary conditions of $V $ at the boundary (surface $\mathcal{S} $)</li>
+							<li>The electric field $\mathbf{E} $ is uniquely determined when we have conductors if the total charge on each conductor is specified.</li>
+						</ol>
+
+						<p>Boundary conditions for the $\mathbf{E} $ field:</p>
+
+						\begin{align*}
+							E_{\text{above} }^{\perp}-E_{\text{below} }^{\perp} &= \frac{1}{\epsilon _0 }\sigma  \\
+							\mathbf{E}^{\parallel}_{\text{above} } &= \mathbf{E}^{\parallel}_{\text{below} } 
+						\end{align*} 
+
+						<p>Boundary conditions for the $V $ field:</p>
+
+						\begin{align*}
+							V_{\text{above} } &= V_{\text{below} } \\
+							\frac{\partial V_{\text{above} }}{\partial n}-\frac{\partial V_{\text{below} }}{\partial n} &= -\frac{1}{\epsilon _0 }\sigma  
+						\end{align*} 
+
+						<p>Energy of a continuous charge distribution:</p>
+
+						\begin{align*}
+							W &= \frac{1}{2}\int \rho Vd\tau  \\
+							  &= \frac{\epsilon _0 }{2}\int_{\text{all space} } E^2 d\tau  
+						\end{align*}
+
+						<p>Ideal conductors are such that</p>
+
+						<ol>
+							<li>$\mathbf{E}=\mathbf{0} $ inside a conductor.</li>
+							<li>$\rho =0 $ inside a conductor.</li>
+							<li>Any net charge resides on the surface.</li>
+							<li>A conductor is an equipotential.</li>
+							<li>$\mathbf{E} $ is perpendicular to the surface just outside the conductor.</li>
+						</ol>
+
+						<p>Capacitors:</p>
+
+						<ul>
+							<li>Capacitance</li>
+							\[C=\frac{Q}{V} \]
+							<li>Energy in a capacity</li>
+							\[W=\frac{1}{2}CV^2  \]
+						</ul>
+
+						<p>Multipole expansion:</p>
+
+						\[V(\mathbf{r})=\frac{1}{4\pi \epsilon _0 }\sum_{n=0}^{\infty } \frac{1}{r^{(n+1)}}\int (r')^n P_n (\cos \left( \alpha  \right) )\rho (\mathbf{r}')d\tau ' \]
+
+						<p>Monopole term:</p>
+
+						\[V_{\text{mon} }(\mathbf{r})=\frac{1}{4\pi \epsilon _0 }\frac{Q}{r} \]
+
+						<p>Dipole moment:</p>
+
+						\[\mathbf{p}\equiv \int \mathbf{r}'\rho (\mathbf{r}')d\tau ' \]
+
+						<p>Dipole term:</p>
+
+						\[V_{\text{dip} }(\mathbf{r})=\frac{1}{4\pi \epsilon _0 }\frac{\mathbf{p}\cdot \hat{\mathbf{r}}}{r^2 } \]
+
+						<p>Physical dipole</p>
+
+						\[\mathbf{p}=q(q\mathbf{r}'_+-q\mathbf{r}'_-)=q\mathbf{d} \]
+
+						\begin{align*}
+							V_{\text{dip} }(r,\theta ) &= \frac{p\cos \theta }{4\pi \epsilon _0 r^2 } \\
+							\mathbf{E}_{\text{dip} }(r,\theta ) &= \frac{p}{4\pi \epsilon _0 r^3 }\bigg(2\cos \theta  \hat{\mathbf{r}}+\sin \theta  \hat{\theta }) 
+						\end{align*}
+
+						<p>Torque experienced by an ideal dipole due to an external field:</p>
+
+						\[\mathbf{n}=\mathbf{p}\times \mathbf{E} \]
+
+						<p>Energy of an ideal dipole in an electric field:</p>
+
+						\[U=-\mathbf{p}\cdot \mathbf{E} \]
+
+						<p>Polarization</p>
+
+						\[\mathbf{P}\equiv \text{dipole moment per unit volume}  \]
+
+						<p>Surface and volume bound charges</p>
+
+						\begin{align*}
+							\sigma _b &= \mathbf{P}\cdot \hat{n} \\
+							\rho _b &= -\nabla \cdot \mathbf{P} 
+						\end{align*}
+
+						<p>Electric Displacement:</p>
+
+						\[\mathbf{D}=\epsilon _0 \mathbf{E}+\mathbf{P} \]
+
+						<p>Gauss's law for the electric displacement $\mathbf{D} $:</p>
+
+						\[\nabla \cdot \mathbf{D}=\rho _f \;\Leftrightarrow \; \oint \mathbf{D}\cdot d\mathbf{a}=Q_{f_{\text{enc} }} \]
+
+						<p>Boundary conditions for the electric displacement $\mathbf{D} $:</p>
+
+						\begin{align*}
+							D^{\perp}_{\text{above} }-D^{\perp}_{\text{below} } &= \sigma _f \\
+							\mathbf{D}^{\parallel}_{\text{above} }-\mathbf{D}^{\parallel}_{\text{below} } &= \mathbf{P}^{\parallel}_{\text{above} }-\mathbf{P}^{\parallel}_{\text{below} } 
+						\end{align*}
+
+						<p>In a linear dielectric:</p>
+
+						\[\mathbf{P}=\epsilon _0 \chi _e\mathbf{E} \]
+
+						<p>Where $\chi _e $ is the electric susceptibility.</p>
+
+						<p>With the permittivity of a material:</p>
+
+						\[\epsilon \equiv \epsilon _0 (1+\chi _e) \]
+
+						<p>The electric displacement is:</p>
+
+						\[\mathbf{D}=\epsilon \mathbf{E} \]
+
+						<p>Relative permittivity/Dielectric constant:</p>
+
+						\[\epsilon _r\equiv 1+\chi _e=\frac{\epsilon }{\epsilon _0 } \]
+
+
+			
+			<hr>
+			<h3 id="Std-Elecstat-Configs">Standard electrostatic configurations.</h3>
+			
+						<p>$\mathbf{E} $ field a distance $z $ above the midpoint of a straight line segment of length $2L $ and (uniform) line charge density $\lambda  $.</p>
+
+						\[\mathbf{E}=\frac{1}{4\pi \epsilon _0 }\frac{2\lambda L}{z\sqrt{z^2 +L^2 }}\hat{\mathbf{z}} \]
+
+						<p>$\mathbf{E} $ field a distance $z $ above the center of a square loop of side $a $ with uniform line charge density $\lambda  $.</p>
+
+						\[\mathbf{E}=\frac{1}{4\pi \epsilon _0 }\frac{4\lambda az}{(z^2 +\frac{a^2 }{4})\sqrt{z^2 +\frac{a^2 }{2}}} \]
+
+						<p>$\mathbf{E} $ field a distance $z $ above the center of a circular loop of radius $r $ with uniform line charge density $\lambda  $.</p>
+
+						\[\mathbf{E}=\frac{1}{4\pi \epsilon _0 }\frac{\lambda (2\pi r)z}{(r^2 +z^2 )^{3/2}}\hat{\mathbf{z}} \]
+
+						<p>$\mathbf{E} $ field a distance $z $ above the center of a flat circular disk of radius $R $ and uniform surface charge density $\sigma  $.</p>
+
+						\[\mathbf{E}=\frac{1}{4\pi \epsilon _0 }2\pi \sigma z \left[ \frac{1}{z}-\frac{1}{\sqrt{R^2 +z^2 }} \right] \hat{\mathbf{z}} \]
+
+						<p>$E $ field of a spherical surface of radius $R $ with uniform surface charge density $\sigma  $ (total charge $Q $).</p>
+
+						\begin{align*}
+							\mathbf{E}_{\text{in} } &= \mathbf{0} \\
+							\mathbf{E}_{\text{out} } &= \frac{1}{4\pi \epsilon _0 }\frac{q}{z^2 \hat{z}} 
+						\end{align*} 
+
+						<p>$\mathbf{E} $ field of a solid sphere of radius $R $ with uniform volume charge density $\rho  $ (total charge $Q $).</p>
+
+						\begin{align*}
+							\mathbf{E}_{\text{in} } &= \frac{1}{4\pi \epsilon _0 }\frac{Q}{R^3 }r\hat{\mathbf{r}} \\
+							\mathbf{E}_{\text{out} } &= \frac{1}{4\pi \epsilon _0 }\frac{Q}{r^2 }\hat{r} 
+						\end{align*} 
+
+						<p>$\mathbf{E} $ field of an infinite plane with uniform surface charge density $\sigma  $.</p>
+
+						\[\mathbf{E}=\frac{\sigma }{2\epsilon _0 }\hat{n} \]
+
+						<p>$\mathbf{E} $ field of an infinitely long straight wire with uniform line charge density $\lambda  $:</p>
+
+						\[\mathbf{E}=\frac{\lambda }{2\pi \epsilon _0 s}\hat{\mathbf{s}} \]
+
+						<p>$V $ field a distance $z $ above the midpoint of a straight line segment of length $2L $ and (uniform) line charge density $\lambda  $.</p>
+
+						\[V(z)=\frac{\lambda }{2\pi \epsilon _0 }\ln  \left( \frac{L+\sqrt{z^2 +L^2 }}{z} \right)  \]
+
+						<p>$V $ field a distance $z $ above the center of a flat circular disk of radius $R $ and uniform surface charge density $\sigma  $.</p>
+
+						\[ V(z)=\frac{\sigma }{2\epsilon _0 }  \left( \sqrt{R^2 +z^2 }-z \right) \]
+
+						<p>$V $ field inside a solid uniformly charged sphere of radius $R $ and total charge $Q $.</p>
+
+						\[V(r)=\frac{q}{8\pi \epsilon _0 R} \left( 3-\frac{r^2 }{R^2 } \right)  \]			
+			
+			<hr>
+			<h3 id="Magnetostatics">Magnetostatics.</h3>
+			
+			
+			
+			<hr>
+			<h3 id="Std-Magstat-Configs">Standard magnetostatics configurations.</h3>
+			
+			
+			
+			<hr>
+			
+			
+			
+			
+			<a href="../Formulas.html" style="color: black; "><h4>Back to Formulas</h4></a>
+        
+		</div>
+    </body>
+</html>

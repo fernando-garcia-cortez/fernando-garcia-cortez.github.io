@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulas - Topology</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../GarciaStyles.css">
+	   <style>
+	   .def{font-weight: bold;color:#b0041b;;border: 1px solid;}
+	   
+	   .theorem{font-weight: bold;color:#030896;border: 1px solid;}
+	   
+	   .lemma{font-weight: bold;color:#580480;;border: 1px solid;}
+	   
+	   .remark{font-weight: bold;color:#046128;;border: 1px solid;}
+	   </style>
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Research.html" style="color: black; text-decoration: none;">
+						Research
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			
+			<h2 style="text-align:center;margin-bottom: 0;">Topology</h2>
+			<h4 style="text-align:center;margin-top: 0;">Formulas</h4>
+
+			
+			
+			
+			<p>Below is a collection of definitions, theorems, remarks, and other things in regards to topology. The structure doesn't follow a particular book, but rather my class.</p>
+			
+			<h3>Contents</h3>
+			
+			<div class="subzone">
+			
+				<a href="#Metric-Spaces"><p>Metric Spaces.</p></a>
+			
+				<a href="#Sequences"><p>Sequences.</p></a>
+				
+
+			
+			</div>
+			
+			<hr>
+			<h3 id="Metric-Spaces">Metric spaces.</h3>
+			
+							<p><span class="def">Def.</span> Let $X $ be a set. A metric $d $ on $X $ is a real function such that $d:X\times X\rightarrow \mathbb{R} ^{+} $ such that $\forall x,y,z \in X $:</p>
+
+							<ol>
+							<li>Positiveness: $d(x,y)\geq 0 $.</li>
+							<li>$d(x,y)=0 $ iff $x=y $.</li>
+							<li>Symmetric: $d(x,y)=d(y,x) $.</li>
+							<li>Triangle inequality: $d(x,z)\leq d(x,y)+d(y,z) $</li>
+							</ol>
+
+							<p><span class="lemma">Lemma</span> Let $(X,d) $ be a metric space. Let $Y\subset X $ be a subset. Then $(Y,d|_Y) $ is also a metric space.</p>
+
+							<p><span class="def">Definition</span> An <b>open ball</b> in a metric space $(X,d) $ of radius $r $ centered at $x $ is the set $B(x,r)=\left\lbrace y\in X|d(x,y)<r \right\rbrace $.</p>
+
+							<p><span class="def">Definition</span> Let $(X,d) $ be a metric space. Let $Y\subset X $ be a subset of $X $. An element $x\in Y $ is an <b>interior point</b> of $Y $ if $\exists  $ $r>0 $ such that $B(x,r)\subset Y $.</p>
+
+							<p><span class="def">Definition</span> A subset $Y\subset X $ is open if $\text{int} (Y)=Y $.</p>
+
+							<p><span class="theorem">Theorem</span> Let $(X,d) $ be a metric space. Then $B(x,r) $ for $x\in X $ is open in $X $.</p>
+
+							<p><span class="theorem">Theorem</span> Let $Y $ be a subset of the metric space $(X,d) $. Then $\text{int} (Y) $ is an open subset of $X $.</p>
+
+							<p><span class="theorem">Theorem</span> The union of a family of open subsets of $(X,d) $ is an open subset of $X $.</p>
+
+							<p><span class="theorem">Theorem</span> A subset $U $ of a metric space $(X,d) $ is open iff $U $ is a union of open balls in $X $.</p>
+
+							<p><span class="theorem">Theorem</span> The intersection of any finite number of open subsets of a metric space is open.</p>
+
+							<p><span class="theorem">Theorem</span> Let $Y $ be a subspace of a metric space $X $. Then a subset $U $ of $Y $ is open in $Y $ iff $U=V\cap Y $ for some open subset $V $ of $X $.</p>
+
+							<p><span class="remark">Remark</span> A subset of $X $ that is open in a subspace of $X $ needs not be open in $X $.</p>
+
+							<p><span class="def">Definition</span> Let $Y\subset (X,d) $ be a subset of the metric space. A point $x \in X $ is an <b>Adherent point</b> of (to) $Y $ if $\forall \;r>0 $, $B(x,r)\cap Y\neq \emptyset   $.</p>
+
+							<p><span class="def">Definition</span> Let $Y  $ be a subset in a metric space $(X,d) $. The <b>Closure</b> of $Y $, denoted $\overline{Y} $, is the set of all adherent points of $Y $.</p>
+
+							<p><span class="remark">Remark</span> $Y\subset \overline{Y} $. Visually, $\overline{Y}=Y+\text{boundary}  $.</p>
+
+							<p><span class="def">Definition</span> A subset $Y $ is said to be <b>closed</b> if it is equal to its closure: $Y=\overline{Y} $.</p>
+
+							<p><span class="theorem">Theorem</span> A subset $Y $ of a metric space $X $ is closed iff the complement of $Y $ is open.</p>
+
+							<p><span class="theorem">Theorem</span> Let $(X,d) $ be a metric space. Let $Y\subset X $. Then $\overline{\overline{Y}}=\overline{Y} $. That is, $\overline{Y} $ is a closed subset.</p>
+
+							<p><span class="theorem">Theorem</span> The intersection of any family of closed subsets is closed. The union of any finite number of closed subsets is closed.</p>
+
+							<p><span class="remark">Remark</span> The infinite union of closed subsets is not necessarily closed.</p>
+			
+			<hr>
+			
+			
+			
+			<h3 id="Sequences">Sequences.</h3>
+			
+			<hr>
+			
+			
+			
+			
+			<a href="../Formulas.html" style="color: black; "><h4>Back to Formulas</h4></a>
+        
+		</div>
+    </body>
+</html>
