@@ -82,6 +82,8 @@
 				
 				<a href="#emf"><p>Electromotive force.</p></a>
 				
+				<a href="#EM-Induction"><p>Electromagnetic induction.</p></a>
+				
 
 			
 			</div>
@@ -468,6 +470,73 @@
 						<p>Flux rule for motional emf:</p>
 
 						\[\mathcal{E}=-\frac{d\Phi }{dt} \]
+			
+			<hr>
+			<h3 id="EM-Induction">Electromagnetic induction.</h3>
+			
+						<p>A changing magnetic field induces an electric field.</p>
+
+						<p>We therefore get Faraday's law (integral form):</p>
+
+						\[\oint \mathbf{E}\cdot d\mathbf{l}=-\int \frac{\partial \mathbf{B}}{\partial t}\cdot d\mathbf{a} \]
+
+						<p>Equivalently, Faraday's law (differential form):</p>
+
+						\[\nabla \times \mathbf{E}=-\frac{\partial \mathbf{B}}{\partial t} \]
+
+						<p>Universal flux rule: Whenever the magnetic flux through a loop changes, an emf will appear in the loop:</p>
+
+						\[\mathcal{E}=-\frac{d\Phi }{dt} \]
+
+						<p>Lenz's law:</p>
+
+						\[\text{Nature abhors a change in flux.}  \]
+
+						<p>For a pure Faraday field,</p>
+
+						\begin{align*}
+							\nabla \cdot \mathbf{E}_{\text{far} } &= 0 \\
+							\nabla \times \mathbf{E}_{\text{far} } &= -\frac{\partial \mathbf{B}}{\partial t} 
+						\end{align*} 
+
+						<p>This similarity with Magnetostatics</p>
+
+						\[-\frac{\partial \mathbf{B}}{\partial t}\Leftrightarrow \mu _0 \mathbf{J} \]
+
+						<p>gives rise to a Biot-Savart-like law for the $\mathbf{E} $ (Faradyan) field:</p>
+
+						\[\mathbf{E}=-\frac{1}{4\pi }\frac{\partial }{\partial t}\int \frac{\mathbf{B}\times \hat{\mathscr{r}}}{\mathscr{r}^2 }d\tau  \]
+
+						<p>And Ampere's law in integral form is just Faraday's law in integral form, with</p>
+
+						\[-\frac{d\Phi }{dt}\Leftrightarrow \mu _0 I_{\text{enc} } \]
+
+						<p>Mutual inductance is the constant $M_{21}  $ such that</p>
+
+						\[\Phi _2 =M_{21}I_1  \]
+
+						<p>Where</p>
+
+						<ul>
+						<li>$I_1  $ is the current through a loop.</li>
+						<li>$\Phi _2  $ is the flux due to the produced $\mathbf{B} $ field due to $I_1  $ through a second loop.</li>
+						</ul>
+
+						<p>Neumann formula</p>
+
+						\[M_{21}=\frac{\mu _0 }{4\pi }\oint \oint \frac{d\mathbf{l}_1 \cdot d\mathbf{l}_2 }{\mathscr{r}} \]
+
+						<p>Which showcases the symmetric nature of the mutual inductances:</p>
+
+						\[M_{21}=M_{12} \]
+
+						<p>Self inductance $L $ (units of Henries $\text{H}  $) relates the current of a loop and its flux through it:</p>
+
+						\[\Phi =LI \]
+
+						<p>The loop generates an emf on itself:</p>
+
+						\[\mathcal{E}=-L\frac{dI}{dt} \]
 
 
 			
