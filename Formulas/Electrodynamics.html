@@ -94,6 +94,10 @@
 						<p>Permittivity of free space</p>
 						
 						\[\epsilon _0 =8.85\times 10^{-12} \frac{\text{C} ^2 }{\text{N} \cdot \text{m} ^2 }\]
+						
+						<p>Permeability of free space:</p>
+
+						\[\mu _0 =4\pi \times 10^{-7}\frac{\text{N} }{\text{A} ^2 } \]
 			
 			
 			<hr>
@@ -421,12 +425,123 @@
 			<hr>
 			<h3 id="Magnetostatics">Magnetostatics.</h3>
 			
-			
+						<p>Lorentz Force law:</p>
+
+						\[\mathbf{F}=Q \left[ \mathbf{E}+(\mathbf{v}\times \mathbf{B}) \right]  \]
+
+						<p>In regards to work:</p>
+
+						\[\text{Magnetic forces do no work.}  \]
+
+						<p>Unit of amperes (current being charge per unit time):</p>
+
+						\[1\;\text{A} =1\;\frac{\text{C} }{\text{s} } \]
+
+						<p>Magnetic force on a segment of current-carrying wire:</p>
+
+						\[\mathbf{F}_{\text{mag} }=I\int d\mathbf{l}\times \mathbf{B} \]
+
+						<p>Surface current density:</p>
+
+						\begin{align*}
+							\mathbf{K} &= \frac{d\mathbf{I}}{dl_{\perp}} \\
+							  &= \sigma \mathbf{v} 
+						\end{align*}
+
+						<p>Volume current density:</p>
+
+						\begin{align*}
+							\mathbf{J} &= \frac{d\mathbf{I}}{da_{\perp}} \\
+							  &= \rho \mathbf{v} 
+						\end{align*}
+
+						<p>Magnetic force on a volume current:</p>
+
+						\begin{align*}
+							\mathbf{F}_{\text{mag} } &= \int (\mathbf{v}\times \mathbf{B})\rho d\tau  \\
+							  &= \int (\mathbf{J}\times \mathbf{B})d\tau  
+						\end{align*}
+
+						<p>Total current crossing a surface $\mathcal{S} $:</p>
+
+						\[I=\int _{\mathcal{S}}J\;da_{\perp} \]
+
+						<p>Continuity equation:</p>
+
+						\[\nabla \cdot \mathbf{J}=-\frac{\partial \rho }{\partial t} \]
+
+						<p>Magnetostatics regime:</p>
+
+						\[\frac{\partial \mathbf{J}}{\partial t}=\mathbf{0} \]
+
+						<p>Unit of teslas:</p>
+
+						\[1\;\text{T} =1\frac{\text{N} }{\text{A} \cdot \text{m} } \]
+
+						<p>Biot-Savart law:</p>
+
+						\begin{align*}
+							\mathbf{B}(\mathbf{r}) &= \frac{\mu _0 }{4\pi }\int \frac{\mathbf{I}\times \hat{\mathscr{r}}}{\mathscr{r}^2 } \\
+							  &= \frac{\mu _0 }{4\pi }I\int \frac{d\mathbf{l}'\times \hat{\mathscr{r}}}{\mathscr{r}^2 } 
+						\end{align*}
+
+						<p>Divergence of $\mathbf{B} $:</p>
+
+						\[\nabla \cdot \mathbf{B}=0 \]
+
+						<p>Curl of $\mathbf{B} $:</p>
+
+						\[\nabla \times \mathbf{B}=\mu _0 \mathbf{J} \]
+
+						<p>In integral form, it becomes Ampere's law:</p>
+
+						\[\oint \mathbf{B}\cdot d\mathbf{l}=\mu _0 I_{\text{enc} } \]
+
+						<p>Where</p>
+
+						\[I_{\text{enc} }=\int \mathbf{J}\cdot d\mathbf{a} \]
+
+						<p>Since $\nabla \cdot \mathbf{B}=0 $, we can introduce a vector potential</p>
+
+						\[\mathbf{B}=\nabla \times \mathbf{A} \]
+
+						<p>We set the divergence of $\mathbf{A} $:</p>
+
+						\[\nabla \cdot \mathbf{A}=0 \]
+
+						<p>And we get (three) Poisson's equation(s):</p>
+
+						\[\nabla ^2 \mathbf{A}=-\mu _0 \mathbf{J} \]			
 			
 			<hr>
 			<h3 id="Std-Magstat-Configs">Standard magnetostatics configurations.</h3>
 			
-			
+						<p>Cyclotron motion</p>
+
+						\begin{align*}
+							QvB &= m\frac{v^2 }{R} \\
+							\omega  &= \frac{QB}{m} 
+						\end{align*}
+						 
+						<p>Magnetic field of an infinite wire with current $I $:</p>
+
+						\[B(s)=\frac{\mu _0 }{2\pi s}I \]
+
+						<p>Magnetic field a distance $z $ above the center of a circular loop of radius $R $ with steady current $I $.</p>
+
+						\[B(z)=\frac{\mu _0 I }{2} \frac{R^2 }{(R^2 +z^2 )^{3/2}} \]
+
+						<p>Magnetic field of an infinitely-long solenoid with $n $-turns per unit length carrying a current $I $:</p>
+
+						\[B =\begin{cases} \begin{matrix}  \mu _0 nI & \text{inside}  \\  0 & \text{outside}  \\  \end{matrix} \end{cases} \]
+
+						<p>Magnetic field of an infinite surface current $\mathbf{K}=k\hat{x} $ on the $xy $-plane:</p>
+
+						\[\mathbf{B}=\begin{cases} \begin{matrix}  (\mu _0 /2)K\hat{\mathbf{y}} & z < 0 \\  -(\mu _0 /2) K \hat{\mathbf{y}} & z > 0 \\  \end{matrix} \end{cases}  \]
+
+						<p>Magnetic field on a toroidal wire with $N $ total turns, carrying a current $I $:</p>
+
+						\[\mathbf{B}(\mathbf{r})=\begin{cases} \begin{matrix}  \frac{\mu _0 NI}{2\pi s}\hat{\phi } & \text{inside the coil}  \\  \mathbf{0} & \text{outside}  \\  \end{matrix} \end{cases}  \]
 			
 			<hr>
 			<h3 id="emf">Electromotive force.</h3>
