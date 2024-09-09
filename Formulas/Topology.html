@@ -21,6 +21,8 @@
 	   .lemma{font-weight: bold;color:#580480;;border: 1px solid;}
 	   
 	   .remark{font-weight: bold;color:#046128;;border: 1px solid;}
+	   
+	   .corollary{font-weight: bold;color:#8f6860;;border: 1px solid;}
 	   </style>
     </head>
     <body>
@@ -78,6 +80,8 @@
 				<a href="#Metric-Spaces"><p>Metric Spaces.</p></a>
 			
 				<a href="#Sequences"><p>Sequences.</p></a>
+				
+				<a href="#Compactness"><p>Compactness.</p></a>
 				
 
 			
@@ -138,6 +142,50 @@
 			
 			
 			<h3 id="Sequences">Sequences.</h3>
+
+							<p><span class="def">Def.</span> A sequence of points $\left\lbrace x_n  \right\rbrace _{n=1}^{\infty } $, where $x_n\in X $, is said to <b>converge</b> to $x\in X $ if $\lim_{n\to \infty }d(x_n ,x)=0 $. If so, then we write $x_n \rightarrow x $ as $n\rightarrow \infty  $ or simply $\lim_{n\to \infty }x_n =x $.</p>
+
+							<p><span class="lemma">Lemma</span> The limit of a convergent sequence in a metric space is unique.</p>
+
+							<p><span class="theorem">Theorem</span> Let $(X,d) $ be a metric space. Let $Y\subseteq  X $. Then $x \in X $ is adherent to $Y $ iff there exists a sequence $y_n\in Y $ such that $\lim_{n\to \infty }y_n =x $.</p>
+
+							<p><span class="def">Def.</span> A sequence $\left\lbrace x_n  \right\rbrace_{n=1}^{\infty } $ in a metric space $(X,d) $ is a <b>Cauchy</b> sequence if $\lim_{m,n\to \infty }d(x_n,x_m)=0 $. That is, for each $\epsilon >0 $, there exists an $N\in \mathbb{N} $ such that $d(x_n ,x_m)<\epsilon  $ for all $n,m\geq N $.</p>
+
+							<p><span class="lemma">Lemma</span> A convergent sequence is a Cauchy sequence.</p>
+
+							<p><span class="remark">Remark</span> Not all Cauchy sequences are convergent sequences.</p>
+
+							<p><span class="lemma">Lemma</span> If $\left\lbrace x_n  \right\rbrace _{n=1}^{\infty } $ is a Cauchy sequence and if there exist a subsequence $\left\lbrace x_{n_k}\right\rbrace_{k=1}^{\infty } $ of $\left\lbrace x_n  \right\rbrace_{n=1}^{\infty } $ that converges to $x $, then $\left\lbrace x_n  \right\rbrace_{n=1}^{\infty } $ also converges to $x $.</p>
+
+							<p><span class="def">Def.</span> A metric space $(X,d) $ is said to be <b>complete</b> if every Cauchy sequence in $X $ is convergent.</p>
+
+							<p><span class="theorem">Theorem</span> A closed subspace of a complete metric space is complete.</p>
+
+							<p><span class="theorem">Theorem</span> A complete subspace $Y $ of a metric space $X$ is closed in $X $.</p>
+
+							<p><span class="def">Def.</span> Let $\left\lbrace f_n \right\rbrace_{n=1}^{\infty }  $ be a sequence of functions ($f_n :S\rightarrow X $), where $X $ is a metric space. We say it uniformly converges to $f $, written $f_n \rightarrow f $ uniformly, if for every $\epsilon >0 $, there exists $N\in \mathbb{N} $ such that $d(f_n(s),f(s))<\epsilon  $ for all $n\geq N $ and $s \in S $.</p>
+
+							<p><span class="def">Def.</span> Let $\left\lbrace f_n :S\rightarrow X \right\rbrace _{n=1}^{\infty } $ be sequence of functions. We say that it is a Cauchy sequence of functions if for every $\epsilon >0 $, there exists $N \in \mathbb{N} $ such that $d(f_n (s),f_m(s))<\epsilon  $ for all $s \in S $ and $n,m\geq N $.</p>
+
+							<p><span class="theorem">Theorem</span> Let $S $ be a set, and let $X $ be a complete metric space. If $\left\lbrace f_n:S\rightarrow X \right\rbrace_{n=1}^{\infty } $ is a Cauchy sequence of functions, then there exists a function $f:S\rightarrow X $ such that $f_n \rightarrow f $ uniformly.</p>
+
+							<p><span class="remark">Remark</span> In the above, we note that we can construct sequences of elements/points by evaluating the functions $f_n  $ at a given point. This sequence will also be Cauchy.</p>
+
+							<p><span class="def">Def.</span> Let $X $ be a metric space. A subset $Y\subset X $ is said to be <b>dense</b> in $ X$ if $\overline{Y}=X $.</p>
+
+							<p><span class="theorem">Theorem</span> (Baire Category theorem) Let $\left\lbrace U_n   \right\rbrace_{n=1}^{\infty } $ be a sequence of dense open subsets of a complete metric space $X $. Then $\cap ^{\infty }_{n=1}U_n  $ is also dense in $X $.</p>
+
+							<p><span class="remark">Remark</span> The Baire Category theorem is NOT true if $X $ is not complete.</p>
+							
+							<p><span class="def">Def.</span> Let $X $ be a metric space. A subset $Y\subset X $ is <b>nowhere dense</b> if $\text{int} (\overline{Y})=\emptyset   $.</p>
+
+							<p><span class="remark">Remark</span> If $Y $ is nowhere dense, then $ (\overline{Y})^{C}$ is open. Claim: $(\overline{Y})^{C} $ is a dense subset.</p>
+
+							<p><span class="corollary">Corollary</span> Let $\left\lbrace E_n  \right\rbrace_{n=1}^{\infty } $ be a sequence of nowhere dense subsets of a complete metric space $ X$. Then $\cup _{n=1}^{\infty }E_n  $ has an empty interior.</p>
+
+			<hr>
+			
+			<h3 id="Completeness">Completeness.</h3>
 			
 			<hr>
 			
