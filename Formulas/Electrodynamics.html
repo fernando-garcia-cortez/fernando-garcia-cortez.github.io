@@ -84,6 +84,12 @@
 				
 				<a href="#EM-Induction"><p>Electromagnetic induction.</p></a>
 				
+				<a href="#MaxwellEquations"><p>Maxwell Equations. (+ in medium)</p></a>
+				
+				<a href="#ConservationLaws"><p>Conservation laws.</p></a>
+				
+				
+				
 
 			
 			</div>
@@ -652,8 +658,99 @@
 						<p>The loop generates an emf on itself:</p>
 
 						\[\mathcal{E}=-L\frac{dI}{dt} \]
+						
+						<p>Energy stored in a magnetic field:</p>
+
+						\begin{align*}
+							W &= \frac{1}{2}LI^2  \\
+							  &= \frac{1}{2\mu _0 }\int _{\text{all space} }B^2 d\tau  
+						\end{align*}
 
 
+			<hr>
+			<h3 id="MaxwellEquations">Maxwell Equations.</h3>
+
+						<p>We have four Maxwell equations:</p>
+
+						\begin{align*}
+							\nabla \cdot \mathbf{E} &= \frac{1}{\epsilon _0 }\rho \tag{Gauss's law} \\
+							\nabla \cdot \mathbf{B} &= 0 \\
+							\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t}\tag{Faraday's law}\\
+							\nabla \times \mathbf{B} &= \mu _0 \mathbf{J} + \mu _0 \epsilon _0 \frac{\partial \mathbf{E}}{\partial t}\tag{(corrected) Ampere's law} 
+						\end{align*}
+						 
+						<p>Where the displacement "current":</p>
+
+						\[\mathbf{J}_d\equiv \epsilon _0  \frac{\partial \mathbf{E}}{\partial t} \]
+
+						<p>The theoretical content of electrodynamics is summarized in Maxwell's equations and the force law:</p>
+
+						\[\mathbf{F}=q(\mathbf{E}+\mathbf{v}\times \mathbf{B}) \]
+
+						<p>In matter, we have the familiar bound charge density (for polarization $\mathbf{P} $):</p>
+
+						\begin{align*}
+							\rho  &= \rho _f+\rho _b \\
+							  &= \rho _f - \nabla \cdot \mathbf{P} 
+						\end{align*}
+
+						<p>And current density has an additional polarization current term (besides the magnetization bound current):</p>
+
+						\begin{align*}
+							\mathbf{J} &= \mathbf{J}_f+\mathbf{J}_b+\mathbf{J}_p \\
+							 &= \mathbf{J}_f+\nabla \times \mathbf{M}+\frac{\partial \mathbf{P}}{\partial t} 
+						\end{align*} 
+
+						<p>By defining the fields:</p>
+
+						\begin{align*}
+							\mathbf{D} &= \epsilon _0 \mathbf{E}+\mathbf{P} \\
+							\mathbf{H} &= \frac{1}{\mu _0 }\mathbf{B}-\mathbf{M} 
+						\end{align*}
+
+						<p>We have the four Maxwell equations:</p>
+
+						\begin{align*}
+							\nabla \cdot \mathbf{D} &= \rho _f \\
+							\nabla \cdot \mathbf{B} &= 0 \\
+							\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t}\\
+							\nabla \times \mathbf{H} &= \mathbf{J}_f+\frac{\partial \mathbf{D}}{\partial t}
+						\end{align*}
+
+						<p>Where the displacement current:</p>
+
+						\[\mathbf{J}_d\equiv \frac{\partial \mathbf{D}}{\partial t} \]
+
+						<p>For linear media, we have:</p>
+
+						\begin{align*}
+							\mathbf{P} &= \epsilon _0 \chi _e\mathbf{E} \\
+							\Rightarrow \;\mathbf{D} &= \epsilon \mathbf{E}\tag{$\epsilon \equiv \epsilon _0 (1+\chi _e) $} \\
+							\mathbf{M} &= \chi _m \mathbf{H}\\
+							\Rightarrow \; \mathbf{H} &= \frac{1}{\mu }\mathbf{B}\tag{$\mu \equiv \mu _0 (1+\chi _m) $}
+						\end{align*} 
+						  
+						<p>There are four boundary conditions:</p>
+
+						\begin{align*}
+							D_1 ^{\perp }-D_2 ^{\perp } &= \sigma _f \\
+							B_1 ^{\perp }-B_2 ^{\perp } &= 0 \\
+							\mathbf{E}_1 ^{\parallel}-\mathbf{E}_2 ^{\parallel} &= \mathbf{0} \\
+							\mathbf{H}_1 ^{\parallel}-\mathbf{H}_2 ^{\parallel} &= \mathbf{K}_f\times \hat{\mathbf{n}} 
+						\end{align*}
+						<p>In particular for linear media:</p>
+
+						\begin{align*}
+							\epsilon _1 E_1 ^{\perp }-\epsilon _2 E_2 ^{\perp } &= \sigma _f \\
+							B^{\perp }_1 -B_2 ^{\perp } &= 0 \\
+							\mathbf{E}_1 ^{\parallel}-\mathbf{E}_2 ^{\parallel} &= \mathbf{0} \\
+							\frac{1}{\mu _1 }\mathbf{B}_1 ^{\parallel}-\frac{1}{\mu _2 }\mathbf{B}_2 ^{\parallel} &= \mathbf{K}_f\times \hat{n} 
+						\end{align*}
+
+ 
+ 			<hr>
+			<h3 id="ConservationLaws">Conservation laws.</h3>
+			
 			
 			
 			
