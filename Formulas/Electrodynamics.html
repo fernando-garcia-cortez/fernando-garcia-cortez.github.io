@@ -88,6 +88,10 @@
 				
 				<a href="#ConservationLaws"><p>Conservation laws.</p></a>
 				
+				<a href="#ClassicalWaves"><p>Classical waves.</p></a>
+				
+				<a href="#EM-Waves-Vacuum"><p>EM Waves (Vacuum).</p></a>
+				
 				
 				
 
@@ -802,9 +806,121 @@
 
 						\[\ell = \mathbf{r}\times \mathbf{g} = \epsilon _{0}  \left[ \mathbf{r}\times (\mathbf{E}\times \mathbf{B}) \right]  \]
 			<hr>
+	
+<h3 id="ClassicalWaves">Classical waves.</h3>
+	
+<p>Classical wave equation</p>
+
+\[\frac{\partial ^2 f}{\partial z^2 }=\frac{1}{v^2 }\frac{\partial ^2 f}{\partial t^2 } \]
+
+<p>Where a "wave" is any function whose dependence on $x,t $ is of the form $z-vt $. This equation is linear in $f $.</p>
+
+<p>Given a sinusoidal wave $f(z,t)=A\cos \left( k(z-vt)+\delta  \right)  $:</p>
+
+
+<ul>
+<li>$k $ is the wave number.</li>
+
+<li>$\lambda  $ is the wavelength:</li>
+\[\lambda =\frac{2\pi }{k} \]
+
+<li>$T $ is the period:</li>
+\[T=\frac{2\pi }{kv} \]
+
+<li>$\nu  $ is the frequency (oscillations per time):</li>
+\[\nu =\frac{1}{T}=\frac{kv}{2\pi }=\frac{v}{\lambda } \]
+
+<li>$\omega  $ is the angular frequency (radians per time):</li>
+\[\omega =2\pi \nu =kv \]
+</ul>
+
+
+<p>Given a complex wave $\tilde{f}(z,t)=\tilde{A}e^{i(kz-\omega t)} $:</p>
+
+
+<ul>
+<li>$\tilde{A} $ is the complex amplitude:</li>
+\[\tilde{A}=Ae^{i\delta } \]
+
+<li>It is related to the sinusoidal wave by</li>
+\[f(z,t)=\text{Re} (\tilde{f}(z,t)) \]
+</ul>
+
+<p><b>Longitudinal</b> waves have displacement along the direction of propagation.</p>
+
+<p><b>Transverse</b> waves have displacement perpendicular to the direction of propagation. Transverse waves are polarized by some polarization angle $\theta  $:</p>
+
+\begin{align*}
+	\tilde{\mathbf{f}}(z,t) &= \tilde{A}e^{i(kz-\omega t)}\hat{\mathbf{n}} \\
+	\hat{\mathbf{n}} &= \cos \left( \theta  \right) \hat{\mathbf{x}}+\sin \left( \theta  \right) \hat{\mathbf{y}} 
+\end{align*} 
 			
+			<hr>
+			<h3 id="EM-Waves-Vacuum">EM Waves (Vacuum).</h3>
 			
-			
+<p>Wave equations for the $\mathbf{E} $ and $\mathbf{B} $ fields:</p>
+
+\begin{align*}
+\nabla ^2 \mathbf{E} &= \mu _0 \epsilon _0 \frac{\partial ^2 \mathbf{E}}{\partial t^2 } \\
+\nabla ^2 \mathbf{B} &= \mu _0 \epsilon _0 \frac{\partial ^2 \mathbf{B}}{\partial t^2 } 
+\end{align*}
+
+<p>With the identity:</p>
+
+\[v=\frac{1}{\epsilon _0 \mu _0 }=c \]
+ 
+<p>Monochromatic (single $\omega  $) plane waves (moving in the $z $ direction, uniform across planes perpendicular to propagation direction) are given by (fields being the real part):</p>
+ \begin{align*}
+ 	\tilde{\mathbf{E}}(z,t) &= \tilde{\mathbf{E}}_0 e^{i(kz-\omega t)} \\
+ 	\tilde{\mathbf{B}}(z,t) &= \tilde{\mathbf{B}}_0 e^{i(kz-\omega t)} 
+ \end{align*}
+<p>Where</p>
+ \[\omega =ck \]
+<p>And (EM waves are transverse)</p>
+  \begin{align*}
+  	(\tilde{E}_0 )_z &= 0 \\
+  	(\tilde{B}_0 )_z &= 0 
+  \end{align*}
+<p>As well as the orthogonality condition:</p>
+   \begin{align*}
+   	\tilde{\mathbf{B}}_0  &= \frac{k}{\omega }(\hat{\mathbf{z}}\times \tilde{\mathbf{E}}_0 ) \\
+   	\text{Real parts} \;\;\;B_0  &= \frac{k}{\omega }E_0 =\frac{1}{c}E_0  
+   \end{align*}
+<p>Polarization convention: The direction of $\mathbf{E} $ specifies the direction of polarization.</p>
+
+<p>A generalized wave has propagation/wave vector $\mathbf{k} $:</p>
+\begin{align*}
+	\tilde{\mathbf{E}}(\mathbf{r},t) &= \tilde{E}_0 e^{i(\mathbf{k}\cdot \mathbf{r}-\omega t)}\hat{\mathbf{n}} \\
+	\tilde{\mathbf{B}}(\mathbf{r},t) &= \frac{1}{c}\hat{\mathbf{k}}\times \tilde{\mathbf{E}} 
+\end{align*} 
+<p>Where $\hat{\mathbf{n}} $ is the polarization vector, giving the fields:</p>
+\begin{align*}
+	\mathbf{E}(\mathbf{r},t) &= E_0 \cos \left( \mathbf{k}\cdot \mathbf{r}-\omega t+\delta  \right) \hat{\mathbf{n}} \\
+	\mathbf{B}(\mathbf{r},t) &= \frac{1}{c}E_0 \cos \left( \mathbf{k}\cdot \mathbf{r}-\omega t+\delta \right) (\hat{\mathbf{k}}\times \hat{\mathbf{n}}) 
+\end{align*}
+<p>Energy per unit volume of a monochromatic </p>plane wave:
+\begin{align*}
+	u &= \epsilon _0 E^2  \\
+	  &= \epsilon _0 E_0 ^2 \cos ^2 (kz-\omega t+\delta ) 
+\end{align*}
+<p>Poynting vector (energy flux density (energy per unit area, per unit time)) of a monochromatic plane wave:</p>
+\[\mathbf{S}=cu\hat{\mathbf{z}} \]
+<p>Momentum density for monochromatic plane waves:</p>
+\[\mathbf{g}=\frac{1}{c}u\hat{\mathbf{z}} \]
+<p>Average of relevant quantities:</p>
+\begin{align*}
+	\langle u \rangle  &= \frac{1}{2}\epsilon _0 E_0 ^2  \\
+	\langle \mathbf{S} \rangle  &= \frac{1}{2}c\epsilon _0 E_0 ^2 \hat{\mathbf{z}} \\
+	\langle \mathbf{g} \rangle  &= \frac{1}{2c}\epsilon _0 E_0 ^2 \hat{\mathbf{z}} 
+\end{align*} 
+<p>Where the average power per unit area being transported is known as intensity $I $:</p>
+\begin{align*}
+	I &= \langle S \rangle  \\
+	  &= \frac{1}{2}c\epsilon _0 E_0 ^2  
+\end{align*}
+<p>Radiation pressure:</p>
+\[P=\frac{I}{c} \]			
+			<hr>
 			
 			<a href="../Formulas.html" style="color: black; "><h4>Back to Formulas</h4></a>
         
