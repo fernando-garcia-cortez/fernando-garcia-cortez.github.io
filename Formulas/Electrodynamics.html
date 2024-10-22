@@ -94,9 +94,11 @@
 				
 				<a href="#EM-Waves-Matter"><p>EM Waves (in matter).</p></a>
 				
+				<a href="#EM-Waves-Conductors"><p>EM Waves (in conductors).</p></a>
 				
+				<a href="#EM-Waves-Dispersion"><p>EM Waves (dispersion).</p></a>
 				
-
+				<a href="#EM-Waves-Guides"><p>EM Waves (Wave Guides).</p></a>
 			
 			</div>
 			
@@ -1039,6 +1041,247 @@
 
 			
 			<hr>
+			
+			<h3 id="EM-Waves-Conductors">EM Waves (in conductors).</h3>
+			
+			
+			
+						<p>In homogeneous linear media, $\rho _f $ evolves as</p>
+
+						\[\rho _f(t)=e^{-(\sigma /\epsilon )t}\rho _f(0) \]
+
+						<p>Giving a characteristic dissipation time of</p>
+
+						\[\tau =\frac{\epsilon }{\sigma } \]
+
+						<p>After free charge disappears, Maxwell's equations are:</p>
+
+						\begin{align*}
+							\nabla \cdot \mathbf{E} &= 0 \\
+							\nabla \cdot \mathbf{B} &= 0 \\
+							\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \\
+							\nabla \times \mathbf{B} &= \mu \epsilon \frac{\partial \mathbf{E}}{\partial t}+\color{blue}\mu \sigma \mathbf{E}\color{black} 
+						\end{align*}
+
+						<p>We get the usual plane-wave solutions</p>
+
+						\begin{align*}
+							\tilde{\mathbf{E}}(z,t) &= \tilde{\mathbf{E}}_0 e^{i(\tilde{k}z-\omega t)} \\
+							\tilde{\mathbf{B}}(z,t) &= \tilde{\mathbf{B}}_0 e^{i(\tilde{k}z-\omega t)} 
+						\end{align*} 
+
+						<p>Now with a complex <i>wave number</i></p>
+
+						\[\tilde{k}^2 =\mu \epsilon \omega ^2 +i\mu \sigma \omega  \]
+
+						<p>Or</p>
+
+						\begin{align*}
+							\tilde{k} &= k+i\kappa  \\
+							k &= \omega \sqrt{\frac{\epsilon \mu }{2}} \left[ \sqrt{1+ \left( \frac{\sigma }{\epsilon \omega } \right) ^2 }+1 \right] ^{1/2}\\
+							\kappa  &= \omega \sqrt{\frac{\epsilon \mu }{2}} \left[ \sqrt{1+ \left( \frac{\sigma }{\epsilon \omega } \right) ^2 }-1 \right] ^{1/2} 
+						\end{align*}
+
+						<p>Waves are attenuated. The <i>skin depth</i> quantifies the distance at which the amplitude gets reduced by a factor of $1/e $:</p>
+
+						\[d=\frac{1}{\kappa } \]
+
+						<p>$k $ determines:</p>
+
+						\begin{align*}
+							\text{Wavelength} \;\lambda  &= \frac{2\pi }{k} \\
+							\text{Propagation speed} \;v &= \frac{\omega }{k}\\
+							\text{Index of refraction} \;n &= \frac{ck}{\omega } 
+						\end{align*}
+
+						<p>The fields are transverse and mutually perpendicular. </p>
+
+						<p>$\tilde{k} $ using a modulus and phase:</p>
+
+						\begin{align*}
+							\tilde{k} &= Ke^{i\phi } \\
+							K &= \sqrt{k^2 +\kappa ^2 }=\omega \sqrt{\epsilon \mu \sqrt{1+ \left( \frac{\sigma }{\epsilon \omega } \right) ^2 }}\\
+							\phi  &= \tan ^{-1} \frac{\kappa }{k} 
+						\end{align*}
+
+						<p>The complex amplitudes ($\tilde{E}_0 =E_0 e^{i\delta _E} $) are related by</p>
+
+						\begin{align*}
+							B_0 e^{i\delta _B} &= \frac{Ke^{i\phi }}{\omega }E_0 e^{i\delta _E} \\
+							\text{Magnetic field lags behind} \;\delta _B-\delta _E &= \phi  
+						\end{align*} 
+
+						<p>Real amplitudes by</p>
+
+						\[\frac{B_0 }{E_0 }=\frac{K}{\omega }=\sqrt{\epsilon \mu \sqrt{1+ \left( \frac{\sigma }{\epsilon \omega } \right) ^2 }} \] 
+
+						If we set $\mathbf{E} $ in the $\hat{\mathbf{x}} $ direction, then
+
+						\begin{align*}
+							\mathbf{E}(z,t) &= E_0 e^{-\kappa z}\cos \left( kz-\omega t+\delta _E \right) \hat{\mathbf{x}} \\
+							\mathbf{B}(z,t) &= B_0 e^{-\kappa z}\cos \left( kz-\omega t+\delta _E+\phi  \right) \hat{\mathbf{y}} 
+						\end{align*}
+
+						<p>When approaching a boundary, the wave obeys</p>
+
+						\begin{align*}
+							\epsilon _1 E_1 ^{\perp}-\epsilon _2 E_2 ^{\perp} &= \sigma _f \tag{Free surface charge $\sigma _f $}\\
+							B_1 ^{\perp}-B_2 ^{\perp} &= 0 \\
+							\mathbf{E}_{1}^{\parallel}-\mathbf{E}_2 ^{\parallel} &= \mathbf{0}\\
+							\frac{1}{\mu _1 }\mathbf{B}_1 ^{\parallel}-\frac{1}{\mu _2 }\mathbf{B}_2 ^{\parallel} &= \mathbf{k}_f\times \hat{\mathbf{n}}\tag{Normal to surface $\hat{\mathbf{n}} $, free surface current $\mathbf{K}_f $} 
+						\end{align*}
+
+						<p>Given an incident wave in a nonconducting medium moving towards a conductor: </p>
+
+						\begin{align*}
+							\tilde{\mathbf{E}}_I (z,t) &= \tilde{E}_{0_I}e^{i(k_1 z-\omega t)}\hat{\mathbf{x}} \\
+							\tilde{\mathbf{B}}_I (z,t) &= \frac{1}{v_1 }\tilde{E}_{0_I}e^{i(k_1 z-\omega t)}\hat{\mathbf{y}} 
+						\end{align*} 
+
+						<p>Then we get a reflected wave:</p>
+
+						\begin{align*}
+							\tilde{\mathbf{E}}_R (z,t) &= \tilde{E}_{0_R}e^{i(-k_1 z-\omega t)}\hat{\mathbf{x}} \\
+							\tilde{\mathbf{B}}_I (z,t) &= -\frac{1}{v_1 }\tilde{E}_{0_R}e^{i(-k_1 z-\omega t)}\hat{\mathbf{y}} 
+						\end{align*} 
+
+						<p>And a transmitted (which will be attenuated inside) wave:</p>
+						\begin{align*}
+
+							\tilde{\mathbf{E}}_T (z,t) &= \tilde{E}_{0_T}e^{i(\tilde{k}_2 z-\omega t)}\hat{\mathbf{x}} \\
+							\tilde{\mathbf{B}}_T (z,t) &= \frac{\tilde{k_2 }}{\omega }\tilde{E}_{0_T}e^{i(\tilde{k}_2 z-\omega t)}\hat{\mathbf{y}} 
+						\end{align*} 
+
+						<p>Such that</p>
+						\begin{align*}
+							\tilde{E}_{0_R} &= \frac{1-\tilde{\beta }}{1+\tilde{\beta }}\tilde{E}_{0_I} \\
+							\tilde{E}_{0_T} &= \frac{2}{1+\tilde{\beta }}\tilde{E}_{0_I} \\
+							\tilde{\beta } &= \frac{\mu _1 v_1}{\mu _2 \omega }\tilde{k}_2 
+						\end{align*}  
+
+						<p>Special case: Perfect conductors have $\sigma =\infty  $, so $k_2 =\infty  $, so $\tilde{\beta }=\infty  $, so $\tilde{E}_{0_R}=-\tilde{E}_{0_I} $ and no transmitted wave.</p>			
+			
+			
+			
+			
+			
+			<hr>
+			
+			<h3 id="EM-Waves-Dispersion">EM Waves (dispersion).</h3>
+			
+						<p>Dispersive mediums: Mediums where speed depends on frequency.</p>
+
+						<p>Wave (phase) velocity:</p>
+
+						\[v=\frac{\omega }{k} \]
+
+						<p>Group velocity:</p>
+
+						\[v_g=\frac{d\omega }{dk} \]
+
+						<p>Complex polarization and susceptibility:</p>
+
+						\[\tilde{\mathbf{P}}=\epsilon _0 \tilde{\chi }_e\tilde{\mathbf{E}} \]
+
+						<p>Complex dielectric constant:</p>
+
+						\[\tilde{\epsilon }_r=\frac{\tilde{\epsilon }}{\epsilon _0 } \]
+
+						<p>Plane wave solution:</p>
+
+						\begin{align*}
+							\tilde{\mathbf{E}}(z,t) &= \tilde{\mathbf{E}}_0 e^{i(\tilde{k}z-\omega t)} \\
+							\tilde{k} &= \sqrt{\tilde{\epsilon }\mu _0 }\omega  
+						\end{align*} 
+
+						<p>For $\tilde{k}=k+i\kappa  $, we have the absorption coefficient:</p>
+
+						\[\alpha \equiv 2\kappa  \]
+
+						<p>Index of refraction</p>
+
+						\[n=\frac{k}{\omega } \]
+
+						<p>Cauchy's formula:</p>
+
+						\[n=1+A \left( 1+\frac{B}{\lambda ^2 } \right)  \]
+
+						<p>Where $A $ is the coefficient of refraction and $B $ the coefficient of dispersion.</p>
+			<hr>
+			
+			<h3 id="EM-Waves-Guides">EM Waves (Wave Guides).</h3>
+			
+<p>A wave guide is a perfect conductor that can be thought of as a hollow pipe.</p>
+
+<p>BC on the inner walls of the wave guide:</p>
+
+\begin{align*}
+	\mathbf{E}^{\parallel} &= \mathbf{0} \\
+	B^{\perp} &= 0 
+\end{align*}
+
+<p>Remark: Longitudinal components needed to satisfy the above.</p>
+
+<p>$E_z $ and $B_z $ give $E_x,E_y,B_x,B_y $:</p>
+
+\begin{align*}
+	E_x &= \frac{i}{ \left( \frac{\omega }{c} \right) ^2 -k^2 } \left( k\frac{\partial E_z}{\partial x}+\omega \frac{\partial B_z}{\partial y} \right)  \\
+	E_y &= \frac{i}{ \left( \frac{\omega }{c} \right) ^2 -k^2 } \left( k\frac{\partial E_z}{\partial y}-\omega \frac{\partial B_z}{\partial x} \right)\\
+	B_x &= \frac{i}{ \left( \frac{\omega }{c} \right) ^2 -k^2 } \left( k\frac{\partial B_z}{\partial x}-\frac{\omega }{c^2 } \frac{\partial E_z}{\partial y} \right)\\
+	B_y &= \frac{i}{ \left( \frac{\omega }{c} \right) ^2 -k^2 } \left( k\frac{\partial B_z}{\partial y}+\frac{\omega }{c^2 } \frac{\partial E_z}{\partial x} \right)\\
+\end{align*} 
+
+<p>Equations for $E_z $ and $B_z $:</p>
+
+\begin{align*}
+	 \left[ \frac{\partial ^2 }{\partial x^2 }+\frac{\partial ^2 }{\partial y^2 }+ \left( \frac{\omega }{c} \right) ^2 -k^2  \right] E_z &= 0 \\
+	\left[ \frac{\partial ^2 }{\partial x^2 }+\frac{\partial ^2 }{\partial y^2 }+ \left( \frac{\omega }{c} \right) ^2 -k^2  \right] B_z &= 0
+\end{align*} 
+
+<p>Types of waves:</p>
+
+<ol>
+<li>TE: Transverse electric waves.</li>
+\[E_z=0 \]
+<li>TM: Transverse magnetic waves.</li>
+\[B_z=0 \]
+<li>TEM: Transverse electric magnetic waves. (Can't occur in hollow wave guides)</li>
+\[E_z=B_z=0 \]
+</ol>
+
+<p>The rectangular wave guide:</p>
+
+<ul>
+<li>Side $a $ along $x $, side $b $ along $y $.</li>
+<li>Separation of variables leads to the $\text{TE} _{mn} $ modes:</li>
+\begin{align*}
+	B_z &= B_0 \cos \left( \frac{m\pi x}{a} \right) \cos \left( \frac{n\pi y}{b} \right) \\
+	k &= \sqrt{ \left( \frac{\omega }{c} \right) ^2 -\pi ^2  \left[  \left( \frac{m}{a} \right) ^2 + \left( \frac{n}{b} \right) ^2  \right] } 
+\end{align*} 
+<li>Imaginary wave numbers: Exponential attenuation when</li>
+\[\omega < c\pi \sqrt{ \left( \frac{m}{a} \right) ^2 + \left( \frac{n}{b} \right) ^2 }\equiv \omega _{mn} \]
+<li>$\omega _{mn} $ is a cutoff frequency, with the lowest being $\omega _{10}=c\pi /a $.</li>
+<li>Wave number:</li>
+\[k=\frac{\sqrt{\omega ^2 -\omega ^2 _{mn}}}{c} \]
+<li>Wave velocity:</li>
+\[v=\frac{c}{\sqrt{1- \left( \frac{\omega _{mn}}{\omega } \right) ^2 }} \]
+<li>Group velocity (velocity of energy being carried)</li>
+</ul>
+\[v_g=c\sqrt{1- \left( \frac{\omega _{mn}}{\omega } \right) ^2 } < c \]
+
+<p>The coaxial transmission line:</p>
+
+<ul>
+<li>Inner conductor wire of radius $a $. Outer cylindrical shell of radius $b $.</li>
+<li>TEM wave where</li>
+\begin{align*}
+	\mathbf{E} &= \frac{A}{s}\cos \left( kz-\omega t \right) \hat{\mathbf{s}} \\
+	\mathbf{B} &= \frac{A}{cs}\cos \left( kz-\omega t \right) \hat{\boldsymbol{\phi }} \\
+	k &= \omega /c
+\end{align*} 
+</ul>
+
+<hr>
 			
 			<a href="../Formulas.html" style="color: black; "><h4>Back to Formulas</h4></a>
         
