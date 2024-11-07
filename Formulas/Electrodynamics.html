@@ -99,6 +99,12 @@
 				<a href="#EM-Waves-Dispersion"><p>EM Waves (dispersion).</p></a>
 				
 				<a href="#EM-Waves-Guides"><p>EM Waves (Wave Guides).</p></a>
+				
+				<a href="#Potentials"><p>Potentials.</p></a>
+				
+				<a href="#Potentials-Continuous-Distributions"><p>Potentials in continuous distributions.</p></a>
+				
+				<a href="#Potentials-Point-Charges"><p>Potentials and point charges.</p></a>
 			
 			</div>
 			
@@ -1211,77 +1217,228 @@
 			
 			<h3 id="EM-Waves-Guides">EM Waves (Wave Guides).</h3>
 			
-<p>A wave guide is a perfect conductor that can be thought of as a hollow pipe.</p>
+						<p>A wave guide is a perfect conductor that can be thought of as a hollow pipe.</p>
 
-<p>BC on the inner walls of the wave guide:</p>
+						<p>BC on the inner walls of the wave guide:</p>
 
-\begin{align*}
-	\mathbf{E}^{\parallel} &= \mathbf{0} \\
-	B^{\perp} &= 0 
-\end{align*}
+						\begin{align*}
+							\mathbf{E}^{\parallel} &= \mathbf{0} \\
+							B^{\perp} &= 0 
+						\end{align*}
 
-<p>Remark: Longitudinal components needed to satisfy the above.</p>
+						<p>Remark: Longitudinal components needed to satisfy the above.</p>
 
-<p>$E_z $ and $B_z $ give $E_x,E_y,B_x,B_y $:</p>
+						<p>$E_z $ and $B_z $ give $E_x,E_y,B_x,B_y $:</p>
 
-\begin{align*}
-	E_x &= \frac{i}{ \left( \frac{\omega }{c} \right) ^2 -k^2 } \left( k\frac{\partial E_z}{\partial x}+\omega \frac{\partial B_z}{\partial y} \right)  \\
-	E_y &= \frac{i}{ \left( \frac{\omega }{c} \right) ^2 -k^2 } \left( k\frac{\partial E_z}{\partial y}-\omega \frac{\partial B_z}{\partial x} \right)\\
-	B_x &= \frac{i}{ \left( \frac{\omega }{c} \right) ^2 -k^2 } \left( k\frac{\partial B_z}{\partial x}-\frac{\omega }{c^2 } \frac{\partial E_z}{\partial y} \right)\\
-	B_y &= \frac{i}{ \left( \frac{\omega }{c} \right) ^2 -k^2 } \left( k\frac{\partial B_z}{\partial y}+\frac{\omega }{c^2 } \frac{\partial E_z}{\partial x} \right)\\
-\end{align*} 
+						\begin{align*}
+							E_x &= \frac{i}{ \left( \frac{\omega }{c} \right) ^2 -k^2 } \left( k\frac{\partial E_z}{\partial x}+\omega \frac{\partial B_z}{\partial y} \right)  \\
+							E_y &= \frac{i}{ \left( \frac{\omega }{c} \right) ^2 -k^2 } \left( k\frac{\partial E_z}{\partial y}-\omega \frac{\partial B_z}{\partial x} \right)\\
+							B_x &= \frac{i}{ \left( \frac{\omega }{c} \right) ^2 -k^2 } \left( k\frac{\partial B_z}{\partial x}-\frac{\omega }{c^2 } \frac{\partial E_z}{\partial y} \right)\\
+							B_y &= \frac{i}{ \left( \frac{\omega }{c} \right) ^2 -k^2 } \left( k\frac{\partial B_z}{\partial y}+\frac{\omega }{c^2 } \frac{\partial E_z}{\partial x} \right)\\
+						\end{align*} 
 
-<p>Equations for $E_z $ and $B_z $:</p>
+						<p>Equations for $E_z $ and $B_z $:</p>
 
-\begin{align*}
-	 \left[ \frac{\partial ^2 }{\partial x^2 }+\frac{\partial ^2 }{\partial y^2 }+ \left( \frac{\omega }{c} \right) ^2 -k^2  \right] E_z &= 0 \\
-	\left[ \frac{\partial ^2 }{\partial x^2 }+\frac{\partial ^2 }{\partial y^2 }+ \left( \frac{\omega }{c} \right) ^2 -k^2  \right] B_z &= 0
-\end{align*} 
+						\begin{align*}
+							 \left[ \frac{\partial ^2 }{\partial x^2 }+\frac{\partial ^2 }{\partial y^2 }+ \left( \frac{\omega }{c} \right) ^2 -k^2  \right] E_z &= 0 \\
+							\left[ \frac{\partial ^2 }{\partial x^2 }+\frac{\partial ^2 }{\partial y^2 }+ \left( \frac{\omega }{c} \right) ^2 -k^2  \right] B_z &= 0
+						\end{align*} 
 
-<p>Types of waves:</p>
+						<p>Types of waves:</p>
 
-<ol>
-<li>TE: Transverse electric waves.</li>
-\[E_z=0 \]
-<li>TM: Transverse magnetic waves.</li>
-\[B_z=0 \]
-<li>TEM: Transverse electric magnetic waves. (Can't occur in hollow wave guides)</li>
-\[E_z=B_z=0 \]
-</ol>
+						<ol>
+						<li>TE: Transverse electric waves.</li>
+						\[E_z=0 \]
+						<li>TM: Transverse magnetic waves.</li>
+						\[B_z=0 \]
+						<li>TEM: Transverse electric magnetic waves. (Can't occur in hollow wave guides)</li>
+						\[E_z=B_z=0 \]
+						</ol>
 
-<p>The rectangular wave guide:</p>
+						<p>The rectangular wave guide:</p>
 
-<ul>
-<li>Side $a $ along $x $, side $b $ along $y $.</li>
-<li>Separation of variables leads to the $\text{TE} _{mn} $ modes:</li>
-\begin{align*}
-	B_z &= B_0 \cos \left( \frac{m\pi x}{a} \right) \cos \left( \frac{n\pi y}{b} \right) \\
-	k &= \sqrt{ \left( \frac{\omega }{c} \right) ^2 -\pi ^2  \left[  \left( \frac{m}{a} \right) ^2 + \left( \frac{n}{b} \right) ^2  \right] } 
-\end{align*} 
-<li>Imaginary wave numbers: Exponential attenuation when</li>
-\[\omega < c\pi \sqrt{ \left( \frac{m}{a} \right) ^2 + \left( \frac{n}{b} \right) ^2 }\equiv \omega _{mn} \]
-<li>$\omega _{mn} $ is a cutoff frequency, with the lowest being $\omega _{10}=c\pi /a $.</li>
-<li>Wave number:</li>
-\[k=\frac{\sqrt{\omega ^2 -\omega ^2 _{mn}}}{c} \]
-<li>Wave velocity:</li>
-\[v=\frac{c}{\sqrt{1- \left( \frac{\omega _{mn}}{\omega } \right) ^2 }} \]
-<li>Group velocity (velocity of energy being carried)</li>
-</ul>
-\[v_g=c\sqrt{1- \left( \frac{\omega _{mn}}{\omega } \right) ^2 } < c \]
+						<ul>
+						<li>Side $a $ along $x $, side $b $ along $y $.</li>
+						<li>Separation of variables leads to the $\text{TE} _{mn} $ modes:</li>
+						\begin{align*}
+							B_z &= B_0 \cos \left( \frac{m\pi x}{a} \right) \cos \left( \frac{n\pi y}{b} \right) \\
+							k &= \sqrt{ \left( \frac{\omega }{c} \right) ^2 -\pi ^2  \left[  \left( \frac{m}{a} \right) ^2 + \left( \frac{n}{b} \right) ^2  \right] } 
+						\end{align*} 
+						<li>Imaginary wave numbers: Exponential attenuation when</li>
+						\[\omega < c\pi \sqrt{ \left( \frac{m}{a} \right) ^2 + \left( \frac{n}{b} \right) ^2 }\equiv \omega _{mn} \]
+						<li>$\omega _{mn} $ is a cutoff frequency, with the lowest being $\omega _{10}=c\pi /a $.</li>
+						<li>Wave number:</li>
+						\[k=\frac{\sqrt{\omega ^2 -\omega ^2 _{mn}}}{c} \]
+						<li>Wave velocity:</li>
+						\[v=\frac{c}{\sqrt{1- \left( \frac{\omega _{mn}}{\omega } \right) ^2 }} \]
+						<li>Group velocity (velocity of energy being carried)</li>
+						</ul>
+						\[v_g=c\sqrt{1- \left( \frac{\omega _{mn}}{\omega } \right) ^2 } < c \]
 
-<p>The coaxial transmission line:</p>
+						<p>The coaxial transmission line:</p>
 
-<ul>
-<li>Inner conductor wire of radius $a $. Outer cylindrical shell of radius $b $.</li>
-<li>TEM wave where</li>
-\begin{align*}
-	\mathbf{E} &= \frac{A}{s}\cos \left( kz-\omega t \right) \hat{\mathbf{s}} \\
-	\mathbf{B} &= \frac{A}{cs}\cos \left( kz-\omega t \right) \hat{\boldsymbol{\phi }} \\
-	k &= \omega /c
-\end{align*} 
-</ul>
+						<ul>
+						<li>Inner conductor wire of radius $a $. Outer cylindrical shell of radius $b $.</li>
+						<li>TEM wave where</li>
+						\begin{align*}
+							\mathbf{E} &= \frac{A}{s}\cos \left( kz-\omega t \right) \hat{\mathbf{s}} \\
+							\mathbf{B} &= \frac{A}{cs}\cos \left( kz-\omega t \right) \hat{\boldsymbol{\phi }} \\
+							k &= \omega /c
+						\end{align*} 
+						</ul>
 
-<hr>
+			<hr>
+			
+			<h3 id="Potentials">Potentials.</h3>
+			
+			
+						<p>$\mathbf{E} $ and $\mathbf{B} $ in terms of the potentials:</p>
+
+						\begin{align*}
+							\mathbf{E} &= -\nabla V-\frac{\partial \mathbf{A}}{\partial t} \\
+							\mathbf{B} &= \nabla \times \mathbf{A} 
+						\end{align*}
+
+						<p>Maxwell's equations in terms of potentials:</p>
+
+						\begin{align*}
+							\nabla ^2 V+\frac{\partial }{\partial t}(\nabla \cdot \mathbf{A}) &= -\frac{1}{\epsilon _0 }\rho  \\
+							 \left( \nabla ^2 \mathbf{A}-\mu _0 \epsilon _0 \frac{\partial ^2 \mathbf{A}}{\partial t^2 } \right) -\nabla  \left( \nabla \cdot \mathbf{A}+\mu _0 \epsilon _0 \frac{\partial V}{\partial t} \right)  &= -\mu _0 \mathbf{J} 
+						\end{align*}
+
+						<p>Gauge transformations for the potentials:</p>
+
+						\begin{align*}
+							\mathbf{A}' &= \mathbf{A}+\nabla \lambda  \\
+							V' &= V-\frac{\partial \lambda }{\partial t} 
+						\end{align*}
+
+
+
+
+
+						<p>Coulomb gauge:</p>
+
+						<ul>
+						<li>Where $\nabla \cdot \mathbf{A}=0 $.</li>
+
+						<li>Maxwell equations reduce to</li>
+						\begin{align*}
+							\nabla ^2 V &= -\frac{1}{\epsilon _0 }\rho \tag{Poisson's equation}  \\
+							\nabla ^2 \mathbf{A}-\mu _0 \epsilon _0 \frac{\partial ^2 \mathbf{A}}{\partial t^2 } &= -\mu _0 \mathbf{J}+\mu _0 \epsilon _0 \nabla  \left( \frac{\partial V}{\partial t} \right)  
+						\end{align*}
+						</ul>
+
+
+
+
+						<p>Lorenz gauge: </p>
+						<ul>
+						<li>Where $\nabla \cdot \mathbf{A}=-\mu _0 \epsilon _0 \frac{\partial V}{\partial t} $.</li>
+
+						<li>Maxwell equations reduce to</li>
+
+						\begin{align*}
+							\nabla ^2 \mathbf{A}-\mu _0 \epsilon _0 \frac{\partial ^2 \mathbf{A}}{\partial t^2 } &= -\mu _0 \mathbf{J} \\
+							\nabla ^2 V-\mu _0 \epsilon _0 \frac{\partial ^2 V}{\partial t^2 } &= -\frac{1}{\epsilon _0 }\rho  
+						\end{align*}
+
+						<li>With the d'Alambertian
+						\[\square ^2 \equiv \nabla ^2 -\mu _0 \epsilon _0 \frac{\partial ^2 }{\partial t^2 } \]
+						They are
+						\begin{align*}
+							\square ^2 V &= -\frac{1}{\epsilon _0 }\rho  \\
+							\square ^2 \mathbf{A} &= -\mu _0 \mathbf{J} 
+						\end{align*} 
+						</li>
+						</ul>
+
+						<p>The Lorentz Force law is:</p>
+
+						\begin{align*}
+							\mathbf{F}=\frac{d\mathbf{p}}{dt} &= q \left[ -\nabla V-\frac{\partial \mathbf{A}}{\partial t}+\mathbf{v}\times (\nabla \times \mathbf{A}) \right]  \\
+							  &= -q \left[ \frac{\partial \mathbf{A}}{\partial t}+(\mathbf{v}\cdot \nabla )\mathbf{A} + \nabla (V-\mathbf{v}\cdot \mathbf{A}) \right]  
+						\end{align*}
+						<p>Where the convective derivative $d\mathbf{A}/dt $ is a total derivative:</p>
+						\[\frac{d\mathbf{A}}{dt}=\frac{\partial \mathbf{A}}{\partial t}+(\mathbf{v}\cdot \nabla )\mathbf{A} \]
+						<p>Representing time rate of change of $\mathbf{A} $ at the location of a moving particle.</p>
+
+						<p>Canonical momentum:</p>
+
+						\[\mathbf{p}_{\text{canonical} }=\mathbf{p}+q\mathbf{A} \]
+
+						<p>The rate of change of the particle's energy, $\frac{dE}{dt}=\frac{\partial U_{\text{vel} }}{\partial t} $, where</p>
+
+						\[U_{\text{vel} }=q(V-\mathbf{v}\cdot \mathbf{A}) \]
+
+						<p>$\mathbf{A}\equiv $ "potential moemntum per unit charge," $V\equiv $ "potential energy per unit charge."</p>
+
+				<hr>
+
+
+				<h3 id="Potentials-Continuous-Distributions">Potentials in continuous distributions.</h3>
+				
+				
+				
+						<p>Statically,</p>
+						\[\nabla ^2 V=-\frac{1}{\epsilon _0 }\rho \;\;\Rightarrow \;\; V(\mathbf{r})=\frac{1}{4\pi \epsilon _0 }\int \frac{\rho (\mathbf{r}')}{\mathscr{r} }d\tau ' \]
+						<p>And</p>
+						\[\nabla ^2 \mathbf{A}=-\mu _0 \mathbf{J} \;\;\Rightarrow \;\; \mathbf{A}(\mathbf{r})=\frac{\mu _0 }{4\pi }\int \frac{\mathbf{J}(\mathbf{r}')}{\mathscr{r} }d\tau ' \tag{Multiple copies of Poisson's}\]
+						Non-statically:
+						<ul>
+						<li>Retarded time:
+						\[t_r\equiv t-\frac{\mathscr{r}}{c}	 \]
+						Gives retarded potentials:
+						\begin{align*}
+							V(\mathbf{r},t) &= \frac{1}{4\pi \epsilon _0 }\int \frac{\rho (\mathbf{r}',t_r)}{\mathscr{r}}d\tau ' \\
+							\mathbf{A}(\mathbf{r},t) &= \frac{\mu _0 }{4\pi }\int \frac{\mathbf{J}(\mathbf{r}',t_r)}{\mathscr{r}}d\tau ' 
+						\end{align*}
+						</li> 
+						<li>
+						Advanced time:
+						\[ t_a\equiv t + \frac{\mathscr{r}}{c}\]
+						Gives advanced potentials:
+						\begin{align*}
+							V_a(\mathbf{r},t) &= \frac{1}{4\pi \epsilon _0 }\int \frac{\rho (\mathbf{r}',t_a)}{\mathscr{r}}d\tau ' \\
+							\mathbf{A}_a(\mathbf{r},t) &= \frac{\mu _0 }{4\pi }\int \frac{\mathbf{J}(\mathbf{r}',t_a)}{\mathscr{r}}d\tau ' 
+						\end{align*}
+						</li> 
+						</ul>
+
+						<p>Jefimenko's Equations</p>
+
+						\begin{align*}
+							\mathbf{E}(\mathbf{r},t) &= \frac{1}{4\pi \epsilon _0 }\int  \left[ \frac{\rho (\mathbf{r}',t_r)}{\mathscr{r}^2 }\hat{\mathscr{r}}+\frac{\dot{\rho }(\mathbf{r}',t_r)}{c\mathscr{r}}\hat{\mathscr{r}}-\frac{\dot{\mathbf{J}}(\mathbf{r}',t_r)}{c^2 \mathscr{r}} \right] d\tau ' \\
+							\mathbf{B}(\mathbf{r},t) &= \frac{\mu _0 }{4\pi }\int  \left[ \frac{\mathbf{J}(\mathbf{r}',t_r)}{\mathscr{r}^2 }+\frac{\dot{\mathbf{J}}(\mathbf{r}',t_r)}{c\mathscr{r}} \right] \times \hat{\mathscr{r}} d\tau ' 
+						\end{align*} 
+
+				<hr>
+
+
+				<h3 id="Potentials-Point-Charges">Potentials and point charges.</h3>
+				
+				
+						<p>If a charge $q $ is moving with trajectory $\mathbf{w}(t) $, then the potentials are given by the Liénard-Wiechert potentials:</p>
+						\begin{align*}
+							V(\mathbf{r},t) &= \frac{1}{4\pi \epsilon _0 }\frac{qc}{(\mathscr{r}c-\mathscr{r}\cdot \mathbf{v})} \\
+							\mathbf{A}(\mathbf{r},t) &= \frac{\mathbf{v}}{c^2 }V(\mathbf{r},t) 
+						\end{align*}
+						<p>Where</p>
+						\begin{align*}
+							|\mathbf{r}-\mathbf{w}(t_r)| &= c(t-t_r) \\
+							\mathscr{r} &= \mathbf{r}-\mathbf{w}(t_r) 
+						\end{align*}
+						<p>By introducing the vector</p>
+						 \[\mathbf{u}\equiv c\hat{\mathscr{r}}-\mathbf{v} \]
+						<p>The $\mathbf{E} $ and $\mathbf{B} $ fields of a moving point particle are:</p>
+						\begin{align*}
+							\mathbf{E}(\mathbf{r},t) &= \frac{q}{4\pi \epsilon _0 }\frac{\mathscr{r}}{(\mathscr{r}\cdot \mathbf{u})^3 } \left[ (c^2 -v^2 )\mathbf{u}+\mathscr{r}\times (\mathbf{u}\times \mathbf{a}) \right]  \\
+							\mathbf{B}(\mathbf{r},t) &= \frac{1}{c}\hat{\mathscr{r}}\times \mathbf{E}(\mathbf{r},t) 
+						\end{align*} 
+
+
+
+				<hr>
 			
 			<a href="../Formulas.html" style="color: black; "><h4>Back to Formulas</h4></a>
         
