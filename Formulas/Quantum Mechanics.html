@@ -71,6 +71,8 @@
 				<a href="#Orbital-Angular-Momentum"><p>Orbital Angular Momentum.</p></a>
 				
 				<a href="#Spin-Angular-Momentum"><p>Spin Angular Momentum.</p></a>
+				
+				<a href="#Addition-Angular-Momentum"><p>Addition of Angular Momentum.</p></a>
 			
 				<a href="#Path-Integrals"><p>Path Integrals.</p></a>
 				
@@ -222,7 +224,109 @@
 
 						<p><b>Spin 1/2</b></p>
 
-						<p><b>Addition of angular momentum</b></p>
+								<p>With $s=1/2 $, $m=-1/2 $ or $1/2 $. They form a basis for spinors:</p>
+
+								\begin{align*}
+									\chi _+  &= \begin{pmatrix}  1 \\  0 \\  \end{pmatrix}     \\
+									\chi _-  &= \begin{pmatrix}  0 \\  1 \\  \end{pmatrix}    
+								\end{align*} 
+
+								<p>General spinor in the above basis:</p>
+
+								\begin{align*}
+									\chi  &= \begin{pmatrix}  a \\  b \\  \end{pmatrix}    \\
+									  &= a\chi _++b\chi _- 
+								\end{align*}
+
+								<p>The three spin operators ($\mathbf{S}=(S_x,S_y,S_z) $) are</p>
+
+								\[\mathbf{S}=\frac{\hbar }{2}\boldsymbol{\sigma } \]
+
+								<p>Where the Pauli spin matrices are ($\boldsymbol{\sigma } =(\sigma _x,\sigma _y,\sigma _z)$):</p>
+
+								\begin{align*}
+									\sigma _x &= \begin{pmatrix}  0 & 1 \\  1 & 0 \\  \end{pmatrix}    \\
+									\sigma _y &= \begin{pmatrix}  0 & -i \\  i & 0 \\  \end{pmatrix} \\
+									\sigma _z &= \begin{pmatrix}  1 & 0 \\  0 & -1 \\  \end{pmatrix}      
+								\end{align*}
+
+								<p>Further,</p>
+
+								\begin{align*}
+									S^2  &= \frac{3}{4}\hbar ^2 \begin{pmatrix}  1 & 0 \\  0 & 1 \\  \end{pmatrix}    \\
+									S_+ &= \hbar \begin{pmatrix}  0 & 1 \\  0 & 0 \\  \end{pmatrix}    \\
+									S_- &= \hbar \begin{pmatrix}  0 & 0 \\  1 & 0 \\  \end{pmatrix}   
+								\end{align*}
+
+								<p>In the $\left\lbrace \chi _+,\chi _- \right\rbrace $ basis,</p>
+
+								<img src="QM/halfspineigenspinors.PNG" class="centerImg" style="width: 40%;">
+
+								<p>In the same basis, the probabilities of measuring $\pm \hbar /2 $ from $S_x $ given $\begin{pmatrix}  a \\  b \\  \end{pmatrix}    $ are:</p>
+
+								\[P_{S_x} \left( \pm \frac{\hbar }{2} \right) = \frac{1}{2}|a\pm b|^2  \]
+
+						<p><b>Spin 1</b></p>
+
+								<p>In the $S_z $ basis, we have the three basis states</p>
+
+								\[\chi _+=\begin{pmatrix}  1 \\  0 \\  0 \\  \end{pmatrix} ,\;\;\; \chi _0 = \begin{pmatrix}  0 \\  1 \\  0 \\  \end{pmatrix} ,\;\;\; \chi _- = \begin{pmatrix}  0 \\  0 \\  1 \\  \end{pmatrix}        \]
+
+								<p>Spin matrices:</p>
+
+								\begin{align*}
+									S_x &= \frac{\hbar }{\sqrt{2}}\begin{pmatrix}  0 & 1 & 0 \\  1 & 0 & 1 \\  0 & 1 & 0 \\  \end{pmatrix}    \\
+									S_y &= i\frac{\hbar }{\sqrt{2}}\begin{pmatrix}  0 & -1 & 0 \\  1 & 0 & -1 \\  0 & 1 & 0 \\  \end{pmatrix}    \\
+									S_z &= \hbar \begin{pmatrix}  1 & 0 & 0 \\  0 & 0 & 0 \\  0 & 0 & -1 \\  \end{pmatrix}   
+								\end{align*} 
+
+
+								<p>Ladder spin 1 matrices:</p>
+
+								\begin{align*}
+									S_+ &= \sqrt{2}\hbar \begin{pmatrix}  0 & 1 & 0 \\  0 & 0 & 1 \\  0 & 0 & 0 \\  \end{pmatrix}    \\
+									S_- &= \sqrt{2}\hbar \begin{pmatrix}  0 & 0 & 0 \\  1 & 0 & 0 \\  0 & 1 & 0 \\  \end{pmatrix}    
+								\end{align*} 
+
+								<p>Note that these relations hold:</p>
+
+								\begin{align*}
+									S_x &= \frac{S_++S_-}{2} \\
+									S_y &= \frac{S_+-S_-}{2i} 
+								\end{align*}
+
+			<hr>
+			<h3 id="Addition-Angular-Momentum">Addition of Angular Momentum.</h3>
+			
+						<p>Given two particles (for concreteness, the following formulas are in terms of spin angular momentum), $| s_1 \;m_1  \rangle  $ and $| s_2 \;m_2  \rangle  $, there exist composite states</p>
+
+						\[| s'\;m' \rangle \equiv| s_1 \;s_2 \;m_1 \;m_2  \rangle    \]
+
+						<p>Where $m' $ is uniquely determined:</p>
+
+						\[m'=m_1 +m_2  \]
+
+						<p>While $s' $ can take one of many values:</p>
+
+						\[s' = (s_1 +s_2 ),\;(s_1 +s_2 -1),\;(s_1 +s_2 -2),\;\cdots ,\;|s_1 -s_2 | \]
+
+
+
+						<b>Clebsch-Gordan coefficients</b>
+
+						<p>Given a combined (coupled) state $| s\;m \rangle  $, we can decompose it as a linear combination of composite states:</p>
+
+						\[| s\;m \rangle =\sum_{m_1 +m_2 =m}^{} C^{s_1 s_2 s}_{m_1 m_2 m}| s_1 \;s_2 \;m_1 \;m_2  \rangle  \]
+
+
+
+						<img src="QM/clebsch-gordan-coefs-1.jpg" class="centerImg" style="width: 80%;">
+
+						<img src="QM/clebsch-gordan-coefs-2.jpg" class="centerImg" style="width: 80%;">
+						
+						<p style="text-align: left;"><i>Source: <a href="https://pdg.lbl.gov/">Particle Data Group.</a></i></p>
+						
+						<p style="text-align: left;"><i><a href="QM/CG-Table-Examples.html">Clebsch-Gordan examples</a></i></p>
 			
 			<hr>
 			<h3 id="Path-Integrals">Path Integrals.</h3>
