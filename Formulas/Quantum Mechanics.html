@@ -331,7 +331,37 @@
 			<hr>
 			<h3 id="Path-Integrals">Path Integrals.</h3>
 
-					
+						<p>The initial state $| \psi  \rangle  $ in the position representation is written as</p>
+
+						\[\langle x_0 |\psi (t_0 ) \rangle  \]
+
+						<p>Its time evolution </p>
+
+						\[\langle x'|\psi (t') \rangle  = \int_{-\infty }^{\infty } dx_0 \langle x',t'|x_0 ,t_0  \rangle \langle x_0 |\psi (t_0 ) \rangle  \]
+
+						<p>Depends on the propagator, which for a free particle takes the form</p>
+
+						\[\langle x',t'|x_0 ,t_0  \rangle =\sqrt{\frac{m}{2\pi \hbar i(t'-t_0 )}}\exp \left( \frac{im(x'-x_0 )^2 }{2\hbar (t'-t_0 )} \right)  \]
+
+						<p>(Formal) definition of the path-integral:</p>
+
+						\[\langle x',t'|x_0 ,t_0  \rangle =\lim_{N\to \infty }\int dx_1 \cdots \int dx_{N-1}\int \frac{dp_1 }{2\pi \hbar }\cdots \int \frac{dp_N}{2\pi \hbar }\exp \left( \frac{i}{\hbar }\sum_{i=1}^{N}  \left[ p_i \frac{(x_i -x_{i-1})}{\Delta t}-E(p_i ,x_{i-1}) \right] \Delta t \right)  \]
+
+						<p>For Hamiltonians of the form $\hat{H}=\frac{\hat{p}^2 _x}{2m}+V(\hat{x}) $, the path integral takes the form:</p>
+
+						\[\langle x',t'|x_0 ,t_0  \rangle = \int_{x_0 }^{x'} \mathcal{D} \left[ x(t) \right] e^{iS \left[ x(t) \right] /\hbar } \]
+
+						<p>Where</p>
+
+						\[\int_{x_0 }^{x'} \mathcal{D} \left[ x(t) \right] \equiv \lim_{N\to \infty }\int dx_1 \cdots \int dx_{N-1} \left( \frac{m}{2\pi \hbar i\Delta t} \right) ^{N/2} \]
+
+						<p>And $S $ is the action:</p>
+
+						\[S \left[ x(t) \right] \int_{t_0 }^{t'} dt\;L(x,\dot{x}) \]
+
+						<p>For a free particle ($V(x)=0 $),</p>
+
+						\[\langle x',t'|x_0 ,t_0  \rangle =\sqrt{\frac{m}{2\pi \hbar i(t'-t_0 )}}\exp \left( \frac{im}{2\hbar }\frac{(x'-x_0 )^2 }{(t'-t_0 )} \right)  \]					
 			
 			<hr>
 			
