@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulas - Complex Analysis</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../GarciaStyles.css">
+	   <style>
+	   .def{font-weight: bold;color:#b0041b;;border: 1px solid;}
+	   
+	   .theorem{font-weight: bold;color:#030896;border: 1px solid;}
+	   
+	   .lemma{font-weight: bold;color:#580480;;border: 1px solid;}
+	   
+	   .remark{font-weight: bold;color:#046128;;border: 1px solid;}
+	   
+	   .corollary{font-weight: bold;color:#8f6860;;border: 1px solid;}
+	   </style>
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Research.html" style="color: black; text-decoration: none;">
+						Research
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			
+			<h2 style="text-align:center;margin-bottom: 0;">Complex Analysis</h2>
+			<h4 style="text-align:center;margin-top: 0;">Formulas</h4>
+
+			
+			
+			
+			<p>Below is a collection of definitions, theorems, remarks, and formulas for complex analysis. The structure and content follows my course in my last semester at the University of New Mexico.</p>
+			
+			<h3>Contents</h3>
+			
+			<div class="subzone">
+			
+				<a href="#Basics"><p>Elementary properties of complex numbers.</p></a>
+			
+				<a href="#Metric-Space"><p>Complex plane as a metric space.</p></a>
+				
+				<a href="#Limits-continuity"><p>Limits and continuity.</p></a>
+				
+				<a href="#Derivatives"><p>Derivatives.</p></a>
+				
+
+			
+			</div>
+			
+			<hr>
+			<h3 id="Basics">Elementary properties of complex numbers.</h3>
+			
+						<p>Triangle inequality</p>
+
+						\[|z_1 +z_2 |\leq |z_1 |+|z_2 | \]
+
+						<p>Reverse triangle inequality</p>
+
+						\[|z_1 +z_2 |\geq ||z_1 |-|z_2 || \]
+
+						<p>Properties of conjugation:</p>
+
+						\begin{align*}
+							\overline{z_1 \pm z_2 } &= \overline{z_1 }\pm \overline{z_2 } \\
+							\overline{z_1 z_2 } &= \overline{z_1 }\cdot \overline{z_2 }\\
+							\overline{ \left( \frac{z_1 }{z_2 } \right) } &= \frac{\overline{z_1 }}{\overline{z_2 }} 
+						\end{align*}
+
+						<p>Identities of conjugation:</p> 
+
+						\begin{align*}
+							\text{Re} (z) &= \frac{z+\overline{z}}{2} \\
+							\text{Im} (z) &= \frac{z-\overline{z}}{2i}  \\
+							z\overline{z} &= |z|^2 	
+						\end{align*} 
+
+						<p>Properties of moduli:</p>
+						\begin{align*}
+							|z_1 z_2 | &= |z_1 ||z_2 | \\
+							\bigg| \frac{z_1 }{z_2 }\bigg| &= \frac{|z_1 |}{|z_2 |}\ 
+						\end{align*}
+
+						<p>Properties of Arg:</p>
+						\begin{align*}
+							\text{arg} (z_1 z_2 ) &= \text{arg} (z_1 )+\text{arg} (z_2 ) \\
+							\text{arg} (z_1 /z_2 ) &= \text{arg} (z_1 )+\text{arg} (z_2 ) 
+						\end{align*}
+			
+			
+			
+			<hr>
+			<h3 id="Metric-Space">Complex plane as a metric space.</h3>
+			
+						<p>Moduli of complex numbers defines a metric on $\mathbb{C}  $:</p>
+
+						\[d(z_1 ,z_2 )=|z_1 -z_2 | \]
+
+						<p>The $\epsilon  $-<b>neighborhood</b> of a complex number $z_0  $ is the set of points $z $ that satisfy</p>
+
+						\[|z-z_0 |<\epsilon  \]
+
+						<p>The <b>deleted neighborhood</b> of $z_0  $ is:</p>
+
+						\[0<|z-z_0 |<\epsilon  \]
+
+						<p>$z_0  $ is an <b>interior point</b> of a set $S $ of complex numbers if there is a neighborhood of $z_0  $ contained inside $S $.</p>
+
+						<p>$z _0 $ is an <b>exterior point</b> of $S $ if there is a neighborhood of $z_0  $ contained outside of $S $.</p>
+
+						<p>$z_0  $ is a <b>boundary point</b> if it is not an interior nor an exterior point. Every neighborhood of a boundary point contains at least one element in $S $ and one in $S^C $.</p>
+
+						<p>The set of boundary points of a set is known as its <b>boundary</b>.</p>
+
+						<p>A set $S $ is said to be <b>open</b> if it contains none of its boundary points. Alternatively, $S $ is open iff all of its points are interior points.</p>
+
+						<p>A set $S $ is said to be <b>closed</b> if it contains all of its boundary points.</p>
+
+						<p>The <b>closure</b> of a set is the union of the set and its boundary.</p>
+
+						<p>An open set is said to be <b>connected</b> if each pair of points can be joined by a polygonal line of finite segments.</p>
+
+						<p>A <b>domain</b> is a nonempty connected open set.</p>
+
+						<p>$z_0  $ is known as an <b>accumulation point</b> of a set $S $ if each deleted neighborhood of $z_0  $ contains at least one point of $S $.</p>
+
+						<p>Theorem: A set is closed iff it contains all of its accumulation points.</p>
+
+
+			<hr>
+			<h3 id="Limits-continuity">Limits and continuity.</h3>
+			
+						<p><b>Images</b> of entire domains are known as <b>ranges</b> of functions/mappings.</p>
+
+						<p>Although the image of a point is unique, the inverse image in the range can consist of one or more points.</p>
+
+						<p>The action on the domain of many functions can be understood through translations, rotations, and reflections.</p>
+
+						<p>The <b>limit</b> of $f(z) $ as $z\rightarrow z_0  $ is $w_0  $ if for each positive number $\epsilon  $, there is a positive number $\delta  $ such that</p>
+
+						\[|f(z)-w_0|<\epsilon  \;\text{whenever} \; 0<|z-z_0 |<\delta  \]
+
+						<p>"For each $\epsilon  $-neighborhood of $w_0  $ there is a deleted $\delta  $-neighborhood of $z_0 $ such that every point in it has an image $w $ in the $\epsilon  $-neighborhood."</p>
+
+						<p>Theorem: When a limit of a function exist at a point, it is unique.</p>
+
+						<p>Theorem: Let $f(z)=u+iv $ for real functions $u,v $, and $z_0 =x_0 +iy_0  $, $w_0 =u_0 +iv_0  $. Then $\lim_{z\to z_0 }f(z)=w_0 $ iff $\lim_{(x,y)\to (x_0 ,y_0 )}u(x,y)=u_0  $ and $\lim_{(x,y)\to (x_0 ,y_0 )}v(x,y)=v_0  $.</p>
+
+						<p>Theorem: Let $\lim_{z\to z_0 }f(z)=w_0  $ and $\lim_{z\to z_0 }F(z)=W_0  $. Then</p>
+						\begin{align*}
+							\lim_{z\to z_0 } \left[ f(z)+F(z) \right]  &= w_0 +W_0  \\
+							\lim_{z\to z_0 } \left[ f(z)F(z) \right]  &= w_0 W_0  \\
+							\lim_{z\to z_0 }\frac{f(z)}{F(z)} &= \frac{w_0 }{W_0}\tag{$W_0 \neq 0 $}
+						\end{align*}
+
+						<p>Elementary limits:</p>
+
+						\begin{align*}
+							\lim_{z\to z_0 }c &= c\tag{For constant $c $} \\
+							\lim_{z\to z_0 }z^n  &= z_0 ^n \tag{For $n=1,2,3,\cdots  $} 
+						\end{align*} 
+
+						<p>The set of complex numbers in addition to the point at infinity is known as the <b>extended complex plane</b>.</p>
+
+						<p>Theorem: Limits regarding infinity:</p>
+
+						\begin{align*}
+							\lim_{z\to z_0 }f(z)=\infty \; &\Leftrightarrow  \;\lim_{z\to z_0 }\frac{1}{f(z)}=0 \\
+							\lim_{z\to \infty }f(z)=w_0 \; &\Leftrightarrow  \; \lim_{z\to 0}f(1/z)=w_0  \\
+							\lim_{z\to \infty }f(z)=\infty  &\Leftrightarrow  \lim_{z\to 0}\frac{1}{f(1/z)}=0
+						\end{align*}			
+			
+			
+			
+			<hr>
+			<h3 id="Derivatives">Derivatives.</h3>
+			
+			
+			
+			<hr>
+			
+			
+			
+			
+			<a href="../Formulas.html" style="color: black; "><h4>Back to Formulas</h4></a>
+        
+		</div>
+    </body>
+</html>
