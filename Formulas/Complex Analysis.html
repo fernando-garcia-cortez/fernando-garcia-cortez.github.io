@@ -163,9 +163,13 @@
 
 						<p>A <b>domain</b> is a nonempty connected open set.</p>
 
+						<p>A set $S $ is <b>bounded</b> if every point of $S $ lies inside some circle $|z|=R $. A set is <b>unbounded</b> if it is non bounded.</p>
+
 						<p>$z_0  $ is known as an <b>accumulation point</b> of a set $S $ if each deleted neighborhood of $z_0  $ contains at least one point of $S $.</p>
 
 						<p>Theorem: A set is closed iff it contains all of its accumulation points.</p>
+						
+						
 
 
 			<hr>
@@ -211,12 +215,45 @@
 							\lim_{z\to \infty }f(z)=\infty  &\Leftrightarrow  \lim_{z\to 0}\frac{1}{f(1/z)}=0
 						\end{align*}			
 			
-			
+						<p>A function $f $ is said to be <b>continuous at a point</b> $z_0  $ if $\lim_{z\to z_0 }f(z) $ exists and is equal to $f(z_0 ) $. In other words, for each positive number $\epsilon  $, there is a positive $\delta  $ such that $|f(z)-f(z_0 )|< \epsilon  $ whenever $ |z-z_ 0 | < \delta  $.</p>
+
+						<p>A function $f $ is said to be <b>continuous in a region</b> $R $ if it is continuous at every point in $R $.</p>
+
+						<p>Theorem: Let $f,g $ be two continuous functions at $z_0  $. Then $f(z_0 )+g(z_0 ) $, $f(z_0 )g(z_0 ) $, $f(z_0 )/g(z_0 ) $ are also continuous at $z_0  $.</p>
+
+						<p>Theorem: Let $f,g $ be two continuous functions. Then their composition $f\circ g $ is also continuous.</p>
+
+						<p>Theorem: If a function $f(z) $ is continuous and nonzero at a point $z_0  $, then $f(z) \neq 0$ throughout some neighborhood of that point.</p>
+
+						<p>Theorem: The function $f(z)=u(x,y)+iv(x,y) $ is continuous at a point iff its component functions are continuous there.</p>
+
+						<p>Theorem: If a function $f $ is continuous throughout a region $R $ that is both closed and bounded, there exists a nonnegative real number $M $ such that $|f(z)|\leq M $ for all points $z \in R $, and equality holds for at least one such $z $. We say that $f $ is <b>bounded</b> on $R $.</p>
+
+
+
+
 			
 			<hr>
 			<h3 id="Derivatives">Derivatives.</h3>
 			
-			
+						<p>The <b>derivative</b> of $f $ at $z_0  $ is the limit</p>
+
+						\[f'(z_0 )=\lim_{z\to z_0 }\frac{f(z)-f(z_0 )}{z-z_0 } \equiv \lim_{\Delta z\to 0}\frac{f(z_0 +\Delta z)-f(z_0 )}{\Delta z}\]
+
+						<p>If $f'(z_0 ) $, then $f $ is said to be <b>differentiable</b> at $z_0  $.</p>
+
+						<p>Theorem: The existence of the derivative of a function at a point implies the continuity of the function at that point.</p>
+
+						<p>Cauchy-Riemann equations:</p>
+
+						\begin{align*}
+							u_x(x_0 ,y_0 ) &= v_y(x_0 ,y_0) \\
+							u_y(x_0 ,y_0 ) &= -v_x(x_0 ,y_0) 
+						\end{align*} 
+
+						<p>Theorem: Suppose that $f(z)=u(x,y)+iv(x,y) $. Suppose that $f'(z) $ exists at a point $z_0 =x_0 +iy_0  $. Then the first-order partial derivatives of $u,v $ must exist at $(x_0 ,y_0 ) $ and they must satisfy the Cauchy-Riemann equations there. Further: </p>
+
+						\[f'(z_0 )=u_x+iv_x \]
 			
 			<hr>
 			
