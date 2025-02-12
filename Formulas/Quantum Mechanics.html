@@ -76,9 +76,9 @@
 			
 				<a href="#Path-Integrals"><p>Path Integrals.</p></a>
 				
+				<a href="#Density-Operators"><p>Density Operators.</p></a>
 				
-				
-
+				<a href="#Time-Independent-Perturbation-Theory"><p>Time Independent Perturbation Theory.</p></a>
 			
 			</div>
 			
@@ -363,9 +363,80 @@
 
 						\[\langle x',t'|x_0 ,t_0  \rangle =\sqrt{\frac{m}{2\pi \hbar i(t'-t_0 )}}\exp \left( \frac{im}{2\hbar }\frac{(x'-x_0 )^2 }{(t'-t_0 )} \right)  \]					
 			
+			
 			<hr>
+			<h3 id="Density-Operators">Density operators.</h3>
+			
+						<p>A state is said to be pure if it can be written in terms of the basis states:</p>
+
+						\[| \psi  \rangle =\sum_{i}^{} c_i| \phi _i  \rangle  \]
+
+						<p>A mixed state can't.</p>
+
+						<p>For a pure state $| \psi  \rangle  $:</p>
+						\begin{align*}
+							\hat{\rho } &= | \psi  \rangle \langle \psi  |  \\
+							\rho _{ij} &= \langle i | \psi  \rangle \langle \psi  | j \rangle \tag{$\rho _{ij}^*  = \rho _{ji} $} \\
+							\text{tr} (\hat{\rho }) &= 1 \\
+							\text{tr} (\hat{\rho }^2 ) &= 1 \tag{$\hat{\rho }^2 =\hat{\rho }$}\\
+							\text{Expectation value} \;\langle A \rangle  &= \text{tr} (\hat{A}\hat{\rho })\\
+							i\hbar \frac{d\hat{\rho }(t)}{dt} &=  \left[ \hat{H},\hat{\rho }(t) \right] 
+						\end{align*}
+						 
+						<p>For a mixed state:</p>
+						\begin{align*}
+							\hat{\rho } &= \sum_{k}^{} p_k| \psi ^{(k)} \rangle \langle \psi ^{(k)} |  \tag{$\sum_{k}^{} p_k=1$}\\
+							\rho _{ij} &= \sum_{k}^{} p_k\langle i | \psi ^{(k)} \rangle \langle \psi ^{(k)} | j \rangle \\
+							\text{tr} (\hat{\rho }) &= 1 \\
+							\text{tr} (\hat{\rho }^2 ) &< 1 \\
+							\text{Expectation value} \;\langle A \rangle  &= \text{tr} (\hat{A}\hat{\rho })
+						\end{align*}
 			
 			
+			<hr>
+			<h3 id="Time-Independent-Perturbation-Theory">Time Independent Perturbation Theory.</h3>
+
+
+			<p>Perturbation theory is used on Hamiltonians of the form</p>
+
+\[\hat{H}=\hat{H}_0 +\lambda \hat{H}_1  \]
+
+<p>Where the eigenstates and eigenvalues of $\hat{H}_0  $ are known exactly.</p>
+
+<p>Perturbations will introduce $n $th order corrections to the eigenstates ($| \phi _i^{(n)} \rangle  $ represents the $n $th order correction to the $i $th eigenstate) and the eigenvalues (energies $E_{n}^{(i)} $).</p>
+
+\begin{align*}
+	| \psi _i \rangle  &= | \psi _i ^{(0)} \rangle +\lambda | \psi _i^{(1)} \rangle +\lambda ^2 | \psi _i^{(2)} \rangle +\cdots  \\
+	E_i  &= E_i ^{(0)} +\lambda E_i^{(1)}+\lambda ^2 E_{i}^{(2)}+\cdots 
+\end{align*}
+
+<p>In a nondegenerate system, the first order corrections are:</p>
+
+\begin{align*}
+	E_i^{(1)} &= \langle \psi _i^{(0)}|\hat{H}_1 |\psi _i^{(0)} \rangle  \\
+	| \psi _i ^{(2)} \rangle  &= \sum_{k\neq i}^{} | \psi _k^{(0)} \rangle \frac{\langle \psi _k^{(0)}|\hat{H}_1  | \psi _i^{(0)} \rangle }{E_i^{(0)}-E_k^{(0)}} 
+\end{align*} 
+
+<p>The second order corrections are:</p>
+
+\begin{align*}
+	E_i^{(2)} &= \langle \psi _i^{(0)}|\hat{H}_1 |\psi _i^{(1)} \rangle  \\
+	  &= \sum_{k\neq i}^{} \frac{|\langle \psi _k^{(0)}|\hat{H}_1 |\psi _i^{(0)} \rangle  |^2 }{E_i^{(0)}-E_k^{(0)}} 
+\end{align*}  
+
+<p>In degenerate systems the main question is: What is the right linear combination of unperturbated states that will become exact eigenstates? A matrix is constructed such that the eigenvalues are the energy corrections and the eigenvectors will give the right linear combination of states.</p>
+
+\[(H_1 )_{ji}=\langle \psi _{n,j}^{(0)}|\hat{H}_{1}|\psi _{n,i}^{(0)} \rangle  \]
+
+<p>For $N=2 $ twofold degeneracy:</p>
+
+\[\begin{pmatrix}  (H_1 )_{11} & (H_1 )_{12} \\  (H_1 )_{21} & (H_1 )_{22} \\  \end{pmatrix} \begin{pmatrix}  c_1  \\  c_2  \\  \end{pmatrix} =E_n ^{(1)}\begin{pmatrix}  c_1  \\  c_2  \\  \end{pmatrix}        \]
+
+<p>That is, the perturbing Hamiltonian is diagonalized in the subspace of degenerate states to find the first-order shifts.</p>
+
+
+
+			<hr>
 			
 			
 			<a href="../Formulas.html" style="color: black; "><h4>Back to Formulas</h4></a>
