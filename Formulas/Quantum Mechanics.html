@@ -78,8 +78,16 @@
 				
 				<a href="#Density-Operators"><p>Density Operators.</p></a>
 				
-				<a href="#Time-Independent-Perturbation-Theory"><p>Time Independent Perturbation Theory.</p></a>
+				<a href="#ND-Time-Independent-Perturbation-Theory"><p>(Non-degenerate) Time Independent Perturbation Theory.</p></a>
+				
+				<a href="#D-Time-Independent-Perturbation-Theory"><p>(Degenerate) Time Independent Perturbation Theory.</p></a>
+				
+				<a href="#H-Fine-Struct"><p>Hydrogen Fine Structure.</p></a>
+				
+				<a href="#Zeeman"><p>Zeeman effect.</p></a>
 			
+			
+
 			</div>
 			
 			
@@ -394,7 +402,7 @@
 			
 			
 			<hr>
-			<h3 id="Time-Independent-Perturbation-Theory">Time Independent Perturbation Theory.</h3>
+			<h3 id="ND-Time-Independent-Perturbation-Theory">(Non-degenerate) Time Independent Perturbation Theory.</h3>
 
 
 			<p>Perturbation theory is used on Hamiltonians of the form</p>
@@ -424,17 +432,43 @@
 	  &= \sum_{k\neq i}^{} \frac{|\langle \psi _k^{(0)}|\hat{H}_1 |\psi _i^{(0)} \rangle  |^2 }{E_i^{(0)}-E_k^{(0)}} 
 \end{align*}  
 
-<p>In degenerate systems the main question is: What is the right linear combination of unperturbated states that will become exact eigenstates? A matrix is constructed such that the eigenvalues are the energy corrections and the eigenvectors will give the right linear combination of states.</p>
 
-\[(H_1 )_{ji}=\langle \psi _{n,j}^{(0)}|\hat{H}_{1}|\psi _{n,i}^{(0)} \rangle  \]
+<hr>
+<h3 id="D-Time-Independent-Perturbation-Theory">(Degenerate) Time Independent Perturbation Theory.</h3>
+
+
+
+
+
+<p>If we have $N $-degeneracy for a given energy level, then any linear combination of the $N $ states is still an eigenstate of the Hamiltonian.</p>
+
+<p>Perturbations break/lift degeneracy.</p>
+
+<p>When a perturbation is shut off, the system goes into orthogonal linear combinations of degenerate states. These are known as the "good" states.</p>
+
+<p>A matrix is constructed using the perturbation:</p>
+
+\[W_{ji}=\langle \psi _{n,j}^{(0)}|\hat{H}_{1}|\psi _{n,i}^{(0)} \rangle  \]
+
+<p>The eigenvalues of this matrix are the 1st order corrections, while the eigenvectors of this matrix are the "good states".</p>
 
 <p>For $N=2 $ twofold degeneracy:</p>
 
-\[\begin{pmatrix}  (H_1 )_{11} & (H_1 )_{12} \\  (H_1 )_{21} & (H_1 )_{22} \\  \end{pmatrix} \begin{pmatrix}  c_1  \\  c_2  \\  \end{pmatrix} =E_n ^{(1)}\begin{pmatrix}  c_1  \\  c_2  \\  \end{pmatrix}        \]
+\[\begin{pmatrix}  W_{11} & W_{12} \\  W_{21} & W_{22} \\  \end{pmatrix} \begin{pmatrix}  c_1  \\  c_2  \\  \end{pmatrix} =E_n ^{(1)}\begin{pmatrix}  c_1  \\  c_2  \\  \end{pmatrix}        \]
 
-<p>That is, the perturbing Hamiltonian is diagonalized in the subspace of degenerate states to find the first-order shifts.</p>
+<p>With general solution</p>
 
+\[E^{(1)}_{\pm}\frac{1}{2} \left( W_{11}+W_{22}\pm \sqrt{(W_{11}-W_{22})^2 +4|W_{12}|^2 } \right)  \]
 
+<p>Original states are "good" if $W_{12}=W_{21}=0 $, and we find that the eignevectors are $(1\;0) $ and $(0\;1) $. The first order energy corrections are given as in nondegenerate perturbation theory.</p>
+
+<p><b>Theorem:</b> Let $A $ be a hermitian operator that commutes with $H^0  $ and $H' $. If the degenerate eigenfunctions $\psi _a^{(0)}  $ and $\psi _b^{(0)} $ are also (1) eigenfunctions of $A $, and (2) with distinct eigenvalue ($A\psi ^{(0)}_a=a \psi _a^{(0)}  $, $A\psi _b^{(0)}=b\psi _b^{(0)} $, for $a\neq b $), then $\psi ^{(0)}_{a,b} $ are the "good" states in perturbation theory.</p>
+
+<hr>
+<h3 id="H-Fine-Struct">Hydrogen Fine Structure.</h3>
+
+<hr>
+<h3 id="Zeeman">Zeeman effect.</h3>
 
 			<hr>
 			
