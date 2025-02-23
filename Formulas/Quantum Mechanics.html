@@ -467,6 +467,60 @@
 <hr>
 <h3 id="H-Fine-Struct">Hydrogen Fine Structure.</h3>
 
+
+<p>Hydrogen atom basics:</p>
+
+<ul>
+<li>Spatial wavefunctions are specified by 3 numbers, $n $, $l $, $m $.</li>
+\[\psi _{nlm}(r,\theta ,\phi )=R_{nl}(r)Y_{l}^{m}(\theta ,\phi ) \]
+<ul>
+<li>$n $ is the principal quantum number.</li>
+<li>$l $ is the azimuthal quantum number.</li>
+<li>$m $ is the magnetic quantum number.</li>
+</ul>
+\begin{align*}
+	n &= 1,2,3,\cdots  \\
+	l &= 0,1,2,\cdots ,n-1 \\
+	m &= -l,\;-l+1,\;\cdots ,\;0,\; \cdots , \; l-1,\;l 
+\end{align*} 
+<li>Bohr energies: </li>
+\[E_n = - \left[ \frac{m}{2\hbar ^2 } \left( \frac{e^2 }{4\pi \epsilon _0 } \right) ^2  \right] \frac{1}{n^2 }\]
+<li>Bohr radius: </li>
+\[a=\frac{4\pi \epsilon _0 \hbar ^2 }{m_ee^2 } \]
+<li></li>
+</ul>
+
+<p>The Bohr Hamiltonian takes into account the electron kinetic energy plus Coulombic potential energy:</p>
+\[H_{\text{Bohr} }=-\frac{\hbar ^2 }{2m}\nabla ^2 -\frac{e^2 }{4\pi \epsilon _0 }\frac{1}{r} \]
+<p>Fine structure constant:</p>
+\[\alpha  \equiv \frac{e^2 }{4\pi \epsilon _0 \hbar c} \]
+<p>Fine structure perturbations are characterized by $\alpha  $: a relativistic correction and a spin-orbit coupling.</p>
+
+<p><u>Relativistic correction perturbation:</u></p>
+\begin{align*}
+	H_1^{\text{relativistic} } &= -\frac{p^4 }{8m^3 c^2 } \\
+	E_{\text{relativistic} }^{(1)} &= -\frac{(E_n )^2 }{2mc ^2 } \left[ \frac{4n}{l+\frac{1}{2}}-3 \right]  
+\end{align*}
+
+<p>Note that $n $, $l $, $m $ are good quantum numbers in this situation.</p>
+
+<p><u>Spin-Orbit coupling:</u></p>
+
+<p>The electron sees a proton circling around: charges moving in circles create magnetic fields. With Hamiltonian (magnetic moment $\mu  $)</p>
+\begin{align*}
+	H &= -\mu \cdot \mathbf{B} \\
+	\mathbf{B} &= \frac{1}{4\pi \epsilon _0 }\frac{e}{mc ^2 r^3 }\mathbf{L} \tag{Where $\mathbf{S} $ is the orbital angular momentum}\\
+	\mu _e &= -\frac{e}{m}\mathbf{S} \tag{Where $\mathbf{S} $ is the spin angular momentum}
+\end{align*}
+<p>The right perturbation has to take into account the acceleration (non-inertiality of the frame) of the electron.  Thomas precession corrects this issue with a factor of $1/2 $:</p>
+\[H^{\text{spin-orbit} }_{1}= \left( \frac{e^2 }{8\pi \epsilon _0 } \right) \frac{1}{m ^2 c^2 r^3 }\mathbf{S}\cdot \mathbf{L} \] 
+<p>Note that $\mathbf{L} $ and $\mathbf{S} $ don't commute with $H^{\text{spin-orbit} }_{1} $, but $L^2 ,S^2 ,  $ and total AM $\mathbf{J}\equiv \mathbf{L}=\mathbf{S} $ do commute, and thus are conserved. Using their eigenstates for perturbation theory, we find</p>
+\[E^{(1)}_{\text{spin-orbit} }=\frac{(E_n)^2 }{mc ^2 } \left[ \frac{n\left\lbrace j(j+1)-l(l+1)-3/4 \right\rbrace}{l(l+1/2)(l+1)} \right]  \]
+<p><u>Conclusions</u></p>
+<p>The first order fine structure corrections total to:</p>
+\[E^{(1)}_{\text{fs} }=\frac{(E_n )^2 }{2m c^2 } \left( 3-\frac{4n}{j+1/2} \right)  \]
+<p>So to first order, the Hydrogen atom energy is (Bohr + 1st order FS):</p>
+\[E_{nj}=-\frac{13.6\;\text{eV} }{n^2 } \left[ 1+\frac{\alpha ^2 }{n^2 } \left( \frac{n}{j+1/2}-\frac{3}{4} \right)  \right]  \]
 <hr>
 <h3 id="Zeeman">Zeeman effect.</h3>
 
