@@ -24,6 +24,35 @@
 			  display: table;
 			  clear: both;
 			}
+			
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container img {
+  display: block;
+  width: 75%;
+  transition: opacity 0.3s;
+}
+
+.image-container img:hover {
+  opacity: 0.5;
+}
+
+.image-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5); /* optional background for readability */
+  padding: 5px;
+  font-family: sans-serif;
+  font-size: 14px;
+  text-align: left;
+}
+
 		</style>
     </head>
     <body>
