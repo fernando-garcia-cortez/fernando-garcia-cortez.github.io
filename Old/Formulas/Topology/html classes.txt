@@ -1,7 +1,0 @@
-<span class="def">Definition</span>
-
-<span class="theorem">Theorem</span>
-
-<span class="lemma">Lemma</span>
-
-<span class="remark">Remark</span>
