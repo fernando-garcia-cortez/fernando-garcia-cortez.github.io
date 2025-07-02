@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Thoughts on the Poincaré transformations of Hilbert spaces</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Research.html" style="color: black; text-decoration: none;">
+						Research
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			
+			<h2 style="text-align:center;">Thoughts on the Poincaré transformations of Hilbert spaces</h2>
+			<p style="text-align:center;">March 17th, 2024.</p>
+
+
+
+<h4>Introduction</h4>
+
+<p>After dealing with Lorentz/Poincaré transformations both in the applied and in the abstract sense for a long time, I started to wonder what happens to states themselves after we perform a Lorentz transformation. I was recently reading Veltman's "Diagrammatica: The Path to Feynman Diagrams," where he touches on this idea in chapter 2.</p>
+
+<p>In this post, I want to discuss some of the ideas while polishing up some of the notation, as well as exploring open ideas left for the reader in the aforementioned text. Although this post will be shorter than others, it will have interesting ideas that are worth reading.</p>
+
+
+<!------------------------------->
+<!------------------------------->
+<!------------------------------->
+
+
+<h4>Quick recap on Hilbert spaces in the context of Quantum Mechanics</h4>
+
+<p>It is assumed that the reader is familiar with the use of Hilbert Spaces in quantum mechanics. This section will mostly serve the purpose of setting up the notation to be used later on.</p>
+
+<p>Orthogonal states of a system will form a basis of a Hilbert space. We shall denote</p>
+\[| 0 \rangle \equiv \text{Vacuum state}  \]
+<p>And </p>
+\[| p \rangle \equiv \text{State of one particle with momentum $p $}  \]
+<p>In the case of multiparticle systems, we use:</p>
+\[| p,q,\cdots  \rangle \equiv \text{State with one particle of momentum $p $, one with $q $, etc.}  \]
+<p>Suppose now we want a state with a <i>sharply</i> defined location (say, $x_0  $) at some time $t_0 $. Then we could have something such as</p>
+\[\psi (t_0 ,\mathbf{x}_0 )=C\delta ^3(\mathbf{x}-\mathbf{x}_0 ) \]
+<p>(Working in 3 spatial dimensions, and $C $ being a normalization constant). Keeping in mind the Fourier transform of the delta function, we see that:</p>
+\[\psi (x)=\frac{C}{(2\pi )^3 }\int d^3 pe^{ip\cdot (x-x_0 )} \]
+<p>Where we further generalized to spacetime. In the above:</p>
+\[p\cdot x=-Et+\mathbf{p}\cdot \mathbf{x};\;\;\;E^2 =\mathbf{p}^2 +m^2  \]
+<p>This suggests that a state with sharp location at some time is composed of (a superposition of) states with sharp momentum:</p>
+\[| x \rangle =\sum_{\mathbf{p}}^{} Ce^{ip\cdot x}| \mathbf{p} \rangle  \]
+<p>Where $C $ is again a normalization constant.</p>
+<!------------------------------->
+<!------------------------------->
+<!------------------------------->
+
+
+
+<h4>The effects of Poincaré Transformations on Hilbert spaces.</h4>
+
+<p>Above we saw that a <i>vector</i> in the Hilbert space of states depends directly on physical quantities (such as momentum and position). If we perform a Lorentz transformation, the physical objects will change, say:</p>
+
+\[p\rightarrow p'=Lp \]
+<p>Where $L $ is a Lorentz transformation. This means that the vector representing some state in Hilbert Space also changed. Given the infinite size of the Hilbert space, for each Lorentz transformation, we should <i>in theory</i> be able to write the infinite dimensional matrix which transforms all the vectors/states in the space.</p>
+
+<p>Consider a 4-translation by the 4-vector $b $. The position state transforms trivially:</p>
+\[| x \rangle \rightarrow | x+b \rangle  \]
+<p>That is</p>
+\[\sum_{\mathbf{p}}^{} e^{ip\cdot x}| \mathbf{p} \rangle \rightarrow \sum_{\mathbf{p}}^{} e^{ip\cdot (x+b)}| \mathbf{p} \rangle  \]
+<p>From which we see that the momentum state $| \mathbf{p} \rangle  $ simply picks up a phase factor from the transformation:</p>
+\[| \mathbf{p} \rangle \rightarrow e^{ip\cdot b}| \mathbf{p} \rangle  \]
+<p>This is certainly not what happens to 4-momentum when we perform a translation. Nonetheless, it represents the same state (as in the physical transformation of 4-momentum). Rotations and boosts are a bit more complicated. Still, there is one remarkable property we can quickly check:</p>
+
+<p>Suppose there is a unique correspondence between transformations in physical space and transformations in Hilbert space. Lorentz transformations can be composed. This suggests the idea that if we have 3 Lorentz transformations $L_1 ,L_2 ,L_3  $ such that</p>
+\[L_3 =L_2 \circ L_1  \]
+<p>Then the unique correspondence should establish that if $X_3 \leftrightarrow  L_3  $, then $X_2 \circ X_1  \leftrightarrow L_2 \circ L_1 $. whenever $X_2 \leftrightarrow L_2  $ and $X_1 \leftrightarrow L_1  $.</p>
+
+<p>We show this for translations. Suppose $L_3 =L_2 \circ L_1  $ where</p>
+\begin{align*}
+	L_1 x &= x+b_1  \\
+	L_2 x &= x+b_2  \\
+	\text{Meaning...} \;\;\; L_3 x &= x + b_1 +b_2 
+\end{align*}
+<p>We see that:</p>
+\begin{align*}
+	| x \rangle   &{\rightarrow } | x+b_1 +b_2  \rangle \tag{Under the action of $L_3  $} \\
+	  &= \sum_{\mathbf{p}} e^{ip\cdot (x+b_1 +b_2 )}| \mathbf{p} \rangle  \\
+	  &= \sum_{\mathbf{p}}^{} e^{ip\cdot x}e^{ip\cdot b_2 }e^{i\cdot b_1 }| \mathbf{p} \rangle 
+\end{align*}
+<p>So</p>
+\begin{align*}
+	| \mathbf{p} \rangle  &{\rightarrow } X_3 | \mathbf{p} \rangle   \\
+	  &= e^{ip\cdot b_2 }e^{ip\cdot b_1 }| \mathbf{p} \rangle \\
+	  &= X_2  e^{ip\cdot b_1 }| \mathbf{p} \rangle \\
+	  &= X_2 \circ X_1 | \mathbf{p} \rangle
+\end{align*}
+<p>Meaning that composition is preserved in the one-to-one mapping between transformations in physical space and in Hilbert space (at least for translation). </p>
+ 
+<!------------------------------->
+<!------------------------------->
+<!------------------------------->
+
+
+
+<h4>Final remarks</h4>
+
+<p>It is clear that for each Poincaré/Lorentz transformation, there is a transformation in the Hilbert space of states. If we assume a one-to-one correspondence, we saw that composition is preserved (group homomorphisms!). In a future post I will explore this same ideas using pure Lorentz transformations, that is: rotations and boosts.</p>
+
+
+
+<br>
+			<a href="../Blog.html" style="color: black; "><h4>Back to Blogs</h4></a>
+		</div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

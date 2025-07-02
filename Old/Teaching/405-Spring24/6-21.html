@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problem 6.21</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Research.html" style="color: black; text-decoration: none;">
+						Research
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			<h2 style="text-align:center;">PHYS405 - Electricity & Magnetism I</h2>
+			<h4 style="text-align:center;">Spring 2024</h4>
+			
+			<h2>Problem 6.21</h2>
+			
+			<div class="BlogAbstract">
+				
+				<p>(a) Show that the energy of a magnetic dipole moment $\mathbf{m} $ in a magnetic field $\mathbf{B} $ is</p>
+\[U=-\mathbf{m}\cdot \mathbf{B} \]
+<p>(Assume that the magnitude of the dipole moment is fixed, and all you have to do is move it into place and rotate it into its final orientation. The energy required to keep the current flowing is a different problem, which we will confront in chapter 7.) Compare Eq. 4.6.</p>
+
+<p>(b) Show that the interaction energy of two magnetic dipoles separated by a displacement $\mathbf{r} $ is given by:</p>
+\[U=\frac{\mu _0 }{4\pi }\frac{1}{r^3 } \left[ \mathbf{m}_1 \cdot \mathbf{m}_2 -3(\mathbf{m}_1 \cdot \hat{\mathbf{r}})(\mathbf{m}_2 \cdot \hat{\mathbf{r}}) \right]  \]
+<p>Compare to Eq. 4.7.</p>
+
+<p>(c) Express your answer to (b) in terms of the angels $\theta _1  $ and $\theta _2  $ in Fig. 6.30.</p>
+<img src="6-21/01.PNG" class="centerImg" style="width: 30%;">
+<p>Use the result to find the stable configuration two dipoles would adopt if held a fixed distance apart, but left <i>free to rotate</i>.</p>
+
+<p>(d) Suppose you had a large collection of compass needles, mounted on pins at regular intervals along a straight line. How would they point (assuming the Earth's magnetic field can be neglected)?</p>
+
+<p>(A rectangular array of compass needles aligns itself spontaneously, and this is sometimes used as a demonstration of "ferromagnetic" behavior on a large scale. It's a bit of a fraud, however, since the mechanism here is purely classical, and much weaker that the quantum mechanical exchange forces that are actually responsible for ferromagnetism).</p>
+				
+			</div>
+			
+
+<h4>Part (a)</h4>
+
+<p>Recall from the beginning of chapter 6 (page 271) that with dipole moment $\mathbf{m} $ in a field $\mathbf{B} $, the force is</p>
+\[\mathbf{F}=\nabla (m\cdot \mathbf{B}) \]
+
+<p>By definition of work/energy:</p>
+\begin{align*}
+	U &= -\int _{\infty }^{\mathbf{r}}\mathbf{F}\cdot d\mathbf{l} \\
+	  &= -\int_{\infty }^{\mathbf{r}} \nabla (\mathbf{m}\cdot \mathbf{B})\cdot d\mathbf{l}\\
+	  &= -\mathbf{m}\cdot \mathbf{B}(\mathbf{r})+\cancel{\mathbf{m}\cdot \mathbf{B}(\infty )}\\
+	  &= - \mathbf{m}\cdot \mathbf{B}(\mathbf{r})
+\end{align*}
+<p>Where in the above we assume that the $\mathbf{B} $ field goes to zero at infinity and we also used the fundamental theorem of gradients ($\int_{\mathbf{a}}^{\mathbf{b}} (\nabla T)\cdot d\mathbf{l} =T(\mathbf{b})-T(\mathbf{a})$).</p>
+
+
+<h4>Part (b)</h4>
+
+<p>Recall that the magnetic field of a dipole can be written in coordinate free form:</p>
+
+\[\mathbf{B}_{\text{dip} }(\mathbf{r})=\frac{\mu _0 }{4\pi }\frac{1}{r^3 }(3(\mathbf{m}\cdot \hat{\mathbf{r}})\hat{\mathbf{r}}-\mathbf{m}) \]
+
+<p>Using this and the result from part (a), it follows that</p>
+\[U=\frac{\mu _0 }{4\pi }\frac{1}{r^3 } \left[ \mathbf{m}_1 \cdot \mathbf{m}_2 -3(\mathbf{m}_1 \cdot \hat{\mathbf{r}})(\mathbf{m}_2 \cdot \hat{\mathbf{r}}) \right]  \]
+
+<h4>Part (c)</h4>
+
+<p>We start by noting that</p>
+\[\mathbf{m}_1 \cdot \mathbf{m}_2 =m_1 m_2 \cos (\theta _2-\theta _1 ) = m_1 m_2 \bigg(\sin \theta _1 \sin \theta _2 +\cos \theta _1 \cos \theta _2 \bigg) \]
+<p>And</p>
+
+\begin{align*}
+	\mathbf{m}_1 \cdot \hat{\mathbf{r}} &= m_1 \cos \theta _1  \\
+	\mathbf{m}_2 \cdot \hat{\mathbf{r}} &=  m_2 \cos \theta _2 
+\end{align*} 
+
+<p>So</p>
+
+\[U = \frac{\mu _0 }{4\pi }\frac{m_1 m_2 }{r^3 }\bigg( \sin \theta _1 \sin \theta _2 -2\cos \theta _1 \cos \theta _2 \bigg) \]
+
+<p>Be careful with the algebra here. We have $-3 \cos \theta _1 \cos \theta _2 $ but also $+1\cos \theta _1 \cos \theta _2 $.</p>
+
+<h4>Part (d)</h4>
+
+<p>They will all point parallel to each other</p>
+			
+			<br>
+			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
+			
+        
+		</div>
+    </body>
+</html>
+

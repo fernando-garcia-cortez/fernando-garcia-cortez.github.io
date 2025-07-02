@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problem 1.56</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Research.html" style="color: black; text-decoration: none;">
+						Research
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			<h2 style="text-align:center;">PHYS405 - Electricity & Magnetism I</h2>
+			<h4 style="text-align:center;">Spring 2024</h4>
+			
+			<h2>Problem 1.56</h2>
+			
+			<div class="BlogAbstract">
+				
+				<p>Compute the line integral of</p>
+				
+				\[\mathbf{v}=6\hat{\mathbf{x}} +yz^2 \hat{\mathbf{y}} +(3y+z)\hat{\mathbf{z}}  \]
+	
+				<p>Along the triangular path from Figure 1.49. Then check your answer using Stokes' theorem.</p>
+	
+				<p>Answer 8/3<p>
+				
+			</div>
+			
+			<p>Here's a 3D render of the path from Figure 1.49. (Feel free to zoom out and drag around to see it from different points of view).</p>
+			
+			<iframe scrolling="no" title="1-56" src="https://www.geogebra.org/material/iframe/id/fnywt5kv/width/975/height/851/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="975px" height="851px" style="border:0px;"> </iframe>
+			
+			<p>Let's recall The Fundamental Theorem for curls, also known as Stokes' theorem:</p>
+			
+			\[\int _{\mathcal{S}}(\nabla \times \mathbf{v})\cdot d\mathbf{a}=\oint _{\mathcal{P}}\mathbf{v}\cdot d\mathbf{l}\tag{Eq. 1.57, page 33} \]
+			
+			<p>Problem 1.56 first asks us to do the right hand side of the equality above, and then check it using the surface integral corresponding to Stokes' theorem.</p>
+			
+			<p>The line integral is straight forward. It consists of 3 paths on which we can deconstruct the closed path over:</p>
+			
+			\[\oint _{\mathcal{P}}\mathbf{v}\cdot d\mathbf{l} = \int _{L_1}\mathbf{v}\cdot d\mathbf{r}_1  +\int _{L_2}\mathbf{v}\cdot d\mathbf{r}_2  +\int _{L_3}\mathbf{v}\cdot d\mathbf{r}_3   \]
+			
+			<p>Where $L_1 $ is the straight path on the $y $-axis, $L_2 $ the diagonal path on the $yz $plane, and $L_3 $ is the straigt path on the $z $-axis. To properly express these paths, we introduce the following 3 curves</p>
+			
+			
+
+			\begin{align*}
+				 \mathbf{r}_1 &= (0,t,0) \\
+				 \mathbf{r}_2&= (0,1-t,2t)\\
+				 \mathbf{r}_3&= (0,0,2-2t) 
+			\end{align*}
+
+			<p>All of which will go from $t_i=0 $ to $t_f=1 $: (notice that this is the $yz $-plane)</p>
+
+			<iframe scrolling="no" title="1-56 3 curves" src="https://www.geogebra.org/material/iframe/id/ks4x3xu7/width/845/height/593/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="845px" height="593px" style="border:0px;"> </iframe>
+
+			<p>For which we have the differentials:</p>
+
+			\begin{align*}
+				d\mathbf{r}_1 &= (0,1,0)   dt \\
+				d\mathbf{r}_2 &= (0,-1,2)   dt \\
+				d\mathbf{r}_3 &= (0,0,-2)   dt 
+			\end{align*}
+
+			<p>Before computing the integral, we must write the field $\mathbf{v} $ in terms of the curve parameter $t $.</p>
+
+			<p>For the first curve, we have</p>
+
+
+			\begin{align*}
+				x &= 0 \\
+				y &= t \\
+				z &= 0
+			\end{align*}
+
+			<p>Thus</p>
+
+
+			\begin{align*}
+				\mathbf{v}_{\text{Curve 1}} &= (6,yz^2 ,3y+z)  \\
+				  &\rightarrow  (6,0,3t) 
+			\end{align*} 
+
+			<p>For the second curve, we have</p>
+
+
+			\begin{align*}
+				x &= 0 \\
+				y &= 1-t \\
+				z &= 2t
+			\end{align*}
+
+			<p>Thus</p>
+
+
+			\begin{align*}
+				\mathbf{v}_{\text{Curve 2}} &= (6,yz^2 ,3y+z)  \\
+				  &\rightarrow  (6,(1-t)(2t)^2 ,3(1-t)+2t)\\
+				  &=   \left( 6,4 t^2-4 t^3 ,3-t\right) 
+			\end{align*}
+
+			<p>For the third curve, we have</p>
+
+
+			\begin{align*}
+				x &= 0 \\
+				y &= 0 \\
+				z &= 2-2t
+			\end{align*}
+
+			<p>Thus</p>
+
+			\begin{align*}
+				\mathbf{v}_{\text{Curve 3}} &= (6,yz^2 ,3y+z)  \\
+				  &\rightarrow  (6,0,2-2t) 
+			\end{align*}
+
+			<p>Thus, the closed line integral is:</p>
+
+			\begin{align*}
+				\oint _{\mathcal{P}}\mathbf{v}\cdot d\mathbf{l} &= \int _{L_1}\mathbf{v}_{\text{Curve 1}}\cdot d\mathbf{r}_1  +\int _{L_2}\mathbf{v}_{\text{Curve 2}}\cdot d\mathbf{r}_2  +\int _{L_3}\mathbf{v}_{\text{Curve 3}}\cdot d\mathbf{r}_3 \\
+				  &= \int_{0}^{1}  0 dt  +  \int_{0}^{1}  -(4t^2 -4t^3 )+2(3-t) dt + \int_{0}^{1}  -2(2-2t) dt \\
+				  &= \frac{8}{3} 
+			\end{align*}
+			
+			<p>Let's now use Stokes' theorem and compute the surface integral of the curl of $\mathbf{v} $. At the end we should find that the surface integral is equal to $\frac{8}{3}  $. It is clear that:</p>
+			
+			\[\nabla \times \mathbf{v}=(3-2yz,0,0) \]
+			
+			<p>And we have</p>
+			
+			\[d\mathbf{a}=(dydz,0,0) \]
+			
+			<p>Using the diagonal path, we see that $y $ and $z $ are related by:</p>
+			
+			\[z=-2y+2 \]
+			
+			<p>So the limits of integration with respect to $z  $ are going to be</p>
+			
+			\begin{align*}
+				z_i  &= 0 \\
+				z_f &= -2y+2 
+			\end{align*}
+			
+			<p>And for $y$ we simply have $y_i=0 $ and $y_f=1 $. The surface integral is:</p>
+			
+			\begin{align*}
+				\int _{\mathcal{S}}(\nabla \times \mathbf{v})\cdot d\mathbf{a} &= \int_{y=0}^{1} \int_{z=0}^{-2y+2} 3-2yzdzdy \\
+				  &= \int_{y=0}^{1} 3 (2-2 y)-(2-2 y)^2 ydy \\
+				  &= \frac{8}{3}
+			\end{align*}
+
+			<p>As expected.</p>
+			
+			
+			
+			<br>
+			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
+			
+        
+		</div>
+    </body>
+</html>
+

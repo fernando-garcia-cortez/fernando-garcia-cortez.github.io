@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cylindrical coordinates</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Research.html" style="color: black; text-decoration: none;">
+						Research
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			<h2 style="text-align:center;">PHYS405 - Electricity & Magnetism I</h2>
+			<h4 style="text-align:center;">Spring 2024</h4>
+			
+			<h2>Conversions between spherical and cylindrical coordinates</h2>
+			
+			<p>Our textbook discusses conversions between cartesian and other systems, but we don't have a lot of inforation to convert between spherical and cylindrical, for example.</p>
+			
+			<p>Coverting coordiantes can be simple, but converting a field will take a few extra steps. Not only do we have to convert the field's functions, but also the unit vectors we use to express the field</p>
+			
+			In this brief entry, we will derive expressions to convert a spherical field (expressed using $r,\theta ,\phi  $ with unit vectors $\hat{r},\hat{\theta },\hat{\phi }$) into a cylindrical field (epxressed using $s,\phi ,z $ and the unite vectors $\hat{s},\hat{\phi },\hat{z} $)
+			
+			Let's start by recalling some unit vector conversions (as seen on our textbook):
+			
+			\begin{align*}
+				\hat{r} &= \sin \left( \theta  \right) \cos \left( \phi  \right) \hat{x} + \sin \left( \theta  \right) \sin \left( \phi  \right) \hat{y}+\cos \left( \theta  \right) \hat{z} \\
+				\hat{\theta } &= \cos \left( \theta  \right) \cos \left( \phi  \right) \hat{x} + \cos \left( \theta  \right) \sin \left( \phi  \right) \hat{y} - \sin \left( \theta  \right) \hat{z} \\
+				\hat{\phi } &= -\sin \left( \phi  \right) \hat{x}+\cos \left( \phi  \right) \hat{y} 
+			\end{align*}
+			
+			<p>And</p>
+			
+			\begin{align*}
+				\hat{x} &= \cos \left( \phi  \right) \hat{s}-\sin \left( \phi  \right) \hat{\phi } \\
+				\hat{y} &= \sin \left( \phi  \right) \hat{s}+\cos \left( \phi  \right) \hat{\phi } \\
+				\hat{z} &= \hat{z} 
+			\end{align*}
+			
+			<p>With those two conversions in mind, we can find expressions for the spherical unit vectors in terms of cylindrical unit vectors:</p>
+			
+			\begin{align*}
+				\text{spherical}  &{\rightarrow } \text{cylindrical}  \\
+				\hat{r} &= \sin \left( \theta  \right) \hat{s}+\cos \left( \theta  \right) \hat{z} \\
+				\hat{\theta } &= \cos \left( \theta  \right) \hat{s}-\sin \left( \theta  \right) \hat{z} \\
+				\hat{\phi } &= \hat{\phi } 
+			\end{align*} 
+
+			The conversion between components is easy to derive geometrically:
+			
+			\begin{align*}
+				r &= \sqrt{s^2 +z^2 } \\
+				\theta  &= \arccos  \left( \frac{z}{\sqrt{s^2 +z^2 }} \right)  \\
+				\phi  &= \phi  
+			\end{align*}
+
+			<p>We can use these to write the spherical unit vectors using only cylindrical variables. It is relevant to recall that</p>
+
+			\[\sin \left( \arccos (\omega ) \right) =\sqrt{1-\omega ^2 } \]
+
+			<p>So</p>
+
+			\begin{align*}
+				\hat{r} &= \sqrt{1-\frac{z^2 }{s^2 +z^2 }}\hat{s}+\frac{z}{\sqrt{s^2 +z^2 }}\hat{z} \\
+				\hat{\theta } &= \frac{z}{\sqrt{s^2 +z^2 }}\hat{s} - \sqrt{1-\frac{z^2 }{s^2 +z^2 }}\hat{z} \\
+				\hat{\phi } &= \hat{\phi } 
+			\end{align*}
+
+			<p>With the last two sets of equations we will be able to convert any spherical vector field</p>
+
+			\[\mathbf{v}=f_r(r,\theta ,\phi )\hat{r} +f_{\theta }(r,\theta ,\phi )\hat{\theta}+f_{\phi }(r,\theta ,\phi )\hat{\phi}   \]
+
+			<p>Into a cylindrical vector field</p>
+
+			\[\mathbf{v}=f_s(s,\phi ,z )\hat{s} +f_{\phi }(s,\phi ,z )\hat{\phi}+f_{z }(s,\phi ,z )\hat{z}   \]			
+		
+			<br>
+			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
+			
+        
+		</div>
+    </body>
+</html>
+

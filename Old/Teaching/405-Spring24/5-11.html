@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problem 5.11</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Research.html" style="color: black; text-decoration: none;">
+						Research
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			<h2 style="text-align:center;">PHYS405 - Electricity & Magnetism I</h2>
+			<h4 style="text-align:center;">Spring 2024</h4>
+			
+			<h2>Problem 5.11</h2>
+			
+			<div class="BlogAbstract">
+				
+				<p>Find the magnetic field at a point $P $ on the axis of a tightly wound solenoid (helical coil) consisting on $n $ turns per unit length wrapped around a cylindrical tube of radius $a $ and carrying current $I $ (Fig. 5.24).</p>
+
+<p>Express your answer in terms of $\theta _1  $ and $\theta _2  $. (It's tidiest that way)</p>
+
+<p>Consider the turns to be essentially circular, and use the result of Ex 5.6. </p>
+
+<p>What is the field on the axis of an infinite solenoid? (Infinite in both directions)</p>
+				
+			</div>
+			<img src="5-11/Fig-5-24.PNG" class="centerImg" style="width: 50%;">
+			
+			<p>As suggested by the problem, we can think of this as a collection of rings. Example 5.6 shows the $B $ field of a ring a distance $z $ above the point of interest:</p>
+			
+			\[B(z)=\frac{\mu _0 I}{2}\frac{R^2 }{(R^2 +z^2 )^{3/2}}\tag{Eq. 5.41} \]
+			
+			<p>Now, we need to modify this slightly. We will replace</p>
+			\[I\rightarrow nI \]
+			<p>So the integral we want to compute is of the form:</p>
+			\[B=\frac{\mu _0 nI}{2}\int \frac{a^2 }{(a^2 +z^2 )^{3/2}}dz \]
+			<p>Instead of using a perpendicular distance to the rings $(z) $, it is of interest to use an angle as showcased in figure 5.24 above. We note that</p>
+			\[\tan \left( \theta  \right) =\frac{a}{z} \]
+			<p>So</p>
+			\begin{align*}
+				z &= \frac{a}{\tan \left( \theta  \right) } \\
+				  &= a\cot \left( \theta  \right)  
+			\end{align*}
+			<p>Replacing this variable in the integral:</p>
+			\begin{align*}
+				dz &= a(-\csc ^2 (\theta ))d\theta  \\
+				  &= -\frac{a}{\sin ^2 \theta }d\theta  
+			\end{align*}
+			<p>Further, we note that </p>
+			\begin{align*}
+				\frac{1}{a^2 +a^2 \cot ^2 \theta } &= \frac{1}{a^2  \left( 1+\cot ^2 \theta  \right) } \\
+				  &= \frac{1}{a^2 \csc ^2 \theta }\\
+				  &= \frac{\sin ^2 \theta }{a^2 } 
+			\end{align*}
+			<p>Therefore</p>
+			\[\frac{1}{(a^2 +z^2 )^{3/2}}=\frac{\sin ^3 \theta }{a ^3} \]
+			<p>We see then that the integral reduces to:</p>
+			\begin{align*}
+				B &= \frac{\mu _0 nI}{2}\int_{\theta _1 }^{\theta _2 }  \frac{a^2 \sin ^3 \theta }{a^3 \sin ^2 \theta }(-1)ad\theta  \\
+				  &= -\frac{\mu _0 nI}{2}\int_{\theta _1 }^{\theta _2 }  \sin \theta d\theta \\
+				  &= -\frac{\mu _0 nI}{2} (\cos \theta _2  - \cos \theta _1 ) 
+			\end{align*}
+			<p>If we now want to consider an infintie solenoid, consider what happens to the angles $\theta _1  $ and $\theta _2  $ as we stretch the solenoid to infinity:</p>
+			\begin{align*}
+				\theta _1  &= \pi  \\
+				\theta _2  &= 0 
+			\end{align*}
+			<p>Which reduces the above result to</p>
+			\[B=\mu _0 nI \]
+			   
+			
+			
+			
+			
+			
+			
+			
+			
+			<br>
+			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
+			
+        
+		</div>
+    </body>
+</html>
+

@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulas - EM</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Research.html" style="color: black; text-decoration: none;">
+						Research
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			
+			<h2 style="text-align:center;margin-bottom: 0;">Electrodynamics</h2>
+			<h4 style="text-align:center;margin-top: 0;">Formulas</h4>
+
+			
+			
+			
+			<p>This collection is inspired on my EM II class. Further, it showcases formulas at the appropriate level for tests such as the PhysGRE.</p>
+			
+			<p>Since these were originally conceived as a personal aid for my EM II class, a lot of electrostatics and magnetostatics are omitted, and what's included has been consolidated into a single section. The order follows that of my class and Griffiths's book. A lot of results and applications can be seen in <a href="../Teaching/405-Spring24.html">my class page</a> when I was the TA for EM I.</p>
+			
+			<h3>Contents</h3>
+			
+			<div class="subzone">
+			
+				<a href="#Constants"><p>Constants.</p></a>
+			
+				<a href="#Vector-Calc-Ids"><p>Vector Calculus Identities.</p></a>
+				
+				<a href="#Electrostatics"><p>Electrostatics.</p></a>
+				
+				<a href="#Std-Elecstat-Configs"><p>Standard electrostatic configurations.</p></a>
+				
+				<a href="#Magnetostatics"><p>Magnetostatics.</p></a>
+				
+				<a href="#Std-Magstat-Configs"><p>Standard magnetostatics configurations.</p></a>
+				
+				<a href="#emf"><p>Electromotive force.</p></a>
+				
+				<a href="#EM-Induction"><p>Electromagnetic induction.</p></a>
+				
+				<a href="#MaxwellEquations"><p>Maxwell Equations. (+ in medium)</p></a>
+				
+				<a href="#ConservationLaws"><p>Conservation laws.</p></a>
+				
+				<a href="#ClassicalWaves"><p>Classical waves.</p></a>
+				
+				<a href="#EM-Waves-Vacuum"><p>EM Waves (Vacuum).</p></a>
+				
+				<a href="#EM-Waves-Matter"><p>EM Waves (in matter).</p></a>
+				
+				<a href="#EM-Waves-Conductors"><p>EM Waves (in conductors).</p></a>
+				
+				<a href="#EM-Waves-Dispersion"><p>EM Waves (dispersion).</p></a>
+				
+				<a href="#EM-Waves-Guides"><p>EM Waves (Wave Guides).</p></a>
+				
+				<a href="#Potentials"><p>Potentials.</p></a>
+				
+				<a href="#Potentials-Continuous-Distributions"><p>Potentials in continuous distributions.</p></a>
+				
+				<a href="#Potentials-Point-Charges"><p>Potentials and point charges.</p></a>
+			
+			</div>
+			
+			<hr>
+			<h3 id="Constants">Constants.</h3>
+			
+						<p>Permittivity of free space</p>
+						
+						\[\epsilon _0 =8.85\times 10^{-12} \frac{\text{C} ^2 }{\text{N} \cdot \text{m} ^2 }\]
+						
+						<p>Permeability of free space:</p>
+
+						\[\mu _0 =4\pi \times 10^{-7}\frac{\text{N} }{\text{A} ^2 } \]
+			
+			
+			<hr>
+			<h3 id="Vector-Calc-Ids">Vector Calculus Identities.</h3>
+			
+						<p>Fundamental theorem for Gradients</p>
+
+						\[\int_{\mathbf{a}}^{\mathbf{b}} (\nabla T)\cdot d\mathbf{l}=T(\mathbf{b})-T(\mathbf{a}) \]
+
+						<p>Fundamental theorem for Divergences (Gauss's/Green's/divergence theorem)</p>
+
+						\[\int _{\mathcal{V}}(\nabla \cdot \mathbf{v})d\tau =\oint _{\mathcal{S}}\mathbf{v}\cdot d\mathbf{a} \]
+
+						<p>Fundamental theorem for Curls (Stokes' theorem)</p>
+
+						\[\int _{\mathcal{S}}(\nabla \times \mathbf{v})\cdot d\mathbf{a}=\oint _{\mathcal{P}}\mathbf{v}\cdot d\mathbf{l} \]
+
+						<p>Dot/cross triple products</p>
+
+						\begin{align*}
+							\mathbf{A}\cdot (\mathbf{B}\times \mathbf{C}) &= \mathbf{B}\cdot (\mathbf{C}\times \mathbf{A})=\mathbf{C}\cdot (\mathbf{A}\times \mathbf{B})\tag{Cyclic permutations} \\
+							\mathbf{A}\times (\mathbf{B}\times \mathbf{C}) &= \mathbf{B}(\mathbf{A}\cdot \mathbf{C})-\mathbf{C}(\mathbf{A}\cdot \mathbf{B}) 
+						\end{align*}
+
+						<p>Gradient, Divergence, and Curl product rules:</p>
+
+						\begin{align*}
+							\nabla (fg) &= f(\nabla g)+g(\nabla f) \\
+							\nabla (\mathbf{A}\cdot \mathbf{B}) &= \mathbf{A}\times (\nabla \times \mathbf{B})+\mathbf{B}\times (\nabla \times \mathbf{A})+(\mathbf{A}\cdot \nabla )\mathbf{B}+(\mathbf{B}\cdot \nabla )\mathbf{A} \\
+							\nabla \cdot (f\mathbf{A}) &= f(\nabla \cdot \mathbf{A})+\mathbf{A}\cdot (\nabla f) \\
+							\nabla \cdot (\mathbf{A}\times \mathbf{B}) &= \mathbf{B}\cdot (\nabla \times \mathbf{A})-\mathbf{A}\cdot (\nabla \times \mathbf{B}) \\
+							\nabla \times (f\mathbf{A}) &= f(\nabla \times \mathbf{A})-\mathbf{A}\times (\nabla f) \\
+							\nabla \times (\mathbf{A}\times \mathbf{B}) &= (\mathbf{B}\cdot \nabla )\mathbf{A}-(\mathbf{A}\cdot \nabla )\mathbf{B}+\mathbf{A}(\nabla \cdot \mathbf{B})-\mathbf{B}(\nabla \cdot \mathbf{A}) 
+						\end{align*} 
+
+						<p>Second derivatives:</p>
+
+						\begin{align*}
+							\nabla \cdot (\nabla \times \mathbf{A}) &= 0 \\
+							\nabla \times (\nabla f) &= \mathbf{0} \\
+							\nabla \times (\nabla \times \mathbf{A}) &= \nabla (\nabla \cdot \mathbf{A})-\nabla ^2 \mathbf{A} 
+						\end{align*}
+
+						<p>Spherical line and volume elements:</p>
+
+						\begin{align*}
+							d\mathbf{l} &= dr\hat{\mathbf{r}}+rd\theta \hat{\theta }+r\sin \theta d\phi  \hat{\phi } \\
+							d\tau  &= r^2 \sin \theta drd\theta d\phi  
+						\end{align*} 
+
+						<p>Cylindrical line and volume elements:</p>
+
+						\begin{align*}
+							d\mathbf{l} &= ds\hat{\mathbf{s}}+sd\phi \hat{\phi }+dz\hat{z} \\
+							d\tau  &= sdsd\phi dz 
+						\end{align*}
+			
+			<hr>
+			<h3 id="Electrostatics">Electrostatics.</h3>
+			
+						<p>Separation vector:</p>
+
+						\[\mathscr{r}=\mathbf{r}-\mathbf{r}' \]
+
+						<ul>
+							<li>$\mathscr{r}$ is the vector from charges to ourselves (test charge).</li>
+							<li>$\mathbf{r}' $ is the vector from the origin to the charge configuration.</li>
+							<li>$\mathbf{r} $ is the vector from the origin to us (a test charge)</li>
+						</ul>
+
+						<p>Coulomb's law:</p>
+
+						\[\mathbf{F}= \frac{1}{4\pi \epsilon _0 }\frac{qQ}{\mathscr{r}^2 }\hat{\mathscr{r}}\]
+
+						<p>Electric field for a line, surface, volume charge:</p>
+
+						\begin{align*}
+							\mathbf{E}(\mathbf{r}) &= \frac{1}{4\pi \epsilon _0 }\int \frac{\lambda (\mathbf{r}')}{\mathscr{r}^2 }\hat{\mathscr{r}}dl' \\
+							\mathbf{E}(\mathbf{r}) &= \frac{1}{4\pi \epsilon _0 }\int \frac{\sigma (\mathbf{r}')}{\mathscr{r}^2 }\hat{\mathscr{r}}da' \\
+							\mathbf{E}(\mathbf{r}) &= \frac{1}{4\pi \epsilon _0 }\int \frac{\rho (\mathbf{r}')}{\mathscr{r}^2 }\hat{\mathscr{r}}d\tau ' 
+						\end{align*}
+
+						<p>Electric flux:</p>
+
+						\[\Phi _E=\int _{\mathcal{S}}\mathbf{E}\cdot d\mathbf{a} \]
+
+						<p>Gauss's law:</p>
+
+						\[\oint \mathbf{E}\cdot d\mathbf{a}=\frac{1}{\epsilon _0 }Q_{\text{enc} } \]
+
+						<p>Gauss's law in differential form:</p>
+
+						\[\nabla \cdot \mathbf{E}=\frac{1}{\epsilon _0 }\rho  \]
+						
+						<p>3 useful symmetries for Gauss's law:</p>
+
+						<ol>
+							<li>Spherical symmetry (use concentric sphere).</li>
+							<li>Cylindrical symmetry (use coaxial cylinder).</li>
+							<li>Plane symmetry (use pillbox).</li>
+						</ol>
+
+						<p>In the case of electrostatics:</p>
+
+						\[\nabla \times \mathbf{E}=\mathbf{0} \]
+
+						<p>Electric potential $V $:</p>
+
+						\[\mathbf{E}=-\nabla V \]
+
+						<p>Inversely:</p>
+
+						\[V=-\int \mathbf{E}\cdot d\mathbf{l} \]
+
+						<p>Poisson's equation:</p>
+
+						\[\nabla ^2 V=-\frac{\rho }{\epsilon _0 } \]
+
+						<p>General solution to Poisson's equation:</p>
+
+						\[V(\mathbf{r})=\frac{1}{4\pi \epsilon _0 }\int \frac{\rho (\mathbf{r}')}{\mathscr{r}}d\tau ' \]
+
+						<p>Laplace's equation:</p>
+
+						\[\nabla ^2 V=0 \]
+
+						<p>General solution to Laplace's equation in spherical coordinates with azimuthal symmetry:</p>
+
+						\[V(r,\theta )=\sum_{l=0}^{\infty }  \left( A_lr^{l}+\frac{B_l}{r^{l+1}} \right) P_l(\cos \theta ) \]
+
+						<p>List of Legendre polynomials:</p>
+
+						\begin{align*}
+							P_{0}(x) &= 1 \\
+							P_{1}(x) &= x \\
+							P_{2}(x) &= \frac{3x^2 -1}{2} \\
+							P_{3}(x) &= \frac{5x^3 -3x}{2} \\
+							P_{4}(x) &= \frac{35x^4 -30x^2 +3}{8} \\
+							P_{5}(x) &= \frac{63x^5 -70x^3 +15x}{8} 
+						\end{align*}
+
+						<p>General solution to Laplace's equation in cylindrical coordinates with cylindrical symmetry:</p>
+						 
+						\[V(s,\phi )=a_0 +b_0 \ln s + \sum_{k=1}^{\infty } \bigg[ s^k (a_k \cos \left( k\phi  \right) +b_k \sin \left( k\phi  \right) )+s^{-k}(c_k \cos \left( k\phi  \right) +d_k \sin \left( k\phi  \right) )\bigg] \]
+						 
+						<p>Uniqueness theorems:</p>
+
+						<ol>
+							<li>The solution to Laplace's equation in a volume $\mathcal{V} $ is uniquely determined by the boundary conditions of $V $ at the boundary (surface $\mathcal{S} $)</li>
+							<li>The electric field $\mathbf{E} $ is uniquely determined when we have conductors if the total charge on each conductor is specified.</li>
+						</ol>
+
+						<p>Boundary conditions for the $\mathbf{E} $ field:</p>
+
+						\begin{align*}
+							E_{\text{above} }^{\perp}-E_{\text{below} }^{\perp} &= \frac{1}{\epsilon _0 }\sigma  \\
+							\mathbf{E}^{\parallel}_{\text{above} } &= \mathbf{E}^{\parallel}_{\text{below} } 
+						\end{align*} 
+
+						<p>Boundary conditions for the $V $ field:</p>
+
+						\begin{align*}
+							V_{\text{above} } &= V_{\text{below} } \\
+							\frac{\partial V_{\text{above} }}{\partial n}-\frac{\partial V_{\text{below} }}{\partial n} &= -\frac{1}{\epsilon _0 }\sigma  
+						\end{align*} 
+
+						<p>Energy of a continuous charge distribution:</p>
+
+						\begin{align*}
+							W &= \frac{1}{2}\int \rho Vd\tau  \\
+							  &= \frac{\epsilon _0 }{2}\int_{\text{all space} } E^2 d\tau  
+						\end{align*}
+
+						<p>Ideal conductors are such that</p>
+
+						<ol>
+							<li>$\mathbf{E}=\mathbf{0} $ inside a conductor.</li>
+							<li>$\rho =0 $ inside a conductor.</li>
+							<li>Any net charge resides on the surface.</li>
+							<li>A conductor is an equipotential.</li>
+							<li>$\mathbf{E} $ is perpendicular to the surface just outside the conductor.</li>
+						</ol>
+
+						<p>Capacitors:</p>
+
+						<ul>
+							<li>Capacitance</li>
+							\[C=\frac{Q}{V} \]
+							<li>Energy in a capacity</li>
+							\[W=\frac{1}{2}CV^2  \]
+						</ul>
+
+						<p>Multipole expansion:</p>
+
+						\[V(\mathbf{r})=\frac{1}{4\pi \epsilon _0 }\sum_{n=0}^{\infty } \frac{1}{r^{(n+1)}}\int (r')^n P_n (\cos \left( \alpha  \right) )\rho (\mathbf{r}')d\tau ' \]
+
+						<p>Monopole term:</p>
+
+						\[V_{\text{mon} }(\mathbf{r})=\frac{1}{4\pi \epsilon _0 }\frac{Q}{r} \]
+
+						<p>Dipole moment:</p>
+
+						\[\mathbf{p}\equiv \int \mathbf{r}'\rho (\mathbf{r}')d\tau ' \]
+
+						<p>Dipole term:</p>
+
+						\[V_{\text{dip} }(\mathbf{r})=\frac{1}{4\pi \epsilon _0 }\frac{\mathbf{p}\cdot \hat{\mathbf{r}}}{r^2 } \]
+
+						<p>Physical dipole</p>
+
+						\[\mathbf{p}=q(q\mathbf{r}'_+-q\mathbf{r}'_-)=q\mathbf{d} \]
+
+						\begin{align*}
+							V_{\text{dip} }(r,\theta ) &= \frac{p\cos \theta }{4\pi \epsilon _0 r^2 } \\
+							\mathbf{E}_{\text{dip} }(r,\theta ) &= \frac{p}{4\pi \epsilon _0 r^3 }\bigg(2\cos \theta  \hat{\mathbf{r}}+\sin \theta  \hat{\theta }) 
+						\end{align*}
+
+						<p>Torque experienced by an ideal dipole due to an external field:</p>
+
+						\[\mathbf{n}=\mathbf{p}\times \mathbf{E} \]
+
+						<p>Energy of an ideal dipole in an electric field:</p>
+
+						\[U=-\mathbf{p}\cdot \mathbf{E} \]
+
+						<p>Polarization</p>
+
+						\[\mathbf{P}\equiv \text{dipole moment per unit volume}  \]
+
+						<p>Surface and volume bound charges</p>
+
+						\begin{align*}
+							\sigma _b &= \mathbf{P}\cdot \hat{n} \\
+							\rho _b &= -\nabla \cdot \mathbf{P} 
+						\end{align*}
+
+						<p>Electric Displacement:</p>
+
+						\[\mathbf{D}=\epsilon _0 \mathbf{E}+\mathbf{P} \]
+
+						<p>Gauss's law for the electric displacement $\mathbf{D} $:</p>
+
+						\[\nabla \cdot \mathbf{D}=\rho _f \;\Leftrightarrow \; \oint \mathbf{D}\cdot d\mathbf{a}=Q_{f_{\text{enc} }} \]
+
+						<p>Boundary conditions for the electric displacement $\mathbf{D} $:</p>
+
+						\begin{align*}
+							D^{\perp}_{\text{above} }-D^{\perp}_{\text{below} } &= \sigma _f \\
+							\mathbf{D}^{\parallel}_{\text{above} }-\mathbf{D}^{\parallel}_{\text{below} } &= \mathbf{P}^{\parallel}_{\text{above} }-\mathbf{P}^{\parallel}_{\text{below} } 
+						\end{align*}
+
+						<p>In a linear dielectric:</p>
+
+						\[\mathbf{P}=\epsilon _0 \chi _e\mathbf{E} \]
+
+						<p>Where $\chi _e $ is the electric susceptibility.</p>
+
+						<p>With the permittivity of a material:</p>
+
+						\[\epsilon \equiv \epsilon _0 (1+\chi _e) \]
+
+						<p>The electric displacement is:</p>
+
+						\[\mathbf{D}=\epsilon \mathbf{E} \]
+
+						<p>Relative permittivity/Dielectric constant:</p>
+
+						\[\epsilon _r\equiv 1+\chi _e=\frac{\epsilon }{\epsilon _0 } \]
+
+
+			
+			<hr>
+			<h3 id="Std-Elecstat-Configs">Standard electrostatic configurations.</h3>
+			
+						<p>$\mathbf{E} $ field a distance $z $ above the midpoint of a straight line segment of length $2L $ and (uniform) line charge density $\lambda  $.</p>
+
+						\[\mathbf{E}=\frac{1}{4\pi \epsilon _0 }\frac{2\lambda L}{z\sqrt{z^2 +L^2 }}\hat{\mathbf{z}} \]
+
+						<p>$\mathbf{E} $ field a distance $z $ above the center of a square loop of side $a $ with uniform line charge density $\lambda  $.</p>
+
+						\[\mathbf{E}=\frac{1}{4\pi \epsilon _0 }\frac{4\lambda az}{(z^2 +\frac{a^2 }{4})\sqrt{z^2 +\frac{a^2 }{2}}} \]
+
+						<p>$\mathbf{E} $ field a distance $z $ above the center of a circular loop of radius $r $ with uniform line charge density $\lambda  $.</p>
+
+						\[\mathbf{E}=\frac{1}{4\pi \epsilon _0 }\frac{\lambda (2\pi r)z}{(r^2 +z^2 )^{3/2}}\hat{\mathbf{z}} \]
+
+						<p>$\mathbf{E} $ field a distance $z $ above the center of a flat circular disk of radius $R $ and uniform surface charge density $\sigma  $.</p>
+
+						\[\mathbf{E}=\frac{1}{4\pi \epsilon _0 }2\pi \sigma z \left[ \frac{1}{z}-\frac{1}{\sqrt{R^2 +z^2 }} \right] \hat{\mathbf{z}} \]
+
+						<p>$E $ field of a spherical surface of radius $R $ with uniform surface charge density $\sigma  $ (total charge $Q $).</p>
+
+						\begin{align*}
+							\mathbf{E}_{\text{in} } &= \mathbf{0} \\
+							\mathbf{E}_{\text{out} } &= \frac{1}{4\pi \epsilon _0 }\frac{q}{z^2 \hat{z}} 
+						\end{align*} 
+
+						<p>$\mathbf{E} $ field of a solid sphere of radius $R $ with uniform volume charge density $\rho  $ (total charge $Q $).</p>
+
+						\begin{align*}
+							\mathbf{E}_{\text{in} } &= \frac{1}{4\pi \epsilon _0 }\frac{Q}{R^3 }r\hat{\mathbf{r}} \\
+							\mathbf{E}_{\text{out} } &= \frac{1}{4\pi \epsilon _0 }\frac{Q}{r^2 }\hat{r} 
+						\end{align*} 
+
+						<p>$\mathbf{E} $ field of an infinite plane with uniform surface charge density $\sigma  $.</p>
+
+						\[\mathbf{E}=\frac{\sigma }{2\epsilon _0 }\hat{n} \]
+
+						<p>$\mathbf{E} $ field of an infinitely long straight wire with uniform line charge density $\lambda  $:</p>
+
+						\[\mathbf{E}=\frac{\lambda }{2\pi \epsilon _0 s}\hat{\mathbf{s}} \]
+
+						<p>$V $ field a distance $z $ above the midpoint of a straight line segment of length $2L $ and (uniform) line charge density $\lambda  $.</p>
+
+						\[V(z)=\frac{\lambda }{2\pi \epsilon _0 }\ln  \left( \frac{L+\sqrt{z^2 +L^2 }}{z} \right)  \]
+
+						<p>$V $ field a distance $z $ above the center of a flat circular disk of radius $R $ and uniform surface charge density $\sigma  $.</p>
+
+						\[ V(z)=\frac{\sigma }{2\epsilon _0 }  \left( \sqrt{R^2 +z^2 }-z \right) \]
+
+						<p>$V $ field inside a solid uniformly charged sphere of radius $R $ and total charge $Q $.</p>
+
+						\[V(r)=\frac{q}{8\pi \epsilon _0 R} \left( 3-\frac{r^2 }{R^2 } \right)  \]			
+			
+			<hr>
+			<h3 id="Magnetostatics">Magnetostatics.</h3>
+			
+						<p>Lorentz Force law:</p>
+
+						\[\mathbf{F}=Q \left[ \mathbf{E}+(\mathbf{v}\times \mathbf{B}) \right]  \]
+
+						<p>In regards to work:</p>
+
+						\[\text{Magnetic forces do no work.}  \]
+
+						<p>Unit of amperes (current being charge per unit time):</p>
+
+						\[1\;\text{A} =1\;\frac{\text{C} }{\text{s} } \]
+
+						<p>Magnetic force on a segment of current-carrying wire:</p>
+
+						\[\mathbf{F}_{\text{mag} }=I\int d\mathbf{l}\times \mathbf{B} \]
+
+						<p>Surface current density:</p>
+
+						\begin{align*}
+							\mathbf{K} &= \frac{d\mathbf{I}}{dl_{\perp}} \\
+							  &= \sigma \mathbf{v} 
+						\end{align*}
+
+						<p>Volume current density:</p>
+
+						\begin{align*}
+							\mathbf{J} &= \frac{d\mathbf{I}}{da_{\perp}} \\
+							  &= \rho \mathbf{v} 
+						\end{align*}
+
+						<p>Magnetic force on a volume current:</p>
+
+						\begin{align*}
+							\mathbf{F}_{\text{mag} } &= \int (\mathbf{v}\times \mathbf{B})\rho d\tau  \\
+							  &= \int (\mathbf{J}\times \mathbf{B})d\tau  
+						\end{align*}
+
+						<p>Total current crossing a surface $\mathcal{S} $:</p>
+
+						\[I=\int _{\mathcal{S}}J\;da_{\perp} \]
+
+						<p>Continuity equation:</p>
+
+						\[\nabla \cdot \mathbf{J}=-\frac{\partial \rho }{\partial t} \]
+
+						<p>Magnetostatics regime:</p>
+
+						\[\frac{\partial \mathbf{J}}{\partial t}=\mathbf{0} \]
+
+						<p>Unit of teslas:</p>
+
+						\[1\;\text{T} =1\frac{\text{N} }{\text{A} \cdot \text{m} } \]
+
+						<p>Biot-Savart law:</p>
+
+						\begin{align*}
+							\mathbf{B}(\mathbf{r}) &= \frac{\mu _0 }{4\pi }\int \frac{\mathbf{I}\times \hat{\mathscr{r}}}{\mathscr{r}^2 } \\
+							  &= \frac{\mu _0 }{4\pi }I\int \frac{d\mathbf{l}'\times \hat{\mathscr{r}}}{\mathscr{r}^2 } 
+						\end{align*}
+
+						<p>Divergence of $\mathbf{B} $:</p>
+
+						\[\nabla \cdot \mathbf{B}=0 \]
+
+						<p>Curl of $\mathbf{B} $:</p>
+
+						\[\nabla \times \mathbf{B}=\mu _0 \mathbf{J} \]
+
+						<p>In integral form, it becomes Ampere's law:</p>
+
+						\[\oint \mathbf{B}\cdot d\mathbf{l}=\mu _0 I_{\text{enc} } \]
+
+						<p>Where</p>
+
+						\[I_{\text{enc} }=\int \mathbf{J}\cdot d\mathbf{a} \]
+
+						<p>Since $\nabla \cdot \mathbf{B}=0 $, we can introduce a vector potential</p>
+
+						\[\mathbf{B}=\nabla \times \mathbf{A} \]
+
+						<p>We set the divergence of $\mathbf{A} $:</p>
+
+						\[\nabla \cdot \mathbf{A}=0 \]
+
+						<p>And we get (three) Poisson's equation(s):</p>
+
+						\[\nabla ^2 \mathbf{A}=-\mu _0 \mathbf{J} \]			
+			
+			<hr>
+			<h3 id="Std-Magstat-Configs">Standard magnetostatics configurations.</h3>
+			
+						<p>Cyclotron motion</p>
+
+						\begin{align*}
+							QvB &= m\frac{v^2 }{R} \\
+							\omega  &= \frac{QB}{m} 
+						\end{align*}
+						 
+						<p>Magnetic field of an infinite wire with current $I $:</p>
+
+						\[B(s)=\frac{\mu _0 }{2\pi s}I \]
+
+						<p>Magnetic field a distance $z $ above the center of a circular loop of radius $R $ with steady current $I $.</p>
+
+						\[B(z)=\frac{\mu _0 I }{2} \frac{R^2 }{(R^2 +z^2 )^{3/2}} \]
+
+						<p>Magnetic field of an infinitely-long solenoid with $n $-turns per unit length carrying a current $I $:</p>
+
+						\[B =\begin{cases} \begin{matrix}  \mu _0 nI & \text{inside}  \\  0 & \text{outside}  \\  \end{matrix} \end{cases} \]
+
+						<p>Magnetic field of an infinite surface current $\mathbf{K}=k\hat{x} $ on the $xy $-plane:</p>
+
+						\[\mathbf{B}=\begin{cases} \begin{matrix}  (\mu _0 /2)K\hat{\mathbf{y}} & z < 0 \\  -(\mu _0 /2) K \hat{\mathbf{y}} & z > 0 \\  \end{matrix} \end{cases}  \]
+
+						<p>Magnetic field on a toroidal wire with $N $ total turns, carrying a current $I $:</p>
+
+						\[\mathbf{B}(\mathbf{r})=\begin{cases} \begin{matrix}  \frac{\mu _0 NI}{2\pi s}\hat{\phi } & \text{inside the coil}  \\  \mathbf{0} & \text{outside}  \\  \end{matrix} \end{cases}  \]
+			
+			<hr>
+			<h3 id="emf">Electromotive force.</h3>
+			
+						<p>Current density $\mathbf{J} $ and force per unit charge $\mathbf{f} $ are related through conductivity $\sigma  $:</p>
+
+						\[\mathbf{J}=\sigma \mathbf{f} \]
+
+						<p>Resistivity:</p>
+
+						\[\rho =\frac{1}{\sigma } \]
+
+						<p>In terms of resistivity,</p>
+
+						\begin{align*}
+							\text{Perfect conductors} \Rightarrow \;\; \sigma  &= \infty  \\
+							\text{Insulators} \Rightarrow \;\; \sigma  &= 0 
+						\end{align*}
+
+						<p>In the limit of small velocity, $\mathbf{J}=\sigma (\mathbf{E}+\cancel{\mathbf{v}\times \mathbf{B}}) $ giving Ohm's law:</p>
+
+						\[\mathbf{J}=\sigma \mathbf{E} \]
+
+
+						<p>In general,</p>
+
+						\[V=IR \]
+
+						<p>Where $R $ is the resistance (units of Ohms).</p>
+
+						<p>Joule heating law:</p>
+
+						\[P=VI=I^2 R \]
+
+						<p>Electromotive force (emf), for a source force $\mathbf{f}_s $:</p>
+
+						\[\mathcal{E}=\oint \mathbf{f}_S\cdot d\mathbf{l} \]
+
+						<p>Where $\mathcal{E} $ is "work done per unit charge."</p>
+
+						<p>Flux rule for motional emf:</p>
+
+						\[\mathcal{E}=-\frac{d\Phi }{dt} \]
+			
+			<hr>
+			<h3 id="EM-Induction">Electromagnetic induction.</h3>
+			
+						<p>A changing magnetic field induces an electric field.</p>
+
+						<p>We therefore get Faraday's law (integral form):</p>
+
+						\[\oint \mathbf{E}\cdot d\mathbf{l}=-\int \frac{\partial \mathbf{B}}{\partial t}\cdot d\mathbf{a} \]
+
+						<p>Equivalently, Faraday's law (differential form):</p>
+
+						\[\nabla \times \mathbf{E}=-\frac{\partial \mathbf{B}}{\partial t} \]
+
+						<p>Universal flux rule: Whenever the magnetic flux through a loop changes, an emf will appear in the loop:</p>
+
+						\[\mathcal{E}=-\frac{d\Phi }{dt} \]
+
+						<p>Lenz's law:</p>
+
+						\[\text{Nature abhors a change in flux.}  \]
+
+						<p>For a pure Faraday field,</p>
+
+						\begin{align*}
+							\nabla \cdot \mathbf{E}_{\text{far} } &= 0 \\
+							\nabla \times \mathbf{E}_{\text{far} } &= -\frac{\partial \mathbf{B}}{\partial t} 
+						\end{align*} 
+
+						<p>This similarity with Magnetostatics</p>
+
+						\[-\frac{\partial \mathbf{B}}{\partial t}\Leftrightarrow \mu _0 \mathbf{J} \]
+
+						<p>gives rise to a Biot-Savart-like law for the $\mathbf{E} $ (Faradyan) field:</p>
+
+						\[\mathbf{E}=-\frac{1}{4\pi }\frac{\partial }{\partial t}\int \frac{\mathbf{B}\times \hat{\mathscr{r}}}{\mathscr{r}^2 }d\tau  \]
+
+						<p>And Ampere's law in integral form is just Faraday's law in integral form, with</p>
+
+						\[-\frac{d\Phi }{dt}\Leftrightarrow \mu _0 I_{\text{enc} } \]
+
+						<p>Mutual inductance is the constant $M_{21}  $ such that</p>
+
+						\[\Phi _2 =M_{21}I_1  \]
+
+						<p>Where</p>
+
+						<ul>
+						<li>$I_1  $ is the current through a loop.</li>
+						<li>$\Phi _2  $ is the flux due to the produced $\mathbf{B} $ field due to $I_1  $ through a second loop.</li>
+						</ul>
+
+						<p>Neumann formula</p>
+
+						\[M_{21}=\frac{\mu _0 }{4\pi }\oint \oint \frac{d\mathbf{l}_1 \cdot d\mathbf{l}_2 }{\mathscr{r}} \]
+
+						<p>Which showcases the symmetric nature of the mutual inductances:</p>
+
+						\[M_{21}=M_{12} \]
+
+						<p>Self inductance $L $ (units of Henries $\text{H}  $) relates the current of a loop and its flux through it:</p>
+
+						\[\Phi =LI \]
+
+						<p>The loop generates an emf on itself:</p>
+
+						\[\mathcal{E}=-L\frac{dI}{dt} \]
+						
+						<p>Energy stored in a magnetic field:</p>
+
+						\begin{align*}
+							W &= \frac{1}{2}LI^2  \\
+							  &= \frac{1}{2\mu _0 }\int _{\text{all space} }B^2 d\tau  
+						\end{align*}
+
+
+			<hr>
+			<h3 id="MaxwellEquations">Maxwell Equations.</h3>
+
+						<p>We have four Maxwell equations:</p>
+
+						\begin{align*}
+							\nabla \cdot \mathbf{E} &= \frac{1}{\epsilon _0 }\rho \tag{Gauss's law} \\
+							\nabla \cdot \mathbf{B} &= 0 \\
+							\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t}\tag{Faraday's law}\\
+							\nabla \times \mathbf{B} &= \mu _0 \mathbf{J} + \mu _0 \epsilon _0 \frac{\partial \mathbf{E}}{\partial t}\tag{(corrected) Ampere's law} 
+						\end{align*}
+						 
+						<p>Where the displacement "current":</p>
+
+						\[\mathbf{J}_d\equiv \epsilon _0  \frac{\partial \mathbf{E}}{\partial t} \]
+
+						<p>The theoretical content of electrodynamics is summarized in Maxwell's equations and the force law:</p>
+
+						\[\mathbf{F}=q(\mathbf{E}+\mathbf{v}\times \mathbf{B}) \]
+
+						<p>In matter, we have the familiar bound charge density (for polarization $\mathbf{P} $):</p>
+
+						\begin{align*}
+							\rho  &= \rho _f+\rho _b \\
+							  &= \rho _f - \nabla \cdot \mathbf{P} 
+						\end{align*}
+
+						<p>And current density has an additional polarization current term (besides the magnetization bound current):</p>
+
+						\begin{align*}
+							\mathbf{J} &= \mathbf{J}_f+\mathbf{J}_b+\mathbf{J}_p \\
+							 &= \mathbf{J}_f+\nabla \times \mathbf{M}+\frac{\partial \mathbf{P}}{\partial t} 
+						\end{align*} 
+
+						<p>By defining the fields:</p>
+
+						\begin{align*}
+							\mathbf{D} &= \epsilon _0 \mathbf{E}+\mathbf{P} \\
+							\mathbf{H} &= \frac{1}{\mu _0 }\mathbf{B}-\mathbf{M} 
+						\end{align*}
+
+						<p>We have the four Maxwell equations:</p>
+
+						\begin{align*}
+							\nabla \cdot \mathbf{D} &= \rho _f \\
+							\nabla \cdot \mathbf{B} &= 0 \\
+							\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t}\\
+							\nabla \times \mathbf{H} &= \mathbf{J}_f+\frac{\partial \mathbf{D}}{\partial t}
+						\end{align*}
+
+						<p>Where the displacement current:</p>
+
+						\[\mathbf{J}_d\equiv \frac{\partial \mathbf{D}}{\partial t} \]
+
+						<p>For linear media, we have:</p>
+
+						\begin{align*}
+							\mathbf{P} &= \epsilon _0 \chi _e\mathbf{E} \\
+							\Rightarrow \;\mathbf{D} &= \epsilon \mathbf{E}\tag{$\epsilon \equiv \epsilon _0 (1+\chi _e) $} \\
+							\mathbf{M} &= \chi _m \mathbf{H}\\
+							\Rightarrow \; \mathbf{H} &= \frac{1}{\mu }\mathbf{B}\tag{$\mu \equiv \mu _0 (1+\chi _m) $}
+						\end{align*} 
+						  
+						<p>There are four boundary conditions:</p>
+
+						\begin{align*}
+							D_1 ^{\perp }-D_2 ^{\perp } &= \sigma _f \\
+							B_1 ^{\perp }-B_2 ^{\perp } &= 0 \\
+							\mathbf{E}_1 ^{\parallel}-\mathbf{E}_2 ^{\parallel} &= \mathbf{0} \\
+							\mathbf{H}_1 ^{\parallel}-\mathbf{H}_2 ^{\parallel} &= \mathbf{K}_f\times \hat{\mathbf{n}} 
+						\end{align*}
+						<p>In particular for linear media:</p>
+
+						\begin{align*}
+							\epsilon _1 E_1 ^{\perp }-\epsilon _2 E_2 ^{\perp } &= \sigma _f \\
+							B^{\perp }_1 -B_2 ^{\perp } &= 0 \\
+							\mathbf{E}_1 ^{\parallel}-\mathbf{E}_2 ^{\parallel} &= \mathbf{0} \\
+							\frac{1}{\mu _1 }\mathbf{B}_1 ^{\parallel}-\frac{1}{\mu _2 }\mathbf{B}_2 ^{\parallel} &= \mathbf{K}_f\times \hat{n} 
+						\end{align*}
+
+ 
+ 			<hr>
+			<h3 id="ConservationLaws">Conservation laws.</h3>
+			
+			
+						<p>Continuity equation (local conservation of charge):</p>
+
+						\[\frac{\partial \rho }{\partial t}=-\nabla \cdot \mathbf{J} \]
+
+						<p>Energy density in electromagnetic fields:</p>
+
+						\[u=\frac{1}{2} \left( \epsilon _0 E^2 +\frac{1}{\mu _0 }B^2  \right)  \]
+
+						<p>Poynting vector (energy flux density):</p>
+
+						\[ \mathbf{S}\equiv \frac{1}{\mu _0 }(\mathbf{E}\times \mathbf{B}) \]
+
+						<p>Poynting's theorem (work-energy theorem):</p>
+
+						\[\frac{dW}{dt}=-\frac{d}{dt}\int _{\mathcal{V}}u d\tau -\oint _{\mathcal{S}}\mathbf{S}\cdot d\mathbf{a} \]
+
+						<p>"The work done on the charges is equal to the decrease in energy remaining in the fields (first term) minus the energy that flowed out through the surface (second term)"</p>
+
+						<p>Maxwell stress tensor (force per unit area):</p>
+
+						\[T_{ij}\equiv \epsilon _0   \left( E_i E_j - \frac{1}{2}\delta _{ij}E^2  \right) +\frac{1}{\mu _0 } \left( B_i B_j-\frac{1}{2}\delta _{ij}B^2  \right)  \]
+
+						<p>Force per unit volume:</p>
+
+						\[\mathbf{f}=\nabla \cdot \mathbf{T}-\epsilon _0 \mu _0 \frac{\partial \mathbf{S}}{\partial t} \]
+
+						<p>Total electromagnetic force</p>
+
+						\[\mathbf{F}=\oint _{\mathcal{S}}\mathbf{T}\cdot d\mathbf{a}-\epsilon _0 \mu _0 \frac{d}{dt}\int _{\mathcal{V}}\mathbf{S}d\tau  \]
+
+						<p>Divergence of $\mathbf{T} $:</p>
+
+						\[ \left( \nabla \cdot \mathbf{T} \right) _j=\epsilon _0  \left[ (\nabla \cdot \mathbf{E})E_{j}+(\mathbf{E}\cdot \nabla )E_j-\frac{1}{2}\nabla _j E^2  \right] +\frac{1}{\mu _0 } \left[ (\nabla \cdot \mathbf{B}) B_j + (\mathbf{B}\cdot \nabla )B_j-\frac{1}{2}\nabla _jB^2  \right]  \]
+
+						<p>Conservation of momentum in electrodynamics:</p>
+
+						\[\frac{d\mathbf{p}_{\text{mech} }}{dt}=-\epsilon _0 \mu _0 \frac{d}{dt}\int _{\mathcal{V}}\mathbf{S}d\tau +\oint_{\mathcal{S}}\mathbf{T}\cdot d\mathbf{a} \]
+
+						<p>Momentum density in the fields:</p>
+
+						\[\mathbf{g}=\mu _0 \epsilon _0 \mathbf{S} \]
+
+						<p>Momentum flux transported by the fields:</p>
+
+						\[-\mathbf{T} \]
+
+						<p>Electromagnetic fields carry angular momentum:</p>
+
+						\[\ell = \mathbf{r}\times \mathbf{g} = \epsilon _{0}  \left[ \mathbf{r}\times (\mathbf{E}\times \mathbf{B}) \right]  \]
+			<hr>
+	
+			<h3 id="ClassicalWaves">Classical waves.</h3>
+							
+						<p>Classical wave equation</p>
+
+						\[\frac{\partial ^2 f}{\partial z^2 }=\frac{1}{v^2 }\frac{\partial ^2 f}{\partial t^2 } \]
+
+						<p>Where a "wave" is any function whose dependence on $x,t $ is of the form $z-vt $. This equation is linear in $f $.</p>
+
+						<p>Given a sinusoidal wave $f(z,t)=A\cos \left( k(z-vt)+\delta  \right)  $:</p>
+
+
+						<ul>
+						<li>$k $ is the wave number.</li>
+
+						<li>$\lambda  $ is the wavelength:</li>
+						\[\lambda =\frac{2\pi }{k} \]
+
+						<li>$T $ is the period:</li>
+						\[T=\frac{2\pi }{kv} \]
+
+						<li>$\nu  $ is the frequency (oscillations per time):</li>
+						\[\nu =\frac{1}{T}=\frac{kv}{2\pi }=\frac{v}{\lambda } \]
+
+						<li>$\omega  $ is the angular frequency (radians per time):</li>
+						\[\omega =2\pi \nu =kv \]
+						</ul>
+
+
+						<p>Given a complex wave $\tilde{f}(z,t)=\tilde{A}e^{i(kz-\omega t)} $:</p>
+
+
+						<ul>
+						<li>$\tilde{A} $ is the complex amplitude:</li>
+						\[\tilde{A}=Ae^{i\delta } \]
+
+						<li>It is related to the sinusoidal wave by</li>
+						\[f(z,t)=\text{Re} (\tilde{f}(z,t)) \]
+						</ul>
+
+						<p><b>Longitudinal</b> waves have displacement along the direction of propagation.</p>
+
+						<p><b>Transverse</b> waves have displacement perpendicular to the direction of propagation. Transverse waves are polarized by some polarization angle $\theta  $:</p>
+
+						\begin{align*}
+							\tilde{\mathbf{f}}(z,t) &= \tilde{A}e^{i(kz-\omega t)}\hat{\mathbf{n}} \\
+							\hat{\mathbf{n}} &= \cos \left( \theta  \right) \hat{\mathbf{x}}+\sin \left( \theta  \right) \hat{\mathbf{y}} 
+						\end{align*} 
+			
+			<hr>
+			<h3 id="EM-Waves-Vacuum">EM Waves (Vacuum).</h3>
+			
+						<p>Wave equations for the $\mathbf{E} $ and $\mathbf{B} $ fields:</p>
+
+						\begin{align*}
+						\nabla ^2 \mathbf{E} &= \mu _0 \epsilon _0 \frac{\partial ^2 \mathbf{E}}{\partial t^2 } \\
+						\nabla ^2 \mathbf{B} &= \mu _0 \epsilon _0 \frac{\partial ^2 \mathbf{B}}{\partial t^2 } 
+						\end{align*}
+
+						<p>With the identity:</p>
+
+						\[v=\frac{1}{\epsilon _0 \mu _0 }=c \]
+						 
+						<p>Monochromatic (single $\omega  $) plane waves (moving in the $z $ direction, uniform across planes perpendicular to propagation direction) are given by (fields being the real part):</p>
+						 \begin{align*}
+							\tilde{\mathbf{E}}(z,t) &= \tilde{\mathbf{E}}_0 e^{i(kz-\omega t)} \\
+							\tilde{\mathbf{B}}(z,t) &= \tilde{\mathbf{B}}_0 e^{i(kz-\omega t)} 
+						 \end{align*}
+						<p>Where</p>
+						 \[\omega =ck \]
+						<p>And (EM waves are transverse)</p>
+						  \begin{align*}
+							(\tilde{E}_0 )_z &= 0 \\
+							(\tilde{B}_0 )_z &= 0 
+						  \end{align*}
+						<p>As well as the orthogonality condition:</p>
+						   \begin{align*}
+							\tilde{\mathbf{B}}_0  &= \frac{k}{\omega }(\hat{\mathbf{z}}\times \tilde{\mathbf{E}}_0 ) \\
+							\text{Real parts} \;\;\;B_0  &= \frac{k}{\omega }E_0 =\frac{1}{c}E_0  
+						   \end{align*}
+						<p>Polarization convention: The direction of $\mathbf{E} $ specifies the direction of polarization.</p>
+
+						<p>A generalized wave has propagation/wave vector $\mathbf{k} $:</p>
+						\begin{align*}
+							\tilde{\mathbf{E}}(\mathbf{r},t) &= \tilde{E}_0 e^{i(\mathbf{k}\cdot \mathbf{r}-\omega t)}\hat{\mathbf{n}} \\
+							\tilde{\mathbf{B}}(\mathbf{r},t) &= \frac{1}{c}\hat{\mathbf{k}}\times \tilde{\mathbf{E}} 
+						\end{align*} 
+						<p>Where $\hat{\mathbf{n}} $ is the polarization vector, giving the fields:</p>
+						\begin{align*}
+							\mathbf{E}(\mathbf{r},t) &= E_0 \cos \left( \mathbf{k}\cdot \mathbf{r}-\omega t+\delta  \right) \hat{\mathbf{n}} \\
+							\mathbf{B}(\mathbf{r},t) &= \frac{1}{c}E_0 \cos \left( \mathbf{k}\cdot \mathbf{r}-\omega t+\delta \right) (\hat{\mathbf{k}}\times \hat{\mathbf{n}}) 
+						\end{align*}
+						<p>Energy per unit volume of a monochromatic </p>plane wave:
+						\begin{align*}
+							u &= \epsilon _0 E^2  \\
+							  &= \epsilon _0 E_0 ^2 \cos ^2 (kz-\omega t+\delta ) 
+						\end{align*}
+						<p>Poynting vector (energy flux density (energy per unit area, per unit time)) of a monochromatic plane wave:</p>
+						\[\mathbf{S}=cu\hat{\mathbf{z}} \]
+						<p>Momentum density for monochromatic plane waves:</p>
+						\[\mathbf{g}=\frac{1}{c}u\hat{\mathbf{z}} \]
+						<p>Average of relevant quantities:</p>
+						\begin{align*}
+							\langle u \rangle  &= \frac{1}{2}\epsilon _0 E_0 ^2  \\
+							\langle \mathbf{S} \rangle  &= \frac{1}{2}c\epsilon _0 E_0 ^2 \hat{\mathbf{z}} \\
+							\langle \mathbf{g} \rangle  &= \frac{1}{2c}\epsilon _0 E_0 ^2 \hat{\mathbf{z}} 
+						\end{align*} 
+						<p>Where the average power per unit area being transported is known as intensity $I $:</p>
+						\begin{align*}
+							I &= \langle S \rangle  \\
+							  &= \frac{1}{2}c\epsilon _0 E_0 ^2  
+						\end{align*}
+						<p>Radiation pressure:</p>
+						\[P=\frac{I}{c} \]			
+			<hr>
+			<h3 id="EM-Waves-Matter">EM Waves (in matter).</h3>
+			
+						<p>Maxwell's equations with no free charge, no free current, and in homogeneous linear media:</p>
+
+						\begin{align*}
+							\nabla \cdot \mathbf{E} &= 0 \\
+							\nabla \cdot \mathbf{B} &= 0 \\
+							\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \\
+							\nabla \times \mathbf{B} &= \mu \epsilon \frac{\partial \mathbf{E}}{\partial t} 
+						\end{align*}
+
+						<p>By defining the index of refraction $n $:</p>
+
+						\[n\equiv \sqrt{\frac{\epsilon \mu }{\epsilon _0 \mu _0 }} \]
+
+						<p>Waves have propagation speed:</p>
+
+						\[v=\frac{1}{\sqrt{\epsilon \mu }}=\frac{c}{n} \]
+
+						<p>For monochromatic waves,</p>
+
+						\[\omega =kv \]
+
+						<p>The energy density is </p>
+
+						\[u=\frac{1}{2} \left( \epsilon E^2 +\frac{1}{\mu B^2 } \right)  \]
+
+						<p>Intensity</p>
+
+						\[ I=\frac{1}{2}\epsilon vE_0 ^2 \]
+
+						<p>And $B\leftrightarrow E $ as follows:</p>
+
+						\[B_0 =\frac{1}{v}E_0  \]
+
+						<p>Boundary conditions between media:</p>
+
+						\begin{align*}
+							\epsilon _1 E_1 ^{\perp} &= \epsilon _2 E_2 ^{\perp } \\
+							B_1 ^{\perp } &= B_2 ^{\perp }\\
+							\mathbf{E}_1 ^{\parallel} &= \mathbf{E}_2 ^{\parallel}\\
+							\frac{1}{\mu _1 }\mathbf{B}_1 ^{\parallel} &= \frac{1}{\mu _2 }\mathbf{B}_2 ^{\parallel} 
+						\end{align*}
+
+						<p><b>Normal Incidence.</b></p>
+
+						<p>Define $\beta  $</p>
+
+						\[\beta \equiv \frac{\mu _1 n_2 }{\mu _2 n_1 } \]
+
+						<p>For plane waves, the reflected and transmitted amplitudes are:</p>
+
+						\begin{align*}
+							\tilde{E}_{0_R} &= \frac{1-\beta }{1+\beta } \tilde{E}_{0_I}\\
+							\tilde{E}_{0_T} &= \frac{2}{1+\beta }\tilde{E}_{0_I} 
+						\end{align*} 
+
+						<p>The real amplitudes are:</p>
+
+						\begin{align*}
+							E_{0_R} &= \bigg|\frac{n_1-n_2  }{n_1 +n_2 }\bigg|  E_{0_I} \\
+							E_{0_T} &= \frac{2n_1  }{n_1 +n_2 }E_{0_I} 
+						\end{align*} 
+
+						<p>For, $\mu _1 =\mu _2 =\mu _0  $, the reflection and transmission coefficeint:</p>
+
+						\begin{align*}
+							R &= \left( \frac{n_1 -n_2 }{n_1 +n_2 } \right) ^2 \\
+							T &= \frac{4n_1 n_2 }{(n_1 +n_2 )^2 } 
+						\end{align*}
+
+						<p><b>Oblique Incidence.</b></p>
+
+						<p>There are three fundamental laws of geometrical optics</p>
+
+						<p><a style="color:red;">First law:</a> The incident, reflected, and transmitted wave vectors form a plane (plane of incidence) which also includes the normal to the surface.</p>
+
+						<p><a style="color:red;">Second law <i>(- of reflection)</i>:</a> The angle of incidence is equal to the angle of reflection:</p>
+
+						\[\theta _I=\theta _R \]
+
+						<p><a style="color:red;">Third law <i>(- of refraction, Snell's)</i>:</a> The transmitted angle is related to the incident angle as follows:</p>
+
+						\[\frac{\sin \left( \theta _T \right) }{\sin \left( \theta _I \right) }=\frac{n_1 }{n_2 } \] 
+
+						<p>The reflected and transmitted amplitudes are <i>(Fresnel's equations)</i>:</p>
+
+						\begin{align*}
+							\tilde{E}_{0_R} &= \frac{\alpha -\beta }{\alpha +\beta }\tilde{E}_{0_I} \\
+							\tilde{E}_{0_T} &= \frac{2}{\alpha +\beta } \tilde{E}_{0_I}
+						\end{align*}
+
+
+						<p>Where $\beta =\frac{\mu _1 n_2 }{\mu _2 n_1 } $, as before, and</p>
+
+						\[\alpha \equiv \frac{\cos \left( \theta _T \right) }{\cos \left( \theta _I \right) } \]
+
+						<p>Where $\alpha =1 $ for normal incidence.</p>
+
+						<p>Brewster's angle (no reflected wave):</p>
+
+						\[\sin ^2 \theta _B=\frac{1-\beta ^2 }{ \left( \frac{n_1 }{n_2 } \right) ^2 -\beta ^2 } \]
+
+						<p>If $\mu _1 \approx \mu _2  $, then</p>
+
+						\[\tan \theta _B\approx \frac{n_2 }{n_1 } \]
+
+						<p>Reflection ($I_R/I_I $) and transmission ($I_T/I_I $) coefficients:</p>
+
+						\begin{align*}
+							R &=  \left( \frac{\alpha -\beta }{\alpha +\beta } \right) ^2  \\
+							T &= \alpha \beta  \left( \frac{2}{\alpha +\beta } \right) ^2  
+						\end{align*} 
+
+			
+			<hr>
+			
+			<h3 id="EM-Waves-Conductors">EM Waves (in conductors).</h3>
+			
+			
+			
+						<p>In homogeneous linear media, $\rho _f $ evolves as</p>
+
+						\[\rho _f(t)=e^{-(\sigma /\epsilon )t}\rho _f(0) \]
+
+						<p>Giving a characteristic dissipation time of</p>
+
+						\[\tau =\frac{\epsilon }{\sigma } \]
+
+						<p>After free charge disappears, Maxwell's equations are:</p>
+
+						\begin{align*}
+							\nabla \cdot \mathbf{E} &= 0 \\
+							\nabla \cdot \mathbf{B} &= 0 \\
+							\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \\
+							\nabla \times \mathbf{B} &= \mu \epsilon \frac{\partial \mathbf{E}}{\partial t}+\color{blue}\mu \sigma \mathbf{E}\color{black} 
+						\end{align*}
+
+						<p>We get the usual plane-wave solutions</p>
+
+						\begin{align*}
+							\tilde{\mathbf{E}}(z,t) &= \tilde{\mathbf{E}}_0 e^{i(\tilde{k}z-\omega t)} \\
+							\tilde{\mathbf{B}}(z,t) &= \tilde{\mathbf{B}}_0 e^{i(\tilde{k}z-\omega t)} 
+						\end{align*} 
+
+						<p>Now with a complex <i>wave number</i></p>
+
+						\[\tilde{k}^2 =\mu \epsilon \omega ^2 +i\mu \sigma \omega  \]
+
+						<p>Or</p>
+
+						\begin{align*}
+							\tilde{k} &= k+i\kappa  \\
+							k &= \omega \sqrt{\frac{\epsilon \mu }{2}} \left[ \sqrt{1+ \left( \frac{\sigma }{\epsilon \omega } \right) ^2 }+1 \right] ^{1/2}\\
+							\kappa  &= \omega \sqrt{\frac{\epsilon \mu }{2}} \left[ \sqrt{1+ \left( \frac{\sigma }{\epsilon \omega } \right) ^2 }-1 \right] ^{1/2} 
+						\end{align*}
+
+						<p>Waves are attenuated. The <i>skin depth</i> quantifies the distance at which the amplitude gets reduced by a factor of $1/e $:</p>
+
+						\[d=\frac{1}{\kappa } \]
+
+						<p>$k $ determines:</p>
+
+						\begin{align*}
+							\text{Wavelength} \;\lambda  &= \frac{2\pi }{k} \\
+							\text{Propagation speed} \;v &= \frac{\omega }{k}\\
+							\text{Index of refraction} \;n &= \frac{ck}{\omega } 
+						\end{align*}
+
+						<p>The fields are transverse and mutually perpendicular. </p>
+
+						<p>$\tilde{k} $ using a modulus and phase:</p>
+
+						\begin{align*}
+							\tilde{k} &= Ke^{i\phi } \\
+							K &= \sqrt{k^2 +\kappa ^2 }=\omega \sqrt{\epsilon \mu \sqrt{1+ \left( \frac{\sigma }{\epsilon \omega } \right) ^2 }}\\
+							\phi  &= \tan ^{-1} \frac{\kappa }{k} 
+						\end{align*}
+
+						<p>The complex amplitudes ($\tilde{E}_0 =E_0 e^{i\delta _E} $) are related by</p>
+
+						\begin{align*}
+							B_0 e^{i\delta _B} &= \frac{Ke^{i\phi }}{\omega }E_0 e^{i\delta _E} \\
+							\text{Magnetic field lags behind} \;\delta _B-\delta _E &= \phi  
+						\end{align*} 
+
+						<p>Real amplitudes by</p>
+
+						\[\frac{B_0 }{E_0 }=\frac{K}{\omega }=\sqrt{\epsilon \mu \sqrt{1+ \left( \frac{\sigma }{\epsilon \omega } \right) ^2 }} \] 
+
+						If we set $\mathbf{E} $ in the $\hat{\mathbf{x}} $ direction, then
+
+						\begin{align*}
+							\mathbf{E}(z,t) &= E_0 e^{-\kappa z}\cos \left( kz-\omega t+\delta _E \right) \hat{\mathbf{x}} \\
+							\mathbf{B}(z,t) &= B_0 e^{-\kappa z}\cos \left( kz-\omega t+\delta _E+\phi  \right) \hat{\mathbf{y}} 
+						\end{align*}
+
+						<p>When approaching a boundary, the wave obeys</p>
+
+						\begin{align*}
+							\epsilon _1 E_1 ^{\perp}-\epsilon _2 E_2 ^{\perp} &= \sigma _f \tag{Free surface charge $\sigma _f $}\\
+							B_1 ^{\perp}-B_2 ^{\perp} &= 0 \\
+							\mathbf{E}_{1}^{\parallel}-\mathbf{E}_2 ^{\parallel} &= \mathbf{0}\\
+							\frac{1}{\mu _1 }\mathbf{B}_1 ^{\parallel}-\frac{1}{\mu _2 }\mathbf{B}_2 ^{\parallel} &= \mathbf{k}_f\times \hat{\mathbf{n}}\tag{Normal to surface $\hat{\mathbf{n}} $, free surface current $\mathbf{K}_f $} 
+						\end{align*}
+
+						<p>Given an incident wave in a nonconducting medium moving towards a conductor: </p>
+
+						\begin{align*}
+							\tilde{\mathbf{E}}_I (z,t) &= \tilde{E}_{0_I}e^{i(k_1 z-\omega t)}\hat{\mathbf{x}} \\
+							\tilde{\mathbf{B}}_I (z,t) &= \frac{1}{v_1 }\tilde{E}_{0_I}e^{i(k_1 z-\omega t)}\hat{\mathbf{y}} 
+						\end{align*} 
+
+						<p>Then we get a reflected wave:</p>
+
+						\begin{align*}
+							\tilde{\mathbf{E}}_R (z,t) &= \tilde{E}_{0_R}e^{i(-k_1 z-\omega t)}\hat{\mathbf{x}} \\
+							\tilde{\mathbf{B}}_I (z,t) &= -\frac{1}{v_1 }\tilde{E}_{0_R}e^{i(-k_1 z-\omega t)}\hat{\mathbf{y}} 
+						\end{align*} 
+
+						<p>And a transmitted (which will be attenuated inside) wave:</p>
+						\begin{align*}
+
+							\tilde{\mathbf{E}}_T (z,t) &= \tilde{E}_{0_T}e^{i(\tilde{k}_2 z-\omega t)}\hat{\mathbf{x}} \\
+							\tilde{\mathbf{B}}_T (z,t) &= \frac{\tilde{k_2 }}{\omega }\tilde{E}_{0_T}e^{i(\tilde{k}_2 z-\omega t)}\hat{\mathbf{y}} 
+						\end{align*} 
+
+						<p>Such that</p>
+						\begin{align*}
+							\tilde{E}_{0_R} &= \frac{1-\tilde{\beta }}{1+\tilde{\beta }}\tilde{E}_{0_I} \\
+							\tilde{E}_{0_T} &= \frac{2}{1+\tilde{\beta }}\tilde{E}_{0_I} \\
+							\tilde{\beta } &= \frac{\mu _1 v_1}{\mu _2 \omega }\tilde{k}_2 
+						\end{align*}  
+
+						<p>Special case: Perfect conductors have $\sigma =\infty  $, so $k_2 =\infty  $, so $\tilde{\beta }=\infty  $, so $\tilde{E}_{0_R}=-\tilde{E}_{0_I} $ and no transmitted wave.</p>			
+			
+			
+			
+			
+			
+			<hr>
+			
+			<h3 id="EM-Waves-Dispersion">EM Waves (dispersion).</h3>
+			
+						<p>Dispersive mediums: Mediums where speed depends on frequency.</p>
+
+						<p>Wave (phase) velocity:</p>
+
+						\[v=\frac{\omega }{k} \]
+
+						<p>Group velocity:</p>
+
+						\[v_g=\frac{d\omega }{dk} \]
+
+						<p>Complex polarization and susceptibility:</p>
+
+						\[\tilde{\mathbf{P}}=\epsilon _0 \tilde{\chi }_e\tilde{\mathbf{E}} \]
+
+						<p>Complex dielectric constant:</p>
+
+						\[\tilde{\epsilon }_r=\frac{\tilde{\epsilon }}{\epsilon _0 } \]
+
+						<p>Plane wave solution:</p>
+
+						\begin{align*}
+							\tilde{\mathbf{E}}(z,t) &= \tilde{\mathbf{E}}_0 e^{i(\tilde{k}z-\omega t)} \\
+							\tilde{k} &= \sqrt{\tilde{\epsilon }\mu _0 }\omega  
+						\end{align*} 
+
+						<p>For $\tilde{k}=k+i\kappa  $, we have the absorption coefficient:</p>
+
+						\[\alpha \equiv 2\kappa  \]
+
+						<p>Index of refraction</p>
+
+						\[n=\frac{k}{\omega } \]
+
+						<p>Cauchy's formula:</p>
+
+						\[n=1+A \left( 1+\frac{B}{\lambda ^2 } \right)  \]
+
+						<p>Where $A $ is the coefficient of refraction and $B $ the coefficient of dispersion.</p>
+			<hr>
+			
+			<h3 id="EM-Waves-Guides">EM Waves (Wave Guides).</h3>
+			
+						<p>A wave guide is a perfect conductor that can be thought of as a hollow pipe.</p>
+
+						<p>BC on the inner walls of the wave guide:</p>
+
+						\begin{align*}
+							\mathbf{E}^{\parallel} &= \mathbf{0} \\
+							B^{\perp} &= 0 
+						\end{align*}
+
+						<p>Remark: Longitudinal components needed to satisfy the above.</p>
+
+						<p>$E_z $ and $B_z $ give $E_x,E_y,B_x,B_y $:</p>
+
+						\begin{align*}
+							E_x &= \frac{i}{ \left( \frac{\omega }{c} \right) ^2 -k^2 } \left( k\frac{\partial E_z}{\partial x}+\omega \frac{\partial B_z}{\partial y} \right)  \\
+							E_y &= \frac{i}{ \left( \frac{\omega }{c} \right) ^2 -k^2 } \left( k\frac{\partial E_z}{\partial y}-\omega \frac{\partial B_z}{\partial x} \right)\\
+							B_x &= \frac{i}{ \left( \frac{\omega }{c} \right) ^2 -k^2 } \left( k\frac{\partial B_z}{\partial x}-\frac{\omega }{c^2 } \frac{\partial E_z}{\partial y} \right)\\
+							B_y &= \frac{i}{ \left( \frac{\omega }{c} \right) ^2 -k^2 } \left( k\frac{\partial B_z}{\partial y}+\frac{\omega }{c^2 } \frac{\partial E_z}{\partial x} \right)\\
+						\end{align*} 
+
+						<p>Equations for $E_z $ and $B_z $:</p>
+
+						\begin{align*}
+							 \left[ \frac{\partial ^2 }{\partial x^2 }+\frac{\partial ^2 }{\partial y^2 }+ \left( \frac{\omega }{c} \right) ^2 -k^2  \right] E_z &= 0 \\
+							\left[ \frac{\partial ^2 }{\partial x^2 }+\frac{\partial ^2 }{\partial y^2 }+ \left( \frac{\omega }{c} \right) ^2 -k^2  \right] B_z &= 0
+						\end{align*} 
+
+						<p>Types of waves:</p>
+
+						<ol>
+						<li>TE: Transverse electric waves.</li>
+						\[E_z=0 \]
+						<li>TM: Transverse magnetic waves.</li>
+						\[B_z=0 \]
+						<li>TEM: Transverse electric magnetic waves. (Can't occur in hollow wave guides)</li>
+						\[E_z=B_z=0 \]
+						</ol>
+
+						<p>The rectangular wave guide:</p>
+
+						<ul>
+						<li>Side $a $ along $x $, side $b $ along $y $.</li>
+						<li>Separation of variables leads to the $\text{TE} _{mn} $ modes:</li>
+						\begin{align*}
+							B_z &= B_0 \cos \left( \frac{m\pi x}{a} \right) \cos \left( \frac{n\pi y}{b} \right) \\
+							k &= \sqrt{ \left( \frac{\omega }{c} \right) ^2 -\pi ^2  \left[  \left( \frac{m}{a} \right) ^2 + \left( \frac{n}{b} \right) ^2  \right] } 
+						\end{align*} 
+						<li>Imaginary wave numbers: Exponential attenuation when</li>
+						\[\omega < c\pi \sqrt{ \left( \frac{m}{a} \right) ^2 + \left( \frac{n}{b} \right) ^2 }\equiv \omega _{mn} \]
+						<li>$\omega _{mn} $ is a cutoff frequency, with the lowest being $\omega _{10}=c\pi /a $.</li>
+						<li>Wave number:</li>
+						\[k=\frac{\sqrt{\omega ^2 -\omega ^2 _{mn}}}{c} \]
+						<li>Wave velocity:</li>
+						\[v=\frac{c}{\sqrt{1- \left( \frac{\omega _{mn}}{\omega } \right) ^2 }} \]
+						<li>Group velocity (velocity of energy being carried)</li>
+						</ul>
+						\[v_g=c\sqrt{1- \left( \frac{\omega _{mn}}{\omega } \right) ^2 } < c \]
+
+						<p>The coaxial transmission line:</p>
+
+						<ul>
+						<li>Inner conductor wire of radius $a $. Outer cylindrical shell of radius $b $.</li>
+						<li>TEM wave where</li>
+						\begin{align*}
+							\mathbf{E} &= \frac{A}{s}\cos \left( kz-\omega t \right) \hat{\mathbf{s}} \\
+							\mathbf{B} &= \frac{A}{cs}\cos \left( kz-\omega t \right) \hat{\boldsymbol{\phi }} \\
+							k &= \omega /c
+						\end{align*} 
+						</ul>
+
+			<hr>
+			
+			<h3 id="Potentials">Potentials.</h3>
+			
+			
+						<p>$\mathbf{E} $ and $\mathbf{B} $ in terms of the potentials:</p>
+
+						\begin{align*}
+							\mathbf{E} &= -\nabla V-\frac{\partial \mathbf{A}}{\partial t} \\
+							\mathbf{B} &= \nabla \times \mathbf{A} 
+						\end{align*}
+
+						<p>Maxwell's equations in terms of potentials:</p>
+
+						\begin{align*}
+							\nabla ^2 V+\frac{\partial }{\partial t}(\nabla \cdot \mathbf{A}) &= -\frac{1}{\epsilon _0 }\rho  \\
+							 \left( \nabla ^2 \mathbf{A}-\mu _0 \epsilon _0 \frac{\partial ^2 \mathbf{A}}{\partial t^2 } \right) -\nabla  \left( \nabla \cdot \mathbf{A}+\mu _0 \epsilon _0 \frac{\partial V}{\partial t} \right)  &= -\mu _0 \mathbf{J} 
+						\end{align*}
+
+						<p>Gauge transformations for the potentials:</p>
+
+						\begin{align*}
+							\mathbf{A}' &= \mathbf{A}+\nabla \lambda  \\
+							V' &= V-\frac{\partial \lambda }{\partial t} 
+						\end{align*}
+
+
+
+
+
+						<p>Coulomb gauge:</p>
+
+						<ul>
+						<li>Where $\nabla \cdot \mathbf{A}=0 $.</li>
+
+						<li>Maxwell equations reduce to</li>
+						\begin{align*}
+							\nabla ^2 V &= -\frac{1}{\epsilon _0 }\rho \tag{Poisson's equation}  \\
+							\nabla ^2 \mathbf{A}-\mu _0 \epsilon _0 \frac{\partial ^2 \mathbf{A}}{\partial t^2 } &= -\mu _0 \mathbf{J}+\mu _0 \epsilon _0 \nabla  \left( \frac{\partial V}{\partial t} \right)  
+						\end{align*}
+						</ul>
+
+
+
+
+						<p>Lorenz gauge: </p>
+						<ul>
+						<li>Where $\nabla \cdot \mathbf{A}=-\mu _0 \epsilon _0 \frac{\partial V}{\partial t} $.</li>
+
+						<li>Maxwell equations reduce to</li>
+
+						\begin{align*}
+							\nabla ^2 \mathbf{A}-\mu _0 \epsilon _0 \frac{\partial ^2 \mathbf{A}}{\partial t^2 } &= -\mu _0 \mathbf{J} \\
+							\nabla ^2 V-\mu _0 \epsilon _0 \frac{\partial ^2 V}{\partial t^2 } &= -\frac{1}{\epsilon _0 }\rho  
+						\end{align*}
+
+						<li>With the d'Alambertian
+						\[\square ^2 \equiv \nabla ^2 -\mu _0 \epsilon _0 \frac{\partial ^2 }{\partial t^2 } \]
+						They are
+						\begin{align*}
+							\square ^2 V &= -\frac{1}{\epsilon _0 }\rho  \\
+							\square ^2 \mathbf{A} &= -\mu _0 \mathbf{J} 
+						\end{align*} 
+						</li>
+						</ul>
+
+						<p>The Lorentz Force law is:</p>
+
+						\begin{align*}
+							\mathbf{F}=\frac{d\mathbf{p}}{dt} &= q \left[ -\nabla V-\frac{\partial \mathbf{A}}{\partial t}+\mathbf{v}\times (\nabla \times \mathbf{A}) \right]  \\
+							  &= -q \left[ \frac{\partial \mathbf{A}}{\partial t}+(\mathbf{v}\cdot \nabla )\mathbf{A} + \nabla (V-\mathbf{v}\cdot \mathbf{A}) \right]  
+						\end{align*}
+						<p>Where the convective derivative $d\mathbf{A}/dt $ is a total derivative:</p>
+						\[\frac{d\mathbf{A}}{dt}=\frac{\partial \mathbf{A}}{\partial t}+(\mathbf{v}\cdot \nabla )\mathbf{A} \]
+						<p>Representing time rate of change of $\mathbf{A} $ at the location of a moving particle.</p>
+
+						<p>Canonical momentum:</p>
+
+						\[\mathbf{p}_{\text{canonical} }=\mathbf{p}+q\mathbf{A} \]
+
+						<p>The rate of change of the particle's energy, $\frac{dE}{dt}=\frac{\partial U_{\text{vel} }}{\partial t} $, where</p>
+
+						\[U_{\text{vel} }=q(V-\mathbf{v}\cdot \mathbf{A}) \]
+
+						<p>$\mathbf{A}\equiv $ "potential moemntum per unit charge," $V\equiv $ "potential energy per unit charge."</p>
+
+				<hr>
+
+
+				<h3 id="Potentials-Continuous-Distributions">Potentials in continuous distributions.</h3>
+				
+				
+				
+						<p>Statically,</p>
+						\[\nabla ^2 V=-\frac{1}{\epsilon _0 }\rho \;\;\Rightarrow \;\; V(\mathbf{r})=\frac{1}{4\pi \epsilon _0 }\int \frac{\rho (\mathbf{r}')}{\mathscr{r} }d\tau ' \]
+						<p>And</p>
+						\[\nabla ^2 \mathbf{A}=-\mu _0 \mathbf{J} \;\;\Rightarrow \;\; \mathbf{A}(\mathbf{r})=\frac{\mu _0 }{4\pi }\int \frac{\mathbf{J}(\mathbf{r}')}{\mathscr{r} }d\tau ' \tag{Multiple copies of Poisson's}\]
+						Non-statically:
+						<ul>
+						<li>Retarded time:
+						\[t_r\equiv t-\frac{\mathscr{r}}{c}	 \]
+						Gives retarded potentials:
+						\begin{align*}
+							V(\mathbf{r},t) &= \frac{1}{4\pi \epsilon _0 }\int \frac{\rho (\mathbf{r}',t_r)}{\mathscr{r}}d\tau ' \\
+							\mathbf{A}(\mathbf{r},t) &= \frac{\mu _0 }{4\pi }\int \frac{\mathbf{J}(\mathbf{r}',t_r)}{\mathscr{r}}d\tau ' 
+						\end{align*}
+						</li> 
+						<li>
+						Advanced time:
+						\[ t_a\equiv t + \frac{\mathscr{r}}{c}\]
+						Gives advanced potentials:
+						\begin{align*}
+							V_a(\mathbf{r},t) &= \frac{1}{4\pi \epsilon _0 }\int \frac{\rho (\mathbf{r}',t_a)}{\mathscr{r}}d\tau ' \\
+							\mathbf{A}_a(\mathbf{r},t) &= \frac{\mu _0 }{4\pi }\int \frac{\mathbf{J}(\mathbf{r}',t_a)}{\mathscr{r}}d\tau ' 
+						\end{align*}
+						</li> 
+						</ul>
+
+						<p>Jefimenko's Equations</p>
+
+						\begin{align*}
+							\mathbf{E}(\mathbf{r},t) &= \frac{1}{4\pi \epsilon _0 }\int  \left[ \frac{\rho (\mathbf{r}',t_r)}{\mathscr{r}^2 }\hat{\mathscr{r}}+\frac{\dot{\rho }(\mathbf{r}',t_r)}{c\mathscr{r}}\hat{\mathscr{r}}-\frac{\dot{\mathbf{J}}(\mathbf{r}',t_r)}{c^2 \mathscr{r}} \right] d\tau ' \\
+							\mathbf{B}(\mathbf{r},t) &= \frac{\mu _0 }{4\pi }\int  \left[ \frac{\mathbf{J}(\mathbf{r}',t_r)}{\mathscr{r}^2 }+\frac{\dot{\mathbf{J}}(\mathbf{r}',t_r)}{c\mathscr{r}} \right] \times \hat{\mathscr{r}} d\tau ' 
+						\end{align*} 
+
+				<hr>
+
+
+				<h3 id="Potentials-Point-Charges">Potentials and point charges.</h3>
+				
+				
+						<p>If a charge $q $ is moving with trajectory $\mathbf{w}(t) $, then the potentials are given by the Liénard-Wiechert potentials:</p>
+						\begin{align*}
+							V(\mathbf{r},t) &= \frac{1}{4\pi \epsilon _0 }\frac{qc}{(\mathscr{r}c-\mathscr{r}\cdot \mathbf{v})} \\
+							\mathbf{A}(\mathbf{r},t) &= \frac{\mathbf{v}}{c^2 }V(\mathbf{r},t) 
+						\end{align*}
+						<p>Where</p>
+						\begin{align*}
+							|\mathbf{r}-\mathbf{w}(t_r)| &= c(t-t_r) \\
+							\mathscr{r} &= \mathbf{r}-\mathbf{w}(t_r) 
+						\end{align*}
+						<p>By introducing the vector</p>
+						 \[\mathbf{u}\equiv c\hat{\mathscr{r}}-\mathbf{v} \]
+						<p>The $\mathbf{E} $ and $\mathbf{B} $ fields of a moving point particle are:</p>
+						\begin{align*}
+							\mathbf{E}(\mathbf{r},t) &= \frac{q}{4\pi \epsilon _0 }\frac{\mathscr{r}}{(\mathscr{r}\cdot \mathbf{u})^3 } \left[ (c^2 -v^2 )\mathbf{u}+\mathscr{r}\times (\mathbf{u}\times \mathbf{a}) \right]  \\
+							\mathbf{B}(\mathbf{r},t) &= \frac{1}{c}\hat{\mathscr{r}}\times \mathbf{E}(\mathbf{r},t) 
+						\end{align*} 
+
+
+
+				<hr>
+			
+			<a href="../Formulas.html" style="color: black; "><h4>Back to Formulas</h4></a>
+        
+		</div>
+    </body>
+</html>

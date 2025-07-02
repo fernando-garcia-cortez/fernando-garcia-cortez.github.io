@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problem 1.57</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Research.html" style="color: black; text-decoration: none;">
+						Research
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			<h2 style="text-align:center;">PHYS405 - Electricity & Magnetism I</h2>
+			<h4 style="text-align:center;">Spring 2024</h4>
+			
+			<h2>Problem 1.57</h2>
+			
+			<div class="BlogAbstract">
+				
+				<p>Compute the line integral of</p>
+				
+				\[\mathbf{v}=(r\cos ^2 \theta )\hat{\mathbf{r}}-(r\cos \left( \theta  \right) \sin \left( \theta  \right) )\hat{\theta } +3r\hat{\phi } \]
+				
+				<p>Around the path shown in Fig. 1.50 (the points are labeled by their Cartesian coordinates).</p>
+				
+				<p>Do it either in cylindrical or in spherical coordinates.</p>
+				
+				<p>Check your answer using Stokes' theorem.</p>
+				
+				<p>Answer $3 \pi /2$</p>
+				
+			</div>
+			
+<p>Here's a 3D render of Figure 1.50:</p>
+			
+<iframe scrolling="no" title="1-57" src="https://www.geogebra.org/material/iframe/id/nbn5sygb/width/975/height/1004/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="975px" height="1004px" style="border:0px;"> </iframe>
+
+<p>Let's first calculate the line integral</p>
+
+<p>The line integral can be split into 4 separate parts:</p>
+
+<p>From $D$ to $A$, from $A$ to $B$, from $B$ to $C$, and from $C$ to $D$. (As seen in the 3D render above).</p>
+
+<p>The first 2 (from $D$ to $A$ and from $A$ to $B$) can be computed trivially in spherical coordiantes.</p>
+
+<p>The last 2 (from $B$ to $C$ and from $C$ to $D$), although possible in spherical, are trivial if we consider the vector field $\mathbf{v} $ in cylindrical coordinates.</p>
+
+<p><b>First line integral:</b></p>
+
+<p>We have a path in the $\hat{r} $-direction, meaning that move at constant $\theta  $ and $\phi  $, that is:</p>
+
+\[d\theta =d\phi =0 \]
+
+<p>Further, along this path this constant variables have the values</p>
+
+\[\theta =\frac{\pi }{2} \;\;\;\;\;\;\;\;\Big|\;\;\;\;\;\;\;\;  \phi =0 \]
+
+<p>The line integral is:</p>
+
+\begin{align*}
+	\int \mathbf{v}\cdot d\mathbf{l} &= \int \mathbf{v}\cdot (dr,rd\theta ,r\sin \left( \theta  \right) d\phi )  \\
+	  &= \int_{r_1}^{r_2 } v_rdr\\
+	  &= \int_{0}^{1} r\cos ^2 (\theta )dr\\
+	  &= \cos ^2 (\theta )\int_{0}^{1} rdr \\
+	  &= \cancel{\cos ^2 (\pi /2 )}\int_{0}^{1} rdr\\
+	  &= 0\tag{Since $\cos \left( \pi /2 \right) =0 $}
+\end{align*}
+
+<p><b>Second line integral:</b></p>
+
+<p>We have a path in the $\hat{\phi } $-direction, meaning that move at constant $r  $ and $\theta  $, that is:</p>
+
+\[dr =d\theta =0 \]
+
+<p>Further, along this path this constant variables have the values</p>
+
+\[r=1 \;\;\;\;\;\;\;\;\Big|\;\;\;\;\;\;\;\;  \theta =\frac{\pi }{2} \]
+
+<p>The line integral is:</p>
+
+\begin{align*}
+	\int \mathbf{v}\cdot d\mathbf{l} &= \int \mathbf{v}\cdot (dr,rd\theta ,r\sin \left( \theta  \right) d\phi )  \\
+	  &= \int_{\phi _1 }^{\phi _2 } v_{\phi }(r\sin \left( \theta  \right) )d\phi \\
+	    &= \int_{0}^{\pi /2} 3r^2 \sin \theta d\phi \\
+	    &= 3(1)^2 \sin (\pi /2)\int_{0}^{\pi /2} d\phi \\
+	    &= 3 \left( \frac{\pi }{2}-0 \right) \\
+	    &= \frac{3}{2}\pi 
+\end{align*}
+
+<p><b>The $\mathbf{v} $ field in cylindrical coordinates:</b></p>
+
+<p>Read <a href="SphericalToCylindrical.html" style="color: black; ">Prologue to 1.57: A brief discussion on conversions between spherical and cylidrical coordinates</a> if you want to learn more details about this derivation.</p>
+
+\begin{align*}
+	\mathbf{v} &= (r\cos ^2 \theta )\hat{\mathbf{r}}-(r\cos \left( \theta  \right) \sin \left( \theta  \right) )\hat{\theta } +3r\hat{\phi } \\
+	  &= \sqrt{s^2 +z^2 }\frac{z^2 }{s^2 +z^2 }\hat{\mathbf{r}}-\sqrt{s^2 +z^2 }\frac{z}{\sqrt{s^2 +z^2 }}\sqrt{1-\frac{z^2 }{s^2 +z^2 }}\hat{\theta } +3\sqrt{s^2 +z^2 }\hat{\phi } \\
+	  &= \frac{z^2 }{\sqrt{s^2 +z^2 }}\hat{\mathbf{r}}-z\sqrt{1-\frac{z^2 }{s^2 +z^2 }}\hat{\theta } +3\sqrt{s^2 +z^2 }\hat{\phi } \\
+	  &= z\hat{z} + 3\sqrt{s^2 +z^2 }\hat{\phi }
+\end{align*}
+
+<p>This is extremely enlightening! This tells us that the $\mathbf{v} $ will never point radially out of the $z $-field. (This is an example of how changing coordinate systems might reveal geometric details about our vector field).</p>
+
+<p><b>Third line integral:</b></p>
+
+<p>We are not moving on the $\hat{\phi } $-direction, only on the $z $-direction, so the integral is quite simple!</p>
+
+\[\int_{0}^{2} zdz=2 \]
+
+<p><b>Fourth line integral:</b></p>
+
+<p>Once again, the integral is simple since we are not moving on the $\hat{\phi } $-direction, but only on the $z $-direction.</p>
+
+\[\int_{2}^{0} zdz=-2 \]
+
+<p><b>Line integral conclusions:</b></p>
+
+\begin{align*}
+	\int \mathbf{v}\cdot d\mathbf{l} &= 0+\frac{3\pi }{2}+2-2 \\
+	  &= \frac{3\pi }{2} 
+\end{align*} 
+
+<p>Now that we computed all 4 segments of the path, we see that</p>
+
+<p><b>Confirm result using Stokes' theorem:</b></p>
+
+
+<p>Recall Stokes' theorem:</p>
+
+\[\int _{\mathcal{S}}(\nabla \times \mathbf{v})\cdot d\mathbf{a}=\oint _{\mathcal{P}}\mathbf{v}\cdot d\mathbf{l}\tag{Eq. 1.57, page 33}\]
+
+<p>The curl of the field is (in spherical)</p>
+
+\[\nabla \times \mathbf{v}=3\cot \theta  \hat{r} - 6 \hat{\theta } + 0 \hat{\phi } \]
+
+<p>We can immediately tell that the surface integral over the triangular surface (on the $yz $-plane) is 0, since we don't have curl in the $\phi  $-direction. For the surface integral on the $xy $-plane (the 1/4th of a circle) is given by:</p>
+
+\begin{align*}
+	\int \begin{pmatrix}  3\cot \theta  & -6 & 0 \\\end{pmatrix} \cdot d\mathbf{a}   &= \int_{r=0}^{1} \int_{\theta =0}^{\pi /2} 6r\sin \left( \theta  \right) d\theta dr \\
+	  &= 6 \left( \frac{1}{2}-0 \right)  \left( \frac{\pi }{2}-0 \right) \\
+	    &= \frac{3\pi }{2} 
+\end{align*}
+
+<p>Agreeing with the line integral result. </p>
+	
+			<br>
+			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
+			
+        
+		</div>
+    </body>
+</html>
+

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulas - Particle Physics</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Research.html" style="color: black; text-decoration: none;">
+						Research
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			
+			<h2 style="text-align:center;margin-bottom: 0;">Particle Physics</h2>
+			<h4 style="text-align:center;margin-top: 0;">Formulas</h4>
+
+			
+			
+			
+			<p>One morning I woke up thinking "I have been studying BSM models for a while, but do I really understand the backbone of the SM?" and thus this page was created.</p>
+			
+			<p>Below you will find a collection of important values, tables, rules, and formulas used in (SM particle physics. These are not for QFT. I follow the structure of Griffiths's "Introduction to Elementary Particles."</p>
+			
+			<h3>Contents</h3>
+			
+			<div class="subzone">
+			
+				<a href="#Constants"><p>Constants.</p></a>
+			
+				<a href="#Special-Relativity"><p>Special Relativity.</p></a>
+				
+				<a href="#CPT"><p>C, P, and T.</p></a>
+				
+				<a href="#Decays-Scattering"><p>Decays and Scattering.</p></a>
+				
+				<a href="#ABC-Model"><p>The ABC Model.</p></a>
+				
+				<a href="#QED"><p>QED.</p></a>
+				
+				<a href="#Quarks-ED-CD"><p>Electro and colordynamics of quarks.</p></a>
+				
+
+			
+			</div>
+			
+			<hr>
+			<h3 id="Constants">Constants.</h3>
+			
+						<p>Metric convention:</p>
+
+						\[g_{\mu \nu }=\text{diag} (+1,-1,-1,-1) \]
+
+						<p>Scales of the interactions:</p>
+
+						<img src="Particle/Scales.PNG" class="centerImg" style="width: 80%;">
+						
+						<p>Fine structure constant</p>
+
+						\[\alpha = \frac{e^2 }{\hbar c}=\frac{1}{137} \]
+						
+						<p>Barns</p>
+
+						\[1\;\text{b} =10^{-24}\;\text{cm} ^2  \]
+
+						
+			<hr>
+			<h3 id="Special-Relativity">Special Relativity.</h3>
+
+						<p>Lorentz factor</p>
+
+						\[\gamma =\frac{1}{\sqrt{1-\frac{v^2 }{c^2 }}} \]
+
+						<p>Lorentz transformation (for primed frame moving in the positive unprimed $x $-direction):</p>
+
+						\begin{align*}
+							x' &= \gamma (x-vt) \\
+							t' &= \gamma  \left( t-\frac{v}{c^2 }x \right)  
+						\end{align*}
+
+						<p>With</p>
+
+						\[u^2 =(u^0 )^2 -\mathbf{u}^2  \]
+
+						<p>We call</p>
+
+						<ul>
+						<li>$u^{\mu } $ timelike if $a^2 >0 $.</li>
+						<li>$u^{\mu } $ spacelike if $a^2 <0 $.</li>
+						<li>$u^{\mu } $ lightlike if $a^2 =0 $.</li>
+						</ul>
+
+						<p>Proper time</p>
+
+						\begin{align*}
+							\eta ^{\mu } &= \frac{dx^{\mu }}{d\tau } \\
+							  &= \gamma (c,v_x,v_y,v_z) 
+						\end{align*}
+
+						<p>Momentum </p>
+
+						\[p^{\mu }=m\eta ^{\mu } \]
+
+						<p>Relativistic energy:</p>
+
+						\[E=\gamma mc^2  \]
+
+						<p>Energy-momentum four-vector:</p>
+
+						\[p^{\mu }= \left( \frac{E}{c},p_x,p_y,p_z \right)  \]
+
+						<p>Rest energy:</p>
+
+						\[R=mc ^2  \]
+
+						<p>Relativistic kinetic energy:</p>
+
+						\[T=mc ^2 (\gamma -1) \]
+
+						<p>For massless particles:</p>
+
+						\begin{align*}
+							v &= c \\
+							E &= |\mathbf{p}|c 
+						\end{align*}
+
+
+						<p>Frequency of a photon:</p>
+
+						\[E=h\nu  \]
+
+						<p>In a relativistic collision:</p>
+
+						<ul>
+						<li>Energy is conserved.</li>
+						<li>Momentum is conserved.</li>
+						<li>Kinetic energy may or may not be conserved.</li>
+						</ul>
+			
+			<hr>
+			<h3 id="CPT">C, P, and T.</h3>
+			
+						<p>Parity</p>
+						
+						<ul>
+
+						<li>Scalar under parity: $P(s)=s $.</;o>
+
+						<li>Pseudoscalar under parity: $P(p)=-p $.</;o>
+
+						<li>Vector under parity: $P(\mathbf{v})=-\mathbf{v} $.</li>
+
+						<li>Pseudovector under parity: $P(\mathbf{a})=\mathbf{a} $.</li>
+
+						<li>Fermions have opposite intrinsic parity with respect to their antiparticle counterparts.</li>
+
+						<li>Bosons have the same intrinsic parity with respect to their antiparticle counterparts.</li>
+
+						<li>Parity is a multiplicative quantum number.</li>
+
+						<li>Conserved in electromagnetic and strong interactions, not in weak interactions.</li>
+
+						<li>Helicity:</li>
+						
+						\[\frac{m_s}{s} \]
+						
+						</ul>
+						
+						<p>Charge (conjugation)</p>
+						
+						<ul>
+
+						<li>Charge conjugation turns a particle into its antiparticle.</li>
+
+						<li>Charge conjugation is a multiplicative quantum number.</li>
+
+						<li>Conserved in electromagnetic and strong interactions, not in weak interactions.</li>
+						
+						</ul>
+
+						<p>Time</p>
+						
+						<ul>
+
+						<li>Harder to measure.</li>
+
+						<li>Violation of CP implies violation of T due to the CPT theorem.</li>
+						
+						</ul>
+									
+			<hr>
+			<h3 id="Decays-Scattering">Decays and Scattering.</h3>
+			
+						<p>Number of particles as a function of time:</p>
+
+						\[N(t)=N(0)e^{-\Gamma t} \]
+
+						<p>Where $\Gamma  $ is the decay rate:</p>
+
+						\[\Gamma (=)\text{probability per unit time}  \]
+
+						<p>Mean lifetime:</p>
+
+						\[\tau =\frac{1}{\Gamma } \]
+
+						<p>If a particle can decay in various ways, the total decay rate is given by:</p>
+
+						\[\Gamma _{\text{tot} }=\sum_{i=1}^{n} \Gamma _i  \]
+
+						<p>With lifetime</p>
+
+						\[\tau =\frac{1}{\Gamma _{\text{tot} }} \]
+
+						<p>Branching ratios:</p>
+
+						\[\text{Branching ratio for the $i $th decay mode} =\frac{\Gamma _i }{\Gamma _{\text{tot} }} \]
+
+						<p>Total cross section:</p>
+
+						\[\sigma _{\text{tot} }=\sum_{i=1}^{n} \sigma _i  \]
+
+						<p>With a scattering solid angle $d\Omega  $, we define the differential scattering cross section $D $:</p>
+
+						\[D(\theta )=\frac{d\sigma }{d\Omega } \]
+
+						<p>Giving a differential cross section:</p>
+
+						\[d\sigma =D(\theta )d\Omega  \]
+
+						<p>Total cross section:</p>
+
+						\begin{align*}
+							\sigma  &= \int d\sigma  \\
+							  &= \int D(\theta )d\Omega  
+						\end{align*}
+
+
+						<p>Luminosity $\mathcal{L} $:</p>
+
+						\[\mathcal{L}(=)\frac{\text{number of particles passing down} }{\text{time} \cdot \text{area} } \]
+
+						<p>The Event rate $dN  $ is the number of particles per unit time passing through area $d\sigma  $:</p>
+
+						\begin{align*}
+							dN &= \mathcal{L}d\sigma  \\
+							  &= \mathcal{L}D(\theta )d\Omega  
+						\end{align*}
+
+						<p>Standard terminology:</p>
+
+						\begin{align*}
+							\text{Amplitude}  &\Leftrightarrow  \text{matrix element}  \\
+							\text{Phase space}  &\Leftrightarrow  \text{density of final states}  
+						\end{align*}
+
+						<p>Fermi's golden rule for multiparticle ($1\rightarrow 2+3+4+\cdots +n $) decay:</p>
+
+						\[\Gamma =\frac{S}{2\hbar m_1 }\int |\mathcal{M}|^2 (2\pi )^4 \delta ^4 (p_1 -p_2 -p_3 -\cdots -p_n )\times \prod ^{n}_{j=2}\frac{1}{2\sqrt{\mathbf{p}_j ^2 +m_j ^2 c^2 }}\frac{d^3 \mathbf{p}_j }{(2\pi )^3 } \]
+
+						<p>Where $S $ is a statistical counting factor.</p>
+
+						<p>Fermi's golden rule for two-particle ($1\rightarrow 2+3 $) decay (with outgoing momentum $\mathbf{p} $):</p>
+
+						\[\Gamma =\frac{S|\mathbf{p}|}{8\pi \hbar m_1 ^2 c}|\mathcal{M}|^2  \]
+
+						<p>Fermi's golden rule for Scattering $1+2\rightarrow 3+4+\cdots +n $:</p>
+
+						\[\sigma =\frac{S\hbar ^2 }{4\sqrt{(p_1 \cdot p_2 )^2 -(m_1 m_2 c^2 )^2 }}\int |\mathcal{M}|^2 (2\pi )^4 \delta ^4 (p_1 +p_2 -p_3 -\cdots -p_n )\times \prod _{j=3}^n \frac{1}{2\sqrt{\mathbf{p}_j ^2 +m_j ^2 c^2 }}\frac{d^3 \mathbf{p}_j }{(2\pi )^3 } \]
+
+						<p>Fermi's golden rule for two-body Scattering $1+2\rightarrow 3+4 $:</p>
+
+						\[\frac{d\sigma }{d\Omega }= \left( \frac{\hbar c}{8\pi } \right) ^2 \frac{S|\mathcal{M}|^2 }{(E_1 +E_2 )^2 }\frac{|\mathbf{p}_f|}{|\mathbf{p}_i |} \]
+
+						<p>The dimensions of $\mathcal{M} $ depend on $n $:</p>
+
+						\[\text{dim} (\mathcal{M})=(mc)^{4-n} \]
+			
+			<hr>
+			<h3 id="ABC-Model">The ABC Model.</h3>
+			
+			<hr>
+			<h3 id="QED">QED.</h3>
+			
+			<hr>
+			<h3 id="Quarks-ED-CD">Electro and colordynamics of quarks.</h3>
+
+
+			
+			
+			
+			<hr>
+			
+			
+			
+			
+			<a href="../Formulas.html" style="color: black; "><h4>Back to Formulas</h4></a>
+        
+		</div>
+    </body>
+</html>

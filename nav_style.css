@@ -1,0 +1,39 @@
+/* Sidebar container for navigation */
+.sidebar {
+	width: 150px; /* Adjust width as needed */
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 10px;
+	align-items: flex-start; /* Prevents stretching */
+}
+
+/* Navigation container - defines vertical line */
+.nav-container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end; /* Right-align text */
+	border-right: 2px solid #333; /* Vertical line */
+	padding-right: 10px;
+	position: relative;
+}
+
+/* Navigation links */
+.nav-container a {
+	text-decoration: none;
+	color: #333;
+	font-size: 16px;
+	padding: 10px;
+	white-space: nowrap;
+}
+
+/* Hover effect */
+.nav-container a:hover {
+	color: #575757;
+}
+
+/* This div marks the end of the nav section */
+.nav-end {
+	width: 100%;
+	height: 1px; /* Ensures the parent container stops here */
+	background-color: transparent;
+}

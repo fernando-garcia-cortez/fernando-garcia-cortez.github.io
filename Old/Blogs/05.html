@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>In-medium neutrino mixing</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Research.html" style="color: black; text-decoration: none;">
+						Research
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			
+			<h2 style="text-align:center;">Some derivations for in-medium neutrino mixing</h2>
+			<p style="text-align:center;">January 27th, 2024.</p>
+			
+			<h4>Introduction</h4>
+			
+					<p>The mixing of Neutrinos plays a central role in my current research. In this entry I will derive some equations that aren't used verbatim in my research, but rather set the stage for me to work on.</p>
+					
+					<p>I assume that the reader is familiar with the distinction between flavor Neutrinos and mass Neutrinos, as well as the general idea behind vacuum neutrino oscillations.</p>
+			
+			<h4>Neutrinos swimming in matter: In-medium mixing angle</h4>
+
+					<p>Let's consider a model with neutrino flavors: electron and muon. Since the neutral weak current has the same effect on both flavors, we don't expect it to make a difference and thus is ignored. The charged weak interaction, on the other hand, will act on the electron flavor neutrino but not on the muon flavor.</p>
+					
+					<p>Starting with the weak effective Hamiltonian:</p>
+					
+					\begin{equation}
+						H=\frac{1}{\sqrt{2}}G_F \left( J^{\mu }_{\text{c} }J_{\text{c} \mu }^{\dagger}+J_{\text{N} }^{\mu }J_{\text{N} \mu } \right)
+					\end{equation}
+
+					<p>The second term (involving the neutral current) vanishes for our purposes. We now recall that the charged current has the form:</p>
+					
+					\begin{equation}
+						J_{\text{c} }^{\mu }=\text{Quark terms} +\begin{pmatrix}  \overline{e} & \overline{\mu } & \overline{\tau } \\\end{pmatrix} \gamma ^{\mu }(1-\gamma ^5 )\begin{pmatrix}  \nu _e \\  \nu _{\mu } \\  \nu _{\tau } \\  \end{pmatrix}     
+					\end{equation}
+					
+					<p>Performing the contraction on $\mu  $ (on the Hamiltonian), while keeping only the electron terms, gives:
+					
+					\begin{equation}
+						H_{\text{int}}=\frac{1}{\sqrt{2}}G_F \overline{e}\gamma ^{\mu }(1-\gamma ^5 )\nu _e\overline{\nu _e}\gamma _{\mu }(1-\gamma ^5 )e
+					\end{equation} 
+					
+					<p>(Using Fierz) Let's rearrange the above expression to look like:</p>
+					
+					\begin{equation}
+						H_{\text{int}}=\frac{1}{\sqrt{2}}G_F \overline{\nu _e}\gamma ^{\mu }(1-\gamma ^5 )\nu _e\overline{e}\gamma _{\mu }(1-\gamma ^5 )e
+					\end{equation}
+					
+					<p>It can then be argued that (having electrons at rest)</p>
+					
+					\begin{equation}
+						\overline{e}\gamma _{\mu } \left( 1-\gamma ^5  \right) e=\delta _{\mu 0}N_e
+					\end{equation} 
+					
+					<p>Where $N_e $ denotes the number density of electrons. Thus:</p>
+					
+					\begin{equation}
+						H_{\text{int}}\rightarrow G_F \sqrt{2} N_e
+					\end{equation} 
+					
+					<p>That is, the medium acts as (through a CC interaction) an additional potential:</p>
+					
+					\begin{equation}
+						V=G_F \sqrt{2} N_e
+					\end{equation}
+
+					<p>In the flavor picture, we initially have $H_{\alpha }=U^{\dagger}H_0U $, but we the added potential, we will now work with the Hamiltonian:</p>
+					
+					\begin{equation}
+					H'_{\alpha }=UH_0U^{\dagger}+H_{\text{int} }
+					\end{equation}  
+					
+					<p>Where $H_0 $ is the Hamiltonian (to describe motion) in the mass picture:</p>
+					
+					\begin{equation}
+					i\frac{d}{dt}| \nu _i \rangle =H_0 | \nu _i \rangle 
+					\end{equation}  
+					
+					<p>And $U $ (along with $U ^{\dagger}$) is the diagonalization matrix used to go from mass states to flavor states (and vice versa).</p>
+					
+					\begin{equation}
+						U=\begin{pmatrix}  C_{\theta } & S_{\theta } \\  -S_{\theta } & C_{\theta } \\  \end{pmatrix} \;\;\;\;\;\;\;\;U^{\dagger}=\begin{pmatrix}  C_{\theta } & -S_{\theta } \\  S_{\theta } & C_{\theta } \\  \end{pmatrix}     
+					\end{equation}  
+					
+					<p>This means that in the flavor picture, the equation of motion looks like</p>
+					
+					\begin{equation}
+						\begin{split}
+							-i\frac{d}{dt}\begin{pmatrix}  \nu _e \\  \nu _{\mu } \\  \end{pmatrix}      &= \epsilon M^2 | \nu _{\alpha } \rangle  \\
+									&= \epsilon  \left( U\text{diag} (m_1^2 ,m_2^2 )U^{\dagger}+\begin{pmatrix}  A & 0 \\  0 & 0 \\  \end{pmatrix}    \right) | \nu _{\alpha } \rangle  \\
+									&= \epsilon  \left( \frac{1}{2} \left[ (\Sigma +A)+\begin{pmatrix}  A-\Delta C_{2\theta } & \Delta S_{2\theta } \\  \Delta S_{2\theta } & -A+\Delta C_{2\theta } \\  \end{pmatrix}    \right]  \right)\color{black} \begin{pmatrix}  \nu _e \\  \nu _{\mu } \\  \end{pmatrix} \\
+									&= \epsilon   \left[ \frac{1}{2}\begin{pmatrix}  2A+\Sigma -\Delta C_{2\theta } & \Delta S_{2\theta } \\  \Delta S_{2\theta } & \Sigma +\Delta C_{2\theta } \\  \end{pmatrix}    \right]\color{black} \begin{pmatrix}  \nu _e \\  \nu _{\mu } \\  \end{pmatrix}
+						\end{split}  
+					\end{equation}  
+					
+					<p>Where $\epsilon  $ is an energy-related constant which won't be too important for us now. Further, the following short-hand notation was used above:</p>
+					
+					\begin{align}
+						\Sigma  &= m_2^2 +m_1^2  \\
+						\Delta  &= m_2^2 -m_1^2  
+					\end{align}
+					
+					<p>Let's now repeat the familiar diagonalization process. This will move us from the flavor basis to the mass in medium basis. We introduce the diagonalization matrices (and their relation to $M^2  $) as follows:</p>
+					
+					\begin{equation}
+						U_{\text{m} }=\begin{pmatrix}  C_{\theta _{\text{m} }} & S_{\theta _{\text{m} }} \\  -S_{\theta _{\text{m} }} & C_{\theta _{\text{m} }} \\  \end{pmatrix} \;\;\;\;\;\;\;\;U^{\dagger}_{\text{m} }=\begin{pmatrix}  C_{\theta _{\text{m} }} & -S_{\theta _{\text{m} }} \\  S_{\theta _{\text{m} }} & C_{\theta _{\text{m} }} \\  \end{pmatrix}     
+					\end{equation}
+					
+					<p>The eigenvalues of $M^2  $, defined to be $M_1 ^2  $ and $M_2^2  $ by the diagonalization above, are easily found:</p>
+					
+					\begin{equation}
+						\begin{split}
+						\text{Eigenvalues of $M^2  $}  &= \frac{1}{2} \left( A+\Sigma \mp \sqrt{A^2 -2AC_{2\theta }\Delta +C^2 _{2\theta }+S_{2\theta }^2 \Delta ^2 } \right)  \\
+						 &= \frac{1}{2} \left( A+\Sigma \mp \sqrt{(A-\Delta C_{2\theta })^2 +(\Delta S_{2\theta })^2 } \right) 
+						\end{split}  
+					\end{equation}
+					
+					<p>In analogy with $ \Sigma $ and $\Delta  $ (defined above as linear combinations of the eigenvalues $m_1 ^2 ,m_2 ^2  $) we define</p>
+					
+					\begin{align}
+						\Sigma ^{\text{M} }  &= M_2^2 +M_1^2  \\
+						\Delta ^{\text{M} }   &= M_2^2 -M_1^2  
+					\end{align}
+					
+					<p>Since we know what the eigenvalues $M_1^2 ,M_2^2  $ are (in terms of the mixing angle $\theta  $, $A $, $\Sigma  $, and $\Delta  $), we can rewrite these expressions as:</p>
+					
+					\begin{equation}
+						\begin{split}
+						\Sigma ^{M} &= M_2^2 +M_1^2  \\
+						  &= \frac{1}{2} \left( A+\Sigma + \cancel{\sqrt{(A-\Delta C_{2\theta })^2 +(\Delta S_{2\theta })^2 }} \right)+\frac{1}{2} \left( A+\Sigma - \cancel{\sqrt{(A-\Delta C_{2\theta })^2 +(\Delta S_{2\theta })^2 }} \right) \\
+						  &= A+\Sigma 
+						\end{split}  
+					\end{equation}  
+					
+					<p>And</p>
+					
+					\begin{equation}
+						\begin{split}
+						\Delta ^{M} &= M_2^2 -M_1^2 \\
+						  &= \frac{1}{2} \left( \cancel{A+\Sigma} + \sqrt{(A-\Delta C_{2\theta })^2 +(\Delta S_{2\theta })^2 } \right)-\frac{1}{2} \left( \cancel{A+\Sigma} - \sqrt{(A-\Delta C_{2\theta })^2 +(\Delta S_{2\theta })^2 } \right) \\
+						  &= \sqrt{(A-\Delta C_{2\theta })^2 +(\Delta S_{2\theta })^2 }\\
+						  &= R
+						\end{split}  
+					\end{equation} 
+					
+					<p>Where we define (to make the manipulations easier to read)</p>
+					
+					\begin{equation}
+						R\equiv \sqrt{(A-\Delta C_{2\theta })^2 +(\Delta S_{2\theta })^2 }
+					\end{equation}
+					
+					<p>We know that (by choice of diagonalization) the in-medium eigenstates are related to flavor eigenstates through the following relation:</p>
+					
+					<p>Where $\theta _m $ is a mixing angle like the one between flavor and mass eigenstates.</p>
+					
+					<p>The immediate question now is: how can we relate $\theta _m $ to the rest of our variables/knowns?</p>
+					
+					<p>Recall that we know what $M^2  $ looks like. Further, notice that this matrix must be equal to $U_{\text{m} }\text{diag} (M_1^2 ,M_2^2 )U_{\text{m} }^{\dagger} $, which is (explicitly):</p>
+					
+					\begin{equation}
+						\begin{split}
+							U_{\text{m} }\begin{pmatrix}  M_1^2  & 0 \\  0 & M_2^2  \\  \end{pmatrix}U_{\text{m} }^{\dagger} &= \frac{1}{2}\begin{pmatrix}  M_2^2 +M_1^2 -(M_2^2 -M_1^2 )C_{2\theta _{\text{m} }} & (M_2^2 -M_1^2 )S_{2\theta _{\text{m} }} \\  (M_2^2 -M_1^2 )S_{2\theta _{\text{m} }} & M_2^2 +M_1^2 +(M_2^2 -M_1^2 )C_{2\theta _{\text{m} }} \\  \end{pmatrix}    \\
+							&= \frac{1}{2}\begin{pmatrix}  \Sigma ^{M}-\Delta ^{M}C_{2\theta _{\text{m} }} & \Delta ^{M}S_{2\theta _{\text{m} }} \\  \Delta ^{M}S_{2\theta _{\text{m} }} & \Sigma ^{M}+\Delta ^{M}C_{2\theta _{\text{m} }} \\  \end{pmatrix}    
+						\end{split}  
+					\end{equation}
+					
+					<p>So:</p>
+					
+					\begin{equation}
+						\begin{split}
+							M^2 &=U_{\text{m} }\begin{pmatrix}  M_1^2  & 0 \\  0 & M_2^2  \\  \end{pmatrix}U_{\text{m} }^{\dagger} \\
+							&{\;\Downarrow}  \\
+							\left[ \frac{1}{2}\begin{pmatrix}  2A+\Sigma -\Delta C_{2\theta } & \Delta S_{2\theta } \\  \Delta S_{2\theta } & \Sigma +\Delta C_{2\theta } \\  \end{pmatrix}    \right] &= \frac{1}{2}\begin{pmatrix}  \Sigma ^{M}-\Delta ^{M}C_{2\theta _{\text{m} }} & \Delta ^{M}S_{2\theta _{\text{m} }} \\  \Delta ^{M}S_{2\theta _{\text{m} }} & \Sigma ^{M}+\Delta ^{M}C_{2\theta _{\text{m} }} \\  \end{pmatrix}
+						\end{split}  
+					\end{equation}
+					
+					<p>If we compare the top right entries, we see that</p>
+					
+					\[\frac{1}{2}\Delta S_{2\theta } = \frac{1}{2}\Delta ^{M}S_{2\theta _{\text{m} }} \]
+					
+					<p>That is:</p>
+					
+					\begin{equation}
+						\sin ^2 2\theta _{\text{m} }=\frac{\Delta ^2 \sin ^2 2\theta }{(A-\Delta C_{2\theta })^2 +(\Delta S_{2\theta })^2 }
+					\end{equation}
+					
+					<p>Before moving on, we must notice that the in-medium eigenstates are not the same as the mass eigenstates. It is for this reason that we refer to $A $ as the induced mass.</p>
+					
+			<h4>The case of resonance</h4>
+			
+					<p>Now that we know a relation between the in-medium mixing angle and other parameters, we can observe the following (feel free to play with the sliders):</p>
+					
+					
+					<iframe scrolling="no" title="Neutrino In-medium resonance" src="https://www.geogebra.org/material/iframe/id/k2euv84n/width/982/height/433/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="982px" height="433px" style="border:0px;"> </iframe>
+					
+					<p>It is clear that there is some value of $A $ for which $\sin ^2 (2\theta _{\text{m} }) $ obtains its maximum. It is straightforward to see that this maximum occurs at</p>
+					
+					\begin{equation}
+					A_{\text{max} } = \Delta \cos \left( 2\theta  \right) 
+					\end{equation}  
+					
+					<p>If our medium is such that this happens, then we will get maximal mixing of neutrinos!</p>
+					
+					
+			<h4>Final remarks</h4>
+
+					<p>Having developed a foundation to explore neutrino propagation through matter, I will talk about the MSW effect in a later post.</p>
+					
+<br>
+			<a href="../Blog.html" style="color: black; "><h4>Back to Blogs</h4></a>
+		</div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,104 @@
+:root {
+    --back-color: #F5F5F5;
+    --text-color: #333;
+	--title-color:#8B0001;
+	--link-color:#5259D2;
+}
+
+html {
+  font-size: 18px; /* Base size */
+}
+
+
+/* General body styling */
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "IBM Plex Sans", sans-serif;
+	background-color: var(--back-color);
+	display: flex;
+}
+
+/* Container for the content and nav */
+.container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+/* Content and navigation max width */
+.inner-container {
+	width: 100%;
+	max-width: 1000px;
+	display: flex;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+/* Content styling */
+.content {
+	padding: 10px;
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 1000px;
+	background-color: --back-color;
+}
+
+/* Blank bars for large screens */
+@media (min-width: 1000px) {
+	.container {
+		padding-left: 50px; /* Left blank bar */
+		padding-right: 50px; /* Right blank bar */
+	}
+}
+
+
+
+.content p {
+    color: var(--text-color);
+    text-align: justify;
+	font-size: 1.1rem;
+}
+
+.content h1 {
+    color: var(--title-color);
+    text-align: justify;
+	font-size: 2.125rem; /* 16px */
+}
+
+.content h2 {
+	font-size: 1.7rem;
+}
+
+.content h5 {
+    color: var(--title-color);
+    text-align: justify;
+	font-size: 1.3rem;
+}
+
+body a {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+body a:hover {
+  font-weight: bold;
+}
+
+.centerImg {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.tags h3 {
+	margin-bottom: 0;
+}
+
+.tags p {
+	margin-top: 0;
+}
+
+.tags h3:hover {
+	color:var(--link-color);
+}

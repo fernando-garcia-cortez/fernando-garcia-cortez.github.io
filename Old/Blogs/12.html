@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Russian Roulettes</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Research.html" style="color: black; text-decoration: none;">
+						Research
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			
+			<h2 style="text-align:center;">Russian Roulettes... or the disadvantege of being first.</h2>
+			<p style="text-align:center;">January 24th, 2025.</p>
+
+
+
+<h4>Introduction</h4>
+
+<p>It’s been a while since I’ve written here! Although I’ve been busy with other things, I do miss typing these little blog entries. Not too long ago, I was thinking about probability—ranging from basic problems to applications in real-world physics research.</p>
+
+<p>Due to my lack of formal studies in probability, I was quite astonished after reflecting on the problem of Russian roulette games. In this blog post, I want to discuss one version of it and test the theory with simulations. By writing this blog, I hope to understand, beyond mathematical manipulations, the equation governing the game.</p>
+
+<h4>The game</h4>
+
+
+
+<p>Let's consider two players. Let's call them $\mathcal{A} $ and $\mathcal{B} $. Suppose player $\mathcal{A} $ goes first (and continuous doing so), and consider a game where</p>
+
+<ul>
+<li>The gun has a barrel that can store $n $ bullets. There will be only one bullet in the barrel.</li>
+<li>Before pulling the trigger, players must spin the gun's barrel.</li>
+</ul>
+
+<p>What is the probability (call it $q $) that $\mathcal{A} $ losses? Spoiler alert: It is greater than $50\% $. It is in fact this number that led to write this blog entry. It feels right but at the same time it doesn't. Perhaps it is just one of those matters your think over and over and at some point you understand it (or you think you do and feel happy doing so).</p>
+
+<p>The most basic game would consist of $\mathcal{A} $ shooting himself on the first round. The chances of this happening are $1/n $.</p>
+
+<p>Suppose $\mathcal{A} $ happens to survive the first round. It is $\mathcal{B} $'s turn now. They spin the gun, prepare to shoot, and boom... player $\mathcal{B} $ survived! This can happen with a probability of $(n-1)/n $.</p>
+
+<p>This can continue on and on and on. We want player $\mathcal{A} $ to lose. That is, we need player $\mathcal{B} $ to beat a round <b>and</b> win. $\mathcal{B} $ winning is represented by $1-q=p $. So $\mathcal{B} $ winning is given by $\frac{n-1}{n}\cdot p $. We now have all the possible cases: ``Player $\mathcal{A} $ loses on the first round, <b>or</b>  player $\mathcal{A} $ survives but $\mathcal{B} $ wins.''</p>
+
+\[q=\frac{1}{n}+\frac{n-1}{n}p \]
+
+<p>Since $p=1-q $,</p>
+
+\[q=\frac{1}{n}+\frac{n-1}{n}(1-q) \tag{i}\]
+
+<p>We can now solve for $q $:</p>
+
+\[ \left( 1+\frac{n-1}{n} \right) q -\frac{1}{n}-\frac{n-1}{n}=0\]
+
+\begin{align*}
+	\left( 1+\frac{n-1}{n} \right) q -\frac{1}{n}-\frac{n-1}{n} &= 0 \\
+	 \left( 2-\frac{1}{n} \right) q -1&= 0\\
+	  \left( \frac{2n-1}{n} \right) q &= 1\\
+	  q &= \frac{n}{2n-1} 
+\end{align*}
+
+<p>The second term in Eq. (i) could also be thought as ``player $\mathcal{A} $ wins the round, but also $\mathcal{B} $ wins the game.''</p>
+
+
+<h4>Simulations</h4>
+
+<p>Before running many games of Russian Roulette, notice that as $n\rightarrow \infty  $, the probabilities even out:</p>
+
+<img src="12/theory-plot.png" class="centerImg" style="width: 65%;">
+
+<p>That is,</p>
+
+\[\lim_{n\to \infty }\frac{n}{2n-1}=\frac{1}{2}\equiv 50\% \]
+
+<p>Consider now the following:</p>
+
+<img src="12/6-chambers.png" class="centerImg" style="width: 65%;">
+
+<p>Dots represent averages, with bars displaying standard deviation over the appropriate subrange of data. Notice first that the fewer rounds we simulate, the more uncertainty we have. Most importantly, as we increase the number of simulated games, the ratio of games lost by $\mathcal{A} $ approaches the theoretical value of (when $n=6 $) $6/11\approx 0.545455 $. This is what probability promises!</p>
+
+<p>Interesting, right?</p>
+<!------------------------------->
+<!------------------------------->
+<!------------------------------->
+
+<br>
+			<a href="../Blog.html" style="color: black; "><h4>Back to Blogs</h4></a>
+		</div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

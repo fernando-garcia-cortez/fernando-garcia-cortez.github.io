@@ -1,0 +1,28 @@
+<p>Orbital angular momentum</p>
+
+<ul>
+
+<li>The eigenvalues of $L^2  $ are $l(l+1)\hbar ^2  $, for $l=0,1,2,\cdots $.</li>
+
+<li>The eigenvalues of $L_z $ are of the form $m_l\hbar  $, where $m_l \in \left\lbrace -l,-l+1,\cdots ,0,\cdots ,l-1,l \right\rbrace $.</li>
+
+<li>Not predetermined for a given particle.</li>
+
+<li>A given orbital angular momentum state is represented by the ket $| l\;m_l \rangle  $.</li>
+
+</ul>
+
+
+<p>Spin angular momentum</p>
+
+<ul>
+
+<li>The eigenvalues of $S^2  $ are of the form $s(s+1)\hbar ^2  $, where $s =0,\frac{1}{2},1,\frac{3}{2},\cdots  $.</li>
+
+<li>The eigenvalues of $S_z $ are of the form $m_s\hbar  $, where $m_s \in \left\lbrace -s,-s+1,\cdots ,s-1,s \right\rbrace $.</li>
+
+<li>Fixed for a given particle (Fermions/Bosons).</li>
+
+<li>A given spin angular momentum state is represented by the ket $| s\;m_s \rangle  $.</li>
+
+</ul> 

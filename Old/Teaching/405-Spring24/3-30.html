@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problem 3.30</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Research.html" style="color: black; text-decoration: none;">
+						Research
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			<h2 style="text-align:center;">PHYS405 - Electricity & Magnetism I</h2>
+			<h4 style="text-align:center;">Spring 2024</h4>
+			
+			<h2>Problem 3.30</h2>
+			
+			<div class="BlogAbstract">
+				
+<p>A circular ring in the $xy $ plane (radius $R $, centered at the origin) carries a uniform line charge $\lambda  $. Find the first three terms ($n=0,1,2 $) in the multipole expansion for $V(r,\theta ) $.</p>
+				
+			</div>
+			
+			<p>Let's start by recalling from Section 3.4.1: "Approximate Potentials at Large Distances" the Multipole expansion:</p>
+			
+			\[V(\mathbf{r})=\frac{1}{4\pi \epsilon _0 }\sum_{n=0}^{\infty } \frac{1}{r^{n+1}}\int (r')^n P_n(\cos \left( \alpha  \right) )\rho (\mathbf{r}')d\tau ' \tag{Eq. 3.95, Page 150}\]
+			
+			<p>We need to polish this formula a bit to suit our problem better. Firstly, the charge configuration is 1-dimensional (with parameter $\phi  $):</p>
+			\[\rho (\mathbf{r}')d\tau '\rightarrow \lambda dl=\lambda Rd\phi '  \]
+			<p>Where the prime distinguish the $\phi  $ from position and the $\phi ' $ for the position of the charge configuration.</p>
+			
+			<p>Our position vector, as usual, is:</p>
+			\[\mathbf{r}=r\sin \left( \theta  \right) \cos \left( \phi  \right) \hat{\mathbf{x}} + r\sin \left( \theta  \right) \sin \left( \phi  \right) \hat{\mathbf{y}} + r\cos \left( \theta  \right) \hat{\mathbf{z}} \]
+			
+			<p>The vector to the charge distribution, $\mathbf{r}' $, is:</p>
+			\[\mathbf{r}'=R\cos \left( \phi ' \right) \hat{\mathbf{x}}+R \sin \left( \phi ' \right) \hat{\mathbf{y}} \]
+			<p>With this in mind, we can compute:</p>
+			\[\mathbf{r}\cdot \mathbf{r}'=rR\sin \left( \theta  \right)  \bigg( \cos \left( \phi  \right) \cos \left( \phi ' \right) +\sin \left( \phi  \right) \sin \left( \phi ' \right)  \bigg) \]
+			<p>And $\alpha  $ is defined as the angle between those two vectors, meaning that we can define it through the dot product:</p>
+			\[\mathbf{r}\cdot \mathbf{r}'=|\mathbf{r}||\mathbf{r}'|\cos \left( \alpha  \right) =rR\cos \left( \alpha  \right)  \]
+			<p>So</p>
+			\[\cos \left( \alpha  \right) = \sin \left( \theta  \right)  \bigg( \cos \left( \phi  \right) \cos \left( \phi ' \right) +\sin \left( \phi  \right) \sin \left( \phi ' \right)  \bigg)\]
+			We now recall Table 3.1 of Legendre Polynomials (page 140):
+			<img src="3-30/Table3-1.PNG" class="centerImg" style="width: 30%;">
+			And compute each term separately. In all of them, $r' \rightarrow R$:
+			<h4>Monopole term: $n=0 $</h4>
+			\[P_0 (\cos \left( \alpha  \right) )=1 \]
+			<p>So</p>
+			\begin{align*}
+				V_0(r,\theta ,\phi ) &= \frac{1}{4\pi \epsilon _0 }\frac{1}{r}\int_{\phi '=0}^{2\pi } R^0 1 \lambda R d\phi '  \\
+				 &= \frac{\lambda R}{2\epsilon _0 r} 
+			\end{align*} 
+			<h4>Dipole term: $n=1 $</h4>
+			\begin{align*}
+				P_1(\cos \left( \alpha  \right)) &= \cos \left( \alpha  \right) \\
+				  &= \sin \left( \theta  \right)  \bigg( \cos \left( \phi  \right) \cos \left( \phi ' \right) +\sin \left( \phi  \right) \sin \left( \phi ' \right)  \bigg) 
+			\end{align*}  
+			<p>So</p>
+			\begin{align*}
+				V_1(r,\theta ,\phi ) &= \frac{1}{4\pi \epsilon _0 }\frac{1}{r^2 }\int_{\phi '=0}^{2\pi } R^1 \sin \left( \theta  \right)  \bigg( \cos \left( \phi  \right) \cos \left( \phi ' \right) +\sin \left( \phi  \right) \sin \left( \phi ' \right)  \bigg)  \lambda R d\phi '  \\
+				 &= 0 
+			\end{align*} 
+			<p>Which is not too surprising! Our system doesn't have the type of geometry a dipole has...</p>
+			<h4>Quadrupole term: $n=2 $</h4>
+			\begin{align*}
+				P_2 (\cos \left( \alpha  \right) ) &= \frac{1}{2}(3\cos ^2 \alpha -1) \\
+				  &= \frac{1}{2} \bigg( 3 \bigg[ \sin \left( \theta  \right)  \bigg( \cos \left( \phi  \right) \cos \left( \phi ' \right) +\sin \left( \phi  \right) \sin \left( \phi ' \right)  \bigg) \bigg] ^2 -1 \bigg)  \\
+				   &= \frac{1}{2} \bigg( 3 \sin ^2 \theta   \left( \cos ^2 \phi \cos ^2 \phi ' + \sin ^2 \phi \sin ^2 \phi ' + 2 \cos \phi  \sin \phi  \cos \phi ' \sin \phi ' \right) -1 \bigg) 
+			\end{align*}  
+			<p>So</p>
+			\begin{align*}
+				V_2(r,\theta ,\phi ) &= \frac{1}{4\pi \epsilon _0 }\frac{1}{r^3}\int_{\phi '=0}^{2\pi } R^2 \frac{1}{2} \bigg( 3 \sin ^2 \theta   \left( \cos ^2 \phi \cos ^2 \phi ' + \sin ^2 \phi \sin ^2 \phi ' + 2 \cos \phi  \sin \phi  \cos \phi ' \sin \phi ' \right) -1 \bigg) \lambda R d\phi '  \\
+				 &= -\frac{R^3 \lambda (1+3\cos \left( 2\theta  \right) )}{16r^3 \epsilon _0 }
+			\end{align*} 
+			
+			
+			
+			<br>
+			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
+			
+        
+		</div>
+    </body>
+</html>
+

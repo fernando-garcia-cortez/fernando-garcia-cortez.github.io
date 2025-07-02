@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quintessence 1 - FGC</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../body_style.css">
+	<link rel="stylesheet" href="../nav_style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="inner-container">
+            <!-- Left sidebar with navigation links -->
+            <div class="sidebar">
+                <div class="nav-container">
+                    <a href="../me.html">Me</a>
+                    <a href="../research.html">Research</a>
+                    <a href="../other.html">Other</a>
+					<a href="../fun.html">Fun</a>
+                    <div class="nav-end"></div> 
+                </div>
+            </div>
+
+            <!-- Content section -->
+            <div class="content">
+			
+<h1>Fernando Garcia Cortez</h1>
+<h2>Scalar Field Dynamics, Dynamical Systems, and Quintessence</h2>
+<p>Out of all the various models of dark energy, quintessence can be
+thought of as the simplest alternative to the cosmological constant.</p>
+
+<p>In this entry, I will explore the basic ideas behind quintessence,
+the role of scalar fields in cosmology, and how dynamical systems provide
+powerful tools for analyzing dark energy models.</p>
+
+<p>Quintessence is, in a few words, a scalar field that interacts only
+gravitationally with the rest of the universe:</p>
+
+\[\mathcal{L}_{\text{Quintessence} }-\frac{1}{2}g^{\mu \nu }\partial _{\mu }\phi \partial _{\nu }\phi -V(\phi ) \]
+
+<p>Popular choices for the potential $V(\phi ) $ come in the form of
+freezing models (such as $V(\phi )=M^{4+n}\phi ^{-n}$, for $n>0$) and
+thawing models (such as $V(\phi )=V_0 +M^{4-n}\phi ^{n} $, for $n>0 $).
+In this post, I will focus primarily on the case of an exponential potential.</p>
+
+<h5>Scalar Field Dynamics</h5>
+
+<p>As stated before, quintessence is modeled (by definition) using a scalar field, from now on $\phi  $. Its lagrangian will not
+contain interactions with other components of the universe, so it is sufficient to speak of $V(\phi ) $.</p>
+
+<p>In an FLRW, the energy-momentum tensor</p>
+\[T_{\mu \nu }=-\frac{2}{\sqrt{-g}}\frac{\delta (\sqrt{-g}\mathcal{L}_{\phi })}{\delta g^{\mu \nu }} \]
+<p>reduces to</p>
+\begin{align*}
+	\rho _{\phi } &= \frac{1}{2}\dot{\phi }^2 +V(\phi ), \\
+	p_{\phi } &= \frac{1}{2}\dot{\phi }^2 -V(\phi ).
+\end{align*}
+<p>Where $\rho _{\phi } $ and $p_{\phi } $ are the energy density and pressure of $\phi  $, respectively. As such, one can write
+the equation of state $w\equiv \frac{p}{\rho } $ as:</p>
+\[w_{\phi }=\frac{\dot{\phi }^2 -2V(\phi )}{\dot{\phi }^2 +2V(\phi )} .\]
+<p>To properly study quintessence, we must acknowledge that it is not the only species in the universe. Nonetheless, we can keep
+it simple and introduce just another species in the form of a perfect fluid with pressure $p_F $ and energy density $\rho _F $. The Friedmann equations tell us, firstly, that</p>
+\begin{align*}
+	H^2  &= \frac{8\pi G}{3}\rho  \\
+	  &= \frac{\kappa ^2 }{3}(\rho _{\phi }+\rho _{F})\\
+	  &= \frac{\kappa ^2 }{3} \left( \frac{1}{2}\dot{\phi }^2 +V(\phi )+\rho _F \right).  
+\end{align*}
+<p>And secondly, that</p>
+\begin{align*}
+	\dot{H} &= \frac{1}{2} \left( -8\pi Gp-3H^2  \right)  \\
+	  &= \frac{1}{2} \left( -\kappa ^2 (p_{\phi }+p_F)-\kappa ^2 \left( \frac{1}{2}\dot{\phi }^2 +V(\phi )+\rho _F \right) \right) \\
+	  &= \frac{1}{2} \left( -\kappa ^2 (\frac{1}{2}\dot{\phi }^2 -V(\phi )+p_F)-\kappa ^2 \left( \frac{1}{2}\dot{\phi }^2 +V(\phi )+\rho _F \right) \right) \\
+	  &= -\frac{\kappa ^2 }{2} \left( \dot{\phi }^2 +\rho _F+p_F \right) 
+\end{align*} 
+<p>where we assumed that the universe is flat and introduced the constant</p>
+\[\kappa ^2 =8\pi G .\]
+<p>The equation of motion (here a Klein-Gordon equation) follows from the variation of the action:</p>
+\[\ddot{\phi }+3H\dot{\phi }+V_{,\phi }=0 \]
+<p>And a last equation describing the evolution of $\phi  $ comes from the continuity equation:</p>
+\[\dot{\rho }_\phi +3H(\rho _{\phi }+p_{\phi })=0. \]
+
+<p>It is often useful in cosmology to work with dimensionless variables. In this context, the following dimensionless variables are often used:</p>
+\begin{align*}
+	x_1  &= \frac{\kappa \dot{\phi }}{\sqrt{6}H} \\
+	x_2  &= \frac{\kappa \sqrt{V}}{\sqrt{3}H} 
+\end{align*} 
+<p>Observing that $x_1  $ is a proxy for kinetic energy, while $x_2  $ is a proxy for potential energy. Further, observe that the energy fraction of $\phi  $ in the universe takes the form:</p>
+\[\Omega _{\Phi }\equiv \frac{\kappa ^2 \rho _{\phi }}{3H^2 }=x_1 ^2 +x_2 ^2  .\]
+<p>As such, if there is no other species besides this and the arbitrary fluid $F $, it is straightforward to conclude that (given that $\Omega _F+\Omega _{\phi }=1 $)</p>
+\[\Omega _{F}=1-x^2 _1 -x_2 ^2  .\]
+<p>The introduction of the dimensionless variables $x_1 ,x_2  $ allows us to rewrite the equations that govern the evolution of quintessence and the universe in a more useful way. Starting with the second Friedmann equation, we observa that</p>
+\begin{align*}
+	\frac{\dot{H}}{H^2 } &= -\frac{\kappa ^2 }{2H^2 }(\dot{\phi }^2 +\rho _F+p_F) \\
+	  &= -\frac{\kappa ^2 }{2} \left( \frac{\dot{\phi }^2 }{H^2 }+\frac{\rho _F}{H^2 }+\frac{w_F\rho _F}{H^2 } \right)  \\
+	  &= -\frac{\kappa ^2 }{2} \left( \frac{6x_1^2 }{\kappa ^2 }+\frac{\rho _F}{H^2 }(1+w_F) \right) \\
+	  &= -\frac{\kappa ^2 }{2} \left( \frac{6x_1^2 }{\kappa ^2 }+\frac{3}{\kappa ^2 }(1-x_1 ^2 -x_2 ^2 )(1+w_F) \right)\\
+	 &= -3x_1 ^2 -\frac{3}{2}(1+w_F)(1-x_1 ^2 -x_2 ^2 )
+\end{align*}
+<p>Where the equation of state, $w\equiv p/\rho  $ for the fluid ($w_F $), was used. We now introduce the variable $N=\ln a $. Observe that</p>
+\begin{align*}
+\frac{dx_1 }{dN} &= \frac{\kappa }{\sqrt{6}} \frac{d}{dN} \frac{\dot{\phi }a}{\dot{a}} \\
+&= \frac{\kappa }{\sqrt{6}} \frac{da}{d\ln a}\frac{d}{da} \frac{\dot{\phi }a}{\dot{a}}\\
+&= \frac{\kappa }{\sqrt{6}} a\frac{d}{da} \frac{\dot{\phi }a}{\dot{a}} \\
+&= \frac{\kappa }{\sqrt{6}} a\frac{dt}{da}\frac{d}{dt} \frac{\dot{\phi }a}{\dot{a}} \\
+&= \frac{\kappa }{\sqrt{6}} a\frac{1}{\dot{a}}\frac{d}{dt} \frac{\dot{\phi }a}{\dot{a}} \\
+&= \frac{\kappa }{\sqrt{6}} a\frac{1}{\dot{a}}\frac{(\ddot{\phi }a+\dot{\phi }\dot{a})\dot{a}-\dot{\phi }a\ddot{a}}{\dot{a}^2 }\\
+&= \frac{\kappa}{\sqrt{6}}\frac{\ddot{\phi }a^2 +\dot{\phi }\dot{a}a-\dot{\phi }a^2 \ddot{a}\frac{1}{\dot{a}}}{\dot{a}^2 }\\
+&= \frac{\kappa}{\sqrt{6}}\frac{\ddot{\phi }+\dot{\phi }\frac{\dot{a}}{a}-\dot{\phi }\frac{\ddot{a}}{\dot{a}}}{(\dot{a}/a)^2 }\\
+&= \frac{\kappa}{\sqrt{6}}\frac{\ddot{\phi }+\dot{\phi }H-\dot{\phi }\frac{1}{\dot{a}}(a\dot{H}+aH^2 )}{H^2 } \tag{$\ddot{a}=a\dot{H}+aH^2  $}\\
+&= \frac{\kappa}{\sqrt{6}}\frac{\ddot{\phi }+\dot{\phi }H-\dot{\phi }\frac{1}{H}(\dot{H}+H^2 )}{H^2 } \tag{$\ddot{a}=a\dot{H}+aH^2  $}\\
+&= \frac{\kappa}{\sqrt{6}}\frac{-2H\dot{\phi }-V_{,\phi }-\dot{\phi }\frac{1}{H}\dot{H}-\dot{\phi }H }{H^2 }\tag{Using Klein-Gordon}\\
+&= -\frac{\kappa}{\sqrt{6}}2\frac{\dot{\phi }}{H}-\frac{\kappa}{\sqrt{6}}\frac{V_{,\phi }}{H^2 }-\frac{\kappa}{\sqrt{6}}\dot{\phi }\frac{\dot{H}}{H^2 }-\frac{\kappa}{H\sqrt{6}}\dot{\phi }\\
+&= -\frac{\kappa}{\sqrt{6}}2\frac{1}{H}\frac{\sqrt{6}H}{\kappa }x_1 -\frac{\kappa}{\sqrt{6}}\frac{V_{,\phi }}{H^2 }-\frac{\kappa}{\sqrt{6}}\frac{\sqrt{6}}{\kappa }x_1 \frac{\dot{H}}{H^2 }-\frac{\kappa}{\sqrt{6}}\frac{\sqrt{6}}{\kappa }x_1 \\
+&= -2x_1 -\frac{\kappa }{\sqrt{6}}\frac{V_{,\phi }}{H^2 }-x_1 \frac{\dot{H}}{H^2 }-x_1 \\
+&= -3x_1 -\frac{\kappa }{\sqrt{6}}V_{,\phi }\frac{3x_2 ^2 }{\kappa ^2 V}-x_1 \frac{\dot{H}}{H^2 } \\
+&= -3x_1 -\frac{\sqrt{6}}{2}\frac{V_{,\phi }}{\kappa V}x_2 ^2 -x_1 \frac{\dot{H}}{H^2 } \\
+&= -3x_1 +\frac{\sqrt{6}}{2}\lambda x_2 ^2 -x_1 \frac{\dot{H}}{H^2 } \\
+&= -3x_1 +\frac{\sqrt{6}}{2}\lambda x_2 ^2 -x_1  \left( -3x_1 ^2 -\frac{3}{2}(1+w_F)(1-x_1 ^2 -x_2 ^2 ) \right)  \\
+&= -3x_1 +\frac{\sqrt{6}}{2}\lambda x_2 ^2 +x_1  \left( +3x_1 ^2 +\frac{3}{2}(1+w_F)(1-x_1 ^2 -x_2 ^2 ) \right)  \\
+&= -3x_1 +\frac{\sqrt{6}}{2}\lambda x_2 ^2 +x_1  \frac{3}{2} \left[ (1-w_F)x_1 ^2 +(1+w_F)(1-x_2 ^2 ) \right]   \\
+\end{align*} 
+<p>Where we introduced</p>
+\[\lambda = -\frac{V_{,\phi }}{\kappa V}. \]
+<p>Similarly with $x_2  $:</p>
+\begin{align*}
+	\frac{dx_2 }{dN} &= \frac{\kappa }{\sqrt{3}}\frac{d}{dN}\frac{\sqrt{V}}{H} \\
+	  &= \frac{\kappa }{\sqrt{3}}\frac{d}{d\ln a}\frac{\sqrt{V}}{H}\\
+	  &= \frac{\kappa }{\sqrt{3}}\frac{da}{d\ln a}\frac{d}{da}\frac{\sqrt{V}}{H}\\
+	  &= \frac{\kappa }{\sqrt{3}}a\frac{d}{da}\frac{\sqrt{V}}{H}\\
+	  &= \frac{\kappa }{\sqrt{3}}a\frac{dt}{da}\frac{d}{dt}\frac{\sqrt{V}}{H}\\
+	  &= \frac{\kappa }{\sqrt{3}}a\frac{1}{\dot{a}}\frac{d}{dt}\frac{\sqrt{V}}{H}\\
+	  &= \frac{\kappa }{\sqrt{3}}a\frac{1}{\dot{a}}\frac{\frac{1}{2\sqrt{V}}V_{,\phi }\dot{\phi }H-\dot{H}\sqrt{V}}{H^2 }\\
+	  &= \frac{\kappa }{\sqrt{3}}a\frac{1}{\dot{a}}\frac{\sqrt{V} \left( \frac{1}{2V}V_{,\phi }\dot{\phi }H-\dot{H} \right) }{H^2 }\\
+	  &= \frac{\kappa }{\sqrt{3}}a\frac{1}{\dot{a}}\frac{\frac{\sqrt{3}Hx_2 }{\kappa } \left( \frac{1}{2V}V_{,\phi }\dot{\phi }H-\dot{H} \right) }{H^2 }\\
+	  &= \frac{\kappa }{\sqrt{3}}a\frac{1}{\dot{a}}\frac{ \left( -\lambda \frac{\sqrt{3}}{2}H^2 x_2 \dot{\phi }-\frac{\sqrt{3}}{\kappa }\dot{H}Hx_2  \right) }{H^2 }\\
+	  &= -\frac{\kappa }{2}\frac{a}{\dot{a}}\lambda x_2 \dot{\phi }-\frac{a}{\dot{a}}\dot{H}H\frac{1}{H^2 }x_2 \\
+	  &= -\frac{1}{2}\lambda x_2 \sqrt{6}\frac{\kappa \dot{\phi }}{\sqrt{6}H}-\frac{1}{H}H\frac{\dot{H}}{H^2 }x_2 \\
+	  &= -\frac{\sqrt{6}}{2}\lambda x_1x_2  - x_2 \frac{\dot{H}}{H^2 }\\
+	  &= -\frac{\sqrt{6}}{2}\lambda x_1x_2 + \frac{3}{2}x_2  \left[ (1-w_F)x_1 ^2 +(1+w_F)(1-x_2 ^2 ) \right]  
+\end{align*}
+<h5>Dynamical systems approach to the exponential potential</h5>
+<p>We observe that $\lambda  $ contains information about the potential $V(\phi ) $. In particular, if $\lambda  $ is constant, it follows that $V $ takes an exponential form:</p>
+\[V(\phi )=V_0 e^{-\kappa \lambda \phi } \tag{For constant $\lambda  $}\]
+<p>Because $\lambda  $ is constant, one can use computer algebra systems to solve for the critical points $x^{(c)}=(x_1 ^{(c)},x_2 ^{(c)}) $, satisfying</p>
+\begin{align*}
+	\frac{dx_1 }{dN}\Big|_{x=x^{(c)}}  &= 0 \\
+	\frac{dx_2 }{dN}\Big|_{x=x^{(c)}} &= 0 
+\end{align*}
+<p>These points follow:</p>
+\begin{align*}
+	x_a &= (0,0) \\
+	x_b &= (1,0) \\
+	x_c &= (-1,0) \\
+	x_d &=  \left( \frac{\lambda }{\sqrt{6}},\sqrt{\frac{1-\lambda ^2 }{6}} \right)  \\
+	x_e &= \left( \frac{\lambda }{\sqrt{6}},-\sqrt{\frac{1-\lambda ^2 }{6}} \right) \\
+	x_f &=  \left( \sqrt{\frac{3}{2}}\frac{(1+w_F)}{\lambda },\sqrt{3\frac{1-w_F^2 }{2\lambda ^2 }} \right)  \\
+	x_g &= \left( \sqrt{\frac{3}{2}}\frac{(1+w_F)}{\lambda },-\sqrt{3\frac{1-w_F^2 }{2\lambda ^2 }} \right)
+\end{align*}
+<img src="01/phase_portrait_constant_lambda.png" class="centerImg" style="width:80%; border: 0.3px solid black;">
+<p style="text-align:center;">$\lambda =1$, $w_F=0$ (matter-like).<br>Points a, b, c represented with stars.<br> Points d, e with squares.<br> Points f, g with triangles.</p>
+<p>With the aid of some code, we can plot a phase portrait and some trajectories. In the above plot, blue dots represent starting points of trajectories, and each red star corresponds to one of the critical points previously discussed.</p>
+<p>Let $f(x_1 ,x_2 )=\frac{dx_1 }{dN} $ and $g(x_1 ,x_2 )=\frac{dx_2 }{dN} $. Then:</p>
+\begin{align*}
+	J &= \begin{pmatrix}  f_{x_1 } & f_{x_2 } \\  g_{x_1 } & g_{x_2 } \\  \end{pmatrix}    \\
+	  &= \left(
+\begin{array}{cc}
+ \frac{1}{2} (-3) \left(-3 x_1^2+x_2 ^2+w \left(3 x_1 ^2+x_2 ^2-1\right)+1\right) & \sqrt{6} y \lambda -3 (w+1) x_1  x_2  \\
+ -\frac{1}{2} x_2  \left(6 (w-1) x_1 +\lambda  \sqrt{6}\right) & \frac{1}{2} \left(3 x_1 ^2-\sqrt{6} \lambda  x_1 -9 x_2 ^2-3 w \left(x_1 ^2+3 x_2 ^2-1\right)+3\right) \\
+\end{array}
+\right)  
+\end{align*}
+<p>The critical point $x_a=(0,0) $ has real eigenvalues of opposite sign ($\lambda _1 =3(w-1)/2 $, $\lambda _2 =3(1+w)/2 $), making it a (unstable) saddle point. </p>
+
+<p>For $x_b=(1,0) $, we find the eigenvalues $\lambda _1 =3(1-w) $ and $\lambda _2 =(6-\sqrt{6}\lambda )/2 $. As such, this critical point behaves like an unstable node whenever $\lambda <\sqrt{6} $ and a saddle point when $\lambda >\sqrt{6} $. </p>
+
+<p>For $x_c=(-1,0) $, we find the eigenvalues $\lambda _1 =3(1-w) $ and $\lambda _2 =(6+\sqrt{6}\lambda )/2 $. As such, this critical point behaves like an unstable node whenever $\lambda >-\sqrt{6} $ and a saddle point when $\lambda <-\sqrt{6} $. </p> 
+
+<p>The nature of points $x_d $ and $x_e $ depends heavily on the values of $w_F$ and $\lambda  $. These can be either stable nodes or saddle points.</p>
+
+<p>A similar problem arises with points $x_f $ and $x_g $. These can be saddles, stable nodes, and stable spirals depending on the values of $\lambda  $ and $w_F $.</p>
+<img src="01/phase_portrait_constant_lambda_2.png" class="centerImg" style="width:80%; border: 0.3px solid black;">
+<p style="text-align:center;">$\lambda =2.4$, $w_F=0$ (matter-like).</p>
+<h5>Concluding remarks (Beyond constant $\lambda $)</h5>
+<p>While our previous work isn't able to realize the type of cosmology we need (why? exercise for the reader! We know the locations of the critical points, that is, points in the $(x_1 ,x_2 ) $ plane. With them, we are able to compute quantities such as $\Omega _{\phi } $, $\Omega _{F} $, $w_{\phi } $, $w_F $, etc.), it lays the foundation for more complicated systems. Beyond that, it shows the power of studying the behavior of the system through a more mathematical approach.</p>
+
+<p>Our previous work is still usable in the sense that as $\lambda  $ (for a more complicated potential) varies, we have knowledge of the "current" or instantaneous locations of the fixed points.</p>
+
+<p>By recalling the definition $\lambda =-V_{,\phi }/\kappa V $, we are able to compute its $N $-derivative</p>:
+\begin{align*}
+	\frac{d\lambda }{dN} &= -\frac{d}{d\ln a}\frac{V_{,\phi }}{\kappa V} \\
+	  &= -\frac{da}{d\ln a} \frac{d}{da}\frac{V_{,\phi }}{\kappa V}\\
+	  &= -\frac{da}{d\ln a}\frac{dt}{da}\frac{d}{dt}\frac{V_{,\phi }}{\kappa V}\\
+	  &= -\frac{a}{\dot{a}\kappa }\frac{d}{dt}\frac{V_{,\phi }}{V}\\
+	  &= -\frac{a}{\dot{a}\kappa }\frac{d\phi }{dt}\frac{d}{d\phi }\frac{V_{,\phi }}{V}\\
+	  &= -\frac{a}{\dot{a}\kappa }\dot{\phi }\frac{V_{,\phi \phi }V-V_{,\phi }^2 }{V^2 }\\
+	  &= -\frac{1}{\kappa }\frac{\dot{\phi }}{H}\frac{V_{,\phi \phi }V-V_{,\phi }^2 }{V^2 }\\
+	  &= -\frac{1}{\kappa }\frac{\sqrt{6}}{\kappa }x_1 \frac{V_{,\phi \phi }V-V_{,\phi }^2 }{V^2 }\\
+	  &= -\sqrt{6}x_1 \frac{V_{,\phi }^2 }{\kappa ^2 V^2 } \left( \frac{V_{,\phi \phi }V}{V^2 _{,\phi }}-1 \right) \\
+	  &= -\sqrt{6}x_1 \lambda ^2 (\Gamma -1) 
+\end{align*}
+<p>Where we introduced</p>
+\[\Gamma =\frac{VV_{,\phi \phi }}{V_{,\phi }^2 } \] 
+<p>In a future post, I will explore how one can impose conditions on $\Gamma  $ such that we get so-called tracker solutions.</p>
+<p><b>Acknowledgements:</b> This post was inspired by "Dark Energy: Theory and Observation" by Amendola and Tsujikawa.</p>
+<br>
+				<br>
+				<br>
+				<p><a href="../other.html">Back to posts listing</a></p>
+            </div>
+        </div>
+</div>
+
+</body>
+</html>

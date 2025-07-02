@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problem 2.46</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Research.html" style="color: black; text-decoration: none;">
+						Research
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			<h2 style="text-align:center;">PHYS405 - Electricity & Magnetism I</h2>
+			<h4 style="text-align:center;">Spring 2024</h4>
+			
+			<h2>Problem 2.46</h2>
+			
+			<div class="BlogAbstract">
+				
+				<p>Find the electric field at a height $z $ above the center of a square sheet (side length $a $) carrying a uniform surface charge $\sigma  $. Check your results for the limiting cases $a\rightarrow \infty  $ and $z>>a $.</p>
+
+				<p>Answer:</p>
+				\[\frac{\sigma }{2\epsilon _0}\left\lbrace \frac{4}{\pi }\arctan  \left( \sqrt{1+\frac{a^2 }{2z^2 }} \right) -1 \right\rbrace \]
+				
+			</div>
+			
+<p>Start by reading the <a href="SquareRing.html" style="color: black; ">"Prologue to 2.46: The electric field of a square ring"</a>, as it will be crucial to this solution.</p>
+
+<p>In physics, we can always brute force a problem. Even though this gives us a path to walk on, it doesn't necessarily mean it's the best path (or even then, a traversable path!). Brute forcing a problem will be like walking up Sandia on a straight line, rather than along the hiking trails. Most of you encountered this situation when solving this problem, so consider this solution instead.</p>
+
+<p>This solution exemplifies two great principles in doing physics: recycling of already derived results and breaking a problem into simpler, smaller problems.</p>
+
+<p>Notice that a square plate is nothing more than a collection of square rings, of increasing size, all centered at one point.</p>
+<img src="2-46/02.PNG" class="centerImg" style="width: 60%;">
+<p>As such, instead of integrating over the square plate, let's add a bunch of infinitesimal square rings.</p>
+
+<p>Recall from the prologue that the electric field (at a distance $z $ above from it) of a square ring of side $a $ is</p>
+
+\[ \mathbf{E}=\frac{1}{\pi \epsilon _0 }\frac{\lambda az}{ \left( z^2 +\frac{a^2 }{4} \right) \sqrt{z^2 +\frac{a^2 }{2}}}\hat{\mathbf{z}}\]
+
+<p>To integrate over this, the only change we have to do is in on $\lambda  $. The ring will now have a (very small) thickness, where if $a $ denotes the length of the (inner) side, then the outer side will be $a+da $, so the thickness is</p>
+
+\[\frac{da}{2} \]
+
+<p>As such, we append the surface charge $\sigma  $ and we get</p>
+
+\[\lambda \;\text{will be replaced by} \;\sigma \frac{da}{2} \]
+
+<p>If this is not convincing, consider that the area of the thick ring is</p>
+\[\begin{split}
+(a+da)^2 -a^2  &= a^2 +2ada+da^2 -a^2  \\
+  &= 2ada+da^2\\
+  &{\approx} 2ada
+\end{split}   \]
+<p>So we get a thick ring total charge of $\sigma 2ada $.</p>
+<img src="2-46/01.PNG" class="centerImg" style="width: 60%;">
+<p>Since the ring charge $4a\lambda  $ has to be equal to that, it follows that $\lambda =\sigma  \frac{da}{2}$. We all of this in mind, we have:</p>
+\[dE= \frac{\sigma }{2\pi \epsilon _0 }\frac{ az}{ \left( z^2 +\frac{a^2 }{4} \right) \sqrt{z^2 +\frac{a^2 }{2}}}da\]
+<p>Let's integrate this expression from $a=0 $ to $a=a $. To avoid confussion, let's relabel $a $ inside the integrand to $b $.</p>
+\[E = \frac{\sigma }{2\pi \epsilon _0 } \int_{b=0}^{a} \frac{ bz}{ \left( z^2 +\frac{b^2 }{4} \right) \sqrt{z^2 +\frac{b^2 }{2}}}db \]
+
+<p>Let $w=b^2 /4 $. This gives $dw=\frac{b}{2}db $, so $bdb = 2dw  $:</p>
+
+
+\[\begin{split}
+E &= \frac{\sigma }{2\pi \epsilon _0 } \int_{b=0}^{a} \frac{ bz}{ \left( z^2 +\frac{b^2 }{4} \right) \sqrt{z^2 +\frac{b^2 }{2}}}db\\
+  &= \frac{\sigma }{2\pi \epsilon _0 }2z \int_{w=0}^{a^2 /4} \frac{dw}{(z^2 +w)\sqrt{z^2 +2w}}
+\end{split}   \] 
+
+<p>Let $u= \sqrt{z^2 +2w} $, so that $\sqrt{z^2 +2w}du=dw $:</p>
+
+\[\begin{split}
+E &=  \frac{\sigma }{2\pi \epsilon _0 }2z \int_{w=0}^{a^2 /4} \frac{dw}{(z^2 +w)\sqrt{z^2 +2w}}\\
+  &= \frac{\sigma }{2\pi \epsilon _0 }2z \int_{u=z}^{\sqrt{z^2 +\frac{a^2 }{2}}} \frac{du}{(z^2 +w)} \\
+  &= \frac{\sigma }{2\pi \epsilon _0 }2z \int_{u=z}^{\sqrt{z^2 +\frac{a^2 }{2}}} \frac{du}{(z^2 +\frac{u^2 -z^2 }{2})} \\
+  &= \frac{\sigma }{2\pi \epsilon _0 }2z \int_{u=z}^{\sqrt{z^2 +\frac{a^2 }{2}}} \frac{du}{\frac{1}{2}(z^2 +u^2) }\\
+  &= \frac{\sigma }{2\pi \epsilon _0 }4z\int_{u=z}^{\sqrt{z^2 +\frac{a^2 }{2}}} \frac{du}{(z^2 +u^2) }
+\end{split}   \] 
+
+<p>Let $v=u/z $, so $du=zdv $:</p>
+
+\[\begin{split}
+E &= \frac{\sigma }{2\pi \epsilon _0 }4z            \int_{u=z}^{\sqrt{z^2 +\frac{a^2 }{2}}} \frac{du}{(z^2 +u^2) }\\
+  &= \frac{\sigma }{2\pi \epsilon _0 }4z            \int_{v=1}^{\sqrt{z^2 +\frac{a^2 }{2}}/z} \frac{zdv}{(z^2 +z^2 v^2) }\\
+  &= \frac{\sigma }{2\pi \epsilon _0 }4z\frac{1}{z} \int_{v=1}^{\sqrt{z^2 +\frac{a^2 }{2}}/z} \frac{dv}{(1 + v^2) } \\
+  &= \frac{\sigma }{2\pi \epsilon _0 }4z\frac{1}{z} \cdot \arctan (v) \Big|_{1}^{\sqrt{z^2 +\frac{a^2 }{2}}/z}  \\
+  &= \frac{\sigma }{2\pi \epsilon _0 }4z\frac{1}{z} \cdot  \left( \arctan  \left( \sqrt{z^2 +\frac{a^2 }{2}}/z \right) -\arctan (1) \right) \\
+  &= \frac{\sigma }{2\pi \epsilon _0 }4z\frac{1}{z} \cdot  \left( \arctan  \left( \sqrt{\frac{z^2 +\frac{a^2 }{2}}{z^2 }} \right) -\frac{\pi }{4} \right)\\
+  &= \frac{\sigma }{2\pi \epsilon _0 }4z\frac{1}{z} \cdot  \left( \arctan  \left( \sqrt{1+\frac{a^2 }{2z^2 }} \right) -\frac{\pi }{4} \right)\\
+  &= \frac{2\sigma }{\pi \epsilon _0 }\cdot  \left( \arctan  \left( \sqrt{1+\frac{a^2 }{2z^2 }} \right) -\frac{\pi }{4} \right)\\
+  &= \frac{2\sigma }{\pi \epsilon _0 }\cdot \frac{\pi }{4}  \left(\frac{4 }{\pi} \arctan  \left( \sqrt{1+\frac{a^2 }{2z^2 }} \right) -1 \right)\\
+  &= \frac{\sigma }{2 \epsilon _0 }\cdot   \left(\frac{4 }{\pi} \arctan  \left( \sqrt{1+\frac{a^2 }{2z^2 }} \right) -1 \right)
+\end{split}  \]
+
+<p>Which is exactly the expression we were looking for.</p>
+
+<p>With $z $ rescaled by $a $, we see that $E$ goes to zero as $z\rightarrow \infty $:</p>
+<img src="2-46/03.PNG" class="centerImg" style="width: 60%;">
+<p>Let's now check the two limiting cases:</p>
+
+<p><b>(1)</b> When $a\rightarrow \infty  $.</p>
+
+<p>If we make the square sheet large enough, it should behave like an infinite plane with uniform charge $\sigma  $. The argument inside the ArcTangent will go to infinity, and we have $\arctan (\infty )=\pi /2 $, so:</p>
+\begin{align*}
+	\lim_{a\to \infty }E &= \frac{\sigma }{2\epsilon _0 } \left( \frac{4}{\pi }\frac{\pi }{2}-1 \right)   \\
+	  &=  \frac{\sigma }{2\epsilon _0 }  
+\end{align*}
+<p>Which is the equation for the field of an infinite plane with uniform charge $\sigma  $.</p>
+
+<p><b>(2)</b> When $z>>a $.</p>
+
+<p>Intuition tells us that as we move far away, the (information of the) geometry of the charge configuration will be lost, so this square sheet will look like a point charge with total charge $a^2 \sigma  $.</p>
+
+<p>We Taylor expand:</p>
+<img src="2-46/04.PNG" class="centerImg" style="width: 50%;">
+<p>Since $x=a^2 /2z^2  $ is small (since $z $ is much, much larger than $a $), we will just keep the first term and we get:</p>
+\[E_{z>>a} =  \frac{1 }{2\pi \epsilon _0 }\frac{Q}{z^2 } \]
+<p>Where $Q $ is the total charge of the square sheet:</p>
+\[Q=\sigma a^2  \]
+
+			<br>
+			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
+			
+        
+		</div>
+    </body>
+</html>
+

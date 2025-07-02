@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problem 3.38</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Research.html" style="color: black; text-decoration: none;">
+						Research
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			<h2 style="text-align:center;">PHYS405 - Electricity & Magnetism I</h2>
+			<h4 style="text-align:center;">Spring 2024</h4>
+			
+			<h2>Problem 3.38</h2>
+			
+			<div class="BlogAbstract">
+				
+<p>Show that the electric field of a (perfect) dipole (see Eq. 3.103) can be written in the coordinate-free form:</p>
+
+\[\mathbf{E}_{\text{dip} }(\mathbf{r})=\frac{1}{4\pi \epsilon _0 }\frac{1}{r^3 } \left[ 3(\mathbf{p}\cdot \hat{\mathbf{r}})\hat{\mathbf{r}}-\mathbf{p} \right]  \tag{Eq. 3.104}\]
+				
+			</div>
+			
+			<p>Let's start by recalling Eq. 3.103 as found on section 3.4.4: The Electric Field of a Dipole:</p>
+			
+			\[\mathbf{E}_{\text{dip} }(r,\theta )=\frac{p}{4\pi \epsilon _0 r^3}\bigg( 2\cos \theta \hat{\mathbf{r}} + \sin \theta \hat{\boldsymbol{\theta }}  \bigg) \tag{Eq. 3.103, page 155}\]
+			
+			<p>There are a few ways to jump from 3.103 to 3.104 and vice versa. My favorite is through the definition of dot products as projections. Any vector, say $\mathbf{a}=(a_x,a_y) $, can be written as:</p>
+			\[\mathbf{a}=a_x\hat{\mathbf{x}}+a_y\hat{\mathbf{y}} \]
+			<p>So far this is just notation. Now, what is $a_x $? It is the $x $-component of $\mathbf{a} $. We find this component through a <i>projection</i>:</p>
+			\[a_x=\mathbf{a}\cdot \hat{\mathbf{x}} \]
+			<p>In this sense, we write:</p>
+			\[\mathbf{p}=p_r\hat{\mathbf{r}}  +p_{\theta }  \hat{\boldsymbol{\theta} }=(\mathbf{p}\cdot \hat{\mathbf{r}})\hat{\mathbf{r}}+(\mathbf{p}\cdot \hat{\boldsymbol{\theta} })\hat{\boldsymbol{\theta} } \]
+			<p>Replace $\mathbf{p} $ in Eq. 3.104:</p>
+			\begin{align*}
+				\mathbf{E}_{\text{dip} }(\mathbf{r}) &= \frac{1}{4\pi \epsilon _0 }\frac{1}{r^3 } \left[ 3(\mathbf{p}\cdot \hat{\mathbf{r}})\hat{\mathbf{r}}-(\mathbf{p}\cdot \hat{\mathbf{r}})\hat{\mathbf{r}}-(\mathbf{p}\cdot \hat{\boldsymbol{\theta} })\hat{\boldsymbol{\theta} } \right]  \\
+				  &= \frac{1}{4\pi \epsilon _0 }\frac{1}{r^3 } \left[ 2(\mathbf{p}\cdot \hat{\mathbf{r}})\hat{\mathbf{r}}-(\mathbf{p}\cdot \hat{\boldsymbol{\theta} })\hat{\boldsymbol{\theta} } \right]  
+			\end{align*}
+			<p>We now use the fact</p>
+			\begin{align*}
+				\mathbf{p}\cdot \hat{\mathbf{r}} &= p \cos \left( \theta  \right)  \\
+				\mathbf{p}\cdot \hat{\boldsymbol{\theta }} &= -p \sin \left( \theta  \right)  
+			\end{align*}
+			 <p>And substitute above:</p>
+			 \begin{align*}
+				\mathbf{E}_{\text{dip} }(\mathbf{r}) &= \frac{1}{4\pi \epsilon _0 }\frac{1}{r^3 } \left[ 2(\mathbf{p}\cdot \hat{\mathbf{r}})\hat{\mathbf{r}}-(\mathbf{p}\cdot \hat{\boldsymbol{\theta} })\hat{\boldsymbol{\theta} } \right]   \\
+				  &=  \frac{1}{4\pi \epsilon _0 }\frac{1}{r^3 } \left[ 2(p\cos \left( \theta  \right) )\hat{\mathbf{r}}-(-p \sin \left( \theta  \right) )\hat{\boldsymbol{\theta} } \right] \\
+				    &= \frac{1}{4\pi \epsilon _0 }\frac{1}{r^3 } \left[ 2(p\cos \left( \theta  \right) )\hat{\mathbf{r}}+(p \sin \left( \theta  \right) )\hat{\boldsymbol{\theta} } \right]\\
+				    &= \frac{p}{4\pi \epsilon _0 }\frac{1}{r^3 } \left[ 2(\cos \left( \theta  \right) )\hat{\mathbf{r}}+( \sin \left( \theta  \right) )\hat{\boldsymbol{\theta} } \right]
+			\end{align*}
+			<p>Which is precisely Eq. 3.103. If we want to go from $3.103 $ to $3.104 $, we can use the same relations for $\mathbf{p}\cdot \hat{\mathbf{r}} $ and $\mathbf{p}\cdot \hat{\boldsymbol{\theta }} $ and build up from there.</p>
+			
+			<p>If you are confused as to how to get the equations for $\mathbf{p}\cdot \hat{\mathbf{r}} $ and $\mathbf{p}\cdot \hat{\boldsymbol{\theta }} $, consider the following:</p>
+			<iframe scrolling="no" title="3-38 Dot Products" src="https://www.geogebra.org/material/iframe/id/wn7gkgar/width/822/height/439/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="822px" height="439px" style="border:0px;"> </iframe>
+			<p>The magnitude of $\hat{\mathbf{r}} $ and $\hat{\boldsymbol{\theta }} $ is 1, of course. Further, notice how $\hat{\boldsymbol{\theta }} $ tends to point opposite to $\mathbf{p} $, that's why the ($-$) sign (the dashed green vector is just $\hat{\boldsymbol{\theta }} $ starting at the origin rather at its familiar location (at the tip of $\hat{\mathbf{r}} $)).</p>
+			<br>
+			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
+			
+        
+		</div>
+    </body>
+</html>
+

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulas - Complex Analysis</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../GarciaStyles.css">
+	   <style>
+	   .def{font-weight: bold;color:#b0041b;;border: 1px solid;}
+	   
+	   .theorem{font-weight: bold;color:#030896;border: 1px solid;}
+	   
+	   .lemma{font-weight: bold;color:#580480;;border: 1px solid;}
+	   
+	   .remark{font-weight: bold;color:#046128;;border: 1px solid;}
+	   
+	   .corollary{font-weight: bold;color:#8f6860;;border: 1px solid;}
+	   </style>
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Research.html" style="color: black; text-decoration: none;">
+						Research
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			
+			<h2 style="text-align:center;margin-bottom: 0;">Complex Analysis</h2>
+			<h4 style="text-align:center;margin-top: 0;">Formulas</h4>
+
+			
+			
+			
+			<p>Below is a collection of definitions, theorems, remarks, and formulas for complex analysis. The structure and content follows my course in my last semester at the University of New Mexico.</p>
+			
+			<h3>Contents</h3>
+			
+			<div class="subzone">
+			
+				<a href="#Basics"><p>Elementary properties of complex numbers.</p></a>
+			
+				<a href="#Metric-Space"><p>Complex plane as a metric space.</p></a>
+				
+				<a href="#Limits-continuity"><p>Limits and continuity.</p></a>
+				
+				<a href="#Derivatives"><p>Derivatives.</p></a>
+				
+				<a href="#Functions"><p>Functions.</p></a>
+				
+				<a href="#Elementary-Functions"><p>Elementary Functions.</p></a>
+				
+
+			
+			</div>
+			
+			<hr>
+			<h3 id="Basics">Elementary properties of complex numbers.</h3>
+			
+						<p>Triangle inequality</p>
+
+						\[|z_1 +z_2 |\leq |z_1 |+|z_2 | \]
+
+						<p>Reverse triangle inequality</p>
+
+						\[|z_1 +z_2 |\geq ||z_1 |-|z_2 || \]
+
+						<p>Properties of conjugation:</p>
+
+						\begin{align*}
+							\overline{z_1 \pm z_2 } &= \overline{z_1 }\pm \overline{z_2 } \\
+							\overline{z_1 z_2 } &= \overline{z_1 }\cdot \overline{z_2 }\\
+							\overline{ \left( \frac{z_1 }{z_2 } \right) } &= \frac{\overline{z_1 }}{\overline{z_2 }} 
+						\end{align*}
+
+						<p>Identities of conjugation:</p> 
+
+						\begin{align*}
+							\text{Re} (z) &= \frac{z+\overline{z}}{2} \\
+							\text{Im} (z) &= \frac{z-\overline{z}}{2i}  \\
+							z\overline{z} &= |z|^2 	
+						\end{align*} 
+
+						<p>Properties of moduli:</p>
+						\begin{align*}
+							|z_1 z_2 | &= |z_1 ||z_2 | \\
+							\bigg| \frac{z_1 }{z_2 }\bigg| &= \frac{|z_1 |}{|z_2 |}\ 
+						\end{align*}
+
+						<p>Properties of Arg:</p>
+						\begin{align*}
+							\text{arg} (z_1 z_2 ) &= \text{arg} (z_1 )+\text{arg} (z_2 ) \\
+							\text{arg} (z_1 /z_2 ) &= \text{arg} (z_1 )+\text{arg} (z_2 ) 
+						\end{align*}
+			
+			
+			
+			<hr>
+			<h3 id="Metric-Space">Complex plane as a metric space.</h3>
+			
+						<p>Moduli of complex numbers defines a metric on $\mathbb{C}  $:</p>
+
+						\[d(z_1 ,z_2 )=|z_1 -z_2 | \]
+
+						<p>The $\epsilon  $-<b>neighborhood</b> of a complex number $z_0  $ is the set of points $z $ that satisfy</p>
+
+						\[|z-z_0 |<\epsilon  \]
+
+						<p>The <b>deleted neighborhood</b> of $z_0  $ is:</p>
+
+						\[0<|z-z_0 |<\epsilon  \]
+
+						<p>$z_0  $ is an <b>interior point</b> of a set $S $ of complex numbers if there is a neighborhood of $z_0  $ contained inside $S $.</p>
+
+						<p>$z _0 $ is an <b>exterior point</b> of $S $ if there is a neighborhood of $z_0  $ contained outside of $S $.</p>
+
+						<p>$z_0  $ is a <b>boundary point</b> if it is not an interior nor an exterior point. Every neighborhood of a boundary point contains at least one element in $S $ and one in $S^C $.</p>
+
+						<p>The set of boundary points of a set is known as its <b>boundary</b>.</p>
+
+						<p>A set $S $ is said to be <b>open</b> if it contains none of its boundary points. Alternatively, $S $ is open iff all of its points are interior points.</p>
+
+						<p>A set $S $ is said to be <b>closed</b> if it contains all of its boundary points.</p>
+
+						<p>The <b>closure</b> of a set is the union of the set and its boundary.</p>
+
+						<p>An open set is said to be <b>connected</b> if each pair of points can be joined by a polygonal line of finite segments.</p>
+
+						<p>A <b>domain</b> is a nonempty connected open set.</p>
+
+						<p>A set $S $ is <b>bounded</b> if every point of $S $ lies inside some circle $|z|=R $. A set is <b>unbounded</b> if it is non bounded.</p>
+
+						<p>$z_0  $ is known as an <b>accumulation point</b> of a set $S $ if each deleted neighborhood of $z_0  $ contains at least one point of $S $.</p>
+
+						<p>Theorem: A set is closed iff it contains all of its accumulation points.</p>
+						
+						
+
+
+			<hr>
+			<h3 id="Limits-continuity">Limits and continuity.</h3>
+			
+						<p><b>Images</b> of entire domains are known as <b>ranges</b> of functions/mappings.</p>
+
+						<p>Although the image of a point is unique, the inverse image in the range can consist of one or more points.</p>
+
+						<p>The action on the domain of many functions can be understood through translations, rotations, and reflections.</p>
+
+						<p>The <b>limit</b> of $f(z) $ as $z\rightarrow z_0  $ is $w_0  $ if for each positive number $\epsilon  $, there is a positive number $\delta  $ such that</p>
+
+						\[|f(z)-w_0|<\epsilon  \;\text{whenever} \; 0<|z-z_0 |<\delta  \]
+
+						<p>"For each $\epsilon  $-neighborhood of $w_0  $ there is a deleted $\delta  $-neighborhood of $z_0 $ such that every point in it has an image $w $ in the $\epsilon  $-neighborhood."</p>
+
+						<p>Theorem: When a limit of a function exist at a point, it is unique.</p>
+
+						<p>Theorem: Let $f(z)=u+iv $ for real functions $u,v $, and $z_0 =x_0 +iy_0  $, $w_0 =u_0 +iv_0  $. Then $\lim_{z\to z_0 }f(z)=w_0 $ iff $\lim_{(x,y)\to (x_0 ,y_0 )}u(x,y)=u_0  $ and $\lim_{(x,y)\to (x_0 ,y_0 )}v(x,y)=v_0  $.</p>
+
+						<p>Theorem: Let $\lim_{z\to z_0 }f(z)=w_0  $ and $\lim_{z\to z_0 }F(z)=W_0  $. Then</p>
+						\begin{align*}
+							\lim_{z\to z_0 } \left[ f(z)+F(z) \right]  &= w_0 +W_0  \\
+							\lim_{z\to z_0 } \left[ f(z)F(z) \right]  &= w_0 W_0  \\
+							\lim_{z\to z_0 }\frac{f(z)}{F(z)} &= \frac{w_0 }{W_0}\tag{$W_0 \neq 0 $}
+						\end{align*}
+
+						<p>Elementary limits:</p>
+
+						\begin{align*}
+							\lim_{z\to z_0 }c &= c\tag{For constant $c $} \\
+							\lim_{z\to z_0 }z^n  &= z_0 ^n \tag{For $n=1,2,3,\cdots  $} 
+						\end{align*} 
+
+						<p>The set of complex numbers in addition to the point at infinity is known as the <b>extended complex plane</b>.</p>
+
+						<p>Theorem: Limits regarding infinity:</p>
+
+						\begin{align*}
+							\lim_{z\to z_0 }f(z)=\infty \; &\Leftrightarrow  \;\lim_{z\to z_0 }\frac{1}{f(z)}=0 \\
+							\lim_{z\to \infty }f(z)=w_0 \; &\Leftrightarrow  \; \lim_{z\to 0}f(1/z)=w_0  \\
+							\lim_{z\to \infty }f(z)=\infty  &\Leftrightarrow  \lim_{z\to 0}\frac{1}{f(1/z)}=0
+						\end{align*}			
+			
+						<p>A function $f $ is said to be <b>continuous at a point</b> $z_0  $ if $\lim_{z\to z_0 }f(z) $ exists and is equal to $f(z_0 ) $. In other words, for each positive number $\epsilon  $, there is a positive $\delta  $ such that $|f(z)-f(z_0 )|< \epsilon  $ whenever $ |z-z_ 0 | < \delta  $.</p>
+
+						<p>A function $f $ is said to be <b>continuous in a region</b> $R $ if it is continuous at every point in $R $.</p>
+
+						<p>Theorem: Let $f,g $ be two continuous functions at $z_0  $. Then $f(z_0 )+g(z_0 ) $, $f(z_0 )g(z_0 ) $, $f(z_0 )/g(z_0 ) $ are also continuous at $z_0  $.</p>
+
+						<p>Theorem: Let $f,g $ be two continuous functions. Then their composition $f\circ g $ is also continuous.</p>
+
+						<p>Theorem: If a function $f(z) $ is continuous and nonzero at a point $z_0  $, then $f(z) \neq 0$ throughout some neighborhood of that point.</p>
+
+						<p>Theorem: The function $f(z)=u(x,y)+iv(x,y) $ is continuous at a point iff its component functions are continuous there.</p>
+
+						<p>Theorem: If a function $f $ is continuous throughout a region $R $ that is both closed and bounded, there exists a nonnegative real number $M $ such that $|f(z)|\leq M $ for all points $z \in R $, and equality holds for at least one such $z $. We say that $f $ is <b>bounded</b> on $R $.</p>
+
+
+
+
+			
+			<hr>
+			<h3 id="Derivatives">Derivatives.</h3>
+			
+						<p>The <b>derivative</b> of $f $ at $z_0  $ is the limit</p>
+
+						\[f'(z_0 )=\lim_{z\to z_0 }\frac{f(z)-f(z_0 )}{z-z_0 } \equiv \lim_{\Delta z\to 0}\frac{f(z_0 +\Delta z)-f(z_0 )}{\Delta z}\]
+
+						<p>If $f'(z_0 ) $, then $f $ is said to be <b>differentiable</b> at $z_0  $.</p>
+
+						<p>Theorem: The existence of the derivative of a function at a point implies the continuity of the function at that point.</p>
+
+						<p>Cauchy-Riemann equations:</p>
+
+						\begin{align*}
+							u_x(x_0 ,y_0 ) &= v_y(x_0 ,y_0) \\
+							u_y(x_0 ,y_0 ) &= -v_x(x_0 ,y_0) 
+						\end{align*} 
+
+						<p>Theorem: Suppose that $f(z)=u(x,y)+iv(x,y) $. Suppose that $f'(z) $ exists at a point $z_0 =x_0 +iy_0  $. Then the first-order partial derivatives of $u,v $ must exist at $(x_0 ,y_0 ) $ and they must satisfy the Cauchy-Riemann equations there. Further: </p>
+
+						\[f'(z_0 )=u_x+iv_x \]
+						
+						<p>Theorem: (sufficient condition for differentiability) Let $f(z)=u(x,y)+iv(x,y) $ be defined throughout some $\epsilon  $-neighborhood of a point $z_0 =x_0 +iy_0  $, and suppose that (1) the first order partial derivatives of the functions $u,v $ with respect to $x,y $ exist everywhere in the neighborhood, and (2) those partial derivatives are continuous at $(x_0 ,y_0 ) $ and satisfy the Cauchy-Riemann equations there. Then $f'(z_0 )  $ exists and is equal to $f'(z_0 )=u_x+iv_x $ evaluated at $(x_0 ,y_0 ) $.</p>
+
+						<p>Cauchy-Riemann in polar form:</p>
+
+						\begin{align*}
+							ru_r &= v_{\theta } \\
+							u_{\theta } &= -rv_r \\
+							f'(z_0 ) &= e^{-i\theta }(u_r+iv_r) 
+						\end{align*}
+			
+			<hr>
+			<h3 id="Analytic">Analytic Functions.</h3>
+
+
+						<p>A function $f $ is said to be <b>analytic</b> at $z_0  $ if it ha a derivative at each point in some neighborhood of $z_0  $. Also known as <b>regular</b> or <b>holomorphic</b>.</p>
+
+						<p>$f $ is <b>analytic in an open set</b> if it has a derivative everywhere in that set.</p>
+
+						<p>An <b>entire</b> function is an analytic function at each point in the entire finite plane.</p>
+
+						<p>$z_0  $ is said to be a <b>singular point</b> (or singularity) of $f $ if it fails to be analytic there but is analytic at some point in every neighborhood of $z_0  $.</p>
+
+						<p>Theorem: Sums, products, and quotients of analytic functions are analytic as well. Composition of two analytic functions results in an analytic function.</p>
+
+						<p>Theorem: If $f'(z)=0 $ everywhere in a domain $D $, then $f(z) $ must be constant throughout $D $.</p>
+
+						<p>Theorem: If both $f  $ and $\overline{f}  $ are analytic in some domain $D $, then $f $ must be constant throughout $D $.</p>
+
+						<p>A real-valued function $H(x,y) $ (two real variables) is said to be <b>harmonic</b> in a given domain if (1) it has continuous partial derivatives of the first and second order, as well as (2) satisfying the PDE known as Laplace's equation:</p>
+
+						\[H_{xx}+H_{yy}=0 \]
+
+						<p>Theorem: If a function $f(z)=u(x,y)+iv(x,y) $ is analytic in $D $, then its component functions $u,v $ are harmonic in $D $.</p>
+
+						<p>Two functions $u,v $ are <b>harmonic</b> conjugates of each other if they are harmonic in some domain $D $ and their first-order partial derivatives satisfy the CR equations throughout the domain.</p>
+
+						<p>Theorem: A function $f(z)=u(x,y)+iv(x,y) $ is analytic in a domain $D $ iff $v $ is a harmonic conjugate of $u $.</p>
+						
+						<p>Lemma: Suppose that (1) a function $f $ is analytic throughout a domain $D $, and (2) $f(z) =0	$ at each point $z $ of a domain or line segment contained in $D $. Then $f(z)\equiv 0 $ in $D $, that is, $f(z) $ is identically equal to zero throughout $D $.</p>
+
+						<p>Theorem: A function that is analytic in a domain $D $ is uniquely determined over $D $ by its values in a domain, or along a line segment, contained in $D $.</p>
+
+						<p>Theorem: Suppose that a function $f $ is analytic in some domain $D $ which contains a segment of the $x $ axis and whose lwoer half is the reflection of the upper half with respect to that axis. Then $\overline{f(z)}=f(\overline{z}) $ for each point $z $ in the domain iff $f(x) $ is real for each point $x $ on the segment.</p>
+						
+			<hr>
+			<h3 id="Elementary-Functions">Elementary Functions.</h3>
+
+			
+			
+<p>Properties of the complex exponential function:</p>
+
+<ul>
+<li>$e^{z_1 }e^{z_2 }=e^{z_1 +z_2 } $.</li>
+<li>$e^{z_1 }/e^{z_2 }=e^{z_1 -z_2 } $.</li>
+<li>$e^{z} $ is entire, further: $de^{z}/dz=e^{z} $.</li>
+<li>$e^{z}\neq 0 $ for any complex $z $.</li>
+<li>$e^{z} $ is periodic: $e^{z+2\pi i}=e^{z} $.</li>
+<li>Contrary to the real counterpart $e^{x} $, $e^{z} $ can take negative values.</li>
+</ul>
+
+
+<p>Properties of the complex logarithmic function:</p>
+
+<ul>
+<li>If $z=re^{i\Theta } $ for $-\pi <\Theta \leq \pi  $, then $\log z = \ln r + i (\Theta +2n\pi ) $ for $n \in \mathbb{Z}  $.</li>
+<li>$\log (e^{z})=z+2n\pi i $ for $n \in \mathbb{Z}  $.</li>
+<li>The principal value corresponds to the $n=0 $ case.</li>
+<li>We can find logs of negative real numbers now.</li>
+</ul>
+
+<p>A single-valued function can be constructed with $\log z = \ln r + i\theta  $ where $\alpha <\theta <\alpha +2\pi  $ for a fixed $\alpha  $. Points at $\alpha =0 $ break continuity. This function is continuous and analytic in $r>0 $, $\alpha <\theta <\alpha +2\pi  $.</p>
+
+<p>$d\log z / dz= 1/re^{i\theta }=1/z $, where $z=re^{i\theta } $, $\theta =\Theta +2n\pi  $, $\Theta =\text{Arg} z $.</p>
+
+<p>A <b>branch</b> (from a multiple-valued function) is any single-valued function $F $ that is analytic in some domain at each point $ z$ of which the value $F(z) $ is one of the values of $f $.</p>
+
+<p>The <b>log principal branch</b> is</p>
+
+\[\text{log} z=\ln r + i\Theta \tag{$r>0,-\pi <\Theta <\pi  $} \]
+
+<p>A <b>branch cut</b> is a portion of a line or curve that is introduced in order to define a branch $F $ on a multiple-valued function $f $. Points on the branch cut are singular points.</p>
+
+<p>A point is said to be a <b>branch point</b> if it is a point common to all branch cuts of a function.</p>		
+
+<p>Properties of logarithms:</p>
+
+\begin{align*}
+	\log (z_1 z_2 ) &= \log (z_1 )+\log (z_2 ) \\
+	\log (z_1 /z_2 ) &= \log z_1 -\log z_2 \\
+	z^n  &= e^{n \cdot \log z}\tag{$n\in \mathbb{Z} , z\neq 0 $} \\
+	z^{1/n} &= \exp \left( \frac{1}{n}\log z \right) \tag{$n=1,2,\cdots ,\; z\neq 0 $}
+\end{align*} 
+
+<p>$z^{c} $ for complex $z,c $ is defined as</p>
+
+\[z^{c}=e^{c \log z} \]
+
+<p>So complex exponents are multi-valued functions.</p>
+
+<p>In the $\alpha  $-branch $\log z = \ln r + i\theta  $ for $\alpha <\theta <\alpha +2\pi  $, $z^{c}=\exp \left( c \log z \right)  $ is single-valued and analytic. This branch of $z^{c} $ has derivative:</p>
+
+\[\frac{d}{dz}z^{c}=cz^{c-1}\]
+
+<p>The principal value is given by</p>
+
+\[\text{P.V.} \;z^{c}=e^{c\text{Log} \;z} \]
+
+<p>Sine and cosine are defined as</p>
+
+\begin{align*}
+	\sin \left( z \right)  &= \frac{e^{iz}-e^{-iz}}{2i} \\
+	\cos \left( z \right)  &= \frac{e^{iz}+e^{-iz}}{2} 
+\end{align*} 
+
+<p>And have derivatives</p>
+
+\begin{align*}
+	\frac{d}{dz}\sin \left( z \right)  &= \cos \left( z \right)  \\
+	\frac{d}{dz}\cos \left( z \right)  &= -\sin \left( z \right)  
+\end{align*} 
+
+<p>And odd/even properties:</p>
+
+\begin{align*}
+	\sin \left( -z \right)  &= -\sin \left( z \right)  \\
+	\cos \left( -z \right)  &= \cos \left( z \right)  
+\end{align*}
+
+<p>Trig identities:</p> 
+
+\begin{align*}
+	\sin \left( z_1 +z_2  \right)  &= \sin \left( z_1  \right) \cos \left( z_2  \right) +\cos \left( z_1  \right) \sin \left( z_2  \right)  \\
+	\cos \left( z_1 +z_2  \right)  &= \cos \left( z_1  \right) \cos \left( z_2  \right) -\sin \left( z_1  \right) \sin \left( z_2  \right) \\
+	\sin \left( 2z \right)  &= 2\sin \left( z \right) \cos \left( z \right)  \\
+	\cos \left( 2z \right)  &= \cos ^2 z-\sin ^2 z \\
+	\sin \left( z+\frac{\pi }{2} \right)  &= \cos \left( z \right) \\
+	\sin \left( z-\frac{\pi }{2} \right)  &= -\cos \left( z \right) \\
+	\sin ^2 z+\cos ^2 z &= 1 \\
+	\sin \left( z+2\pi  \right)  &= \sin \left( z \right) \\
+	\sin \left( z+\pi  \right)  &= -\sin \left( z \right) \\
+	\cos \left( z+2\pi  \right)  &= \cos \left( z \right) \\
+	\cos \left( z+\pi  \right)  &= -\cos \left( z \right)  
+\end{align*}
+
+<p>The hyperbolic functions are defined as</p>
+
+\begin{align*}
+	\sinh z &= \frac{e^{z}-e^{-z}}{2} \\
+	\cosh z &= \frac{e^{z}+e^{-z}}{2} 
+\end{align*}
+
+<p>So that</p>
+
+\begin{align*}
+	\sin \left( iy \right)  &= i \sinh y \\
+	\cos \left( iy \right)  &= \cosh y \\
+	\sin \left( z \right)  &= \sin \left( x \right) \cosh (y)+i \cos \left( x \right) \sinh (y)\\
+	\cos \left( z \right)  &= \cos \left( x \right) \cosh y - i \sin \left( x \right) \sinh y \\
+	|\sin \left( z \right) |^2  &= \sin ^2 x + \sinh ^2 y \\
+	|\cos \left( z \right) |^2  &= \cos ^2 z + \sinh ^2 y 
+\end{align*}
+
+<p>Other trigonometric functions:</p>
+
+\begin{align*}
+	\tan \left( z \right)  &= \frac{\sin \left( z \right) }{\cos \left( z \right) }  &  \frac{d}{dz}\tan \left( z \right)  &= \sec ^2 z \\
+	\sec \left( z \right)  &= \frac{1}{\cos \left( z \right) }  &  \frac{d}{dz}\sec \left( z \right)  &= \sec \left( z  \right) \tan \left( z \right)  \\
+	\cot \left( z \right)  &= \frac{\cos \left( z \right) }{\sin \left( z \right) }  &  \frac{d}{dz}\cot \left( z \right)  &= -\csc ^2 (z) \\
+	 \csc (z) &= \frac{1}{\sin \left( z \right) }  &  \frac{d}{dz}\csc (z) &= -\csc (z)\cot \left( z \right)
+\end{align*} 
+  
+<p>Note that $\tan \left( z \right) ,\sec \left( z \right)  $ are analytic except at the singularities (zeros of $\cos \left( z \right)  $) $z=\frac{\pi }{2}+n\pi  $ for $n \in \mathbb{Z}  $.</p>
+
+<p>$\cot \left( z \right)  ,\csc (z)	$ have singularities at the zeros of $\sin \left( z \right)  $: $z=n\pi  $ for $n \in \mathbb{Z}  $.</p>
+
+<p>They are all periodic in some way. </p>
+
+<p>More hyperbolic identities:</p>
+\begin{align*}
+	- \sinh (iz) &= \sin \left( z \right)  \\
+	\cosh (iz) &= \cos \left( z \right)  \\
+	- \sin \left( iz \right)  &= \sinh (z)\\
+	\cos \left( iz \right)  &= \cosh (z)\\
+	\sinh (-z) &= -\sinh (z)\\
+	\cosh (-z) &= \cos \left( z \right) \\
+	\cosh ^2 z - \sinh ^2 z &= 1\\
+	\sinh (z_1 +z_2 ) &= \sinh z_1 \cosh z_2 +\cosh z_1 \sinh z_2  \\
+	\cosh (z_1 +z_2 ) &= \cosh z_1 \cosh z_2 +\sinh z_1 \sinh z_2  \\
+	\sinh z &= \sinh x \cos \left( y \right) +i\cosh x \sin \left( y  \right)  \\
+	\cosh z &= \cosh x \cos \left( y \right) +i \sinh x \sin \left( y \right) \\
+	|\sinh z|^2  &= \sinh ^2 x + \sin ^2 y \\
+	|\cosh z|^2  &= \sinh ^2 x + \cos ^2 y 
+\end{align*} 
+
+<p>More hyperbolic functions:</p>
+
+\begin{align*}
+	\tanh z  &= \frac{\sinh z}{\cosh z} &  \frac{d}{dz}\tanh z &= \text{sech} ^2 z\\
+	\coth z &= \frac{1}{\tanh z}    &      \frac{d}{dz}\coth z &= -\text{csch} ^2 z\\
+	\text{sech} z &= \frac{1}{\cosh z}    &      \frac{d}{dz}\text{sech} z &= -\text{sech} z \tanh z\\
+	\text{csch} z &= \frac{1}{\sinh z}    &      \frac{d}{dz}\text{csch} z &= -\text{csch} z \coth z\\
+\end{align*} 
+
+<p>Inverse trig functions:</p>
+
+\begin{align*}
+	\sin ^{-1} z &= -i \log  \left[ iz+(1-z^2 )^{1/2} \right]  &  \frac{d}{dz}\sin ^{-1} z &= \frac{1}{(1-z^2 )^{1/2}}\\
+	\cos ^{-1} z &= -i \log  \left[ z+i(1-z^2 )^{1/2} \right]  &  \frac{d}{dz}\cos ^{-1} z &= \frac{-1}{(1-z^2 )^{1/2}}\\
+	\tan ^{-1} z &= \frac{i}{2}\log \frac{i+z}{i-z}  &  \frac{d}{dz}\tan ^{-1} z &= \frac{1}{1+z^2 }
+\end{align*} 
+
+<p>Inverse hyperbolic trig functions:</p>
+
+\begin{align*}
+	\sinh ^{-1} z &= \log  \left[ z+(z^2 +1)^{1/2} \right]  \\
+	\cosh ^{-1} z &= \log  \left[ z+(z^2 -1)^{1/2} \right] \\
+	\tanh ^{-1} z &= \frac{1}{2}\log \frac{1+z}{1-z} 
+\end{align*} 			
+			<hr>
+			<a href="../Formulas.html" style="color: black; "><h4>Back to Formulas</h4></a>
+        
+		</div>
+    </body>
+</html>

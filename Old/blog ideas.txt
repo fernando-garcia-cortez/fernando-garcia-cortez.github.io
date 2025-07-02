@@ -1,0 +1,20 @@
+https://londmathsoc.onlinelibrary.wiley.com/doi/epdf/10.1112/plms/s2-42.1.90
+On Milne's Theory of World-Structure
+A. G. Walker
+
+". Interestingly, although
+the Majorana condition and Weyl condition cannot be imposed simultaneously in four
+dimensions, you can do this in Minowski spacetimes of dimension 2, 10, 18,...."
+Tong, p. 97, QFT
+https://static.ias.edu/pitp/archive/PiTPspinrs.pdf
+
+
+https://physlab.org/wp-content/uploads/2016/08/Electric-fields-in-the-presence-of-conducting-objects-AJP-2010.pdf
+Griffiths Ref 21, Chapter 3. From problem 3.40
+
+Derive Eqs. 35 to 39 (from notes) from Tilde Conjugation Rules (TQFT Ch5)
+
+
+Pauli-Lubanski
+https://iopscience.iop.org/article/10.1088/0031-8949/91/3/035301/ampdf
+Thermal For ω^2 != 0 it can be shown [12] that only integral and half-integral spins are possible.

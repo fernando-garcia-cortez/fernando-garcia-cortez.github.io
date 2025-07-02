@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problem 3.40</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Research.html" style="color: black; text-decoration: none;">
+						Research
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			<h2 style="text-align:center;">PHYS405 - Electricity & Magnetism I</h2>
+			<h4 style="text-align:center;">Spring 2024</h4>
+			
+			<h2>Problem 3.40</h2>
+			
+			<div class="BlogAbstract">
+				
+
+<p>Useful context: In section 3.2.1: The Classic Image Problem, we studied the problem of an infinite grounded plane with a charge $q $ held a distance $d $ above. We found (using the method of images) that</p>
+
+\[V(x,y,z)=\frac{1}{4\pi \epsilon _0 }\bigg[ \frac{q}{\sqrt{x^2 +y^2 +(z-d)^2 }}-\frac{q}{\sqrt{x^2 +y^2 +(z+d)^2 }} \bigg] \tag{Eq. 3.9, page 124} \]
+
+A bit further down, in section 3.2.2: Induced Surface Charge, we recalled Equation 2.49: $\sigma =-\epsilon _0  \frac{\partial V}{\partial n} $. Using this and Eq. 3.9, we see that the induced charge on the conductor (the infinite grounded plane) is:
+
+\[\sigma (x,y)=\frac{-qd}{2\pi (x^2 +y^2 +d^2 )^{3/2}}\tag{Eq. 3.10, page 125} \]
+
+<p>Here's an alternative derivation of Eq. 3.10</p>
+
+<p>This approach (which generalizes to many other problems) does NOT rely on the method of images.</p>
+
+<p>The total field is due in part to $q $, and in part to the induced surface charge. Write down the $z $ components of these fields - In terms of $q $ and the as-yet-unknown $\sigma (x,y) $ - just below the surface.</p>
+
+<p>The sum must be zero, because this is inside a conductor. Use this argument to determine $\sigma  $.</p>
+				
+			</div>
+			
+			<p>Let's follow the ideas above.</p>
+			
+			<p>Firstly, the $z $ component of the electric field of $q $ at any point on the grounded field:</p>
+			<img src="3-40/01.PNG" class="centerImg" style="width: 50%;">
+			<p>Using a factor of</p>
+			\[\cos \left( \theta  \right) =\frac{d}{\sqrt{x^2 +y^2 +d^2 }} \]
+			<p>Is given by</p>
+			\begin{align*}
+				E_z(x,y) &= |\mathbf{E}|\cos \left( \theta  \right)  \\
+				  &= \frac{1}{4\pi \epsilon _0 }\frac{q}{x^2 +y^2 +z^2 }\frac{d}{\sqrt{x^2 +y^2 +d^2 }}\\
+			      &= \frac{1}{4\pi \epsilon _0 }\frac{qd}{(x^2 +y^2 +z^2)^{3/2} } 
+			\end{align*}
+			 <p>Further, the field close to the infinite-plane is (due to the plane itself) is (see Eq. 2.17, page 72):</p>
+			 \[E_z=\frac{\sigma }{2\epsilon _0 } \]
+			 <p>The sum must be zero, so:</p>
+			 \[0= \frac{\sigma }{2\epsilon _0 }+\frac{1}{4\pi \epsilon _0 }\frac{qd}{(x^2 +y^2 +z^2)^{3/2} } \]
+			 <p>Solve for $\sigma  $:</p>
+			 \[\sigma (x,y)=\frac{-qd}{2\pi (x^2 +y^2 +d^2 )^{3/2}}\tag{The same as Eq. 3.10!} \]
+			 
+			
+			
+			
+			<br>
+			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
+			
+        
+		</div>
+    </body>
+</html>
+

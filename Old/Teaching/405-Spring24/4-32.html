@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Problem 4.32</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	   <link rel="stylesheet" href="../../GarciaStyles.css">
+    </head>
+    <body>
+		<div class="InnerBody">
+			<!------------------------------>
+			<!----------- Header ----------->
+			<!------------------------------>
+			<hr>
+			<h1 class="liner">Fernando Garcia</h1>
+			
+			<h4>
+					<a href="../../index.html" style="color: black; text-decoration: none;">
+						Home
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Research.html" style="color: black; text-decoration: none;">
+						Research
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Blog.html" style="color: black; text-decoration: none;">
+						Blog
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../Other.html" style="color: black; text-decoration: none;">
+						Other
+					</a>
+					&nbsp; &nbsp;
+					<a href="../../AboutMe.html" style="color: black; text-decoration: none;">
+						About me
+					</a>
+			</h4>
+			
+			<hr>
+			
+			
+			<!------------------------------->
+			<!----------- Content ----------->
+			<!------------------------------->
+			
+			
+			
+			<h2 style="text-align:center;">PHYS405 - Electricity & Magnetism I</h2>
+			<h4 style="text-align:center;">Spring 2024</h4>
+			
+			<h2>Problem 4.32</h2>
+			
+			<div class="BlogAbstract">
+				
+<p>As a model for a polarizable atom, consider two point charges $\pm q $ connected by a spring of constant $k $ and equilibrium length zero.</p>
+
+<p>That is, the force on $+q $ (with $-q $ nailed down at the origin) would be $-kx $, where $x $ is the separation.</p>
+
+<p>The "spring" here is a surrogate for whatever holds the molecule together. It includes the electrical attraction of the other end.</p>
+
+<p>If it bothers you that the force is taken ot be proportional to the separation (rather than $1/r^2  $) loo again at Example 4.1 or problems 4.2/4.3; realistic models, with the charges smeared out, lead naturally to Hooke's law force, at least for small displacements.</p>
+
+<p>(a) Find the polarizability $\alpha  $, in terms of $k $ and $q $.</p>
+
+<p>(b) Now calculate the energy of an induced dipole $\mathbf{p} $, in an electric field $\mathbf{E} $.</p>
+
+<p>Hint: The work required to bring in the charges and place them in positions is still given by Eq. 4.6. But in addition to that we must stretch the spring to its appropriate length. How much work does that take?</p>
+				
+			</div>
+			
+			<h4>Part (a)</h4>
+			
+			<p>Going by definition (recall Equation 4.1: $\mathbf{p}=\alpha \mathbf{E} $):</p>
+			\begin{align*}
+				\alpha  &= \frac{\mathbf{p}}{\mathbf{E}} \\
+				  &= \frac{qx}{\frac{1}{q}\mathbf{F}}\\
+				  &= \frac{qx}{\frac{1}{q}kx}\\
+				  &= \frac{q^2 }{k} 
+			\end{align*} 
+			<h4>Part (b)</h4>
+			
+			<p>To calculate the energy, we have to consider two terms acting here: The energy from the "spring"</p>
+			\[U_{\text{spring} }=\frac{1}{2}kx^2  \]
+			<p>And that of the dipole and the $E $ field:</p>
+			\begin{align*}
+				U_{\text{dipole} } &= -\mathbf{p}\cdot \mathbf{E}\tag{See Eq. 4.6, page 171} \\
+				  &= -(\alpha \mathbf{E})\cdot \mathbf{E} \\
+				  &= -\alpha \mathbf{E}^2  \\
+				  &= -\frac{q^2 }{k}\mathbf{E}^2 \tag{Using the result of part (a)}
+			\end{align*}
+			<p>Combining these results:</p>
+			\begin{align*}
+				U &= U_{\text{spring} }+U_{\text{dipole} } \\
+				  &= \frac{1}{2}kx^2 -\frac{q^2 }{k}\mathbf{E}^2
+			\end{align*}  
+			
+			 
+			
+			
+			
+			
+			<br>
+			<a href="../405-Spring24.html" style="color: black; "><h4>Back to PHYS405 site</h4></a>
+			
+        
+		</div>
+    </body>
+</html>
+
