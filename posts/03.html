@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrostatics Monte Carlo - FGC</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../body_style.css">
+	<link rel="stylesheet" href="../nav_style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="inner-container">
+            <!-- Left sidebar with navigation links -->
+            <div class="sidebar">
+                <div class="nav-container">
+                    <a href="../me.html">Me</a>
+                    <a href="../work.html">Work</a>
+                    <a href="../posts.html">Posts</a>
+					<a href="../fun.html">Fun</a>
+                    <div class="nav-end"></div> 
+                </div>
+            </div>
+
+            <!-- Content section -->
+            <div class="content">
+			
+				<h1>Fernando Garcia Cortez</h1>
+				<h2>Electrostatics Potential Problems using Monte Carlo</h2>
+<p>Whenever I think about electromagnetism, potential theory always comes to mind. Whether it's using theorems to validate solutions and propositions, the method of separation of variables, or employing the method of images, I remember these problems fondly. Beyond that, I always wondered about more complex problems and the lack of analytic methods to solve them.</p>
+
+<p>In this post, I explore the idea of solving a boundary value problem using Monte Carlo methods. Specifically, I'll present an electrostatic configuration and compare the exact theoretical solution to the results obtained through statistical methods.</p>
+
+<p>Let's begin by considering Laplace's equation for a scalar field $u(\mathbf{x}) $,</p>
+
+\[\nabla ^2 u=0 .\]
+
+<p>This equation can be turned into a finite difference equation, a common exercise when studying numerical methods to solve this kind of problems. This form follows (in two dimensions):</p>
+
+\[\nabla ^2 u=\frac{u(x+\Delta ,y)+u(x-\Delta ,y)+u(x,y+\Delta )+u(x,y-\Delta )-4u(x,y)}{\Delta ^2 }=0, \]
+
+<p>where $\Delta  $ stands for the spacing between neighboring points in the two dimensional lattice. It is relevant to isolate $u(x,y) $</p>
+
+\[u(x,y)= \frac{u(x+\Delta ,y)+u(x-\Delta ,y)+u(x,y+\Delta )+u(x,y-\Delta )}{4}\]
+
+<p>Instead of performing the finite difference method (FDM), we can observe the following: random walks starting at a given point in the domain will terminate at a boundary point after some time. This random walk operates under the assumption that there is an equal $1/4$ chance of moving from $(x, y)$ to $(x+\Delta, y)$, $(x-\Delta, y)$, $(x, y+\Delta)$, or $(x, y-\Delta)$.</p>
+
+<p>Here is the proposition: an estimate of $u(x, y)$ (the solution to Laplace's equation at a given point in the domain) can be obtained by running multiple random walks that terminate at boundary points. If $N$ walks are run, then the approximation is given by:</p>
+
+\[u(x,y)\sim \frac{1}{N}\sum_{i}^{} f(x_i ,y_i ), \]
+
+<p>where $f$ is the function that determines the boundary values.</p>
+
+<p>To explore this method, I will borrow an example problem from Griffith's "Introduction to Electrodynamics." We want to find the electric potential field, so $V(\mathbf{x}) $ acts as $u $ in the aforementioned equations.</p>
+
+<img src="03_laplace_montecarlo_electro/diagram.png" class="centerImg" style="width: 95%;">
+
+<p>Consider four infinitely long (extending in the $z $-axis) metal plates meeting at their edges to form a prism, such that the top and bottom plates have a width of $2b $ and the vertical plates have a height of $a $. The horizontal plates are grounded ($V=0 $), while the vertical plates are kept at a constant potential $V_0  $.</p>
+
+<p>Using separation of variables one can show that</p>
+
+\[V(x,y)=\frac{4V_0 }{\pi }\sum_{n=1,3,5,\cdots }^{} \frac{1}{n}\frac{\cosh (n\pi x/a)}{\cosh (n\pi b/a)}\sin (n\pi y/a). \]
+
+<img src="03_laplace_montecarlo_electro/plot.png" class="centerImg" style="width: 95%;">
+
+<p>With $a=1 $, $b=0.5 $, and $V_0 =3 $, the first 50 terms of the series solution yield:</p>
+
+\[V(0,45,0.2)=2.52874 \tag{*}\]
+
+<p>It is this point, $(0.45,0.2) $, the one we will use as the starting point of the random walks and thus we will approximate(only, and not the entire solution) $V(0,45,0.2) $. The value in ($* $) will be our baseline to compare the results form the random walks.</p>
+
+<img src="03_laplace_montecarlo_electro/path_example_transparent.png" class="centerImg" style="width: 55%;">
+
+<p style="text-align:center;">Example of a random walk over the problem's domain.</p>
+
+<p>The walker algorithm is straightforward. Randomly pick a direction, update the position, and repeat until we detect a boundary point. In this case, if it detects that we are in an edge of constant $x $, then <i>return</i> $V_0$. If it detects that we are in an edge of constant $y$, <i>return</i> $0$.</p>
+
+<p>Below is a graph comparing the method at different $N $. Five runs were used to compute the averages and errors. The dashed red line indicates the true value as computed using the first 50 terms of the series solution.</p>
+
+<img src="03_laplace_montecarlo_electro/monte_carlo_Laplace_approximations_transparent.png" class="centerImg" style="width: 70%;">
+
+<p>As $N$ grows, individual predictions fall closer and closer to the real value in a more consistent manner. Find below a comparison of computation times (i5-11400F 11th gen 6 Cores 12 Threads, DDR4 32 GB, Windows 10 64 bit)</p>
+
+<img src="03_laplace_montecarlo_electro/Monte_Carlo_Laplace_timing_plot_transparent.png" class="centerImg" style="width: 70%;">
+
+<p>It is clear that the Monte Carlo method discussed is a valid approach to solving these types of problems. One question remains: is it any faster than FDM? At first glance, parallelizing the Monte Carlo method seems much more straightforward than parallelizing FDM. This question will be addressed in a later post!</p>
+				<br>
+				<br>
+				<br>
+				<p><a href="../posts.html">Back to posts listing</a></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
