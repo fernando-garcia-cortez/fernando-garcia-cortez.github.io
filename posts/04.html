@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hands-on MCMC for beginners - FGC</title>
+        <script>
+            MathJax = {
+                tex: {
+                inlineMath: [['$', '$']]
+                }
+            };
+	   </script>
+	   <script id="MathJax-script" async
+		  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+	   </script>
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../body_style.css">
+	<link rel="stylesheet" href="../nav_style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="inner-container">
+            <!-- Left sidebar with navigation links -->
+            <div class="sidebar">
+                <div class="nav-container">
+                    <a href="../me.html">Me</a>
+                    <a href="../work.html">Work</a>
+                    <a href="../posts.html">Posts</a>
+					<a href="../fun.html">Fun</a>
+                    <div class="nav-end"></div> 
+                </div>
+            </div>
+
+            <!-- Content section -->
+            <div class="content">
+			
+				<h1>Fernando Garcia Cortez</h1>
+				<h2>Hands-on MCMC for beginners</h2>
+				
+				<p>Many times, when discussing my work with people outside my field, I’ve found it tricky to explain what Markov Chain Monte Carlo (MCMC) is and how it works in practice. In this post, I’ll walk you through a process called parameter estimation (using MCMC) without relying on advanced code libraries. I’ll assume you’re already familiar with a bit of Bayesian statistics—specifically the concepts of a prior, a likelihood, and a posterior.</p>
+				
+				<p>Consider the following situation: An alien species happens to know how pendulum's period (the time it takes to complete one full oscillation) is related to the local gravitational acceleration:</p>
+				\[T=2\pi \sqrt{\frac{L}{g}}\;,\]
+				<p>where $L$ is the pendulum’s length. Unfortunately for them, the planet's atmosphere is extremely toxic, so their only option is to take measurements inside a cramped spaceship with minimal tools.</p>
+
+				<p>They could try to measure the pendulum's period a few times and use the formula to extract some estimation of $g$, but that would likely be imprecise. Measuring it millions of times would be more accurate, but also painfully tedious and time-consuming.</p>
+
+				<p>Instead, one clever research assistant proposes a smarter approach: take just a handful of measurements and use Markov Chain Monte Carlo (MCMC) to draw conclusions. After all, a computer can crunch numbers much faster than an alien can swing a pendulum.</p>
+				
+				<p>The data set then consists of a set of measurements of the pendulum's period. For this calculation, we can assume that the alien's measurement device induces, effectively, normal noise on the measurement. Further, suppose that the aliens measured the period 25 times.</p>
+				
+				PICTURE OF DATA HISTOGRAM
+				
+				<p>The dataset will be generated synthetically by adding normally distributed noise to the true value. In other words, data points $T_i$ are generated using</p>
+				
+				\[T_i = T_{\text{true}}+\mathcal{N}(\mu = 0, \sigma = 0.5)\]
+				
+				
+				
+				
+				
+				<br>
+				<br>
+				<br>
+				<p><a href="../posts.html">Back to posts listing</a></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
